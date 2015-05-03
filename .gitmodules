@@ -1,0 +1,4 @@
+[submodule "Watcher"]
+	path = Watcher
+	url = git@gitlab.jobuzzle.com:Jobuzzle/Watcher.git
+	branch = master
