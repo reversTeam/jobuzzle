@@ -1,0 +1,11 @@
+class Route {
+	
+	initialize : function () {
+		console.log('Route initialize ok');
+	}
+
+	test : function () {
+		console.log('Je fait un petit test');
+	}
+
+}

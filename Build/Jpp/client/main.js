@@ -1,0 +1,3 @@
+
+
+var KernelConfig = new Config();
