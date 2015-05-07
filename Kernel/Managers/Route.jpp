@@ -1,0 +1,9 @@
+#import ('./Master') = MasterManager;
+
+class Route extends MasterManager {
+
+	pathDir = 'Route';
+
+}
+
+#export Route;

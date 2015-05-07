@@ -1,0 +1,35 @@
+#import ('fs') = fs;
+
+class Master {
+
+	pathDir = 'Kernel';
+	#default get, set for pathDir;
+
+	initialize : function () {
+		this._all = {};
+	}
+
+	public add : function (key, value) {
+		this._all[key] = value;
+	}
+
+	public get : function (key) {
+		if (this._all[key])
+			return this.getObject(this._all[key]);
+		else
+			throw 'Module '+ key +' doesn\'t found';
+	}
+
+	getObject : function (pathFile) {
+		var pathToFile = KernelConfig.path +'/'+ this.getPathDir() +'/'+ pathFile +'.js';
+		var obj = {};
+
+		if (!fs.existsSync(pathToFile))
+			throw 'File doesn\'t exist "'+ pathToFile +'"';
+		obj = require(pathToFile);
+		return new obj();
+	}
+
+}
+
+#export Master;
