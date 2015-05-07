@@ -1,0 +1,9 @@
+#import ('./Master') = MasterManager;
+
+class Service extends MasterManager {
+
+	pathDir = 'Service';
+
+}
+
+#export Service;

@@ -1,9 +1,0 @@
-class Config {
-
-	initialize : function () {
-		console.log('Inialize Config');	
-	}
-
-}
-
-#export Config;
