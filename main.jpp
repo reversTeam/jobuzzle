@@ -1,3 +1,7 @@
-#import ("./Kernel/Config") = Config;
+#import ('fs') = fs;
+#import ('./Kernel/Config') = Config;
 
-var KernelConfig = new Config();
+#import ('./Kernel/Managers/Master') = ServiceManager;
+
+global.KernelConfig = JSON.parse(fs.readFileSync('../../conf/all.json'));
+KernelConfig.path = __dirname;
