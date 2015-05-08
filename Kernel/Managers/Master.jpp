@@ -1,35 +1,54 @@
 #import ('fs') = fs;
 
-class Master {
+class MasterManager {
 
 	pathDir = 'Kernel';
 	#default get, set for pathDir;
 
 	initialize : function () {
 		this._all = {};
+		this._all.invokables = {};
+		this._all.factory = {};
 	}
 
-	public add : function (key, value) {
-		this._all[key] = value;
+	public add : function (key, value, type) {
+		this._all[type][key] = value;
 	}
 
 	public get : function (key) {
-		if (this._all[key])
-			return this.getObject(this._all[key]);
-		else
-			throw 'Module '+ key +' doesn\'t found';
+		var obj = this.getFactory(key);
+		if (!obj)
+			obj = this.getInvokables();
+		return obj;
 	}
 
-	getObject : function (pathFile) {
-		var pathToFile = KernelConfig.path +'/'+ this.getPathDir() +'/'+ pathFile +'.js';
-		var obj = {};
+	public getInvokables : function (key) {
+		if (this._all['invokables'][key])
+			return this.getObject(this._all['invokables'][key], 'invokables');
+		return false;
+	}
+
+	public getFactory : function (key) {
+		if (this._all['factory'][key])
+			return this.getObject(this._all['factory'][key], 'factory');
+		return false;
+	}
+
+	getObject : function (pathFile, type) {
+		var pathToFile = Config.path +'/'+ this.getPathDir() +'/'+ pathFile +'.js';
+		var req = {},
+			obj = {};
 
 		if (!fs.existsSync(pathToFile))
 			throw 'File doesn\'t exist "'+ pathToFile +'"';
-		obj = require(pathToFile);
-		return new obj();
+		req = require(pathToFile);
+		obj = new req();
+		if (type == 'factory')
+			return obj.create(this);
+		else
+			return obj;
 	}
 
 }
 
-#export Master;
+#export MasterManager;
