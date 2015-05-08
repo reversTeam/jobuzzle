@@ -1,7 +1,18 @@
 #import ('fs') = fs;
-#import ('./Kernel/Config') = Config;
+#import ('./Kernel/Config') = x;
+#import ('./Kernel/ServiceLocator') = ServiceLocator;
 
-#import ('./Kernel/Managers/Master') = ServiceManager;
+Config = x;
+Config.path = __dirname;
 
-global.KernelConfig = JSON.parse(fs.readFileSync('../../conf/all.json'));
-KernelConfig.path = __dirname;
+serviceLocator = new ServiceLocator();
+serviceLocator.init();
+
+#import ('./Modules/Test/main') = test;
+new test();
+
+// var routeManager = serviceLocator.get('RouteManager');
+var serviceManager = serviceLocator.get('ServiceManager');
+
+var test = serviceManager.get('test');
+test.start();

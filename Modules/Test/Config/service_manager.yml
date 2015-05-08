@@ -1,0 +1,4 @@
+factory:
+    test: Factory/Test
+invokables:
+    test: Test

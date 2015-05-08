@@ -1,0 +1,13 @@
+class TestService {
+
+	initialize : function () {
+		console.log('Hello');
+	}
+
+	start : function () {
+		console.log('Start is call');
+	}
+
+}
+
+#export TestService;

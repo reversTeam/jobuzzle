@@ -1,2 +1,0 @@
-var Config = {"dev":{"server":{"host":"v1.api.local.jobuzzle.dev"}},"global":{"env":"dev"},"modules":{"Test":{"dev":{},"global":{"test":"oui"},"prod":{},"route_mananger":{"factory":null,"invokables":null},"service_manager":{"factory":{"test":"Factory/Test"},"invokables":{"test":"Test"}}}},"prod":{"serveur":{"host":"v1.api.jobuzzle.com"}},"servicelocator":{"invokables":{"RouteManager":"Kernel/Managers/Route","ServiceManager":"Kernel/Managers/Service"}},"env":{"server":{"host":"v1.api.local.jobuzzle.dev"}}}
-#export Config;
