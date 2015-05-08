@@ -6,38 +6,46 @@ class MasterManager {
 	#default get, set for pathDir;
 
 	initialize : function () {
-		this._all = {};
-		this._all.invokables = {};
-		this._all.factory = {};
+		this._all = {
+			invokables : {},
+			factory : {}
+		};
 	}
 
-	public add : function (key, value, type) {
-		this._all[type][key] = value;
+	public add : function (key, value, module, type) {
+		this._all[type][key] = module +'/'+ this.getPathDir() +'/'+ value;
 	}
 
 	public get : function (key) {
 		var obj = this.getFactory(key);
 		if (!obj)
-			obj = this.getInvokables();
+			obj = this.getInvokables(key);
+		if (!obj)
+			throw 'Manager "'+ key +'" is not defined';
 		return obj;
 	}
 
 	public getInvokables : function (key) {
-		if (this._all['invokables'][key])
+		if (this._all['invokables'][key]) {
 			return this.getObject(this._all['invokables'][key], 'invokables');
+		}
 		return false;
 	}
 
 	public getFactory : function (key) {
-		if (this._all['factory'][key])
-			return this.getObject(this._all['factory'][key], 'factory');
+		if (this._all['factory'][key]) {
+			var obj = this.getObject(this._all['factory'][key], 'factory');
+			if (!obj)
+				throw 'Factory "'+ key +'" doesn\'t have invokables';
+			return obj;
+		}
 		return false;
 	}
 
 	getObject : function (pathFile, type) {
-		var pathToFile = Config.path +'/'+ this.getPathDir() +'/'+ pathFile +'.js';
-		var req = {},
-			obj = {};
+		var pathToFile = Config.path +'/Modules/'+ pathFile +'.js';
+		var req = {};
+		var obj = {};
 
 		if (!fs.existsSync(pathToFile))
 			throw 'File doesn\'t exist "'+ pathToFile +'"';
