@@ -1,0 +1,3 @@
+invokables:
+    RouteManager: Kernel/Managers/Route
+    ServiceManager: Kernel/Managers/Service 

@@ -1,0 +1,44 @@
+class MasterAutoload {
+
+	confModuleName = '';
+
+	#default get, set for confModuleName;
+
+	initialize : function () {
+		if (Config.modules && Config.modules[this.getConfModuleName()]) {
+			this.addServiceManager();
+			this.addRouteManager();
+		}
+	}
+
+	addServiceManager : function () {
+		var serviceManager = serviceLocator.get('ServiceManager');
+		var confServiceManager = Config.modules[this.getConfModuleName()].service_manager;
+		if (!confServiceManager)
+			return ;
+		this.addInManager(serviceManager, confServiceManager);
+		
+	}
+
+	addRouteManager : function () {
+		var routeManager = serviceLocator.get('RouteManager');
+		var confRouteManager = Config.modules[this.getConfModuleName()].route_manager;
+		if (!confRouteManager)
+			return ;
+		this.addInManager(routeManager, confRouteManager);
+	}
+
+	addInManager : function (manager, confManager) {
+		if (confManager.invokables) {
+			for (var i in confManager.invokables)
+				manager.add(i, confManager.invokables[i], this.getConfModuleName(), 'invokables');
+		}
+		if (confManager.factory) {
+			for (var i in confManager.factory)
+				manager.add(i, confManager.factory[i], this.getConfModuleName(), 'factory');
+		}
+	}
+
+}
+
+#export MasterAutoload;
