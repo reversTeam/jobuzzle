@@ -1,0 +1,14 @@
+#import (Config.path +'/Kernel/Factory/Master') = MasterFactory;
+
+class TestFactory extends MasterFactory {
+
+	invokableClassName = 'test';
+
+	create : function (serviceLocator) {
+		var obj = _super(serviceLocator);
+		return obj;
+	}
+
+}
+
+#export TestFactory;
