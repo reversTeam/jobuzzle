@@ -1,0 +1,17 @@
+class MasterFactoy {
+
+	className = 'class';
+	#default get, set for className;
+
+	initialize : function () {
+		console.log('Service Manager Instantiated');
+	}
+
+	create : function (serviceManager) {
+		var obj = serviceManager.getInvokables(this.getClassName());
+		return obj;
+	}
+
+}
+
+#export MasterFactoy;
