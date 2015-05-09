@@ -1,0 +1,7 @@
+#import (Config.path +'/Kernel/Route/Master') = MasterRoute;
+
+class TestRoute extends MasterRoute {
+
+}
+
+#export TestRoute;

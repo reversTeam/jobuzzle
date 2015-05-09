@@ -1,6 +1,9 @@
-class TestService {
+#import (Config.path +'/Kernel/Service/Master') = MasterService;
+
+class TestService extends MasterService {
 
 	initialize : function () {
+		_super();
 		console.log('Hello');
 	}
 
