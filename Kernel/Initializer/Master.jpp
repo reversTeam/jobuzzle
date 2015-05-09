@@ -1,0 +1,9 @@
+class MasterInitializer {
+
+	initialize : function () {
+		
+	}
+
+}
+
+#export MasterInitializer;
