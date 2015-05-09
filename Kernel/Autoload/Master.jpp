@@ -28,9 +28,9 @@ class MasterAutoload {
 			for (var i in confManager.invokables)
 				manager.add(i, confManager.invokables[i], this.getConfModuleName(), 'invokables');
 		}
-		if (confManager.factory) {
+		if (confManager.factories) {
 			for (var i in confManager.factory)
-				manager.add(i, confManager.factory[i], this.getConfModuleName(), 'factory');
+				manager.add(i, confManager.factory[i], this.getConfModuleName(), 'factories');
 		}
 	}
 
