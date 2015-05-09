@@ -4,8 +4,14 @@ class TestFactory extends MasterFactory {
 
 	invokableClassName = 'test';
 
+	initialize : function () {
+		_super();
+		console.log('Factory Test instanciated');
+	}
+
 	create : function (serviceLocator) {
 		var obj = _super(serviceLocator);
+
 		return obj;
 	}
 
