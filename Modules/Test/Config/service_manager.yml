@@ -1,4 +1,4 @@
-factory:
+factories:
     test: Factory/Test
 invokables:
     test: Test
