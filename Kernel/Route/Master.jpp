@@ -1,0 +1,23 @@
+class MasterRoute {
+
+	#default get for _routes;
+
+	initialize : function () {
+		this._routes = {};
+	}
+
+	addRoute : function (name, routes) {
+		if (!name || !routes)
+			throw 'You can\'t add empty route name or value';
+		this._routes[name] = routes;
+	}
+
+	getRoute : function (name) {
+		if (!name)
+			throw 'You can\'t get route empty name';
+		return this._routes[name];
+	}
+
+}
+
+#export MasterRoute;
