@@ -4,11 +4,10 @@ class TestService extends MasterService {
 
 	initialize : function () {
 		_super();
-		console.log('Hello');
 	}
 
 	start : function () {
-		console.log('Start is call');
+		console.log('Service Test is ready to die');
 	}
 
 }
