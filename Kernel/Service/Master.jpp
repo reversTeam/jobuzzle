@@ -1,0 +1,5 @@
+class MasterService {
+
+}
+
+#export MasterService;
