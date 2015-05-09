@@ -5,7 +5,7 @@ class ServiceLocator {
 	initialize : function () {
 		this._component = {};
 		this._component.invokables = {};
-		this._component.factory = {};
+		this._component.factories = {};
 	}
 
 	init : function () {
@@ -18,9 +18,9 @@ class ServiceLocator {
 			}
 		}
 
-		if (Config.servicelocator.factory) {
-			for (var i in Config.servicelocator.factory) {
-				this.add(i, Config.servicelocator.factory[i], 'factory');
+		if (Config.servicelocator.factories) {
+			for (var i in Config.servicelocator.factories) {
+				this.add(i, Config.servicelocator.factories[i], 'factories');
 			}
 		}
 	}
@@ -49,8 +49,8 @@ class ServiceLocator {
 	}
 
 	getFactory : function (key) {
-		if (this._component['factory'][key]) {
-			var obj = this._component['factory'][key];
+		if (this._component['factories'][key]) {
+			var obj = this._component['factories'][key];
 			if (!obj)
 				throw 'ServiceLocator dosen\'t success call invokables for "'+ key +'" factory';
 			return obj;

@@ -8,7 +8,7 @@ class MasterManager {
 	initialize : function () {
 		this._all = {
 			invokables : {},
-			factory : {}
+			factories : {}
 		};
 	}
 
@@ -33,8 +33,8 @@ class MasterManager {
 	}
 
 	public getFactory : function (key) {
-		if (this._all['factory'][key]) {
-			var obj = this.getObject(this._all['factory'][key], 'factory');
+		if (this._all['factories'][key]) {
+			var obj = this.getObject(this._all['factories'][key], 'factories');
 			if (!obj)
 				throw 'Factory "'+ key +'" doesn\'t have invokables';
 			return obj;
@@ -51,7 +51,7 @@ class MasterManager {
 			throw 'File doesn\'t exist "'+ pathToFile +'"';
 		req = require(pathToFile);
 		obj = new req();
-		if (type == 'factory')
+		if (type == 'factories')
 			return obj.create(this);
 		else
 			return obj;
