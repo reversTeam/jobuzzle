@@ -1,18 +1,22 @@
 #import ('fs') = fs;
 #import ('./Kernel/Config') = x;
 #import ('./Kernel/ServiceLocator') = ServiceLocator;
+#import ('./Kernel/Initializer/Module') = ModuleInitializer;
 
 Config = x;
 Config.path = __dirname;
 
 serviceLocator = new ServiceLocator();
 serviceLocator.init();
+moduleInitializer = new ModuleInitializer();
 
-#import ('./Modules/Test/main') = test;
-new test();
-
-// var routeManager = serviceLocator.get('RouteManager');
 var serviceManager = serviceLocator.get('ServiceManager');
+var serviceTest = serviceManager.get('test');
+serviceTest.start();
 
-var test = serviceManager.get('test');
-test.start();
+var routeManager = serviceLocator.get('RouteManager');
+var routeTest = routeManager.get('test');
+
+routeTest.addRoute('test', {key : 'value'});
+
+console.log(routeTest.getRoute('test'));

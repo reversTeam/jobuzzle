@@ -11,6 +11,10 @@ class MasterAutoload {
 		this.initManager('RouteManager', 'route_manager');
 	}
 
+	onBootstrap : function () {
+
+	}
+
 	initManager : function (managerName, managerConf) {
 		var manager = serviceLocator.get(managerName);
 		var confManager = Config.modules[this.getConfModuleName()][managerConf];
