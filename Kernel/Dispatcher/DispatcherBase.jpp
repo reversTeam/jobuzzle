@@ -1,4 +1,4 @@
-#import('./Master') = MasterDispatcher;
+# import('./DispatcherMaster') = MasterDispatcher;
 
 class DispatcherBase extends MasterDispatcher {
 
