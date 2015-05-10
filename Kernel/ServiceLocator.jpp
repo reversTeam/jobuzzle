@@ -27,8 +27,11 @@ class ServiceLocator {
 
 	public get : function (key) {
 		var obj = this.getFactory(key);
-		if (!obj)
+		if (!obj) {
 			obj = this.getInvokables(key);
+			if (!obj)
+				throw 'ServiceLocator cannot be resolved "'+ key +'"';
+		}
 		return obj;
 	}
 

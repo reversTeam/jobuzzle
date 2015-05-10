@@ -3,3 +3,4 @@ invokables:
     ServiceManager: Kernel/Managers/Service
     ModuleInitializer: Kernel/Initializer/Module
     Router : Kernel/Router
+    Dispatcher : Kernel/Dispatcher/DispatcherBase
