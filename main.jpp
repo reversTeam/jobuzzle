@@ -17,8 +17,11 @@ serviceTest.start();
 // Test sur les routes
 var router = serviceLocator.get('Router');
 var routeManager = serviceLocator.get('RouteManager');
+
 var routeTest = routeManager.get('test');
 
 //  Test sur le router
 router.addRoute('test', routeTest);
-console.log(router.getRoute('test'));
+router.getRoute('test').getRoute('view').addRoute('test2', routeTest);
+
+// console.log(router);
