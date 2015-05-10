@@ -1,0 +1,67 @@
+#import ('../Master') = MasterRoute;
+
+class MasterRouteType {
+
+	#default get, set for _parent;
+	#default get for _name;
+	#default set for _controller;
+	#default get, set for _method;
+	#default get for _childs;
+
+	initialize : function (name, routes, parent) {
+		if (!routes || !routes.action || !routes.action.method)
+			throw 'You can\'t create an empty route or route with empty action method';
+		this._childs = {};
+		this.setName(name);
+		this.setParent(parent);
+		this.setPatternRoute(routes.route);
+		this.setController(routes.action.controller);
+		this.setMethod(routes.action.method);
+		this.createChilds(routes.childs);
+	}
+
+	getController : function () {
+		if (this._controller)
+			return this._controller;
+		else if (this.getParent())
+			return this.getParent().getController();
+		else
+			throw 'You don\'t teach controller for your route';
+	}
+
+	createChilds : function (childs) {
+		if (!childs)
+			return ;
+		for (var i in childs) {
+			this.addRoute(i, childs[i], this);
+		}
+	}
+
+	addRoute : function (name, route, parent, type) {
+		if (route instanceof MasterRoute)
+			route = route.getRoutes();
+		var req = require('./'+ route.type);
+		this._childs[name] = new req(name, route, parent);
+	}
+
+	getRoute : function (name) {
+		if (!this._childs[name])
+			throw 'You can\'t get "'+ name +'" route, please add or assemble your route';
+		return this._childs[name];
+	}
+
+	setName : function (name) {
+		if (!name)
+			throw 'You don\'t teach name for your route';
+		this._name = name;
+	}
+
+	setPatternRoute : function (route) {
+		if (!route)
+			throw 'You don\'t teach pattern for your route';
+		this._route = route;
+	}
+
+}
+
+#export MasterRouteType;
