@@ -27,7 +27,6 @@ router.getRoute('test').getRoute('view').addRoute('test2', routeTest);
 console.log("## TEST DISPATCHER");
 var dispatcher = serviceLocator.get('Dispatcher');
 
-
 class obj {
 	initialize: function () {
 		dispatcher.listen('kernel:*:bonjour', this, this.test);
