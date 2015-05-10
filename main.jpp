@@ -1,7 +1,6 @@
 #import ('fs') = fs;
 #import ('./Kernel/Config') = x;
 #import ('./Kernel/ServiceLocator') = ServiceLocator;
-#import ('./Kernel/Dispatcher/DispatcherBase') = DispatcherBase;
 
 Config = x;
 Config.path = __dirname;
@@ -26,11 +25,12 @@ router.addRoute('test', routeTest);
 router.getRoute('test').getRoute('view').addRoute('test2', routeTest);
 
 console.log("## TEST DISPATCHER");
-var dispatcher = new DispatcherBase();
+var dispatcher = serviceLocator.get('Dispatcher');
+
 
 class obj {
 	initialize: function () {
-		dispatcher.listen('kernel:*:bonjour', this, 'test');
+		dispatcher.listen('kernel:*:bonjour', this, this.test);
 	}
 
 	test: function (name, id) {
