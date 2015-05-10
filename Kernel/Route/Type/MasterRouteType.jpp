@@ -1,4 +1,5 @@
 #import ('../MasterRoute') = MasterRoute;
+#import ('../../Utility') = Utility;
 
 class MasterRouteType {
 
@@ -9,15 +10,15 @@ class MasterRouteType {
 	#default get for _childs;
 
 	initialize : function (name, routes, parent) {
-		if (!routes || !routes.action || !routes.action.method)
+		if (!routes || !routes['action'] || !routes['action']['method'])
 			throw 'You can\'t create an empty route or route with empty action method';
 		this._childs = {};
 		this.setName(name);
 		this.setParent(parent);
-		this.setPatternRoute(routes.route);
-		this.setController(routes.action.controller);
-		this.setMethod(routes.action.method);
-		this.createChilds(routes.childs);
+		this.setPatternRoute(routes['route']);
+		this.setController(routes['action']['controller']);
+		this.setMethod(routes['action']['method']);
+		this.createChilds(routes['childs']);
 	}
 
 	getController : function () {
@@ -40,11 +41,7 @@ class MasterRouteType {
 	addRoute : function (name, route, parent, type) {
 		if (route instanceof MasterRoute)
 			route = route.getRoutes();
-		#target server;
-			var req = require('./'+ route.type +'RouteType');
-		#else target;
-			var req = window[route.type + 'RouteType'];
-		#end target;
+		var req = Utility.require('./'+ route.type +'RouteType');
 		this._childs[name] = new req(name, route, parent);
 	}
 
