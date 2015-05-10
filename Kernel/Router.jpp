@@ -1,3 +1,6 @@
+#import ('./Route/Master') = MasterRoute;
+#import ('./Route/Type/Part') = PartRouteType;
+
 class Router {
 
 	initialize : function () {
@@ -7,7 +10,10 @@ class Router {
 	addRoute : function (name, routes) {
 		if (!name || !routes)
 			throw 'You can\'t add empty route name or routes';
-		this._routes[name] = routes;
+		if (routes instanceof MasterRoute)
+			this._routes[name] = this.build(name, routes);
+		else
+			this._routes[name] = routes;
 	}
 
 	getRoute : function (name) {
@@ -18,6 +24,21 @@ class Router {
 
 	getRoutes : function () {
 		return this._routes;
+	}
+
+	build : function (key, cur) {
+		var routes = {};
+
+		if (cur instanceof MasterRoute)
+			routes = cur.getRoutes();
+		else {
+			routes = cur;
+			cur = null;
+		}
+		if (!routes.type)
+			throw 'Cannot determined type for your route';
+		var req = require('./Route/Type/'+ routes.type);
+		return new req(key, routes, cur);
 	}
 
 }

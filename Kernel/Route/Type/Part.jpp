@@ -1,0 +1,11 @@
+#import ('./Master') = MasterRouteType;
+
+class PartRouteType extends MasterRouteType {
+
+	initialize : function (key, routes, parent) {
+		_super(key, routes, parent);
+	}
+
+}
+
+#export PartRouteType;

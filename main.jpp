@@ -1,6 +1,7 @@
 #import ('fs') = fs;
 #import ('./Kernel/Config') = x;
 #import ('./Kernel/ServiceLocator') = ServiceLocator;
+#import ('./Kernel/Dispatcher/DispatcherBase') = DispatcherBase;
 
 Config = x;
 Config.path = __dirname;
@@ -17,8 +18,31 @@ serviceTest.start();
 // Test sur les routes
 var router = serviceLocator.get('Router');
 var routeManager = serviceLocator.get('RouteManager');
+
 var routeTest = routeManager.get('test');
 
 //  Test sur le router
 router.addRoute('test', routeTest);
-console.log(router.getRoute('test'));
+router.getRoute('test').getRoute('view').addRoute('test2', routeTest);
+
+console.log("## TEST DISPATCHER");
+var dispatcher = new DispatcherBase();
+
+class obj {
+	initialize: function () {
+		dispatcher.listen('kernel:*:bonjour', this, 'test');
+	}
+
+	test: function (name, id) {
+		console.log('name: ' + name + ' - id: ' + id);
+		if (id == 42)
+			dispatcher.unlisten('kernel:*:bonjour', this);
+	}
+}
+
+var o = new obj();
+
+dispatcher.trigger('kernel:init:bonjour', [ 13 ]);
+dispatcher.trigger('kernel:test:bonjour', [ 42 ]);
+dispatcher.trigger('kernel:haha:bonjour', [ 60 ]);
+console.log("## END TEST DISPATCHER");

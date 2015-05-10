@@ -1,14 +1,12 @@
 class MasterRoute {
 
-	baseName : 'Master';
 	baseRoute : '/{masters}';
 	baseController : 'Master';
 	baseMethod : 'search';
 
-	paramName : 'id_master';
+	paramName : 'master_id';
 	paramRegex : '[0-9]+';
 
-	#default get for baseName;
 	#default get for baseRoute;
 	#default get for baseController;
 	#default get for baseMethod;
@@ -23,8 +21,8 @@ class MasterRoute {
 	}
 
 	getRoutesFromArray : function () {
-		var route = {};
-		route[this.getBaseName()] = {
+		return {
+			type : 'Part',
 			route : this.getBaseRoute(),
 			action : {
 				controller : this.getBaseController(),
@@ -32,25 +30,29 @@ class MasterRoute {
 			},
 			childs : {
 				create : {
+					type : 'Part',
 					route : '/{create}',
 					action : {
 						method : 'create'
 					}
 				},
 				view : {
-					route : '/'+ this.getParamName(),
+					type : 'Part',
+					route : '/:'+ this.getParamName(),
 					options : this.getParams(),
 					action : {
 						method : 'view'
 					},
 					childs : {
 						edit : {
+							type : 'Part',
 							route : '/{edit}',
 							action : {
 								method : 'edit'
 							}
 						},
 						delete : {
+							type : 'Part',
 							route : '/{delete}',
 							action : {
 								method : 'detele'
@@ -60,7 +62,6 @@ class MasterRoute {
 				}
 			}
 		};
-		return route;
 	}
 
 	getParams : function () {
