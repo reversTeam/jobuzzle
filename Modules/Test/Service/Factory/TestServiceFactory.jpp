@@ -1,6 +1,6 @@
-#import (Config.path +'/Kernel/Factory/Master') = MasterFactory;
+#import (Config.path +'/Kernel/Factory/MasterFactory') = MasterFactory;
 
-class TestFactory extends MasterFactory {
+class TestServiceFactory extends MasterFactory {
 
 	invokableClassName = 'test';
 

@@ -1,5 +1,5 @@
 #import ('fs') = fs;
-#import ('./Master') = MasterInitalizer;
+#import ('./MasterInitializer') = MasterInitalizer;
 
 class ModuleInitializer extends MasterInitalizer {
 
