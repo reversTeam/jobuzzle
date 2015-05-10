@@ -5,8 +5,8 @@ class ServiceLocator {
 
 	initialize : function () {
 		this._component = {};
-		this._component.invokables = {};
-		this._component.factories = {};
+		this._component['invokables'] = {};
+		this._component['factories'] = {};
 	}
 
 	init : function () {

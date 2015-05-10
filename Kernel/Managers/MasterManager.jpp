@@ -7,8 +7,8 @@ class MasterManager {
 
 	initialize : function () {
 		this._all = {
-			invokables : {},
-			factories : {}
+			"invokables" : {},
+			"factories" : {}
 		};
 	}
 
@@ -21,7 +21,7 @@ class MasterManager {
 		if (!obj)
 			obj = this.getInvokables(key);
 		if (!obj)
-			throw 'Manager "'+ key +'" is not defined';
+			throw 'Manager "'+ this.getPathDir() + ' '+ key +'" is not defined';
 		return obj;
 	}
 
