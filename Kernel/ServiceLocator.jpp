@@ -1,4 +1,5 @@
 #import ('fs') = fs;
+#import ('./Utility') = Utility;
 
 class ServiceLocator {
 
@@ -36,13 +37,11 @@ class ServiceLocator {
 	}
 
 	public add : function (key, value, type) {
-		var pathfile = Config.path +'/'+ value +'.js';
+		var pathfile = Config.path +'/'+ value;
 		var req = {};
 		var obj = {};
 
-		if (!fs.existsSync(pathfile))
-			throw 'File ['+ type +'] not found "'+ pathfile +'"';
-		req = require(pathfile);
+		req = Utility.require(pathfile);
 		obj = new req();
 		if (type == 'invokables')
 			this._component[type][key] = obj;
