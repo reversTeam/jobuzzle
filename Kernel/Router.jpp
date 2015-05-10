@@ -1,5 +1,4 @@
-#import ('./Route/Master') = MasterRoute;
-#import ('./Route/Type/Part') = PartRouteType;
+#import ('./Route/MasterRoute') = MasterRoute;
 
 class Router {
 

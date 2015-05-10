@@ -1,6 +1,6 @@
 invokables:
-    RouteManager: Kernel/Managers/Route
-    ServiceManager: Kernel/Managers/Service
-    ModuleInitializer: Kernel/Initializer/Module
+    RouteManager: Kernel/Managers/RouteManager
+    ServiceManager: Kernel/Managers/ServiceManager
+    ModuleInitializer: Kernel/Initializer/ModuleInitializer
     Router : Kernel/Router
     Dispatcher : Kernel/Dispatcher/DispatcherBase

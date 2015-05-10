@@ -1,4 +1,4 @@
-#import (Config.path +'/Kernel/Autoload/Master') = MasterAutoload;
+#import (Config.path +'/Kernel/Autoload/MasterAutoload') = MasterAutoload;
 
 class TestAutoload extends MasterAutoload {
 
