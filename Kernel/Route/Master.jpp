@@ -1,0 +1,76 @@
+class MasterRoute {
+
+	baseName : 'Master';
+	baseRoute : '/{masters}';
+	baseController : 'Master';
+	baseMethod : 'search';
+
+	paramName : 'id_master';
+	paramRegex : '[0-9]+';
+
+	#default get for baseName;
+	#default get for baseRoute;
+	#default get for baseController;
+	#default get for baseMethod;
+
+	#default get for paramName;
+	#default get for paramRegex;
+
+	#default get for _routes;
+
+	initialize : function () {
+		this._routes = this.getRoutesFromArray();
+	}
+
+	getRoutesFromArray : function () {
+		var route = {};
+		route[this.getBaseName()] = {
+			route : this.getBaseRoute(),
+			action : {
+				controller : this.getBaseController(),
+				method : this.getBaseMethod()
+			},
+			childs : {
+				create : {
+					route : '/{create}',
+					action : {
+						method : 'create'
+					}
+				},
+				view : {
+					route : '/'+ this.getParamName(),
+					options : this.getParams(),
+					action : {
+						method : 'view'
+					},
+					childs : {
+						edit : {
+							route : '/{edit}',
+							action : {
+								method : 'edit'
+							}
+						},
+						delete : {
+							route : '/{delete}',
+							action : {
+								method : 'detele'
+							}
+						}
+					}
+				}
+			}
+		};
+		return route;
+	}
+
+	getParams : function () {
+		var tab = {}
+		tab[this.getParamName()] = {
+			paramName : this.getParamRegex()
+		};
+		return tab;
+	}
+
+}
+
+#export MasterRoute;

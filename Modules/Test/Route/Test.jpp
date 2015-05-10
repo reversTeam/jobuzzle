@@ -1,0 +1,13 @@
+#import (Config.path +'/Kernel/Route/Master') = MasterRoute;
+
+class TestRoute extends MasterRoute {
+
+	baseName = 'Test';
+	baseRoute = '/{tests}';
+	baseController = 'Test';
+
+	paramName : 'id_test';
+
+}
+
+#export TestRoute;
