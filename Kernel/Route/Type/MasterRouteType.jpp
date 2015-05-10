@@ -40,7 +40,7 @@ class MasterRouteType {
 	addRoute : function (name, route, parent, type) {
 		if (route instanceof MasterRoute)
 			route = route.getRoutes();
-		var req = require('./'+ route.type);
+		var req = require('./'+ route.type +'RouteType');
 		this._childs[name] = new req(name, route, parent);
 	}
 
