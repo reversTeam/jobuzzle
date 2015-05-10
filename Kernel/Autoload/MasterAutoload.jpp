@@ -24,13 +24,14 @@ class MasterAutoload {
 	}
 
 	addInManager : function (manager, confManager) {
-		if (confManager.invokables) {
-			for (var i in confManager.invokables)
-				manager.add(i, confManager.invokables[i], this.getConfModuleName(), 'invokables');
+		if (confManager['invokables']) {
+			for (var i in confManager['invokables']) {
+				manager.add(i, confManager['invokables'][i], this.getConfModuleName(), 'invokables');
+			}
 		}
-		if (confManager.factories) {
-			for (var i in confManager.factory)
-				manager.add(i, confManager.factory[i], this.getConfModuleName(), 'factories');
+		if (confManager['factories']) {
+			for (var i in confManager['factories'])
+				manager.add(i, confManager['factories'][i], this.getConfModuleName(), 'factories');
 		}
 	}
 

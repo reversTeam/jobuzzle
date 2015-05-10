@@ -15,7 +15,7 @@ class ModuleInitializer extends MasterInitializer {
 		var obj = {};
 
 		for (var i in Config.modules) {
-			req = Utility.require(basePath +'/'+ i +'/'+ i +'Autoload');
+			req = Utility.require(basePath +'/'+ i +'/'+ i + 'Autoload');
 			obj = new req();
 			obj.onBootstrap();
 		}

@@ -1,0 +1,23 @@
+scripts:
+    - Kernel/Config.js
+    - Kernel/Router.js
+    - Kernel/Utility.js
+    - Kernel/ServiceLocator.js
+    - Kernel/Autoload/MasterAutoload.js
+    - Kernel/Dispatcher/DispatcherMaster.js
+    - Kernel/Dispatcher/DispatcherBase.js
+    - Kernel/Factory/MasterFactoy.js
+    - Kernel/Initializer/MasterInitializer.js
+    - Kernel/Initializer/ModuleInitializer.js
+    - Kernel/Managers/MasterManager.js
+    - Kernel/Managers/RouteManager.js
+    - Kernel/Managers/ServiceManager.js
+    - Kernel/Route/MasterRoute.js
+    - Kernel/Service/MasterService.js
+    - Modules/Test/TestAutoload.js
+    - Kernel/Route/Type/MasterRouteType.js
+    - Kernel/Route/Type/PartRouteType.js
+    - Modules/Test/Route/TestRoute.js
+    - Modules/Test/Service/TestService.js
+    - Modules/Test/Service/Factory/TestServiceFactory.js
+    - main.js
