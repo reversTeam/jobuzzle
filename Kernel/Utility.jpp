@@ -1,0 +1,20 @@
+#import ('fs') = fs;
+
+var Utility = {
+	'require': function (filename) {
+		#target server;
+			filename += '.js';
+			if (!fs.existsSync(filename))
+				throw "Unknow file [" + filename + "]";
+			return require(filename);
+		#else target;
+			filename = filename.split('/');
+			filename = filename[filename.length - 1];
+			if (!window[filename])
+				throw "Unknow class [" + filename + "]";
+			return window[filename];
+		#end target;
+	}
+}
+
+#export Utility;

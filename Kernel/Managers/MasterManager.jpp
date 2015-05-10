@@ -1,5 +1,5 @@
 #import ('fs') = fs;
-
+#import ('../Utility') = Utility;
 class MasterManager {
 
 	pathDir = 'Kernel';
@@ -43,13 +43,11 @@ class MasterManager {
 	}
 
 	getObject : function (pathFile, type) {
-		var pathToFile = Config.path +'/Modules/'+ pathFile +'.js';
+		var pathToFile = Config.path +'/Modules/'+ pathFile;
 		var req = {};
 		var obj = {};
 
-		if (!fs.existsSync(pathToFile))
-			throw 'File doesn\'t exist "'+ pathToFile +'"';
-		req = require(pathToFile);
+		req = Utility.require(pathToFile);
 		obj = new req();
 		if (type == 'factories')
 			return obj.create(this);

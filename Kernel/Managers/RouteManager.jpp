@@ -1,4 +1,4 @@
-#import ('./Master') = MasterManager;
+#import ('./MasterManager') = MasterManager;
 
 class RouteManager extends MasterManager {
 

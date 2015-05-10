@@ -1,4 +1,4 @@
-class MasterFactoy {
+class MasterFactory {
 
 	invokableClassName = 'masterClass';
 	#default get, set for invokableClassName;
@@ -10,4 +10,4 @@ class MasterFactoy {
 
 }
 
-#export MasterFactoy;
+#export MasterFactory;
