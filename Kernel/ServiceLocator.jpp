@@ -62,6 +62,7 @@ class ServiceLocator {
 	}
 
 	getInvokables : function (key) {
+		console.log(this._component['invokables']);
 		if (this._component['invokables'][key])
 			return this._component['invokables'][key];
 		return false;
