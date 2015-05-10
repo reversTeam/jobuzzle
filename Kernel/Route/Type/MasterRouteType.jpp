@@ -1,4 +1,4 @@
-#import ('../Master') = MasterRoute;
+#import ('../MasterRoute') = MasterRoute;
 
 class MasterRouteType {
 

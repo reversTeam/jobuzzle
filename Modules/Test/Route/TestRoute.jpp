@@ -1,4 +1,4 @@
-#import (Config.path +'/Kernel/Route/Master') = MasterRoute;
+#import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
 
 class TestRoute extends MasterRoute {
 

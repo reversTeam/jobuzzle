@@ -1,4 +1,4 @@
-#import (Config.path +'/Kernel/Service/Master') = MasterService;
+#import (Config.path +'/Kernel/Service/MasterService') = MasterService;
 
 class TestService extends MasterService {
 

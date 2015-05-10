@@ -1,4 +1,4 @@
-#import ('./Master') = MasterRouteType;
+#import ('./MasterRouteType') = MasterRouteType;
 
 class PartRouteType extends MasterRouteType {
 
