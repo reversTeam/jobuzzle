@@ -2,6 +2,8 @@
 #import ('./Kernel/Config') = x;
 #import ('./Kernel/ServiceLocator') = ServiceLocator;
 
+#import ('./Kernel/Route/MasterRoute') = MasterRoute;
+
 Config = x;
 Config.path = __dirname;
 

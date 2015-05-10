@@ -9,9 +9,10 @@ class Router {
 	addRoute : function (name, routes) {
 		if (!name || !routes)
 			throw 'You can\'t add empty route name or routes';
-		if (routes instanceof MasterRoute)
+		if (routes instanceof MasterRoute) {
 			this._routes[name] = this.build(name, routes);
-		else
+		}
+		else 
 			this._routes[name] = routes;
 	}
 
@@ -36,7 +37,7 @@ class Router {
 		}
 		if (!routes.type)
 			throw 'Cannot determined type for your route';
-		var req = require('./Route/Type/'+ routes.type);
+		var req = require('./Route/Type/'+ routes.type +'RouteType');
 		return new req(key, routes, cur);
 	}
 

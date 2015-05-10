@@ -13,7 +13,6 @@ class DispatcherBase extends MasterDispatcher {
 			events._listeners[obj] = callback;
 		}
 		else {
-			console.log(datas[i]);
 			if (!events[datas[i]])
 				events[datas[i]] = {};
 			this._subevent_listen(datas, i + 1, len, events[datas[i]], obj, callback);
