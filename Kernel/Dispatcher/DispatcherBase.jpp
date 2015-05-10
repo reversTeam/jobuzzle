@@ -1,0 +1,83 @@
+# import('./Master') = MasterDispatcher;
+
+class DispatcherBase extends MasterDispatcher {
+
+	initialize: function () {
+		_super();
+	}
+
+	_subevent_listen: function (datas, i, len, events, obj, callback) {
+		if (i == len) {
+			if (!events._listeners)
+				events._listeners = {};
+			events._listeners[obj] = callback;
+		}
+		else {
+			console.log(datas[i]);
+			if (!events[datas[i]])
+				events[datas[i]] = {};
+			this._subevent_listen(datas, i + 1, len, events[datas[i]], obj, callback);
+		}
+	}
+
+	_subevent_unlisten: function (datas, i, len, events, obj) {
+		if (i == len) {
+			if (events._listeners && events._listeners[obj])
+				delete events._listeners[obj];
+		}
+		else {
+			if (!events[datas[i]])
+				throw "Unable to find event";
+			this._subevent_unlisten(datas, i + 1, len, events[datas[i]], obj);
+		}
+	}
+
+	_subevent_trigger: function (datas, i, len, events, arr_params) {
+		if (i == len) {
+			if (events._listeners) {
+				var params = [ datas.join(':') ];
+				var len2 = arr_params.length;
+				for (var j = 0; j < len2; ++j)
+					params.push(arr_params[j]);
+				for (var obj in events._listeners) {
+					var callback = events._listeners[obj];
+					callback.apply(obj, params);
+				}
+			}
+		}
+		else {
+			if (events[datas[i]])
+				this._subevent_trigger(datas, i + 1, len, events[datas[i]], arr_params);
+			if (events['*'])
+				this._subevent_trigger(datas, i + 1, len, events['*'], arr_params);
+		}
+	}
+
+	listen: function (name, obj, callback) {
+		if (!obj)
+			throw "You need an object to listen";
+		var datas = name.split(':');
+		if (datas.length != 3)
+			throw "An event is composed into 3 scopes (s1:s2:s3)";
+		this._subevent_listen(datas, 0, datas.length, this.getListeners(), obj, callback);
+	}
+
+	unlisten: function (name, obj) {
+		if (!obj)
+			throw "You need an object to unlisten";
+		var datas = name.split(':');
+		if (datas.length != 3)
+			throw "An event is composed into 3 scopes (s1:s2:s3)";
+		this._subevent_unlisten(datas, 0, datas.length, this.getListeners(), obj);
+	}
+
+	trigger: function (name, arr_params) {
+		var datas = name.split(':');
+		if (datas.length != 3)
+			throw "An event is composed into 3 scopes (s1:s2:s3)";
+		this._subevent_trigger(datas, 0, datas.length, this.getListeners(), arr_params);
+	}
+
+}
+
+#export DispatcherBase;

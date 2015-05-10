@@ -1,0 +1,17 @@
+class MasterDispatcher {
+
+	#default get for _listeners;
+
+	initialize : function () {
+		this._listeners = {};
+	}
+
+	abstract listen: function (name, obj) {}
+
+	abstract unlisten: function (name, obj) {}
+
+	abstract trigger: function (name, arr_params) {}
+
+}
+
+#export MasterDispatcher;
