@@ -26,12 +26,18 @@ serviceTest.start();
 var router = serviceLocator.get('Router');
 var routeManager = serviceLocator.get('RouteManager');
 
-var routeTest = routeManager.get('test');
+var testRoute = routeManager.get('test');
+var studentRoute = routeManager.get('student');
 
 //  Test sur le router
-router.addRoute('test', routeTest);
-router.getRoute('test').getRoute('view').addRoute('test2', routeTest);
+router.addRoute('test', testRoute);
+router.getRoute('test').getRoute('view').addRoute('student', studentRoute);
 
+// Test sur le match des routes
+router.match('/tests/42/students/theotime-riviere/edit');
+
+
+// Test sur le Dispatcher
 console.log("## TEST DISPATCHER");
 var dispatcher = serviceLocator.get('Dispatcher');
 
