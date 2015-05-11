@@ -1,0 +1,13 @@
+class Translator {
+
+	initialize: function() {
+
+	}
+
+	translate : function(key) {
+		return key;
+	}
+
+}
+
+#export Translator;
