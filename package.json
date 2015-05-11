@@ -1,14 +1,14 @@
 {
-  "name": "Generic Framework",
+  "name": "Jobuzzle Framework",
   "version": "0.0.0",
-  "description": "Generic Framework Front/Back",
+  "description": "Jobuzzle Framework Front/Back",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.jobuzzle.com:Generic/Framework,git"
+    "url": "git@gitlab.jobuzzle.com:Jobuzzle/Framework,git"
   },
   "author": "Jobuzzle",
   "license": "ISC"

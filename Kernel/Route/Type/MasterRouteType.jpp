@@ -3,11 +3,16 @@
 
 class MasterRouteType {
 
-	#default get, set for _parent;
 	#default get for _name;
 	#default set for _controller;
-	#default get, set for _method;
 	#default get for _childs;
+	#default get for _routeUrl;
+	#default get for _options;
+
+	#default get, set for _method;
+	#default get, set for _parent;
+
+	_typePatternRoute = { "Translation" : "{([^}]+)}", "Parameters" : ":(\.*)", "Literale" : "(.*)" };
 
 	initialize : function (name, routes, parent) {
 		if (!routes || !routes['action'] || !routes['action']['method'])
@@ -15,9 +20,10 @@ class MasterRouteType {
 		this._childs = {};
 		this.setName(name);
 		this.setParent(parent);
-		this.setPatternRoute(routes['route']);
+		this.setRouteUrl(routes['route']);
 		this.setController(routes['action']['controller']);
 		this.setMethod(routes['action']['method']);
+		this.setOptions(routes['options']);
 		this.createChilds(routes['childs']);
 	}
 
@@ -47,8 +53,12 @@ class MasterRouteType {
 
 	getRoute : function (name) {
 		if (!this._childs[name])
-			throw 'You can\'t get "'+ name +'" route, please add or assemble your route';
+			return false;
 		return this._childs[name];
+	}
+
+	getRoutes : function () {
+		return this.getChilds();
 	}
 
 	setName : function (name) {
@@ -57,10 +67,75 @@ class MasterRouteType {
 		this._name = name;
 	}
 
-	setPatternRoute : function (route) {
+	setRouteUrl : function (route) {
 		if (!route)
 			throw 'You don\'t teach pattern for your route';
-		this._route = route;
+		
+		var i = '';
+		var reg = {};
+		route = route.substr(1);
+
+		for (i in this._typePatternRoute) {
+			reg = new RegExp('^'+ this._typePatternRoute[i] +'$');
+			if (reg.test(route)) {
+				break ;
+			}
+		}
+		this._routeUrl = {};
+		this._routeUrl['parseBy'] = i;
+		this._routeUrl['value'] = route;
+	}
+
+	setOptions : function (options) {
+		this._options = null;
+		if (options) {
+			this._options = options;
+		}	
+	}
+
+	match : function (segment) {
+		if (!segment)
+			return false;
+		var route = this.getRouteUrl();
+		var ret = this['matchWith'+ route['parseBy']](segment);
+
+		if (ret)
+			return ret;
+
+		return false;
+	}
+
+	public matchWithTranslation : function (segment) {
+		var reg = new RegExp('^'+ this._typePatternRoute['Translation'] +'$');
+		var translation_key = reg.exec(this._routeUrl['value']);
+
+		if (translation_key) {
+			if (serviceLocator.get('Translator').translate(translation_key[1]) == segment) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public matchWithParameters : function (segment) {
+		var reg = new RegExp('^'+ this._typePatternRoute['Parameters'] +'$');
+		var params_key = reg.exec(this._routeUrl['value']);
+
+		if (params_key) {
+			var options = this.getOptions();
+			reg = new RegExp('^('+ options[params_key[1]] +')$');
+			var result = reg.exec(segment);
+			if (result) {
+				var ret = {};
+				ret[params_key[1]] = segment;
+				return ret;
+			}
+		}
+		return false;
+	}
+
+	public matchWithLiterale : function (segment) {
+		return segment == this._routeUrl['value'];
 	}
 
 }
