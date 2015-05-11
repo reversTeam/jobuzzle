@@ -6,6 +6,7 @@
 #import ('./Kernel/Route/MasterRoute') = MasterRoute;
 
 #target server;
+	global.window = {};
 	Config = x;
 	Config.path = __dirname;
 #else target;
