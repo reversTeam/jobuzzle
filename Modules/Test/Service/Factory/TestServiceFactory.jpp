@@ -9,8 +9,8 @@ class TestServiceFactory extends MasterFactory {
 		console.log('Factory Test instanciated');
 	}
 
-	create : function (serviceLocator) {
-		var obj = _super(serviceLocator);
+	create : function (serviceManager) {
+		var obj = _super(serviceManager);
 
 		return obj;
 	}
