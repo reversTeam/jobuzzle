@@ -6,7 +6,7 @@ scripts:
     - Kernel/Autoload/MasterAutoload.js
     - Kernel/Dispatcher/DispatcherMaster.js
     - Kernel/Dispatcher/DispatcherBase.js
-    - Kernel/Factory/MasterFactoy.js
+    - Kernel/Factory/MasterFactory.js
     - Kernel/Initializer/MasterInitializer.js
     - Kernel/Initializer/ModuleInitializer.js
     - Kernel/Managers/MasterManager.js

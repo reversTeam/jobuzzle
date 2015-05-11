@@ -41,7 +41,7 @@ class MasterRouteType {
 	addRoute : function (name, route, parent, type) {
 		if (route instanceof MasterRoute)
 			route = route.getRoutes();
-		var req = Utility.require('./'+ route.type +'RouteType');
+		var req = Utility.require(Config.path +'/Kernel/Route/Type/'+ route.type +'RouteType');
 		this._childs[name] = new req(name, route, parent);
 	}
 

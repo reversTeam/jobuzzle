@@ -17,4 +17,4 @@ class TestServiceFactory extends MasterFactory {
 
 }
 
-#export TestFactory;
+#export TestServiceFactory;
