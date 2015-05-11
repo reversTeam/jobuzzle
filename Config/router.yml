@@ -1,0 +1,9 @@
+default: 
+    controller : TestController
+    method : home
+404:
+    contoller: ErrorController
+    method : error404
+403:
+    controller: ErrorController
+    method: error403

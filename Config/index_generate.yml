@@ -19,6 +19,7 @@ scripts:
     - Kernel/Route/Type/MasterRouteType.js
     - Kernel/Route/Type/PartRouteType.js
     - Modules/Test/Route/TestRoute.js
+    - Modules/Test/Route/StudentRoute.js
     - Modules/Test/Service/TestService.js
     - Modules/Test/Service/Factory/TestServiceFactory.js
     - main.js
