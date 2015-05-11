@@ -3,8 +3,8 @@ class MasterFactory {
 	invokableClassName = 'masterClass';
 	#default get, set for invokableClassName;
 
-	create : function (serviceLocator) {
-		var obj = serviceLocator.getInvokables(this.getInvokableClassName());
+	create : function (serviceManager) {
+		var obj = serviceManager.getInvokables(this.getInvokableClassName());
 		return obj;
 	}
 

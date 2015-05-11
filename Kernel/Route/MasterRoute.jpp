@@ -66,9 +66,7 @@ class MasterRoute {
 
 	getParams : function () {
 		var tab = {}
-		tab[this.getParamName()] = {
-			paramName : this.getParamRegex()
-		};
+		tab[this.getParamName()] = this.getParamRegex();
 		return tab;
 	}
 

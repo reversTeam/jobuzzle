@@ -2,3 +2,4 @@ factories:
 
 invokables:
     test: TestRoute
+    student : StudentRoute

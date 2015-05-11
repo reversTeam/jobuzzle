@@ -42,6 +42,42 @@ class Router {
 		return new req(key, routes, cur);
 	}
 
+	match : function (str) {
+		str = str.substr(1);
+		var segments = str.split('/');
+		var routes = this.getRoutes();
+		var result = this.matchRecusiveRoute(segments, routes, 0);
+
+		console.log(result);
+		return result;
+	}
+
+	matchRecusiveRoute : function (segments, routes, index) {
+		var result = false;
+
+		for (var i in routes) {
+			var match = routes[i].match(segments[index]);
+			if (match && segments[index + 1]) {
+				return this.concatResultMatch(match, this.matchRecusiveRoute(segments, routes[i].getRoutes(), index + 1));
+			} else if (match)
+				return match;
+		}
+		return false;
+	}
+
+	concatResultMatch : function (tab1, tab2) {
+		if (!tab2)
+			return false;
+		if (tab2 == true)
+			return tab1;
+		if (tab1 == true)
+			return tab2;
+		for (var i in tab2) {
+			tab1[i] = tab2[i];
+		}
+		return tab1;
+	} 
+
 }
 
 #export Router;

@@ -4,3 +4,4 @@ invokables:
     ModuleInitializer: Kernel/Initializer/ModuleInitializer
     Router : Kernel/Router
     Dispatcher : Kernel/Dispatcher/DispatcherBase
+    Translator : Kernel/Translator
