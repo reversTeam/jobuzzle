@@ -2,6 +2,10 @@
 
 class TestService extends MasterService {
 
+	_test = 'lol';
+
+	#default get, set for _test;
+
 	initialize : function () {
 		_super();
 		console.log('Service Invokable test Instancied');

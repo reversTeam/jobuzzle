@@ -19,8 +19,16 @@ var moduleInitializer = serviceLocator.get('ModuleInitializer');
 
 // Test sur les services
 var serviceManager = serviceLocator.get('ServiceManager');
-var serviceTest = serviceManager.get('test');
-serviceTest.start();
+var testService = serviceManager.get('test');
+testService.start();
+
+console.log('[testService] getTest() : '+ testService.getTest());
+testService.setTest('xD');
+console.log('[testService] getTest() : '+ testService.getTest());
+
+var otherTestService = serviceManager.get('test');
+console.log('[otherTestService] getTest() : '+ otherTestService.getTest());
+
 
 // Test sur les routes
 var router = serviceLocator.get('Router');

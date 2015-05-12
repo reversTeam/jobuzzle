@@ -2,7 +2,8 @@
 
 class RouteManager extends MasterManager {
 
-	pathDir = 'Route';
+	_pathDir = 'Route';
+	_defaultShared = false;
 
 }
 
