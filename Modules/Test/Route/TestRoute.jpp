@@ -3,7 +3,7 @@
 class TestRoute extends MasterRoute {
 
 	baseName = 'Test';
-	baseRoute = '/{tests}';
+	baseRoute = '{tests}';
 	baseController = 'Test';
 
 	paramName : 'test_id';

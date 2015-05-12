@@ -1,6 +1,6 @@
 class MasterRoute {
 
-	baseRoute : '/{masters}';
+	baseRoute : '{masters}';
 	baseController : 'Master';
 	baseMethod : 'search';
 
@@ -31,14 +31,14 @@ class MasterRoute {
 			"childs" : {
 				"create" : {
 					"type" : 'Translation',
-					"route" : '/{create}',
+					"route" : '{create}',
 					"action" : {
 						"method" : 'create'
 					}
 				},
 				"view" : {
 					"type" : 'Params',
-					"route" : '/:'+ this.getParamName(),
+					"route" : ':'+ this.getParamName(),
 					"options" : this.getParams(),
 					"action" : {
 						"method" : 'view'
@@ -46,14 +46,14 @@ class MasterRoute {
 					"childs" : {
 						"edit" : {
 							"type" : 'Translation',
-							"route" : '/{edit}',
+							"route" : '{edit}',
 							"action" : {
 								"method" : 'edit'
 							}
 						},
 						'delete' : {
 							"type" : 'Translation',
-							"route" : '/{delete}',
+							"route" : '{delete}',
 							"action" : {
 								"method" : 'detele'
 							}

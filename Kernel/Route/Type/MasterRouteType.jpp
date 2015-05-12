@@ -70,7 +70,7 @@ class MasterRouteType {
 	setRouteUrl : function (route) {
 		if (!route)
 			throw 'You don\'t teach pattern for your route';
-		this._routeUrl = route.substr(1);
+		this._routeUrl = route;
 		var reg = new RegExp('^'+ this._typePatternRoute +'$');
 		if (!reg.test(this._routeUrl))
 			throw '"'+ route +'" it\'s not a good type for your route'; 
