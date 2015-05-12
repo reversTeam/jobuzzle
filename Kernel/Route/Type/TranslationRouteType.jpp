@@ -1,0 +1,25 @@
+#import ('./MasterRouteType') = MasterRouteType;
+
+class TranslationRouteType extends MasterRouteType {
+
+	_typePatternRoute : "{([^}]+)}";
+
+	initialize : function (key, routes, parent) {
+		_super(key, routes, parent);
+	}
+
+	parse : function (segment) {
+		var reg = new RegExp('^'+ this._typePatternRoute +'$');
+		var translation_key = reg.exec(this._routeUrl);
+
+		if (translation_key) {
+			if (serviceLocator.get('Translator').translate(translation_key[1]) == segment) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+}
+
+#export TranslationRouteType;

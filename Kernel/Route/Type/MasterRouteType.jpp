@@ -12,7 +12,7 @@ class MasterRouteType {
 	#default get, set for _method;
 	#default get, set for _parent;
 
-	_typePatternRoute = { "Translation" : "{([^}]+)}", "Parameters" : ":(\.*)", "Literale" : "(.*)" };
+	_typePatternRoute = null;
 
 	initialize : function (name, routes, parent) {
 		if (!routes || !routes['action'] || !routes['action']['method'])
@@ -70,20 +70,10 @@ class MasterRouteType {
 	setRouteUrl : function (route) {
 		if (!route)
 			throw 'You don\'t teach pattern for your route';
-		
-		var i = '';
-		var reg = {};
-		route = route.substr(1);
-
-		for (i in this._typePatternRoute) {
-			reg = new RegExp('^'+ this._typePatternRoute[i] +'$');
-			if (reg.test(route)) {
-				break ;
-			}
-		}
-		this._routeUrl = {};
-		this._routeUrl['parseBy'] = i;
-		this._routeUrl['value'] = route;
+		this._routeUrl = route.substr(1);
+		var reg = new RegExp('^'+ this._typePatternRoute +'$');
+		if (!reg.test(this._routeUrl))
+			throw '"'+ route +'" it\'s not a good type for your route'; 
 	}
 
 	setOptions : function (options) {
@@ -96,8 +86,7 @@ class MasterRouteType {
 	match : function (segment) {
 		if (!segment)
 			return false;
-		var route = this.getRouteUrl();
-		var ret = this['matchWith'+ route['parseBy']](segment);
+		var ret = this.parse(segment);
 
 		if (ret)
 			return ret;
@@ -105,37 +94,8 @@ class MasterRouteType {
 		return false;
 	}
 
-	public matchWithTranslation : function (segment) {
-		var reg = new RegExp('^'+ this._typePatternRoute['Translation'] +'$');
-		var translation_key = reg.exec(this._routeUrl['value']);
-
-		if (translation_key) {
-			if (serviceLocator.get('Translator').translate(translation_key[1]) == segment) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public matchWithParameters : function (segment) {
-		var reg = new RegExp('^'+ this._typePatternRoute['Parameters'] +'$');
-		var params_key = reg.exec(this._routeUrl['value']);
-
-		if (params_key) {
-			var options = this.getOptions();
-			reg = new RegExp('^('+ options[params_key[1]] +')$');
-			var result = reg.exec(segment);
-			if (result) {
-				var ret = {};
-				ret[params_key[1]] = segment;
-				return ret;
-			}
-		}
-		return false;
-	}
-
-	public matchWithLiterale : function (segment) {
-		return segment == this._routeUrl['value'];
+	parse : function (segment) {
+		throw 'You ca\'t call MasterRouteType Parse, please override function parse';
 	}
 
 }

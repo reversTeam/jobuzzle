@@ -17,7 +17,9 @@ scripts:
     - Kernel/Service/MasterService.js
     - Modules/Test/TestAutoload.js
     - Kernel/Route/Type/MasterRouteType.js
-    - Kernel/Route/Type/PartRouteType.js
+    - Kernel/Route/Type/LitteralRouteType.js
+    - Kernel/Route/Type/TranslationRouteType.js
+    - Kernel/Route/Type/ParamsRouteType.js
     - Modules/Test/Route/TestRoute.js
     - Modules/Test/Route/StudentRoute.js
     - Modules/Test/Service/TestService.js

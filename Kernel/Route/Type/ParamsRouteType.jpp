@@ -1,0 +1,30 @@
+#import ('./MasterRouteType') = MasterRouteType;
+
+class ParamsRouteType extends MasterRouteType {
+
+	_typePatternRoute : ":(\.*)";
+
+	initialize : function (key, routes, parent) {
+		_super(key, routes, parent);
+	}
+
+	parse : function (segment) {
+		var reg = new RegExp('^'+ this._typePatternRoute +'$');
+		var params_key = reg.exec(this._routeUrl);
+
+		if (params_key) {
+			var options = this.getOptions();
+			reg = new RegExp('^('+ options[params_key[1]] +')$');
+			var result = reg.exec(segment);
+			if (result) {
+				var ret = {};
+				ret[params_key[1]] = segment;
+				return ret;
+			}
+		}
+		return false;
+	}
+
+}
+
+#export ParamsRouteType;
