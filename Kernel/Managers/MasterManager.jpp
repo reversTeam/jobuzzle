@@ -2,37 +2,61 @@
 #import ('../Utility') = Utility;
 class MasterManager {
 
-	pathDir = 'Kernel';
-	#default get, set for pathDir;
+	_pathDir = 'Kernel';
+	_defaultShared = false;
+
+	#default get for _defaultShared;
+
+	#default get, set for _pathDir;
 
 	initialize : function () {
 		this._all = {
 			"invokables" : {},
-			"factories" : {}
+			"factories" : {},
+			"shared" : {},
+			"static" : {}
 		};
+
+		this._static = {};
 	}
 
-	public add : function (key, value, module, type) {
+	add : function (key, value, module, type) {
 		this._all[type][key] = module +'/'+ this.getPathDir() +'/'+ value;
 	}
 
-	public get : function (key) {
+	get : function (key) {
+		var shared = this.isShared(key);
+		if (shared && this._static[key])
+			return this._static[key];
+
 		var obj = this.getFactory(key);
 		if (!obj)
 			obj = this.getInvokables(key);
 		if (!obj)
 			throw 'Manager "'+ this.getPathDir() + ' '+ key +'" is not defined';
+		if (shared)
+			this._static[key] = obj;
 		return obj;
 	}
 
-	public getInvokables : function (key) {
+	addShared : function (key, value) {
+		this._all['shared'][key] = value;
+	}
+
+	isShared : function (key) {
+		if (this._all['shared'][key] != undefined)
+			return this._all['shared'][key];
+		return this.getDefaultShared();
+	}
+
+	getInvokables : function (key) {
 		if (this._all['invokables'][key]) {
 			return this.getObject(this._all['invokables'][key], 'invokables');
 		}
 		return false;
 	}
 
-	public getFactory : function (key) {
+	getFactory : function (key) {
 		if (this._all['factories'][key]) {
 			var obj = this.getObject(this._all['factories'][key], 'factories');
 			if (!obj)

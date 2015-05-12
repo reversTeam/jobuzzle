@@ -2,7 +2,8 @@
 
 class ServiceManager extends MasterManager {
 
-	pathDir = 'Service';
+	_pathDir = 'Service';
+	_defaultShared = false;
 
 }
 

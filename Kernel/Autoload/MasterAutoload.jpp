@@ -24,6 +24,11 @@ class MasterAutoload {
 	}
 
 	addInManager : function (manager, confManager) {
+		if (confManager['shared']) {
+			for (var i in confManager['shared']) {
+				manager.addShared(i, confManager['shared'][i]);
+			}
+		}
 		if (confManager['invokables']) {
 			for (var i in confManager['invokables']) {
 				manager.add(i, confManager['invokables'][i], this.getConfModuleName(), 'invokables');
