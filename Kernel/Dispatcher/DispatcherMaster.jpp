@@ -6,10 +6,23 @@ class MasterDispatcher {
 		this._listeners = {};
 	}
 
-	abstract listen: function (name, obj) {}
+	/* Methode abstraite pour enregister un listener
+	** -> name : nom de l'event (*:*:*), * = tous le scope d'event
+	** -> obj : Objet de reference pour le listener
+	** -> callback : Une fonction a appeler, lors de l'appel, le this sera `obj`
+	**/
+	abstract listen: function (name, obj, callback) {}
 
+	/* Methode abstraite pour supprimer un listener 
+	** -> name : nom de l'event (*:*:*), * = tous le scope d'event
+	** -> obj : Objet correspondant au listener de l'event
+	**/
 	abstract unlisten: function (name, obj) {}
 
+	/* Methode abstraite pour lancer un event
+	** -> name : nom de l'event, (scope1:scope2:scope3)
+	** -> arr_params : Tableau de parametres a envoyer aux listeners
+	*/
 	abstract trigger: function (name, arr_params) {}
 
 }
