@@ -6,6 +6,14 @@ class DispatcherBase extends MasterDispatcher {
 		_super();
 	}
 
+	/* Sous fonctions gerant l'insertion d'un listener dans le tableau
+	** -> datas : Tableau contentant les trois scopes du nom de l'event
+	** -> i : Index dans le tableau
+	** -> len : Taille du tableau
+	** -> events : Tableau contenant les listeners
+	** -> obj : Objet de reference pour le listener
+	** -> callback : Fonction a apeller lors de l'event
+	*/
 	_subevent_listen: function (datas, i, len, events, obj, callback) {
 		if (i == len) {
 			if (!events._listeners)
@@ -19,6 +27,13 @@ class DispatcherBase extends MasterDispatcher {
 		}
 	}
 
+	/* Sous fonctions gerant la suppression d'un listener dans le tableau
+	** -> datas : Tableau contentant les trois scopes du nom de l'event
+	** -> i : Index dans le tableau
+	** -> len : Taille du tableau
+	** -> events : Tableau contenant les listeners
+	** -> obj : Objet de reference pour le listener
+	*/
 	_subevent_unlisten: function (datas, i, len, events, obj) {
 		if (i == len) {
 			if (events._listeners && events._listeners[obj])
@@ -31,6 +46,13 @@ class DispatcherBase extends MasterDispatcher {
 		}
 	}
 
+	/* Sous fonctions gerant le lancement d'un event
+	** -> datas : Tableau contentant les trois scopes du nom de l'event
+	** -> i : Index dans le tableau
+	** -> len : Taille du tableau
+	** -> events : Tableau contenant les listeners
+	** -> arr_params : Arguments a envoyer aux listeners
+	*/
 	_subevent_trigger: function (datas, i, len, events, arr_params) {
 		if (i == len) {
 			if (events._listeners) {
@@ -52,6 +74,7 @@ class DispatcherBase extends MasterDispatcher {
 		}
 	}
 
+	// Cf DispatcherMaster::listen
 	listen: function (name, obj, callback) {
 		if (!obj)
 			throw "You need an object to listen";
@@ -61,6 +84,7 @@ class DispatcherBase extends MasterDispatcher {
 		this._subevent_listen(datas, 0, datas.length, this.getListeners(), obj, callback);
 	}
 
+	// Cf DispatcherMaster::unlisten
 	unlisten: function (name, obj) {
 		if (!obj)
 			throw "You need an object to unlisten";
@@ -70,6 +94,7 @@ class DispatcherBase extends MasterDispatcher {
 		this._subevent_unlisten(datas, 0, datas.length, this.getListeners(), obj);
 	}
 
+	// Cf DispatcherMaster::trigger
 	trigger: function (name, arr_params) {
 		var datas = name.split(':');
 		if (datas.length != 3)
