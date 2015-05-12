@@ -1,6 +1,6 @@
 class MasterRoute {
 
-	baseRoute : '/{masters}';
+	baseRoute : '{masters}';
 	baseController : 'Master';
 	baseMethod : 'search';
 
@@ -22,7 +22,7 @@ class MasterRoute {
 
 	getRoutesFromArray : function () {
 		return {
-			"type" : 'Part',
+			"type" : 'Translation',
 			"route" : this.getBaseRoute(),
 			"action" : {
 				"controller" : this.getBaseController(),
@@ -30,30 +30,30 @@ class MasterRoute {
 			},
 			"childs" : {
 				"create" : {
-					"type" : 'Part',
-					"route" : '/{create}',
+					"type" : 'Translation',
+					"route" : '{create}',
 					"action" : {
 						"method" : 'create'
 					}
 				},
 				"view" : {
-					"type" : 'Part',
-					"route" : '/:'+ this.getParamName(),
+					"type" : 'Params',
+					"route" : ':'+ this.getParamName(),
 					"options" : this.getParams(),
 					"action" : {
 						"method" : 'view'
 					},
 					"childs" : {
 						"edit" : {
-							"type" : 'Part',
-							"route" : '/{edit}',
+							"type" : 'Translation',
+							"route" : '{edit}',
 							"action" : {
 								"method" : 'edit'
 							}
 						},
 						'delete' : {
-							"type" : 'Part',
-							"route" : '/{delete}',
+							"type" : 'Translation',
+							"route" : '{delete}',
 							"action" : {
 								"method" : 'detele'
 							}

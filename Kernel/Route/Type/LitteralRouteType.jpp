@@ -1,0 +1,17 @@
+#import ('./MasterRouteType') = MasterRouteType;
+
+class LitteraltRouteType extends MasterRouteType {
+
+	_typePatternRoute : "(.*)";
+
+	initialize : function (key, routes, parent) {
+		_super(key, routes, parent);
+	}
+
+	parse : function (segment) {
+		return segment == this._routeUrl;
+	}
+
+}
+
+#export LitteraltRouteType;

@@ -3,7 +3,7 @@
 class StudentRoute extends MasterRoute {
 
 	baseName = 'Student';
-	baseRoute = '/{students}';
+	baseRoute = '{students}';
 	baseController = 'Student';
 
 	paramName : 'student_url';
