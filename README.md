@@ -20,6 +20,8 @@
 12. <a href="#translator">Translator</a>
 13. <a href="#utility">Utility</a>
 14. <a href="#modules">Modules</a>
+    1. <a href="#modules-declaration">Déclaration</a>
+    2. <a href="#modules-nomenclature">Nomenclature</a>
 
 
 ## <a name="installation>Installation</a>
@@ -204,7 +206,7 @@ Dans notre exemple nous souhaiton avoir un object qui sera instancié et qui aur
 
 Pour ce faire nous créeons notre objec invokable comme ceci :
 ```javascript
-class Example {
+class ExampleBookMainServiceBook {
     
     _translator = {};
     _router = {};
@@ -213,16 +215,23 @@ class Example {
     #default get, set for _router;
 
 }
+
+#export ExampleBookMainServiceBook;
 ```
+Les noms des modules doivent suivre cette conventions, ainsi que les déclaration dans les managers afin de ne jamais ecraser la classe d'un autre module:
+`ModuleName``BundleName``Directory``NomDeClass``CurrentDir`
+`./Modules/Example/Bundle/Book/Service/ExampleBookMainService`
+
+
 Maintenant nous lui créeons une factory :
 ```javascript
 
 #import (Config.path +'/Kernel/Factory/MasterFactory') = MasterFactory;
 
-class ExampleFactory extends MasterFactory {
+class ExampleBookServiceMainFactory extends MasterFactory {
 
     // Le nom de la Factory ajouter dans le manager
-    invokableClassName = 'Exemple';
+    invokableClassName = 'example_book_main_service';
 
     create : function (serviceManager) {
         // Dans obj nous avons notre invokable car c'est le parent qui se charge de nous instancié l'objet
@@ -236,7 +245,7 @@ class ExampleFactory extends MasterFactory {
 
 }
 
-#export ExampleFactory;
+#export ExampleBookServiceMainFactory;
 
 ```
 
@@ -297,49 +306,48 @@ Nous feront donc deux objets de routes :
 ```javascript
 #import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
 
-class CompanyRoute extends MasterRoute {
+class ExampleAuthorMainRoute extends MasterRoute {
 
-    baseName = 'Company';
-    baseRoute = '{companies}';
-    baseController = 'Company';
+    baseName = 'Author';
+    baseRoute = '{authors}';
+    baseController = 'Author';
 
-    paramName : 'company_url';
+    paramName : 'author_url';
     paramRegex : '[a-z0-9-]+';
 
 }
 
-#export CompanyRoute;
+#export ExampleAuthorMainRoute;
 ```
 
 ```javascript
 #import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
 
-class StudentRoute extends MasterRoute {
+class ExampleBookMainRoute extends MasterRoute {
 
-    baseName = 'Student';
-    baseRoute = '{students}';
-    baseController = 'Student';
+    baseName = 'Book';
+    baseRoute = '{books}';
+    baseController = 'Book';
 
-    paramName : 'student_id';
-    paramRegex : '[0-9]+';
+    paramName : 'book_id';
 
 }
 
-#export StudentRoute;
+#export ExampleBookMainRoute;
 ```
 Ainsi nous venons donc de créer toutes ses routes :
 ```
-/{companies}
-/{companies}/{create}
-/{companies}/:company_url
-/{companies}/:company_url/{update}
-/{companies}/:company_url/{delete}
+/{authors}
+/{authors}/{create}
+/{authors}/:author_url
+/{authors}/:author_url/{update}
+/{authors}/:author_url/{delete}
 
-/{students}
-/{students}/{create}
-/{students}/:student_id
-/{students}/:student_id/{update}
-/{students}/:student_id/{delete}
+/{books}
+/{books}/{create}
+/{books}/:book_id
+/{books}/:book_id/{update}
+/{books}/:book_id/{delete}
 ```
 
 ## <a name="service">Service</a>
@@ -351,33 +359,32 @@ Le router vous donne la capacité de rajouter et imbriquer vos routes de la faco
 ```javascript
 var routeManager = serviceLocator.get('routeManager');
 var router = serviceLocator.get('Router');
-var companyRoute = routeManager.get('CompanyRoute');
-var studentRoute = routeManager.get('StudentRoute');
-router.addRoute('company', companyRoute);
-router.getRoute('company').getRoute('view').addRoute('student', studentRoute);
+var authorRoute = routeManager.get('exemple_author_main_route');
+var bookRoute = routeManager.get('exemple_book_main_route');
+router.addRoute('author', authorRoute);
+router.getRoute('author').getRoute('view').addRoute('book', bookRoute);
 ```
-
-Dans cet exemple nous venons d'imbriquer les routes de students dans celle de company, nos routes disponibles sont donc :
+Dans cet exemple nous venons d'imbriquer les routes de book dans celle de author, nos routes disponibles sont donc :
 ```javascript
-/{companies}
-/{companies}/{create}
-/{companies}/:company
-/{companies}/:company_url/{update}
-/{companies}/:company_url/{delete}
-/{companies}/:company_url/{students}
-/{companies}/:company_url/{students}/{create}
-/{companies}/:company_url/{students}/:student_id
-/{companies}/:company_url/{students}/:student_id/{update}
-/{companies}/:company_url/{students}/:student_id/{delete}
+/{authors}
+/{authors}/{create}
+/{authors}/:company
+/{authors}/:author_url/{update}
+/{authors}/:author_url/{delete}
+/{authors}/:author_url/{books}
+/{authors}/:author_url/{books}/{create}
+/{authors}/:author_url/{books}/:book_id
+/{authors}/:author_url/{books}/:book_id/{update}
+/{authors}/:author_url/{books}/:book_id/{delete}
 ```
 
 Le router peut maintenant procédé au match des urls entrante:
 ```javascript
 // Dans le cadre de la langue FR_fr
-router.match('/entreprises/google/etudiants/theotime-riviere/editer');
+router.match('/auteurs/john-doe/livres/42/editer');
 
 // Dans le cadre de la langue EN_us
-router.match('/companies/google/students/theotime-riviere/update');
+router.match('/authors/john-doe/books/42/update');
 ```
 
 
@@ -460,3 +467,32 @@ Inactif : false
 Other : true
 ```
 Dans ce cas seul les `Modules` : `Actif` & `Other` seront loader
+
+### <a name="modules-nomenclature">Nomenclature</a>
+Les dossiers respecte une certaine nomenclature, afin de préservé une l'unicité des classe et la lisibilité des modules, car en effet deux classe du meme nom se ferai ecrasé dans le front vue que tous est ramenez a l'object window. Il est donc très important de réspecter le naming des fichiers qui dois correspondre a celui des classe, ainsi que le naming des classe qui doivent être sous cette forme:
+`ModuleName``BundleName``Directory``NomDeClass``CurrentDir`
+`./Modules/Example/Bundle/Book/Service/ExampleBookMainService`
+
+```
+    Example/
+        Assets/
+        Bundle/
+            Author/
+                Route/
+                    ExampleAuthorMainRoute.jpp
+                Service/
+                    ExampleAuthorMainService.jpp
+                [...]
+            Book/
+                Route/
+                    ExampleBookMainRoute.jpp
+                Service/
+                    Factory/
+                        ExampleBookServiceMainFactory.jpp
+                    ExampleBookMainService.jpp
+                [...]
+        Config/
+            translation/
+                EN_us/
+                FR_fr/
+```
