@@ -260,6 +260,23 @@ Actuellement nous avons le `ModuleIntializer`, c'est l'objet qui s'occupe de pre
 ## <a name="manager">Manager</a>
 Le design `Manager` est un objet qui permet de stocker des collections d'objet, il fonctionne un peu comme le serviceLocator, sauf qu'il n'est pas accessible dans le context globale, mais aussi qu'il permet via la configuration `shared` de définir si l'objet qui sera retourné sera une nouvelle instance ou alors un singleton.
 
+Nous avons actuellement deux type de manager `RouteManager` et `ServiceManager`. Chaque module intégre ses propres `Service` et ses propre routes, lorsque l'<a name"#initialize">Initializer</a> vien loader le module, le module inject ses `Manager` au sein des différent managers disponnible dans le <a name="#servicelocator">ServiceLocator</a>. Pour ce faire il faut respecter la déclaration de ses composant, dans le dossier `Config` de votre module vous avez un fichier qui sera en liaison avec le manager en relation :
+`route_manager.yml` c'est ici qu'on déclare les `RouteManager` de notre module afin qu'il soit injecter dans le manager principle :
+```yaml
+invokables:
+    ExampleRoute: ExampleService
+```
+`service_manager.yml` c'est ici qu'on déclare les `ServiceManager` de notre module afin qu'il soit injecter dans le manager principle :
+```yaml
+factories:
+    ExampleService: Factory/ExampleServiceFactory
+invokables:
+    ExampleService: ExampleService
+shared :
+    ExampleService : true
+```
+
+
 ## <a name="route">Route</a>
 Le design `Route`, il permet la déclaration des routes sous forme d'objet avec la notions d'héritage ainsi une `Route` instancié par cet objet, aura directement les routes suivantes :
 ```
