@@ -337,18 +337,49 @@ Ainsi nous venons donc de créer toutes ses routes :
 
 /{students}
 /{students}/{create}
-/{students}/:company_id
-/{students}/:company_id/{update}
-/{students}/:company_id/{delete}
+/{students}/:student_id
+/{students}/:student_id/{update}
+/{students}/:student_id/{delete}
 ```
-
-
 
 ## <a name="service">Service</a>
 Le design `Service` n'a actuellement aucune logique générique. Les `Controller` et les `Mediator` intéragirons avec ses objet.
 
 ## <a name="router">Router</a>
 L'objet `Router` s'occupe de gerer l'ensemble des routes de votre applications, que ce soit au niveau de la construction de l'ensemble des routes, des imbrications, de la résolution ou encore de la création des routes de votre applications, c'est cet objet fera votre affaire.
+Le router vous donne la capacité de rajouter et imbriquer vos routes de la facon suivante :
+```javascript
+var routeManager = serviceLocator.get('routeManager');
+var router = serviceLocator.get('Router');
+var companyRoute = routeManager.get('CompanyRoute');
+var studentRoute = routeManager.get('StudentRoute');
+router.addRoute('company', companyRoute);
+router.getRoute('company').getRoute('view').addRoute('student', studentRoute);
+```
+
+Dans cet exemple nous venons d'imbriquer les routes de students dans celle de company, nos routes disponibles sont donc :
+```javascript
+/{companies}
+/{companies}/{create}
+/{companies}/:company
+/{companies}/:company_url/{update}
+/{companies}/:company_url/{delete}
+/{companies}/:company_url/{students}
+/{companies}/:company_url/{students}/{create}
+/{companies}/:company_url/{students}/:student_id
+/{companies}/:company_url/{students}/:student_id/{update}
+/{companies}/:company_url/{students}/:student_id/{delete}
+```
+
+Le router peut maintenant procédé au match des urls entrante:
+```javascript
+// Dans le cadre de la langue FR_fr
+router.match('/entreprises/google/etudiants/theotime-riviere/editer');
+
+// Dans le cadre de la langue EN_us
+router.match('/companies/google/students/theotime-riviere/update');
+```
+
 
 ## <a name="servicelocator">ServiceLocator</a>
 Le `serviceLocator` est un objet déclarer dans le scope globale de votre application ce qui lui donne la particularité d'être accèssible partout au seins de votre application, il stock des object de type `singleton`, c'est a dire que vous intéragirez toujours avec la même instance d'object peut importe le nombre de get que vous effecturer sur cette meme entité.
