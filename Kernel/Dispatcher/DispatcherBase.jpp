@@ -95,7 +95,10 @@ class DispatcherBase extends MasterDispatcher {
 	}
 
 	// Cf DispatcherMaster::trigger
-	trigger: function (name, arr_params) {
+	trigger: function () {
+		var name = Array.prototype.shift.call(arguments);
+		var arr_params = arguments;
+
 		var datas = name.split(':');
 		if (datas.length != 3)
 			throw "An event is composed into 3 scopes (s1:s2:s3)";

@@ -74,7 +74,7 @@ class obj {
 
 var o = new obj();
 
-dispatcher.trigger('kernel:init:bonjour', [ 13 ]);
-dispatcher.trigger('kernel:test:bonjour', [ 42 ]);
-dispatcher.trigger('kernel:haha:bonjour', [ 60 ]);
+dispatcher.trigger('kernel:init:bonjour', 13);
+dispatcher.trigger('kernel:test:bonjour', 42);
+dispatcher.trigger('kernel:haha:bonjour', 60);
 console.log("## END TEST DISPATCHER");
