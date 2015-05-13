@@ -1,0 +1,14 @@
+#import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
+
+class AuthorRoute extends MasterRoute {
+
+	baseName = 'Author';
+	baseRoute = '{authors}';
+	baseController = 'Author';
+
+	paramName : 'author_url';
+	paramRegex : '[a-z0-9-]+';
+
+}
+
+#export AuthorRoute;

@@ -1,0 +1,22 @@
+#import (Config.path +'/Kernel/Service/MasterService') = MasterService;
+
+class AuthorService extends MasterService {
+
+	_lastName = '';
+	_firstName = '';
+
+	#default get, set for _firstName;
+	#default get, set for _lastName;
+
+	initialize : function () {
+		_super();
+		console.log('AuthorService Instancied');
+	}
+
+	start : function () {
+		console.log('AuthorService is ready to die');
+	}
+
+}
+
+#export AuthorService;

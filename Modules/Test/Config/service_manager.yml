@@ -1,4 +1,0 @@
-factories:
-    test: Factory/TestServiceFactory
-invokables:
-    test: TestService
