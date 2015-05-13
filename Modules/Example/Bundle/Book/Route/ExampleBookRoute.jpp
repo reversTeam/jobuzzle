@@ -1,6 +1,6 @@
 #import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
 
-class BookRoute extends MasterRoute {
+class ExampleBookRoute extends MasterRoute {
 
 	baseName = 'Book';
 	baseRoute = '{books}';
@@ -10,4 +10,4 @@ class BookRoute extends MasterRoute {
 
 }
 
-#export BookRoute;
+#export ExampleBookRoute;
