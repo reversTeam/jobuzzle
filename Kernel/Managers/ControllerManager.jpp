@@ -2,6 +2,8 @@
 
 class ControllerManager extends MasterManager {
 
+	_name = 'ControllerManager';
+	_fileConf = 'controller';
 	_defaultShared = false;
 
 }

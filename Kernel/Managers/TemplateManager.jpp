@@ -2,6 +2,8 @@
 
 class TemplateManager extends MasterManager {
 
+	_name = 'TemplateManager';
+	_fileConf = 'template';
 	_defaultShared = true;
 
 }

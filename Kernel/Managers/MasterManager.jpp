@@ -2,8 +2,12 @@
 #import ('../Utility') = Utility;
 class MasterManager {
 
+	_name = 'MasterManager';
+	_fileConf = 'master';
 	_defaultShared = false;
 
+	#default get for _name;
+	#default get for _fileConf;
 	#default get for _defaultShared;
 
 	initialize : function () {

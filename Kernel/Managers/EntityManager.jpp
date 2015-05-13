@@ -2,6 +2,8 @@
 
 class EntityManager extends MasterManager {
 
+	_name = 'EntityManager';
+	_fileConf = 'entity';
 	_defaultShared = true;
 
 }
