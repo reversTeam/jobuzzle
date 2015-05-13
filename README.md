@@ -206,7 +206,7 @@ Dans notre exemple nous souhaiton avoir un object qui sera instancié et qui aur
 
 Pour ce faire nous créeons notre objec invokable comme ceci :
 ```javascript
-class ExampleBookMainServiceBook {
+class ExampleBookMainService {
     
     _translator = {};
     _router = {};
@@ -216,7 +216,7 @@ class ExampleBookMainServiceBook {
 
 }
 
-#export ExampleBookMainServiceBook;
+#export ExampleBookMainService;
 ```
 Les noms des modules doivent suivre cette conventions, ainsi que les déclaration dans les managers afin de ne jamais ecraser la classe d'un autre module:
 `ModuleName``BundleName``Directory``NomDeClass``CurrentDir`
