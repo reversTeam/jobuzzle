@@ -1,6 +1,6 @@
 #import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
 
-class ExampleAuthorRoute extends MasterRoute {
+class ExampleAuthorMainRoute extends MasterRoute {
 
 	baseName = 'Author';
 	baseRoute = '{authors}';
@@ -11,4 +11,4 @@ class ExampleAuthorRoute extends MasterRoute {
 
 }
 
-#export ExampleAuthorRoute;
+#export ExampleAuthorMainRoute;

@@ -1,5 +1,5 @@
 factories:
 
 invokables:
-    example_author_route: Author/Route/ExampleAuthorRoute
-    example_book_route : Book/Route/ExampleBookRoute
+    example_author_main_route: Author/Route/ExampleAuthorMainRoute
+    example_book_main_route : Book/Route/ExampleBookMainRoute

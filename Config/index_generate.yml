@@ -20,9 +20,9 @@ scripts:
     - Kernel/Route/Type/LitteralRouteType.js
     - Kernel/Route/Type/TranslationRouteType.js
     - Kernel/Route/Type/ParamsRouteType.js
-    - Modules/Example/Bundle/Book/Route/ExampleBookRoute.js
-    - Modules/Example/Bundle/Book/Service/ExampleBookService.js
-    - Modules/Example/Bundle/Author/Route/ExampleAuthorRoute.js
-    - Modules/Example/Bundle/Author/Service/ExampleAuthorService.js
-    - Modules/Example/Bundle/Book/Service/Factory/ExampleBookServiceFactory.js
+    - Modules/Example/Bundle/Book/Route/ExampleBookMainRoute.js
+    - Modules/Example/Bundle/Book/Service/ExampleBookMainService.js
+    - Modules/Example/Bundle/Author/Route/ExampleAuthorMainRoute.js
+    - Modules/Example/Bundle/Author/Service/ExampleAuthorMainService.js
+    - Modules/Example/Bundle/Book/Service/Factory/ExampleBookServiceMainFactory.js
     - main.js

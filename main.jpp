@@ -16,7 +16,7 @@ var moduleInitializer = serviceLocator.get('ModuleInitializer');
 
 // Test sur les services
 var serviceManager = serviceLocator.get('ServiceManager');
-var bookService = serviceManager.get('example_book_service');
+var bookService = serviceManager.get('example_book_main_service');
 
 console.log('Author for book : '+ bookService.getAuthorName());
 
@@ -25,8 +25,8 @@ console.log('Author for book : '+ bookService.getAuthorName());
 var router = serviceLocator.get('Router');
 var routeManager = serviceLocator.get('RouteManager');
 
-var authorRoute = routeManager.get('example_author_route');
-var bookRoute = routeManager.get('example_book_route');
+var authorRoute = routeManager.get('example_author_main_route');
+var bookRoute = routeManager.get('example_book_main_route');
 
 //  Test sur le router
 router.addRoute('author', authorRoute);

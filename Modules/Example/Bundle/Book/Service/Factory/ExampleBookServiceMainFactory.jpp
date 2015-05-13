@@ -1,8 +1,8 @@
 #import (Config.path +'/Kernel/Factory/MasterFactory') = MasterFactory;
 
-class ExampleBookServiceFactory extends MasterFactory {
+class ExampleBookServiceMainFactory extends MasterFactory {
 
-	invokableClassName = 'example_book_service';
+	invokableClassName = 'example_book_main_service';
 
 	initialize : function () {
 		_super();
@@ -12,7 +12,7 @@ class ExampleBookServiceFactory extends MasterFactory {
 	create : function (serviceManager) {
 		var obj = _super(serviceManager);
 
-		var author = serviceManager.get('example_author_service');
+		var author = serviceManager.get('example_author_main_service');
 		author.setLastName('Thibault');
 		author.setFirstName('Riviere');
 		obj.setAuthor(author);
@@ -22,4 +22,4 @@ class ExampleBookServiceFactory extends MasterFactory {
 
 }
 
-#export ExampleBookServiceFactory;
+#export ExampleBookServiceMainFactory;

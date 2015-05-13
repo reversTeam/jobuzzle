@@ -1,6 +1,6 @@
 #import (Config.path +'/Kernel/Service/MasterService') = MasterService;
 
-class ExampleAuthorService extends MasterService {
+class ExampleAuthorMainService extends MasterService {
 
 	_lastName = '';
 	_firstName = '';
@@ -19,4 +19,4 @@ class ExampleAuthorService extends MasterService {
 
 }
 
-#export ExampleAuthorService;
+#export ExampleAuthorMainService;
