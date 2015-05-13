@@ -10,11 +10,11 @@ class ModuleInitializer extends MasterInitializer {
 	}
 
 	loadModules : function () {
-		var basePath = Config.path +'/Modules';
+		var basePath = Config['path'] +'/Modules';
 		var req = {};
 		var obj = {};
 
-		for (var i in Config.modules) {
+		for (var i in Config['modules']) {
 			req = Utility.require(basePath +'/'+ i +'/'+ i + 'Autoload');
 			obj = new req();
 			obj.onBootstrap();

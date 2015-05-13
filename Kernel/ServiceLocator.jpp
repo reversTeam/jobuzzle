@@ -10,18 +10,18 @@ class ServiceLocator {
 	}
 
 	init : function () {
-		if (!Config.servicelocator)
+		if (!Config['servicelocator'])
 			return ;
 
-		if (Config.servicelocator.invokables) {
-			for (var i in Config.servicelocator.invokables) {
-				this.add(i, Config.servicelocator.invokables[i], 'invokables');
+		if (Config['servicelocator']['invokables']) {
+			for (var i in Config['servicelocator']['invokables']) {
+				this.add(i, Config['servicelocator']['invokables'][i], 'invokables');
 			}
 		}
 
-		if (Config.servicelocator.factories) {
-			for (var i in Config.servicelocator.factories) {
-				this.add(i, Config.servicelocator.factories[i], 'factories');
+		if (Config['servicelocator']['factories']) {
+			for (var i in Config['servicelocator']['factories']) {
+				this.add(i, Config['servicelocator']['factories'][i], 'factories');
 			}
 		}
 	}
@@ -37,9 +37,11 @@ class ServiceLocator {
 	}
 
 	public add : function (key, value, type) {
-		var pathfile = Config.path +'/'+ value;
+		var pathfile = Config['path'] +'/'+ value;
 		var req = {};
 		var obj = {};
+
+		console.log(key, value, type);
 
 		req = Utility.require(pathfile);
 		obj = new req();

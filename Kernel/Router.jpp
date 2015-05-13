@@ -38,7 +38,7 @@ class Router {
 		}
 		if (!routes.type)
 			throw 'Cannot determined type for your route';
-		var req = Utility.require(Config.path + '/Kernel/Route/Type/'+ routes.type +'RouteType');
+		var req = Utility.require(Config['path'] + '/Kernel/Route/Type/'+ routes.type +'RouteType');
 		return new req(key, routes, cur);
 	}
 

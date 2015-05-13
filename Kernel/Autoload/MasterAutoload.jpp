@@ -5,8 +5,14 @@ class MasterAutoload {
 	#default get, set for confModuleName;
 
 	initialize : function () {
-		if (!Config.modules || !Config.modules[this.getConfModuleName()])
+		if (!Config['modules'] || !Config['modules'][this.getConfModuleName()])
 			return ;
+		var translation = Config['modules'][this.getConfModuleName()]['translation'];
+		var translator = serviceLocator.get('Translator');
+		if (translation) {
+			translator.initTranslationRoutes(translation);
+			translator.initTranslation(translation);
+		}
 		this.initManager('ServiceManager', 'service_manager');
 		this.initManager('RouteManager', 'route_manager');
 	}
@@ -17,7 +23,7 @@ class MasterAutoload {
 
 	initManager : function (managerName, managerConf) {
 		var manager = serviceLocator.get(managerName);
-		var confManager = Config.modules[this.getConfModuleName()][managerConf];
+		var confManager = Config['modules'][this.getConfModuleName()][managerConf];
 		if (!confManager)
 			return ;
 		this.addInManager(manager, confManager);

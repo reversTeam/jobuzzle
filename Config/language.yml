@@ -1,0 +1,4 @@
+all:
+	- EN_us
+	- FR_fr
+default : FR_fr
