@@ -1,0 +1,21 @@
+#import (Config.path +'/Kernel/Service/MasterService') = MasterService;
+
+class BookService extends MasterService {
+
+	_author = {};
+
+	#default get, set for _author;
+
+	initialize : function () {
+		_super();
+		console.log('BookService Instancied');
+	}
+
+	getAuthorName : function () {
+		var author = this.getAuthor();
+		return author.getFirstName() +' '+ author.getLastName();
+	}
+
+}
+
+#export BookService;

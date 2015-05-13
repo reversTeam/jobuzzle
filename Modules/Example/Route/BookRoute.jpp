@@ -1,0 +1,13 @@
+#import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
+
+class BookRoute extends MasterRoute {
+
+	baseName = 'Book';
+	baseRoute = '{books}';
+	baseController = 'Book';
+
+	paramName : 'book_id';
+
+}
+
+#export BookRoute;

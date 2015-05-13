@@ -15,13 +15,14 @@ scripts:
     - Kernel/Managers/ServiceManager.js
     - Kernel/Route/MasterRoute.js
     - Kernel/Service/MasterService.js
-    - Modules/Test/TestAutoload.js
+    - Modules/Example/ExampleAutoload.js
     - Kernel/Route/Type/MasterRouteType.js
     - Kernel/Route/Type/LitteralRouteType.js
     - Kernel/Route/Type/TranslationRouteType.js
     - Kernel/Route/Type/ParamsRouteType.js
-    - Modules/Test/Route/TestRoute.js
-    - Modules/Test/Route/StudentRoute.js
-    - Modules/Test/Service/TestService.js
-    - Modules/Test/Service/Factory/TestServiceFactory.js
+    - Modules/Example/Route/BookRoute.js
+    - Modules/Example/Route/AuthorRoute.js
+    - Modules/Example/Service/BookService.js
+    - Modules/Example/Service/AuthorService.js
+    - Modules/Example/Service/Factory/BookServiceFactory.js
     - main.js

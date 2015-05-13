@@ -1,0 +1,5 @@
+factories:
+
+invokables:
+    author_route: AuthorRoute
+    book_route : BookRoute
