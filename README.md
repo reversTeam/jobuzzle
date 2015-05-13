@@ -31,8 +31,8 @@ Dans le dossier `Config` de votre framework se trouve deux dossiers `dev` et `pr
 Le fichier `language.yml` disponible dans les configuration générale vous permettra de définir la langue par default de votre application, ainsi que les differents langues disponible, il a cette forme la :
 ``` yaml
 all:
-	- EN_us
-	- FR_fr
+    - EN_us
+    - FR_fr
 default : FR_fr
 ```
 La variable `default` permet de définir une langue par default pour votre application, le <a href="#translator">Translator</a> se référera a la langue par default si une traduction été indisponnible.
@@ -66,7 +66,7 @@ factories:
     Test : Path/To/TestFactory
 
 invokables:
-	Translator : Kernel/Translator
+    Translator : Kernel/Translator
     RouteManager: Kernel/Managers/RouteManager
     ServiceManager: Kernel/Managers/ServiceManager
     ModuleInitializer: Kernel/Initializer/ModuleInitializer
