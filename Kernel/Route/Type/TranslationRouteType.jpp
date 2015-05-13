@@ -13,7 +13,7 @@ class TranslationRouteType extends MasterRouteType {
 		var translation_key = reg.exec(this._routeUrl);
 
 		if (translation_key) {
-			if (serviceLocator.get('Translator').translate(translation_key[1]) == segment) {
+			if (serviceLocator.get('Translator').translateRoute(translation_key[1]) == segment) {
 				return true;
 			}
 		}

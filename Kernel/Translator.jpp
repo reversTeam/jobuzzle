@@ -1,11 +1,91 @@
 class Translator {
 
-	initialize: function() {
+	_lang = {
+		"FR_fr" : {},
+		"EN_us" : {}
+	};
 
+	_routes = {
+		"FR_fr" : {},
+		"EN_us" : {}
+	};
+
+	_defaultLang = 'EN_us';
+	_currentLang = 'EN_us';
+
+	#default get, set for _currentLang;
+	#default get, set for _defaultLang;
+
+	initialize: function() {
+		this.setDefaultLang(Config['language']['default']);
+		this.setCurrentLang(Config['language']['default']);
+		this.initTranslationRoutes(Config['translation']);
+		this.initTranslation(Config['translation']);
 	}
 
-	translate : function(key) {
-		return key;
+	initTranslationRoutes : function (translations) {
+		for (var lang in translations) {
+			if (translations[lang]['routes']) {
+				for (var i in translations[lang]['routes']) {
+					this.addTranslationRoute(lang, i, translations[lang]['routes'][i]);
+				}
+				delete translations[lang]['routes'];
+			}
+		}
+	}
+
+	initTranslation : function (translations) {
+		for (var lang in translations) {
+			if (translations[lang]) {
+				this.addTranslationInLang(lang, translations[lang], '');
+			}
+		}
+	}
+
+	addTranslationInLang : function (lang, translations, base) {
+		if (base !== '')
+			base += '.';
+		for (var i in translations) {
+			if (typeof translations[i] === 'string')
+				this.addTranslation(lang, base + i, translations[i]);
+			else
+				this.addTranslationInLang(lang, translations[i], base + i);
+		}
+	}
+
+	addTranslation : function (lang, key, value) {
+		this._lang[lang][key] = value;
+	}
+
+	addTranslationRoute : function (lang, key, value) {
+		this._routes[lang][key] = value;
+	}
+
+	translate : function(key, params) {
+		var ret = this._lang[this.getCurrentLang()][key];
+		if (!ret)
+			ret = this._lang[this.getDefaultLang()][key];
+		if (!ret)
+			ret = '{{ __EMPTY_TRANSLATION ['+ key +']__ }}';
+		else if (params)
+			ret = this.injectVars(ret, params);
+		return ret;
+	}
+
+	translateRoute : function (key) {
+		var ret = this._routes[this.getCurrentLang()][key];
+		if (!ret)
+			ret = this._routes[this.getDefaultLang()][key];
+		if (!ret)
+			ret = '{{ __EMPTY_TRANSLATION ['+ key +']__ }}';
+		return ret;
+	}
+
+	injectVars : function (str, params) {
+		for (var i in params) {
+			str = str.replace(new RegExp('{{'+ i +'}}'), params[i]);
+		}
+		return str;
 	}
 
 }

@@ -1,7 +1,7 @@
 invokables:
+	Translator : Kernel/Translator
     RouteManager: Kernel/Managers/RouteManager
     ServiceManager: Kernel/Managers/ServiceManager
     ModuleInitializer: Kernel/Initializer/ModuleInitializer
     Router : Kernel/Router
     Dispatcher : Kernel/Dispatcher/DispatcherBase
-    Translator : Kernel/Translator

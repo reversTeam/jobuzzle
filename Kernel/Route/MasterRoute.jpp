@@ -44,11 +44,11 @@ class MasterRoute {
 						"method" : 'view'
 					},
 					"childs" : {
-						"edit" : {
+						"update" : {
 							"type" : 'Translation',
-							"route" : '{edit}',
+							"route" : '{update}',
 							"action" : {
-								"method" : 'edit'
+								"method" : 'update'
 							}
 						},
 						'delete' : {

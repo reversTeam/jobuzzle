@@ -67,7 +67,7 @@ class MasterManager {
 	}
 
 	getObject : function (pathFile, type) {
-		var pathToFile = Config.path +'/Modules/'+ pathFile;
+		var pathToFile = Config['path'] +'/Modules/'+ pathFile;
 		var req = {};
 		var obj = {};
 
