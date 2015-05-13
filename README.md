@@ -13,6 +13,12 @@
 5. <a href="#factory">Factory</a>
 6. <a href="#initializer">Initializer</a>
 7. <a href="#manager">Manager</a>
+    1. <a href="#manager-service">Service Manager</a>
+    2. <a href="#manager-route">Route Manager</a>
+    3. <a href="#manager-template">Template Manager</a>
+    4. <a href="#manager-models">Model Manager</a>
+    5. <a href="#manager-entity">Entity Manager</a>
+    6. <a href="#manager-controller">Controller Manager</a>
 8. <a href="#route">Route</a>
 9. <a href="#service">Service</a>
 10. <a href="#router">Router</a>
@@ -285,6 +291,13 @@ shared :
     ExampleService : true
 ```
 
+### <a name="#manager-service">Service Manager</a>
+### <a name="#manager-route">Route Manager</a>
+### <a name="#manager-template">Template Manager</a>
+### <a name="#manager-models">Model Manager</a>
+### <a name="#manager-entity">Entity Manager</a>
+### <a name="#manager-controller">Controller Manager</a>
+
 
 ## <a name="route">Route</a>
 Le design `Route`, il permet la déclaration des routes sous forme d'objet avec la notions d'héritage ainsi une `Route` instancié par cet objet, aura directement les routes suivantes :
@@ -460,6 +473,8 @@ var Utility = {
 
 ## <a name="modules">Modules</a>
 Le design des `Modules`, ce sont les composant applicatif de votre application, le code spécifique qui va déterminer le fonctionnement de votre application. Il faut pour utiliser un `Module`, le déclarer dans le fichier `Config/modules.yml` sans cette déclaration il ne sera jamais instancié et donc en fonctionnement. Vous pouvez aussi disable un module en passant sa configuration a `false` dans ce meme fichier de configuration.
+
+### <a name="#modules-declaration">Déclaration</a>
 Example :
 ```yaml
 Actif : true
