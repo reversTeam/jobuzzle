@@ -333,7 +333,7 @@ Le design `Service` n'a actuellement aucune logique générique. Les `Controller
 ## <a name="router">Router</a>
 L'objet `Router` s'occupe de gerer l'ensemble des routes de votre applications, que ce soit au niveau de la construction de l'ensemble des routes, des imbrications, de la résolution ou encore de la création des routes de votre applications, c'est cet objet fera votre affaire.
 
-## <a name="servicelocator">Serv## <a name="servicelocator">ServiceLocator</a>
+## <a name="servicelocator">ServiceLocator</a>
 Le `serviceLocator` est un objet déclarer dans le scope globale de votre application ce qui lui donne la particularité d'être accèssible partout au seins de votre application, il stock des object de type `singleton`, c'est a dire que vous intéragirez toujours avec la même instance d'object peut importe le nombre de get que vous effecturer sur cette meme entité.
 Vous pouvez ajouter des object a votre `serviceLocator` via son fichier de condiguration disponnible a cet endroi `Config/servicelocator.yml`. On utilise le `serviceLocator` de cette facon.
 ```javascript
