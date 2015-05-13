@@ -2,6 +2,8 @@
 
 class ServiceManager extends MasterManager {
 
+	_name = 'ServiceManager';
+	_fileConf = 'service';
 	_defaultShared = false;
 
 }

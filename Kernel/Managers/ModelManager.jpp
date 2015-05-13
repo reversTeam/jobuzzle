@@ -2,6 +2,8 @@
 
 class ModelManager extends MasterManager {
 
+	_name = 'ModelManager';
+	_fileConf = 'model';
 	_defaultShared = false;
 
 }
