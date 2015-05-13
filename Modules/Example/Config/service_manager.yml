@@ -1,5 +1,5 @@
 factories:
-    book_service: Factory/BookServiceFactory
+    book_service: Book/Service/Factory/BookServiceFactory
 invokables:
-    book_service: BookService
-    author_service: AuthorService
+    book_service: Book/Service/BookService
+    author_service: Author/Service/AuthorService

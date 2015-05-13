@@ -2,12 +2,9 @@
 #import ('../Utility') = Utility;
 class MasterManager {
 
-	_pathDir = 'Kernel';
 	_defaultShared = false;
 
 	#default get for _defaultShared;
-
-	#default get, set for _pathDir;
 
 	initialize : function () {
 		this._all = {
@@ -21,7 +18,7 @@ class MasterManager {
 	}
 
 	add : function (key, value, module, type) {
-		this._all[type][key] = module +'/'+ this.getPathDir() +'/'+ value;
+		this._all[type][key] = module +'/Bundle/'+ value;
 	}
 
 	get : function (key) {
@@ -33,7 +30,7 @@ class MasterManager {
 		if (!obj)
 			obj = this.getInvokables(key);
 		if (!obj)
-			throw 'Manager "'+ this.getPathDir() + ' '+ key +'" is not defined';
+			throw 'Manager "'+ key +'" is not defined';
 		if (shared)
 			this._static[key] = obj;
 		return obj;
