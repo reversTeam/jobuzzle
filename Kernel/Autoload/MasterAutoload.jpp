@@ -13,8 +13,12 @@ class MasterAutoload {
 			translator.initTranslationRoutes(translation);
 			translator.initTranslation(translation);
 		}
-		this.initManager('ServiceManager', 'service_manager');
-		this.initManager('RouteManager', 'route_manager');
+		this.initManager('ServiceManager', 'service');
+		this.initManager('RouteManager', 'route');
+		this.initManager('ModelManager', 'model');
+		this.initManager('TemplateManager', 'template');
+		this.initManager('ControllerManager', 'controller');
+		this.initManager('EntityManager', 'entity');
 	}
 
 	onBootstrap : function () {
@@ -23,7 +27,8 @@ class MasterAutoload {
 
 	initManager : function (managerName, managerConf) {
 		var manager = serviceLocator.get(managerName);
-		var confManager = Config['modules'][this.getConfModuleName()][managerConf];
+		if (Config['modules'][this.getConfModuleName()]['manager'])
+		var confManager = Config['modules'][this.getConfModuleName()]['manager'][managerConf];
 		if (!confManager)
 			return ;
 		this.addInManager(manager, confManager);

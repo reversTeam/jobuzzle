@@ -13,6 +13,10 @@ scripts:
     - Kernel/Managers/MasterManager.js
     - Kernel/Managers/RouteManager.js
     - Kernel/Managers/ServiceManager.js
+    - Kernel/Managers/ModelManager.js
+    - Kernel/Managers/TemplateManager.js
+    - Kernel/Managers/ControllerManager.js
+    - Kernel/Managers/EntityManager.js
     - Kernel/Route/MasterRoute.js
     - Kernel/Service/MasterService.js
     - Modules/Example/ExampleAutoload.js

@@ -1,0 +1,9 @@
+#import ('./MasterManager') = MasterManager;
+
+class EntityManager extends MasterManager {
+
+	_defaultShared = true;
+
+}
+
+#export EntityManager;

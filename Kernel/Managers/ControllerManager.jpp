@@ -1,9 +1,9 @@
 #import ('./MasterManager') = MasterManager;
 
-class RouteManager extends MasterManager {
+class ControllerManager extends MasterManager {
 
 	_defaultShared = false;
 
 }
 
-#export RouteManager;
+#export ControllerManager;

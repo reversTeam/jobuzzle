@@ -1,0 +1,9 @@
+#import ('./MasterManager') = MasterManager;
+
+class TemplateManager extends MasterManager {
+
+	_defaultShared = true;
+
+}
+
+#export TemplateManager;
