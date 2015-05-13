@@ -174,7 +174,7 @@ Il est possible de définir les scope a `*` afin de dire par exemple :
 Il est également possible de transmettre des paramêtre du trigger a ceux qui listen, de cette facon :
 ```javascript
 var dispatcher = serviceLocator.get('Dispatcher');
-dispatcher.trigger('Example:Test:init', [ 42 ]);
+dispatcher.trigger('Example:Test:init', 42);
 ```
 
 Il sera ensuite catcher par une méthode de ce type :
