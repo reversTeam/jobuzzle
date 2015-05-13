@@ -41,8 +41,6 @@ class ServiceLocator {
 		var req = {};
 		var obj = {};
 
-		console.log(key, value, type);
-
 		req = Utility.require(pathfile);
 		obj = new req();
 		if (type == 'invokables')
