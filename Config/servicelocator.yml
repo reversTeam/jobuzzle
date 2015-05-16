@@ -1,11 +1,14 @@
 invokables:
+    Translation : Kernel/Translation
 	Translator : Kernel/Translator
-    RouteManager: Kernel/Managers/RouteManager
-    ServiceManager: Kernel/Managers/ServiceManager
-    ModelManager: Kernel/Managers/ModelManager
-    TemplateManager: Kernel/Managers/TemplateManager
-    ControllerManager: Kernel/Managers/ControllerManager
-    EntityManager: Kernel/Managers/EntityManager
-    ModuleInitializer: Kernel/Initializer/ModuleInitializer
+    RouteManager : Kernel/Managers/RouteManager
+    ServiceManager : Kernel/Managers/ServiceManager
+    ModelManager : Kernel/Managers/ModelManager
+    TemplateManager : Kernel/Managers/TemplateManager
+    ControllerManager : Kernel/Managers/ControllerManager
+    EntityManager : Kernel/Managers/EntityManager
+    ModuleInitializer : Kernel/Initializer/ModuleInitializer
     Router : Kernel/Router
     Dispatcher : Kernel/Dispatcher/DispatcherBase
+shared:
+    Translator : false
