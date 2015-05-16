@@ -1,70 +1,23 @@
 class Translator {
 
-	_lang = {
-		"FR_fr" : {},
-		"EN_us" : {}
-	};
-
-	_routes = {
-		"FR_fr" : {},
-		"EN_us" : {}
-	};
-
 	_defaultLang = 'EN_us';
 	_currentLang = 'EN_us';
+	_translation = {};
 
 	#default get, set for _currentLang;
 	#default get, set for _defaultLang;
+	#default get, set for _translation;
 
 	initialize: function() {
+		this.setTranslation(serviceLocator.get('Translation'));
 		this.setDefaultLang(Config['language']['default']);
 		this.setCurrentLang(Config['language']['default']);
-		this.initTranslationRoutes(Config['translation']);
-		this.initTranslation(Config['translation']);
-	}
-
-	initTranslationRoutes : function (translations) {
-		for (var lang in translations) {
-			if (translations[lang]['routes']) {
-				for (var i in translations[lang]['routes']) {
-					this.addTranslationRoute(lang, i, translations[lang]['routes'][i]);
-				}
-				delete translations[lang]['routes'];
-			}
-		}
-	}
-
-	initTranslation : function (translations) {
-		for (var lang in translations) {
-			if (translations[lang]) {
-				this.addTranslationInLang(lang, translations[lang], '');
-			}
-		}
-	}
-
-	addTranslationInLang : function (lang, translations, base) {
-		if (base !== '')
-			base += '.';
-		for (var i in translations) {
-			if (typeof translations[i] === 'string')
-				this.addTranslation(lang, base + i, translations[i]);
-			else
-				this.addTranslationInLang(lang, translations[i], base + i);
-		}
-	}
-
-	addTranslation : function (lang, key, value) {
-		this._lang[lang][key] = value;
-	}
-
-	addTranslationRoute : function (lang, key, value) {
-		this._routes[lang][key] = value;
 	}
 
 	translate : function(key, params) {
-		var ret = this._lang[this.getCurrentLang()][key];
+		var ret = this._translation.getTranslation(key, this.getCurrentLang());
 		if (!ret)
-			ret = this._lang[this.getDefaultLang()][key];
+			ret = this._translation.getTranslation(key, this.getDefaultLang())
 		if (!ret)
 			ret = '{{ __EMPTY_TRANSLATION ['+ key +']__ }}';
 		else if (params)
@@ -73,9 +26,9 @@ class Translator {
 	}
 
 	translateRoute : function (key) {
-		var ret = this._routes[this.getCurrentLang()][key];
+		var ret = this._translation.getTranslationRoute(key, this.getCurrentLang());
 		if (!ret)
-			ret = this._routes[this.getDefaultLang()][key];
+			ret = this._translation.getTranslationRoute(key, this.getDefaultLang());
 		if (!ret)
 			ret = '{{ __EMPTY_TRANSLATION ['+ key +']__ }}';
 		return ret;

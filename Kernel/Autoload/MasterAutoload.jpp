@@ -7,11 +7,11 @@ class MasterAutoload {
 	initialize : function () {
 		if (!Config['modules'] || !Config['modules'][this.getConfModuleName()])
 			return ;
-		var translation = Config['modules'][this.getConfModuleName()]['translation'];
-		var translator = serviceLocator.get('Translator');
-		if (translation) {
-			translator.initTranslationRoutes(translation);
-			translator.initTranslation(translation);
+		var translations = Config['modules'][this.getConfModuleName()]['translation'];
+		var translation = serviceLocator.get('Translation');
+		if (translations) {
+			translation.initTranslationRoutes(translations);
+			translation.initTranslation(translations);
 		}
 
 		this.initManagers();

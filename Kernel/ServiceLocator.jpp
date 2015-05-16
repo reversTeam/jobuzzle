@@ -3,15 +3,28 @@
 
 class ServiceLocator {
 
+	_defaultShared = true;
+
+	#default get, set for _defaultShared;
+
 	initialize : function () {
-		this._component = {};
-		this._component['invokables'] = {};
-		this._component['factories'] = {};
+		this._all = {};
+		this._all['invokables'] = {};
+		this._all['factories'] = {};
+		this._all['shared'] = {};
+
+		this._static = {};
 	}
 
 	init : function () {
 		if (!Config['servicelocator'])
 			return ;
+
+		if (Config['servicelocator']['shared']) {
+			for (var i in Config['servicelocator']['shared']) {
+				this.addShared(i, Config['servicelocator']['shared'][i]);
+			}
+		}
 
 		if (Config['servicelocator']['invokables']) {
 			for (var i in Config['servicelocator']['invokables']) {
@@ -26,7 +39,11 @@ class ServiceLocator {
 		}
 	}
 
-	public get : function (key) {
+	get : function (key) {
+		var shared = this.isShared(key);
+		if (shared && this._static[key])
+			return this._static[key];
+
 		var obj = this.getFactory(key);
 		if (!obj) {
 			obj = this.getInvokables(key);
@@ -36,34 +53,60 @@ class ServiceLocator {
 		return obj;
 	}
 
-	public add : function (key, value, type) {
+	add : function (key, value, type) {
 		var pathfile = Config['path'] +'/'+ value;
 		var req = {};
 		var obj = {};
 
-		req = Utility.require(pathfile);
-		obj = new req();
-		if (type == 'invokables')
-			this._component[type][key] = obj;
-		else
-			this._component[type][key] = obj.create();
+		if (this.isShared(key)) {
+			req = Utility.require(pathfile);
+			obj = new req();
+			if (type == 'factories')
+				obj = obj.create();
+			this._static[key] = obj;
+		} else {
+			this._all[type][key] = value;
+		}
 
 	}
 
+	addShared : function (key, value) {
+		this._all['shared'][key] = value;
+	}
+
+	isShared : function (key) {
+		if (this._all['shared'][key] != undefined)
+			return this._all['shared'][key];
+		return this.getDefaultShared();
+	}
+
+	getInvokables : function (key) {
+		if (this._all['invokables'][key]) {
+			return this.getObject(this._all['invokables'][key], 'invokables');
+		}
+		return false;
+	}
+
 	getFactory : function (key) {
-		if (this._component['factories'][key]) {
-			var obj = this._component['factories'][key];
+		if (this._all['factories'][key]) {
+			var obj = this.getObject(this._all['factories'][key], 'factories');
 			if (!obj)
-				throw 'ServiceLocator dosen\'t success call invokables for "'+ key +'" factory';
+				throw 'Factory "'+ key +'" doesn\'t have invokables';
 			return obj;
 		}
 		return false;
 	}
 
-	getInvokables : function (key) {
-		if (this._component['invokables'][key])
-			return this._component['invokables'][key];
-		return false;
+	getObject : function (pathFile, type) {
+		var pathToFile = Config['path'] +'/'+ pathFile;
+		var req = {};
+		var obj = {};
+
+		req = Utility.require(pathToFile);
+		obj = new req();
+		if (type == 'factories')
+			obj = obj.create(this);
+		return obj;
 	}
 
 }

@@ -3,6 +3,7 @@ scripts:
     - Kernel/Router.js
     - Kernel/Utility.js
     - Kernel/ServiceLocator.js
+    - Kernel/Translation.js
     - Kernel/Translator.js
     - Kernel/Autoload/MasterAutoload.js
     - Kernel/Dispatcher/DispatcherMaster.js
