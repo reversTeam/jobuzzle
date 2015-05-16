@@ -18,9 +18,6 @@ var moduleInitializer = serviceLocator.get('ModuleInitializer');
 var serviceManager = serviceLocator.get('ServiceManager');
 var bookService = serviceManager.get('example_book_main_service');
 
-console.log('Author for book : '+ bookService.getAuthorName());
-
-
 // Test sur les routes
 var router = serviceLocator.get('Router');
 var routeManager = serviceLocator.get('RouteManager');
@@ -37,16 +34,23 @@ var t = serviceLocator.get('Translator');
 console.log('\n################# START TEST TRANSLATOR & ROUTER MATCH #################');
 console.log('------------------------------ [FR_fr] ------------------------------');
 console.log(t.translate('example.match_route', { "route" : '/authors/theotime-riviere/books/42/update' }));
-router.match('/authors/theotime-riviere/books/42/update');
+console.log(router.match('/authors/theotime-riviere/books/42/update'));
 console.log(t.translate('example.match_route', { "route" : '/auteurs/theotime-riviere/livres/42/editer'}));
-router.match('/auteurs/theotime-riviere/livres/42/editer');
+var a = router.match('/auteurs/theotime-riviere/livres/42/editer');
+console.log(a);
 console.log('------------------------------ [EN_us] ------------------------------');
 t.setCurrentLang('EN_us');
 console.log(t.translate('example.match_route', { "route" : '/authors/theotime-riviere/books/42/update' }));
-router.match('/authors/theotime-riviere/books/42/update');
+console.log(router.match('/authors/theotime-riviere/books/42/update'));
 console.log(t.translate('example.match_route', { "route" : '/auteurs/theotime-riviere/livres/42/editer' }));
-router.match('/auteurs/theotime-riviere/livres/42/editer');
+console.log(router.match('/auteurs/theotime-riviere/livres/42/editer'));
 console.log('################# END TEST TRANSLATOR & ROUTER MATCH #################\n');
+
+console.log(a);
+
+var controller = serviceLocator.get('ControllerManager').get(a['controller']);
+console.log(controller);
+controller[a['method']]();
 
 
 

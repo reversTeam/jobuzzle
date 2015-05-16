@@ -28,7 +28,7 @@ class MasterAutoload {
 		for (var i = 0; i < len; ++i) {
 			var manager = serviceLocator.get(managers[i]);
 			if (Config['modules'][this.getConfModuleName()]['manager'])
-			var confManager = Config['modules'][this.getConfModuleName()]['manager'][manager.getFileConf()];
+				var confManager = Config['modules'][this.getConfModuleName()]['manager'][manager.getFileConf()];
 			if (!confManager)
 				break ;
 			this.addInManager(manager, confManager);

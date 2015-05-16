@@ -24,9 +24,11 @@ scripts:
     - Kernel/Route/Type/LitteralRouteType.js
     - Kernel/Route/Type/TranslationRouteType.js
     - Kernel/Route/Type/ParamsRouteType.js
+    - Kernel/Controller/MasterController.js
     - Modules/Example/Bundle/Book/Route/ExampleBookMainRoute.js
     - Modules/Example/Bundle/Book/Service/ExampleBookMainService.js
     - Modules/Example/Bundle/Author/Route/ExampleAuthorMainRoute.js
     - Modules/Example/Bundle/Author/Service/ExampleAuthorMainService.js
     - Modules/Example/Bundle/Book/Service/Factory/ExampleBookServiceMainFactory.js
+    - Modules/Example/Bundle/Book/Controller/ExampleBookMainController.js
     - main.js

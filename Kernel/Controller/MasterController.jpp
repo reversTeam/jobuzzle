@@ -1,0 +1,13 @@
+class MasterController {
+
+	initialize : function () {
+		console.log('Controller has been instancied');
+	}
+
+
+	public update : function () {
+		console.log('Entity is update by Controller');
+	}
+}
+
+#export MasterController;
