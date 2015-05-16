@@ -1,0 +1,66 @@
+class Translation {
+
+	_lang = {
+		"FR_fr" : {},
+		"EN_us" : {}
+	};
+
+	_routes = {
+		"FR_fr" : {},
+		"EN_us" : {}
+	};
+
+	initialize : function () {
+		this.initTranslationRoutes(Config['translation']);
+		this.initTranslation(Config['translation']);
+	}
+
+	initTranslationRoutes : function (translations) {
+		for (var lang in translations) {
+			if (translations[lang]['routes']) {
+				for (var i in translations[lang]['routes']) {
+					this.addTranslationRoute(lang, i, translations[lang]['routes'][i]);
+				}
+				delete translations[lang]['routes'];
+			}
+		}
+	}
+
+	initTranslation : function (translations) {
+		for (var lang in translations) {
+			if (translations[lang]) {
+				this.addTranslationInLang(lang, translations[lang], '');
+			}
+		}
+	}
+
+	addTranslationInLang : function (lang, translations, base) {
+		if (base !== '')
+			base += '.';
+		for (var i in translations) {
+			if (typeof translations[i] === 'string')
+				this.addTranslation(lang, base + i, translations[i]);
+			else
+				this.addTranslationInLang(lang, translations[i], base + i);
+		}
+	}
+
+	addTranslation : function (lang, key, value) {
+		this._lang[lang][key] = value;
+	}
+
+	addTranslationRoute : function (lang, key, value) {
+		this._routes[lang][key] = value;
+	}
+
+	getTranslation : function (key, lang) {
+		return this._lang[lang][key];
+	}
+
+	getTranslationRoute : function (key, lang) {
+		return this._routes[lang][key];
+	}
+
+}
+
+#export Translation;
