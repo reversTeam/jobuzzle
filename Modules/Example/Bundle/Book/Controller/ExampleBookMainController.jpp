@@ -1,0 +1,9 @@
+#import (Config.path +'/Kernel/Controller/MasterController') = MasterController;
+
+class ExampleBookMainController extends MasterController {
+
+	
+
+}
+
+#export ExampleBookMainController;

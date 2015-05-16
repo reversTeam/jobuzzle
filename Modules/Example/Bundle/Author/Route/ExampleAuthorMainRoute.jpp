@@ -4,7 +4,7 @@ class ExampleAuthorMainRoute extends MasterRoute {
 
 	baseName = 'Author';
 	baseRoute = '{authors}';
-	baseController = 'Author';
+	baseController = 'example_author_main_controller';
 
 	paramName : 'author_url';
 	paramRegex : '[a-z0-9-]+';

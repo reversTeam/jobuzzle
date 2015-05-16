@@ -1,0 +1,2 @@
+invokables:
+	example_book_main_controller: Book/Controller/ExampleBookMainController
