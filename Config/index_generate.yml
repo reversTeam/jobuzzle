@@ -16,7 +16,6 @@ scripts:
     - Kernel/Managers/ServiceManager.js
     - Kernel/Managers/ModelManager.js
     - Kernel/Managers/TemplateManager.js
-    - Kernel/Managers/ViewManager.js
     - Kernel/Managers/ControllerManager.js
     - Kernel/Managers/EntityManager.js
     - Kernel/Route/MasterRoute.js

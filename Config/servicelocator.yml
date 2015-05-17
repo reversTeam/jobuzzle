@@ -5,7 +5,6 @@ invokables:
     ServiceManager : Kernel/Managers/ServiceManager
     ModelManager : Kernel/Managers/ModelManager
     TemplateManager : Kernel/Managers/TemplateManager
-    ViewManager : Kernel/Managers/ViewManager
     ControllerManager : Kernel/Managers/ControllerManager
     EntityManager : Kernel/Managers/EntityManager
     ModuleInitializer : Kernel/Initializer/ModuleInitializer

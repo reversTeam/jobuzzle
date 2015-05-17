@@ -14,7 +14,6 @@ class MasterTemplate {
 		}
 		this.view.apply(this.view, arguments);
 
-		console.log(this.view);
 		return this.view;
 	}
 
