@@ -1,6 +1,7 @@
 - ControllerManager
 - ServiceManager
 - RouteManager
-- ModelManager
+- ViewManager
 - TemplateManager
+- ModelManager
 - EntityManager

@@ -1,0 +1,11 @@
+#import ('./MasterManager') = MasterManager;
+
+class ViewManager extends MasterManager {
+
+	_name = 'ViewManager';
+	_fileConf = 'view';
+	_defaultShared = false;
+
+}
+
+#export ViewManager;

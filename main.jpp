@@ -53,6 +53,24 @@ console.log(controller);
 controller[a['method']]();
 
 
+var templateManager = serviceLocator.get('TemplateManager');
+// templateManager.get('example_author_main_template');
+
+var All = React['createClass']({'displayName': "All",
+
+	"render" : function () {
+		return (
+			React['createElement']("div", {id: "webApp"},
+				React['createElement'](window['ExampleAuthorMainTemplate'], null)
+			)
+		);
+	}
+
+});
+
+React['render'](React['createElement'](All, null), document.getElementsByTagName('body')[0]);
+
+
 
 // Test sur le Dispatcher
 console.log("## TEST DISPATCHER");

@@ -16,20 +16,25 @@ scripts:
     - Kernel/Managers/ServiceManager.js
     - Kernel/Managers/ModelManager.js
     - Kernel/Managers/TemplateManager.js
+    - Kernel/Managers/ViewManager.js
     - Kernel/Managers/ControllerManager.js
     - Kernel/Managers/EntityManager.js
     - Kernel/Route/MasterRoute.js
     - Kernel/Service/MasterService.js
-    - Modules/Example/ExampleAutoload.js
     - Kernel/Route/Type/MasterRouteType.js
     - Kernel/Route/Type/LitteralRouteType.js
     - Kernel/Route/Type/TranslationRouteType.js
     - Kernel/Route/Type/ParamsRouteType.js
     - Kernel/Controller/MasterController.js
+    - Kernel/Template/MasterTemplate.js
+    - Kernel/Template/View/MasterView.js
+    - Modules/Example/ExampleAutoload.js
     - Modules/Example/Bundle/Book/Route/ExampleBookMainRoute.js
     - Modules/Example/Bundle/Book/Service/ExampleBookMainService.js
     - Modules/Example/Bundle/Author/Route/ExampleAuthorMainRoute.js
     - Modules/Example/Bundle/Author/Service/ExampleAuthorMainService.js
     - Modules/Example/Bundle/Book/Service/Factory/ExampleBookServiceMainFactory.js
     - Modules/Example/Bundle/Book/Controller/ExampleBookMainController.js
+    - Modules/Example/Bundle/Author/Template/ExampleAuthorMainTemplate.js
+    - Modules/Example/Bundle/Author/Template/View/ExampleAuthorTemplateMainView.js
     - main.js
