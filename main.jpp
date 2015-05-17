@@ -52,20 +52,6 @@ serviceLocator.init();
 // console.log(controller);
 // controller[a['method']]();
 
-var All = React['createClass']({'displayName': "All",
-
-	"render" : function () {
-		return (
-			React['createElement']("div", {id: "webApp"},
-				React['createElement'](window['ExampleAuthorMainTemplate'], null)
-			)
-		);
-	}
-
-});
-
-React['render'](React['createElement'](All, null), document.getElementsByTagName('body')[0]);
-
 
 
 // Test sur le Dispatcher
