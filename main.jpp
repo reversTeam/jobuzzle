@@ -12,49 +12,45 @@
 
 serviceLocator = new ServiceLocator();
 serviceLocator.init();
-var moduleInitializer = serviceLocator.get('ModuleInitializer');
+// var moduleInitializer = serviceLocator.get('ModuleInitializer');
 
 // Test sur les services
-var serviceManager = serviceLocator.get('ServiceManager');
-var bookService = serviceManager.get('example_book_main_service');
+// var serviceManager = serviceLocator.get('ServiceManager');
+// var bookService = serviceManager.get('example_book_main_service');
 
 // Test sur les routes
-var router = serviceLocator.get('Router');
-var routeManager = serviceLocator.get('RouteManager');
+// var router = serviceLocator.get('Router');
+// var routeManager = serviceLocator.get('RouteManager');
 
-var authorRoute = routeManager.get('example_author_main_route');
-var bookRoute = routeManager.get('example_book_main_route');
+// var authorRoute = routeManager.get('example_author_main_route');
+// var bookRoute = routeManager.get('example_book_main_route');
 
 //  Test sur le router
-router.addRoute('author', authorRoute);
-router.getRoute('author').getRoute('view').addRoute('book', bookRoute);
+// router.addRoute('author', authorRoute);
+// router.getRoute('author').getRoute('view').addRoute('book', bookRoute);
 
 // Test sur le match des routes
-var t = serviceLocator.get('Translator');
-console.log('\n################# START TEST TRANSLATOR & ROUTER MATCH #################');
-console.log('------------------------------ [FR_fr] ------------------------------');
-console.log(t.translate('example.match_route', { "route" : '/authors/theotime-riviere/books/42/update' }));
-console.log(router.match('/authors/theotime-riviere/books/42/update'));
-console.log(t.translate('example.match_route', { "route" : '/auteurs/theotime-riviere/livres/42/editer'}));
-var a = router.match('/auteurs/theotime-riviere/livres/42/editer');
-console.log(a);
-console.log('------------------------------ [EN_us] ------------------------------');
-t.setCurrentLang('EN_us');
-console.log(t.translate('example.match_route', { "route" : '/authors/theotime-riviere/books/42/update' }));
-console.log(router.match('/authors/theotime-riviere/books/42/update'));
-console.log(t.translate('example.match_route', { "route" : '/auteurs/theotime-riviere/livres/42/editer' }));
-console.log(router.match('/auteurs/theotime-riviere/livres/42/editer'));
-console.log('################# END TEST TRANSLATOR & ROUTER MATCH #################\n');
+// var t = serviceLocator.get('Translator');
+// console.log('\n################# START TEST TRANSLATOR & ROUTER MATCH #################');
+// console.log('------------------------------ [FR_fr] ------------------------------');
+// console.log(t.translate('example.match_route', { "route" : '/authors/theotime-riviere/books/42/update' }));
+// console.log(router.match('/authors/theotime-riviere/books/42/update'));
+// console.log(t.translate('example.match_route', { "route" : '/auteurs/theotime-riviere/livres/42/editer'}));
+// var a = router.match('/auteurs/theotime-riviere/livres/42/editer');
+// console.log(a);
+// console.log('------------------------------ [EN_us] ------------------------------');
+// t.setCurrentLang('EN_us');
+// console.log(t.translate('example.match_route', { "route" : '/authors/theotime-riviere/books/42/update' }));
+// console.log(router.match('/authors/theotime-riviere/books/42/update'));
+// console.log(t.translate('example.match_route', { "route" : '/auteurs/theotime-riviere/livres/42/editer' }));
+// console.log(router.match('/auteurs/theotime-riviere/livres/42/editer'));
+// console.log('################# END TEST TRANSLATOR & ROUTER MATCH #################\n');
 
-console.log(a);
+// console.log(a);
 
-var controller = serviceLocator.get('ControllerManager').get(a['controller']);
-console.log(controller);
-controller[a['method']]();
-
-
-var templateManager = serviceLocator.get('TemplateManager');
-// templateManager.get('example_author_main_template');
+// var controller = serviceLocator.get('ControllerManager').get(a['controller']);
+// console.log(controller);
+// controller[a['method']]();
 
 var All = React['createClass']({'displayName': "All",
 
@@ -73,7 +69,7 @@ React['render'](React['createElement'](All, null), document.getElementsByTagName
 
 
 // Test sur le Dispatcher
-console.log("## TEST DISPATCHER");
+// console.log("## TEST DISPATCHER");
 var dispatcher = serviceLocator.get('Dispatcher');
 
 class obj {
@@ -90,7 +86,7 @@ class obj {
 
 var o = new obj();
 
-dispatcher.trigger('kernel:init:bonjour', 13);
-dispatcher.trigger('kernel:test:bonjour', 42);
-dispatcher.trigger('kernel:haha:bonjour', 60);
-console.log("## END TEST DISPATCHER");
+// dispatcher.trigger('kernel:init:bonjour', 13);
+// dispatcher.trigger('kernel:test:bonjour', 42);
+// dispatcher.trigger('kernel:haha:bonjour', 60);
+// console.log("## END TEST DISPATCHER");
