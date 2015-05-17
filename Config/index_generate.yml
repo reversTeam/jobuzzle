@@ -36,4 +36,6 @@ scripts:
     - Modules/Example/Bundle/Book/Controller/ExampleBookMainController.js
     - Modules/Example/Bundle/Author/Template/ExampleAuthorMainTemplate.js
     - Modules/Example/Bundle/Author/Template/View/ExampleAuthorTemplateMainView.js
+    - Modules/Example/Bundle/Book/Template/ExampleBookMainTemplate.js
+    - Modules/Example/Bundle/Book/Template/View/ExampleBookTemplateMainView.js
     - main.js
