@@ -1,0 +1,14 @@
+#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
+
+class ExampleAuthorMainTemplate extends MasterTemplate {
+
+	_viewClassName = 'ExampleAuthorTemplateMainView';
+
+	initialize : function () {
+		return _super();
+	}
+
+
+}
+
+#export ExampleAuthorMainTemplate;

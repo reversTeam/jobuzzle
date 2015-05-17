@@ -1,0 +1,23 @@
+#import (Config.path +'/Kernel/Utility') = Utility;
+
+class MasterTemplate {
+
+	_viewClassName = 'MasterView';
+
+	#default get for _viewClassName;
+
+	initialize : function () {
+		this.view = window[this.getViewClassName()];
+
+		for (var i in window[this.getViewClassName()].prototype) {
+			this.view[i] = window[this.getViewClassName()].prototype[i];
+		}
+		this.view.apply(this.view, arguments);
+
+		console.log(this.view);
+		return this.view;
+	}
+
+}
+
+#export MasterTemplate;
