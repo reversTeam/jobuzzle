@@ -17,8 +17,15 @@ class DispatcherBase extends MasterDispatcher {
 	_subevent_listen: function (datas, i, len, events, obj, callback) {
 		if (i == len) {
 			if (!events._listeners)
-				events._listeners = {};
-			events._listeners[obj] = callback;
+				events._listeners = [];
+			for (var j = 0; j < events._listeners.length; ++j) {
+				if (events._listeners[j].obj === obj)
+					return ;
+			}
+			events._listeners.push({
+				'obj': obj,
+				'callback': callback
+			});
 		}
 		else {
 			if (!events[datas[i]])
@@ -36,8 +43,14 @@ class DispatcherBase extends MasterDispatcher {
 	*/
 	_subevent_unlisten: function (datas, i, len, events, obj) {
 		if (i == len) {
-			if (events._listeners && events._listeners[obj])
-				delete events._listeners[obj];
+			if (events._listeners) {
+				for (var j = 0; j < events._listeners.length; ++j) {
+					if (events._listeners[j].obj === obj) {
+						delete events._listeners[j];
+						break ;
+					}
+				}
+			}
 		}
 		else {
 			if (!events[datas[i]])
@@ -60,9 +73,8 @@ class DispatcherBase extends MasterDispatcher {
 				var len2 = arr_params.length;
 				for (var j = 0; j < len2; ++j)
 					params.push(arr_params[j]);
-				for (var obj in events._listeners) {
-					var callback = events._listeners[obj];
-					callback.apply(obj, params);
+				for (var j = 0; j < events._listeners.length; ++j) {
+					events._listeners[j].callback.apply(events._listeners[j].obj, params);
 				}
 			}
 		}

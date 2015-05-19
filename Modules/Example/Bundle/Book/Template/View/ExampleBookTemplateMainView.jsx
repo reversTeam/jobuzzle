@@ -1,7 +1,9 @@
-var ExampleBookTemplateMainView = MasterView.extend({
+var ExampleBookTemplateMainView = function (props, context) {
+	MasterView.call(this, props, context);
+}
 
-	"render" : function () {
-		return (<div id="First">Hello World !</div>);
-	}
+ExampleBookTemplateMainView.prototype = Object.create(MasterView.prototype);
 
-});
+ExampleBookTemplateMainView.prototype.render = function () {
+	return (<div id="First">Example Book</div>);
+};
