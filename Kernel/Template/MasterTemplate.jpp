@@ -3,18 +3,32 @@
 class MasterTemplate {
 
 	_viewClassName = 'MasterView';
+	_view_class = undefined;
+	_view = undefined;
 
 	#default get for _viewClassName;
 
 	initialize : function () {
-		this.view = window[this.getViewClassName()];
+		this.onListen();
+	}
 
-		for (var i in window[this.getViewClassName()].prototype) {
-			this.view[i] = window[this.getViewClassName()].prototype[i];
+	onListen : function () {
+
+	}
+
+	getView : function () {
+		if (this._view_class == undefined) {
+			var self = this;
+			this._view = window[this.getViewClassName()];
+			var tmp = function (props, context) {
+				window[self.getViewClassName()].call(this, props, context);
+				self._view = this;
+			}
+			tmp.prototype = Object.create(window[this.getViewClassName()].prototype);
+			this._view_class = tmp;
 		}
-		this.view.apply(this.view, arguments);
 
-		return this.view;
+		return this._view_class;
 	}
 
 }
