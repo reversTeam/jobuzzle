@@ -4,24 +4,24 @@ class ExampleAutoload extends MasterAutoload {
 
 	confModuleName = 'Example';
 
-	onBootstrap : function () {
-		var templateManager = serviceLocator.get('TemplateManager');
+	// onBootstrap : function () {
+	// 	var templateManager = serviceLocator.get('TemplateManager');
 
-		var All = React['createClass']({'displayName': "All",
+	// 	var All = React['createClass']({'displayName': "All",
 
-			"render" : function () {
-				return (
-					React['createElement']("div", {id: "webApp"},
-						React['createElement'](templateManager.get('example_author_main_template'), null),
-						React['createElement'](templateManager.get('example_book_main_template'), null)
-					)
-				);
-			}
+	// 		"render" : function () {
+	// 			return (
+	// 				React['createElement']("div", {id: "webApp"},
+	// 					React['createElement'](templateManager.get('example_book_main_template'), null),
+	// 					React['createElement'](templateManager.get('example_author_main_template'), null)
+	// 				)
+	// 			);
+	// 		}
 
-		});
+	// 	});
 
-		React['render'](React['createElement'](All, null), document.getElementsByTagName('body')[0]);
-	}
+	// 	React['render'](React['createElement'](All, null), document.getElementsByTagName('body')[0]);
+	// }
 
 }
 
