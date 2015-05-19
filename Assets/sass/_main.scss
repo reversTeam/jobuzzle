@@ -1,4 +1,8 @@
-body {
-	background-color: black;
-	color : white;
+@import "vars/all";
+@import "mixins/all";
+
+body, html {
+	margin : 0px;
+	padding: 0px;
+	height : 100%;
 }
