@@ -1,12 +1,12 @@
 # <a name="Title">Generic Framework Front/Back</a>
 
 1. <a href="#installation">Installation</a>
-2. <a href="#configuration">Configurations Global</a>
+2. <a href="#configuration">Configuration</a>
     1. <a href="#configuration-language">Langues</a>
     2. <a href="#configuration-modules">Modules</a>
-    3. <a href="#configuration-router">Router</a>
+    3. <a href="#configuration-router">Routeur</a>
     4. <a href="#configuration-servicelocator">Service Locator</a>
-    5. <a href="#configuration-environnement">Environement</a>
+    5. <a href="#configuration-environnement">Environnement</a>
     6. <a href="#configuration-translation">Traduction</a>
 3. <a href="#autoload">Autoload</a>
 4. <a href="#dispatcher">Dispatcher</a>
@@ -21,7 +21,7 @@
     6. <a href="#manager-controller">Controller Manager</a>
 8. <a href="#route">Route</a>
 9. <a href="#service">Service</a>
-10. <a href="#router">Router</a>
+10. <a href="#router">Routeur</a>
 11. <a href="#servicelocator">ServiceLocator</a>
 12. <a href="#translator">Translator</a>
 13. <a href="#utility">Utility</a>
@@ -43,30 +43,30 @@ git remote add generic git@gitlab.jobuzzle.com:Generic/Framework.git
 git submodule foreach --recursive npm install
 ```
 
-## <a name="configuration">Configurations</a>
-Les configuration du framework et de ses modules sont disponnible via l'object `Config` c'est un object globale. Les dossiers de configurations sont disponnible dans chaqu'un de vos modules et son totalement flexible, elles suivent l'architecture de votre dossier `Config` a quelque exeptions près, en effet un liens est créer entre les configurations de vos modules et les configuration du framework, pour les rendres accessible via  `Config['modules']['nom_du_module']`.
-Dans le dossier `Config` de votre framework se trouve deux dossiers `dev` et `prod` c'est dans se dossier que vous mettrez les configurations propres au différents environements, pour changer d'environnement il vous suffis de modifier `env` dans le fichier `global.yml` qui se trouve dans le dossier de configuration de votre framework.
+## <a name="configuration">Configuration</a>
+La configuration du framework et de ses modules sont disponibles via l'objet `Config`, c'est un objet global. Les dossiers de configurations sont disponibles dans chacuns de vos modules et sont totalements flexibles, elles suivent l'architecture de votre dossier `Config` à quelques exeptions près, en effet un lien est créé entre les configurations de vos modules et les configurations du framework pour les rendres accessible via `Config['modules']['nom_du_module']`.
+Dans le dossier `Config` de votre framework se trouve deux dossiers, `dev` et `prod`. C'est dans ce dossier que vous mettrez les configurations propres au différents environnements. Pour changer d'environnement, il vous suffit de modifier `env` dans le fichier `global.yml` qui se trouve dans le dossier de configuration de votre framework.
 
 ### <a name="configuration-language">Langues</a>
-Le fichier `language.yml` disponible dans les configuration générale vous permettra de définir la langue par default de votre application, ainsi que les differents langues disponible, il a cette forme la :
+Le fichier `language.yml` disponible dans les configurations générales vous permettra de définir la langue par défaut de votre application, ainsi que les différentes langues disponibles. Exemple :
 ``` yaml
 all:
 	- EN_us
 	- FR_fr
 default : FR_fr
 ```
-La variable `default` permet de définir une langue par default pour votre application, le <a href="#translator">Translator</a> se référera a la langue par default si une traduction été indisponnible.
+La variable `default` permet de définir une langue par défaut pour votre application, le <a href="#translator">Translator</a> se référera à la langue par défaut si une traduction était indisponible.
 
 ### <a name="configuration-modules">Modules</a>
-Les configurations du modules servent a déclarer un module comme actif, ou alors a le desactiver. Si le module est désactiver, il ne sera pas charger les ses configurations ne seront pas accessible par le reste de votre application, il a ce format :
+Les configurations des modules servent à déclarer un module comme actif, ou alors à le désactiver. Si le module est désactivé, il ne sera pas chargé, et ses configurations ne seront pas accessible par le reste de votre application. Exemple :
 ```yaml
 Example: true
 ModuleName: true
 ModuleDisable: false
 ```
 
-### <a name="configuration-router">Router</a>
-Le router, est celui qui s'occupe de construire ou de résoudre des routes qui lui sont envoyer. Ses configuration permette de définir un controller et une méthode par default qui sera appeller lorsque le router cherchera a résoudre la route `/`. Nous déclarons aussi au router ce qu'il dois faire si une route est inconus ou alors si une erreur survenais. Voicis les configurations de base :
+### <a name="configuration-router">Routeur</a>
+Le routeur s'occupe de construire ou de résoudre les routes qui lui sont envoyées. Ses configurations permettent de définir un controlleur et une méthode par défaut qui sera appellée lorsque le routeur cherchera à résoudre la route `/`. Nous déclarons aussi au routeur ce qu'il doit faire si une route est inconue ou alors si une erreur survenait. Exemple:
 ```yaml
 default: 
     controller : ExampleController
@@ -80,7 +80,7 @@ default:
 ```
 
 ### <a name="configuration-servicelocator">Service Locator</a>
-Le service locator est un objet, il est disponnible partout dans votre application, le fichier de configuration permet de déterminé ou se trouve la class qu'il dois instancié et quel est le nom par lequel vous y ferez référence. On distingue deux type d'object, les `invokables` qui seront instancié directement, et les `factories`, la factory est un object intermédiaire qui vous permettra de configurer un object avant utilisations
+Le service locator est un objet, il est disponible partout dans votre application, le fichier de configuration détermine où se trouve la classe qu'il doit instancier et quel est le nom par lequel vous y ferez référence. On y distingue deux types d'objet, les `invokables` qui seront instanciés directement, et les `factories`, la factory est un objet intermédiaire qui vous permettra de configurer un objet avant utilisation. Exemple:
 ```yaml
 factories:
     Test : Path/To/TestFactory
@@ -96,9 +96,9 @@ invokables:
 ```
 
 ### <a name="configuration-environnement">Environnement</a>
-Les configuration d'environnement vous permettrons d'intéragire différemment avec votre application en fonction de si vous êtes en environnement de dévelloppement (`dev`) ou alors de production (`prod`), vous êtes libre de créer votre propre arboréscence de dossier qui définira alors votre tableau de configuration.
-L'environnement actif (`Config['global']['env']`) est disponnible directement via l'objet de configuration sur la référence `Config['env']`.
-Par exemple si vos configuration sont semblable a celle ci :
+Les configuration d'environnement vous permettrons d'intéragir différemment avec votre application en fonction de votre environnement de développement (`dev`) ou celui de production (`prod`), vous êtes alors libre de créer votre propre arboréscence de dossier qui définira alors votre tableau de configuration.
+L'environnement actif (`Config['global']['env']`) est disponible directement via l'objet de configuration sur la référence `Config['env']`.
+Par exemple si vos configurations sont semblables à celle ci :
 `Conf/dev/server.yml`
 ```yaml
 host: v1.api.local.jobuzzle.dev
@@ -114,25 +114,25 @@ host: v1.api.jobuzzle.com
 env: dev
 ```
 
-`Config.env.server.host` est égale a `v1.api.local.jobuzzle.dev` ce qui aurait été différent si vous aviez eu la configuration `env: prod`, dans ce cas `Config.env.server.host` aurait été `v1.api.jobuzzle.com`
+`Config.env.server.host` est égal à `v1.api.local.jobuzzle.dev` ce qui aurait été différent si vous aviez eu la configuration `env: prod`, dans ce cas `Config.env.server.host` aurait été `v1.api.jobuzzle.com`
 
 ### <a name="configuration-translation">Traduction</a>
-Les configurations de traduction se trouve dans `Config/translation/...`. Vous avez un dossier pour chaque langue que vous avez configurer dans votre fichier `language.yml`. Dans ces dossiers se trouve un fichier `routes.yml`, qui seras utiliser seulement pour la traduction des routes de votre application.
+Les configurations de traductions se trouve dans `Config/translation/...`. Vous avez un dossier pour chaque langue que vous avez configurer dans votre fichier `language.yml`. Dans ces dossiers se trouve un fichier `routes.yml`, qui sera utilisé seulement pour la traduction des routes de votre application.
 Vous avez donc par exemple dans ce fichiers `routes.yml`
 ```yaml
 create: creer
 delete: supprimer
 update: editer
 ```
-Seul les routes ont un comportement un peu particulier car elles sont utiliser tel quel par le router au moment du match.
-Le reste des traductions aura le meme comportement, ils seront toutes disponible via un system de key, en chaine de caractères avec comme caracteres séparateur `.`. C'est a dire que si vous créer un fichier `header.yml` de ce type :
+Seul les routes ont un comportement un peu particulier car elles sont utilisées tel quel par le routeur au moment du match.
+Le reste des traductions aura le même comportement, elles seront toutes disponibles via un system de key, en chaine de caractères avec comme caractères séparateur `.`. C'est à dire que si vous créer un fichier `header.yml` de ce type :
 ```yaml
 menu:
     messages: Messages
     user_name: {{last_name}} {{first_name}}
     disconnect: Deconnexion
 ```
-Vous utiliserais alors le translator de la facon suivante pour acceder au differentes sections:
+Vous utiliserez alors le translator de la facon suivante pour acceder aux différentes sections:
 ```javascript
 var t = serviceLocator.get('Translator');
 console.log(t.translate('header.menu.messages'));
@@ -142,12 +142,12 @@ console.log(t.translate('header.menu.user_name', {
 }));
 console.log(t.translate('header.menu.disconnect'));
 ```
-Comme nous venons de le voir nous avons la capacité de faire correspondre des segments de text avec des variables passer en parametres a la methode `translate` de notre `Translator`, pour cela il faut que la variable soit renseigné par `{{` `}}`
+Comme nous venons de le voir, nous avons la capacité de faire correspondre des segments de texte avec des variables passées en paramètres à la methode `translate` de notre `Translator`, pour cela il faut que la variable soit renseignée par `{{` `}}`
 
 ## <a name="autoload">Autoload</a>
-L'objet `Autoload` est celui qui si charge de loader les modules, chaque modules herite de ce `MasterAutoload`, a son intialisation il vient loader les Traduction, les `Route` et les `Service` du module qui est en train d'être instancié. La methode qui sera appeller juste apres le constructeur, sera la méthod `onBootstrap` qui ne fait rien dans le parent, elle permettra au enfant d'effectué des actions supplémentaire si elle le désire.
+L'objet `Autoload` charge les modules, chaque modules hérite de ce `MasterAutoload`, à son intialisation, il vient charger les Traduction, les `Route` et les `Service` du module qui est en train d'être instancié. La methode qui sera appellée juste apres le constructeur, sera la méthode `onBootstrap` qui ne fait rien dans le parent, elle permettra aux enfants d'effectuer des actions supplémentaires si elle le désire.
 
-Voici la déclaration Basic d'un Autoload : 
+Voici la déclaration basique d'un Autoload : 
 ```javascript
 #import (Config.path +'/Kernel/Autoload/MasterAutoload') = MasterAutoload;
 
@@ -162,24 +162,24 @@ class ExampleAutoload extends MasterAutoload {
 
 
 ## <a name="dispatcher">Dispatcher</a>
-L'objet `Dispatcher` est celui qui gere les évenements, sont role est de permettre a votre application d'avoir des points de branchement, afin de pouvoir plugger des actions a certain étape de l'éxecution de votre code. Pour se faire il met a votre disposion trois méthode :
+L'objet `Dispatcher` gère les évenements, sont role permet à votre application d'avoir des points de branchement, afin de pouvoir plugger des actions à certaines étapes de l'éxecution de votre code. Pour ce faire, il met à votre disposion trois méthodes :
     1. trigger : Qui permet d'émettre un événement
     2. listen : Qui permet d'écouter un évenement
-    3. unlisten : Qui permet de se deconnecter d'un événement
+    3. unlisten : Qui permet de se déconnecter d'un événement
 
-Lorsque l'on écoute un événement on a la trois scope qui s'offre a nous séparer par des `:`, c'est scope sont enfaite 
+Lorsque l'on écoute un événement, trois scopes s'offrent à nous séparés par des `:` : 
     1. Module : C'est le module qui lance l'événement
-    2. Class : C'est la class qui a send cet événement
-    3. Method : C'est la méthod dans la quel l'événement a été lancé
+    2. Class : C'est la classe qui a send cet événement
+    3. Method : C'est la méthode dans la quel l'événement a été lancé
 
-Il est possible de définir les scope a `*` afin de dire par exemple :
-    `Example:Test:*` : Je veux listen tous les event de la class Test du module Example
-    `*:Test:init` : Je veux listen tous les events de toutes les méthod init de toutes les classe Test de tous les modules
+Il est possible de définir les scopes a `*` afin de :
+    `Example:Test:*` : Je veux listen tous les events de la classe Test du module Example
+    `*:Test:init` : Je veux listen tous les events de toutes les méthodes init de toutes les classes Test de tous les modules
     `Exemple:*:init` : Je veux listen tous les init de toutes les classe du module Example
-    `*:*:*` : Je veux tous listen
+    `*:*:*` : Je veux tout listen
     ...
 
-Il est également possible de transmettre des paramêtre du trigger a ceux qui listen, de cette facon :
+Il est également possible de transmettre les paramêtre passés au trigger à ceux qui listen :
 ```javascript
 var dispatcher = serviceLocator.get('Dispatcher');
 dispatcher.trigger('Example:Test:init', 42);
@@ -207,10 +207,10 @@ var o = new obj();
 
 
 ## <a name="factory">Factory</a>
-Les `Factory`, permettent de construire des objects et de setter les attibuts de l'objet afin qu'il soit tout prêt à l'usage, vous pouvez créer plusieurs `factory` pour une même `invokables`. Afin d'avoir deux configurations d'objet pour deux context différents.
-Dans notre exemple nous souhaiton avoir un object qui sera instancié et qui aura dans ses attribut le `Translator` et le `Router`.
+Les `Factory`, permettent de construire des objets et de set les attibuts de l'objet afin qu'il soit tout prêt à l'usage, vous pouvez créer plusieurs `factory` pour une même `invokables`. Afin d'avoir deux configurations d'objet pour deux contextes différents.
+Dans notre exemple nous souhaitont avoir un objet qui sera instancié et qui aura dans ses attributs le `Translator` et le `Router`.
 
-Pour ce faire nous créeons notre objec invokable comme ceci :
+Pour ce faire nous créeons notre objet invokable comme ceci :
 ```javascript
 class ExampleBookMainService {
     
@@ -224,7 +224,7 @@ class ExampleBookMainService {
 
 #export ExampleBookMainService;
 ```
-Les noms des modules doivent suivre cette conventions, ainsi que les déclaration dans les managers afin de ne jamais ecraser la classe d'un autre module:
+Les noms des modules doivent suivre cette convention, ainsi que les déclarations dans les managers afin de ne jamais écraser la classe d'un autre module:
 `ModuleName``BundleName``Directory``NomDeClass``CurrentDir`
 `./Modules/Example/Bundle/Book/Service/ExampleBookMainService`
 
@@ -256,8 +256,8 @@ class ExampleBookServiceMainFactory extends MasterFactory {
 ```
 
 ## <a name="initializer">Initializer</a>
-L'objet `Initializer` permet l'initialisation de différents composants du Framework, tels que les `Modules` ou encore les `Mediators`.
-Actuellement nous avons le `ModuleIntializer`, c'est l'objet qui s'occupe de prendre les modules actif et de charger chacune des classe `Autoload` des modules, une fois l'objet instancier il appelle directement la méthode `onBootstrap` de l'object, comme nous le montre son code :
+L'objet `Initializer` permet l'instanciation de différents composants du Framework, tels que les `Modules` ou encore les `Mediators`.
+Actuellement nous avons le `ModuleIntializer`, c'est l'objet qui s'occupe de prendre les modules actifs et de charger chacunes des classes `Autoload` des modules, une fois l'objet instancié, il appelle directement la méthode `onBootstrap` de l'objet, comme nous le montre son code :
 ```javascript
     loadModules : function () {
         var basePath = Config['path'] +'/Modules';
@@ -273,15 +273,15 @@ Actuellement nous avons le `ModuleIntializer`, c'est l'objet qui s'occupe de pre
 ```
 
 ## <a name="manager">Manager</a>
-Le design `Manager` est un objet qui permet de stocker des collections d'objet, il fonctionne un peu comme le serviceLocator, sauf qu'il n'est pas accessible dans le context globale, mais aussi qu'il permet via la configuration `shared` de définir si l'objet qui sera retourné sera une nouvelle instance ou alors un singleton.
+Le design `Manager` est un objet qui permet de stocker des collections d'objets, il fonctionne un peu comme le serviceLocator, sauf qu'il n'est pas accessible dans le contexte global, mais aussi qu'il permet via la configuration `shared` de définir si l'objet qui sera retourné sera une nouvelle instance ou alors un singleton.
 
-Nous avons actuellement deux type de manager `RouteManager` et `ServiceManager`. Chaque module intégre ses propres `Service` et ses propre routes, lorsque l'<a name"#initialize">Initializer</a> vien loader le module, le module inject ses `Manager` au sein des différent managers disponnible dans le <a name="#servicelocator">ServiceLocator</a>. Pour ce faire il faut respecter la déclaration de ses composant, dans le dossier `Config` de votre module vous avez un fichier qui sera en liaison avec le manager en relation :
-`route_manager.yml` c'est ici qu'on déclare les `RouteManager` de notre module afin qu'il soit injecter dans le manager principle :
+Nous avons actuellement deux type de manager `RouteManager` et `ServiceManager`. Chaque module intégre ses propres `Service` et ses propre routes, lorsque l'<a name"#initialize">Initializer</a> vient charger le module, le module injecte ses `Manager` au sein des différents managers disponibles dans le <a name="#servicelocator">ServiceLocator</a>. Pour ce faire il faut respecter la déclaration de ses composants, dans le dossier `Config` de votre module vous avez un fichier qui sera en liaison avec le manager en relation :
+`route_manager.yml` c'est ici que l'on déclare les `RouteManager` de notre module afin qu'il soit injecté dans le manager principal :
 ```yaml
 invokables:
     ExampleRoute: ExampleService
 ```
-`service_manager.yml` c'est ici qu'on déclare les `ServiceManager` de notre module afin qu'il soit injecter dans le manager principle :
+`service_manager.yml` c'est ici que l'on déclare les `ServiceManager` de notre module afin qu'il soit injecté dans le manager principal :
 ```yaml
 factories:
     ExampleService: Factory/ExampleServiceFactory
@@ -300,7 +300,7 @@ shared :
 
 
 ## <a name="route">Route</a>
-Le design `Route`, il permet la déclaration des routes sous forme d'objet avec la notions d'héritage ainsi une `Route` instancié par cet objet, aura directement les routes suivantes :
+Le design `Route` permet la déclaration des routes sous forme d'objet avec la notions d'héritage, ainsi une `Route` instanciée par cet objet, aura directement les routes suivantes :
 ```
 /{name_route}
 /{name_route}/{create}
@@ -308,14 +308,14 @@ Le design `Route`, il permet la déclaration des routes sous forme d'objet avec 
 /{name_route}/:id_name_route/{update}
 /{name_route}/:id_name_route/{delete}
 ```
-Nous distinguon dans cette exemple deux des trois type de routes qui sont a notre disposition, en effets :
-    1. {name_route} : C'est une route de type `Translation` ce qui signifie que l'identifiant de la traduction est `name_route` et donc qu'il faut que vous ayez dans votre fichier `[Modules/ModulesName/]Config/translation/route.yml` la traduction correspondante
-    2. :id_name_route : C'est une route de type `Parameters` ce qui signigie que la valeur de ce parametre sera régie par une regex et donc qu'il devra répondre a un type dans notre exemple il semble logique que le pattern corresponde a ceci `[0-9]`
-    3. name_route : Ce dernier type que nous n'avons pas vue dans notre exemple est un type `Litteral` c'est a dire qu'aucune action ne sera effectuer sur ce type de chaine, elle matchera seulement si la chain est exactement la meme
-Le fait d'utiliser des objects pour effectuer la création des routes va nous permettre de nous abstenir des choses rebarbatives tel que la redéclaration dans leurs intégralité si celle-ci sont plus ou moins similaire.
+Nous distinguons dans cette exemple deux des trois types de routes qui sont à notre disposition :
+    1. {name_route} : C'est une route de type `Translation` ce qui signifie que l'identifiant de la traduction est `name_route` et donc qu'il faut que vous ayez dans votre fichier `[Modules/ModulesName/]Config/translation/route.yml` la traduction correspondante.
+    2. :id_name_route : C'est une route de type `Parameters` ce qui signifie que la valeur de ce paramètre sera régi par une regex et donc qu'il devra répondre à un type. Dans notre exemple il semble logique que le pattern correspond a ceci `[0-9]`
+    3. name_route : Ce dernier type que nous n'avons pas vu dans notre exemple est un type `Litteral` c'est a dire qu'aucune action ne sera effectuée sur ce type de chaine, elle matchera seulement si la chaine est exactement la même.
+Le fait d'utiliser des objets pour effectuer la création des routes va nous permettre de nous abstenir des choses rebarbatives tel que la redéclaration dans leurs intégralité si celle-ci sont plus ou moins similaires.
 
-Adméton que dans notre application nous ayons besoins de créer des routes pour maninuper des entreprise que nous les identifions par leurs marque dans nos url, mais que nous devions aussi manipuler des étudiants, mais que pour les étudiant nous preferons utiliser leurs id plutot que leurs nom, login ou prenom pour préserver leurs annonymat.
-Nous feront donc deux objets de routes :
+Admettons que dans notre application nous ayons besoin de créer des routes pour manipuler des entreprises, que nous les identifions par leurs marque dans nos url, mais que nous devions aussi manipuler des étudiants, mais que pour les étudiant nous préferons utiliser leurs id plutot que leurs nom, login ou prenom pour préserver leurs annonymat.
+Nous ferons donc deux objets de route :
 ```javascript
 #import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
 
@@ -364,11 +364,11 @@ Ainsi nous venons donc de créer toutes ses routes :
 ```
 
 ## <a name="service">Service</a>
-Le design `Service` n'a actuellement aucune logique générique. Les `Controller` et les `Mediator` intéragirons avec ses objet.
+Le design `Service` n'à actuellement aucune logique générique. Les `Controller` et les `Mediator` intéragirons avec ces objet.
 
-## <a name="router">Router</a>
-L'objet `Router` s'occupe de gerer l'ensemble des routes de votre applications, que ce soit au niveau de la construction de l'ensemble des routes, des imbrications, de la résolution ou encore de la création des routes de votre applications, c'est cet objet fera votre affaire.
-Le router vous donne la capacité de rajouter et imbriquer vos routes de la facon suivante :
+## <a name="router">Routeur</a>
+L'objet `Router` s'occupe de gérer l'ensemble des routes de votre applications, que ce soit au niveau de la construction de l'ensemble des routes, des imbrications, de la résolution ou encore de la création des routes de votre applications, c'est cet objet qui fera votre affaire.
+Le routeur vous donne la capacité de rajouter et imbriquer vos routes de la facon suivante :
 ```javascript
 var routeManager = serviceLocator.get('routeManager');
 var router = serviceLocator.get('Router');
@@ -391,7 +391,7 @@ Dans cet exemple nous venons d'imbriquer les routes de book dans celle de author
 /{authors}/:author_url/{books}/:book_id/{delete}
 ```
 
-Le router peut maintenant procédé au match des urls entrante:
+Le routeur peut maintenant procéder au match des urls entrantes:
 ```javascript
 // Dans le cadre de la langue FR_fr
 router.match('/auteurs/john-doe/livres/42/editer');
@@ -402,15 +402,15 @@ router.match('/authors/john-doe/books/42/update');
 
 
 ## <a name="servicelocator">ServiceLocator</a>
-Le `serviceLocator` est un objet déclarer dans le scope globale de votre application ce qui lui donne la particularité d'être accèssible partout au seins de votre application, il stock des object de type `singleton`, c'est a dire que vous intéragirez toujours avec la même instance d'object peut importe le nombre de get que vous effecturer sur cette meme entité.
-Vous pouvez ajouter des object a votre `serviceLocator` via son fichier de condiguration disponnible a cet endroi `Config/servicelocator.yml`. On utilise le `serviceLocator` de cette facon.
+Le `serviceLocator` est un objet déclaré dans le scope global de votre application, ce qui lui donne la particularitée d'être accessible partout au sein de votre application, il stock des objets de type `singleton`, c'est à dire que vous intéragirez toujours avec la même instance d'objet, peut importe le nombre de jets que vous effectuerez sur cette meme entitée.
+Vous pouvez ajouter des objets à votre `serviceLocator` via son fichier de condiguration disponible à cet endroit `Config/servicelocator.yml`. On utilise le `serviceLocator` de cette facon.
 ```javascript
 var serviceManager = serviceLocator.get('ServiceManager');
 var router = serviceLocator.get('Router');
 ```
-Le `serviceLocator` vous donne accès au différents managers ainsi que des composant du Kernel comme le router. Pour plus de renseignement sur les capacité de votre `serviceLocator` regardez votre configuration `Config/servicelocator.yml`
+Le `serviceLocator` vous donne accès aux différents managers ainsi que des composants du Kernel comme le routeur. Pour plus de renseignement sur les capacitées de votre `serviceLocator` regardez votre configuration `Config/servicelocator.yml`.
 
-Pour ajouter un service au seins de votre modules vous devez aller l'ajouter dans le fichier de configuration suivant :
+Pour ajouter un service au sein de votre modules, vous devez aller l'ajouter dans le fichier de configuration suivant :
 `Modules/Example/Config/service_manager.yml`
 ```yaml
 factories:
@@ -420,17 +420,17 @@ invokables:
 shared:
     Example/Service : false
 ```
-Dans le cas présent je déclare un invokable `ExampleService` qui sera toujours instancié via sa factory, et qui n'est pas partager, donc qui me renverra toujours une nouvelle instanication de l'objet.
+Dans le cas présent je déclare un invokable `ExampleService` qui sera toujours instancié via sa factory, et qui n'est pas partagé, donc qui me renverra toujours une nouvelle instantiation de l'objet.
 
 
 ## <a name="translator">Translator</a>
-L'objet `Translator` est l'objet qui s'occupe du stockage et de la résolutions des différentes traductions de votre application, il reprend la nomenclature de vos déclaration des traduction au seins de vos `Config/translate`. Il remet a plat toutes les traduction de tous vos modules et vous permet donc d'acceder a celle ci et de les résoudre via une simple chaine de caractère `content.title`. vous pouvez aussi lui passer un tableau au format `JSON`, si la traduction que vous désirez résoudre contient des variables. La déclarations d'une variable au seins d'une traduction dois être préfixer de `{{` et post fixé par `}}` ce qui donne : `{{ma_var}}`
+L'objet `Translator` est l'objet qui s'occupe du stockage et de la résolution des différentes traductions de votre application, il reprend la nomenclature de vos déclarations des traductions au sein de vos `Config/translate`. Il remet a plat toutes les traductions de tous vos modules et vous permet donc d'acceder à celles-ci et de les résoudres via une simple chaine de caractère `content.title`. vous pouvez aussi lui passer un tableau au format `JSON`, si la traduction que vous désirez résoudre contient des variables. La déclaration d'une variable au sein d'une traduction dois être préfixer de `{{` et post fixé par `}}` ce qui donne : `{{ma_var}}`
 
-Le translator peut déclarer deux type de translate celle qui sont commune a votre coeur d'applications seront directement dans le dossier :
+Le translator peut déclarer deux types de translate, celles qui sont communes à votre coeur d'application seront directement dans le dossier :
 `Config/translation`
-Celle qui sont spécifique a un module :
+Celle qui sont spécifiques à un module :
 `Modules/{MODULE_NAME}/Config/translation`
-Dans ce dossier de translation vous devez retrouver autant de dossier que vous avez déclarer de langues dans votre fichier de configuration :
+Dans ce dossier de translation, vous devez retrouver autant de dossiers, que vous avez déclaré de langues dans votre fichier de configuration :
 `Config/language.yml`
 ```yaml
 all:
@@ -438,14 +438,14 @@ all:
     - FR_fr
 default : FR_fr
 ```
-Dans le cas présent nous avons déclarer une langue `EN_us` et une langue `FR_fr` qui se trouve être notre langue par default c'est a dire que si une traduction venais a manquer dans la langue courente de l'utilisateurs, le `Translator` ira la chercher dans la langue par default, et si il ne la trouve toujours pas il revera une chaine de ce type :
+Dans le cas présent nous avons déclaré une langue `EN_us` et une langue `FR_fr` qui se trouve être notre langue par defaut. Dans le cas contraire, une traduction venait à manquer dans la langue courante de l'utilisateur, le `Translator` ira la chercher dans la langue par defaut, en cas d'echec, il renverra une chaine de ce type :
 `{{ __EMPTY_TRANSLATION [NOM_DE_VARIABLE]__ }}`
 
 
 
 ## <a name="utility">Utility</a>
-L'object `Utility` est une interface en charge d'unifier les codes qui ont des spécificité, sur leurs cible d'éxécution, par exemple le process de récupération d'une classe entre le serveur et le browser est différents.
-Le browser a toutes la déclarations de ses classes accessible directement depuis l'objet `window`, alors que le serveur utilise le require pour faire référence a l'objet.
+L'objet `Utility` est une interface en charge d'unifier les codes qui ont des spécificités, sur leurs cible d'éxécution, par exemple le processus de récupération d'une classe entre le serveur et le browser est différent.
+Le browser à toutes les déclarations de ses classes accessible directement depuis l'objet `window`, alors que le serveur utilise le `require` pour faire référence à l'objet.
 La surcouche Jpp nous permet via les `#targets` d'unifier l'usage au seins du Kernel, voicis notre exemple applicatif :
 ```javascript
 #import ('fs') = fs;
@@ -472,19 +472,19 @@ var Utility = {
 
 
 ## <a name="modules">Modules</a>
-Le design des `Modules`, ce sont les composant applicatif de votre application, le code spécifique qui va déterminer le fonctionnement de votre application. Il faut pour utiliser un `Module`, le déclarer dans le fichier `Config/modules.yml` sans cette déclaration il ne sera jamais instancié et donc en fonctionnement. Vous pouvez aussi disable un module en passant sa configuration a `false` dans ce meme fichier de configuration.
+Le design des `Modules`, sont les composants applicatifs de votre application. Le code spécifique qui va déterminer le fonctionnement de votre application. Il faut pour utiliser un `Module`, le déclarer dans le fichier `Config/modules.yml`. Sans cette déclaration il ne sera jamais instancié et donc en fonctionnement. Vous pouvez aussi désactiver un module en passant sa configuration à `false` dans ce meme fichier de configuration.
 
 ### <a name="#modules-declaration">Déclaration</a>
-Example :
+Exemple :
 ```yaml
 Actif : true
 Inactif : false
 Other : true
 ```
-Dans ce cas seul les `Modules` : `Actif` & `Other` seront loader
+Dans ce cas seul les `Modules` : `Actif` & `Other` seront chargés
 
 ### <a name="modules-nomenclature">Nomenclature</a>
-Les dossiers respecte une certaine nomenclature, afin de préservé une l'unicité des classe et la lisibilité des modules, car en effet deux classe du meme nom se ferai ecrasé dans le front vue que tous est ramenez a l'object window. Il est donc très important de réspecter le naming des fichiers qui dois correspondre a celui des classe, ainsi que le naming des classe qui doivent être sous cette forme:
+Les dossiers respectent une certaine nomenclature, afin de préserver l'unicité des classes et la lisibilité des modules, car en effet deux classes du même nom se feraient écraser dans le front vu que tout est ramené à l'objet window. Il est donc très important de réspecter le nommage des fichiers qui doit correspondre à celui des classes, ainsi que le nommage des classes qui doivent être sous cette forme:
 `ModuleName``BundleName``Directory``NomDeClass``CurrentDir`
 `./Modules/Example/Bundle/Book/Service/ExampleBookMainService`
 
