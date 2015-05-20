@@ -56,5 +56,10 @@ scripts:
     - Modules/Body/Bundle/Left/Template/View/BodyLeftTemplateMainView.js
     - Modules/Body/Bundle/Cover/Template/BodyCoverMainTemplate.js
     - Modules/Body/Bundle/Cover/Template/View/BodyCoverTemplateMainView.js
+# MODULE CLIENT
+    - Modules/Client/ClientAutoload.js
+    - Modules/Client/Bundle/Websocket/Service/ClientWebsocketMainService.js
+    - Modules/Client/Bundle/Auth/Service/ClientAuthMainService.js
+
 # START APPLICATION
     - main.js
