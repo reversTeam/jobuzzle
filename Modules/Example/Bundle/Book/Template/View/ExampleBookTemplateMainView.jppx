@@ -1,0 +1,13 @@
+#import (Config.path +'/Kernel/Template/View/MasterView') = MasterView;
+
+class ExampleBookTemplateMainView extends MasterView {
+
+	render : function () {
+		return (<div id="book">
+			Example -'\3e' Book View
+		</div>);
+	}
+
+}
+
+#export BodyRightTemplateMainView;
