@@ -6,15 +6,23 @@ class MasterTemplate {
 	_view_class = undefined;
 	_view = undefined;
 
+	_templateManager = undefined;
+
 	#default get for _viewClassName;
+	#default set, get for _templateManager;
 
 	initialize : function () {
+		this.setTemplateManager(serviceLocator.get('TemplateManager'));
 		this.onListen();
 	}
 
 	onListen : function () {
 		return serviceLocator.get('Dispatcher');
 	}
+
+	getTemplate : function (template_name) {
+		return React['createElement'](this.getTemplateManager().get(template_name).getView(), null);
+	} 
 
 	getView : function () {
 		if (this._view_class == undefined) {
