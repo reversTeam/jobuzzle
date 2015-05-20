@@ -5,13 +5,16 @@ var tmp = React['createClass']({
 });
 
 var MasterView = function (props, context) {
-	tmp.call(this, props, context);
-};
-
+		tmp.call(this, props, context);
+	}
 MasterView.prototype = Object.create(tmp.prototype);
 
 MasterView.prototype.reactInheritance = tmp;
 
 MasterView.prototype.render = function () {
-	return <div onClick={this.test.bind(this)}>{this.state.n}</div>
-};
+		return React.createElement("div", {onClick: this.test.bind(this)}, this.state.n)
+	}
+
+window["MasterView"] = MasterView;
+
+

@@ -13,7 +13,7 @@ class MasterTemplate {
 	}
 
 	onListen : function () {
-
+		return serviceLocator.get('Dispatcher');
 	}
 
 	getView : function () {
@@ -25,6 +25,7 @@ class MasterTemplate {
 				self._view = this;
 			}
 			tmp.prototype = Object.create(window[this.getViewClassName()].prototype);
+			tmp.prototype._template = this; 
 			this._view_class = tmp;
 		}
 
