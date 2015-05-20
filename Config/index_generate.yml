@@ -54,6 +54,8 @@ scripts:
     - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateMainView.js
     - Modules/Body/Bundle/Left/Template/BodyLeftMainTemplate.js
     - Modules/Body/Bundle/Left/Template/View/BodyLeftTemplateMainView.js
+    - Modules/Body/Bundle/Left/Template/View/BodyLeftTemplateLogoView.js
+    - Modules/Body/Bundle/Left/Template/BodyLeftLogoTemplate.js
     - Modules/Body/Bundle/Cover/Template/BodyCoverMainTemplate.js
     - Modules/Body/Bundle/Cover/Template/View/BodyCoverTemplateMainView.js
 # MODULE CLIENT
