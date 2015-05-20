@@ -10,3 +10,7 @@
 	path = Modules/Client
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Client-Front.git
 	branch = master
+[submodule "Modules/Notification"]
+	path = Modules/Notification
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Notification-Front.git
+	branch = master
