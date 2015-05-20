@@ -6,3 +6,7 @@
 	path = Modules/Body
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Body.git
 	branch = master
+[submodule "Modules/Client"]
+	path = Modules/Client
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Client-Front.git
+	branch = master
