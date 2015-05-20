@@ -1,0 +1,21 @@
+var tmp = React['createClass']({
+	"render" : function () {
+		throw "It's an abstract view, you can't instancied an object if you don't have override render method"
+	}
+});
+
+class MasterView extends tmp {
+
+	reactInheritance = tmp;
+
+	initialize : function (props, context) {
+		_super(props, context);
+	}
+
+	render = function () {
+		return React.createElement("div", {onClick: this.test.bind(this)}, this.state.n)
+	}
+
+}
+
+#export MasterView;
