@@ -7,10 +7,18 @@ var tmp = React['createClass']({
 class MasterView extends tmp {
 
 	reactInheritance = tmp;
+	_templateManager = undefined;
+
+	#default get, set for _templateManager;
 
 	initialize : function (props, context) {
+		this.setTemplateManager(serviceLocator.get('TemplateManager'));
 		_super(props, context);
 	}
+
+	getTemplate : function (template_name) {
+		return React['createElement'](this.getTemplateManager().get(template_name).getView(), null);
+	} 
 
 	render = function () {
 		return React.createElement("div", {onClick: this.test.bind(this)}, this.state.n)
