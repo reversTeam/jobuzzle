@@ -1,4 +1,6 @@
-scripts:
+scripts : 
+    - Vendors/socket.io.js
+    - Vendors/React.js
     - Kernel/Config.js
     - Kernel/Router.js
     - Kernel/Utility.js
@@ -9,10 +11,8 @@ scripts:
     - Kernel/Dispatcher/DispatcherMaster.js
     - Kernel/Dispatcher/DispatcherBase.js
     - Kernel/Factory/MasterFactory.js
-# INITIALIZER
     - Kernel/Initializer/MasterInitializer.js
     - Kernel/Initializer/ModuleInitializer.js
-# MANAGER
     - Kernel/Managers/MasterManager.js
     - Kernel/Managers/RouteManager.js
     - Kernel/Managers/ServiceManager.js
@@ -20,7 +20,6 @@ scripts:
     - Kernel/Managers/TemplateManager.js
     - Kernel/Managers/ControllerManager.js
     - Kernel/Managers/EntityManager.js
-
     - Kernel/Route/MasterRoute.js
     - Kernel/Service/MasterService.js
     - Kernel/Route/Type/MasterRouteType.js
@@ -30,7 +29,6 @@ scripts:
     - Kernel/Controller/MasterController.js
     - Kernel/Template/MasterTemplate.js
     - Kernel/Template/View/MasterView.js
-# MODULE EXAMPLE
     - Modules/Example/ExampleAutoload.js
     - Modules/Example/Bundle/Book/Route/ExampleBookMainRoute.js
     - Modules/Example/Bundle/Book/Service/ExampleBookMainService.js
@@ -42,26 +40,23 @@ scripts:
     - Modules/Example/Bundle/Author/Template/View/ExampleAuthorTemplateMainView.js
     - Modules/Example/Bundle/Book/Template/ExampleBookMainTemplate.js
     - Modules/Example/Bundle/Book/Template/View/ExampleBookTemplateMainView.js
-# MODULE BODY
     - Modules/Body/BodyAutoload.js
-    # - Modules/Body/Bundle/Left/Route/BodyLeftMainRoute.js
-    # - Modules/Body/Bundle/Left/Service/BodyLeftMainService.js
-    # - Modules/Body/Bundle/Right/Route/BodyRightMainRoute.js
-    # - Modules/Body/Bundle/Right/Service/BodyRightMainService.js
-    # - Modules/Body/Bundle/Left/Service/Factory/BodyLeftServiceMainFactory.js
-    # - Modules/Body/Bundle/Left/Controller/BodyLeftMainController.js
     - Modules/Body/Bundle/Right/Template/BodyRightMainTemplate.js
     - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateMainView.js
+    - Modules/Body/Bundle/Right/Template/BodyRightHeaderTemplate.js
+    - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateHeaderView.js
     - Modules/Body/Bundle/Left/Template/BodyLeftMainTemplate.js
     - Modules/Body/Bundle/Left/Template/View/BodyLeftTemplateMainView.js
     - Modules/Body/Bundle/Left/Template/View/BodyLeftTemplateLogoView.js
     - Modules/Body/Bundle/Left/Template/BodyLeftLogoTemplate.js
     - Modules/Body/Bundle/Cover/Template/BodyCoverMainTemplate.js
     - Modules/Body/Bundle/Cover/Template/View/BodyCoverTemplateMainView.js
-# MODULE CLIENT
     - Modules/Client/ClientAutoload.js
     - Modules/Client/Bundle/Websocket/Service/ClientWebsocketMainService.js
     - Modules/Client/Bundle/Auth/Service/ClientAuthMainService.js
-
-# START APPLICATION
+    - Modules/Notification/NotificationAutoload.js
+    - Modules/Notification/Bundle/Panel/Template/NotificationPanelMainTemplate.js
+    - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
     - main.js
+styles : 
+    - Assets/css/all.css
