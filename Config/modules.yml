@@ -1,4 +1,6 @@
 Example: true
-Body : true
+Body: true
 Client: true
 Notification: true
+Testing: false
+Navigation: true
