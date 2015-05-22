@@ -57,6 +57,7 @@ scripts :
     - Modules/Notification/NotificationAutoload.js
     - Modules/Notification/Bundle/Panel/Template/NotificationPanelMainTemplate.js
     - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
+    - Modules/User/UserAutoload.js
     - main.js
 styles : 
     - Assets/css/all.css
