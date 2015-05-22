@@ -1,0 +1,1 @@
+(cd Watcher && node main 5)
