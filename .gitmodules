@@ -14,3 +14,11 @@
 	path = Modules/Notification
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Notification-Front.git
 	branch = master
+[submodule "Modules/User"]
+	path = Modules/User
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/User-Front.git
+	branch = master
+[submodule "Modules/Navigation"]
+	path = Modules/Navigation
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Navigation-Front.git
+	branch = master
