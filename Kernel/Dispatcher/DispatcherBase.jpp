@@ -74,7 +74,8 @@ class DispatcherBase extends MasterDispatcher {
 				for (var j = 0; j < len2; ++j)
 					params.push(arr_params[j]);
 				for (var j = 0; j < events._listeners.length; ++j) {
-					events._listeners[j].callback.apply(events._listeners[j].obj, params);
+					if (events._listeners[j])
+						events._listeners[j].callback.apply(events._listeners[j].obj, params);
 				}
 			}
 		}

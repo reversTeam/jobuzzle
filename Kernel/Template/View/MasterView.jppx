@@ -16,6 +16,16 @@ class MasterView extends tmp {
 		_super(props, context);
 	}
 
+	link : function (e) {
+		if (e == undefined || e == null || e.target == undefined || e.target == null)
+			throw "You can't call directly link";
+		var url = e.target.getAttribute('data-url');
+		if (url == null || url == undefined)
+			throw "You cant redirect with an empty URL";
+		var dispatcher = serviceLocator.get('Dispatcher');
+		dispatcher.trigger('Navigation:Link:onClick', {url : url});
+	}
+
 	getTemplate : function (template_name) {
 		return React['createElement'](this.getTemplateManager().get(template_name).getView(), null);
 	} 
