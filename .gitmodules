@@ -22,3 +22,7 @@
 	path = Modules/Navigation
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Navigation-Front.git
 	branch = master
+[submodule "Modules/Store"]
+	path = Modules/Store
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Store-Front.git
+	branch = master

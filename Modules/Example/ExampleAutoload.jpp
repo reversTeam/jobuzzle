@@ -4,6 +4,18 @@ class ExampleAutoload extends MasterAutoload {
 
 	confModuleName = 'Example';
 
+	onBootstrap : function () {
+		var routeManager = serviceLocator.get('RouteManager');
+		var router = serviceLocator.get('Router');
+		var authorRoute = routeManager.get('example_author_main_route');
+		var bookRoute = routeManager.get('example_book_main_route');
+
+		router.addRoute('author', authorRoute);
+		router.addRoute('book', bookRoute);
+		router.getRoute('author').getRoute('view').addRoute('book', bookRoute);
+		router.getRoute('book').getRoute('view').addRoute('author', bookRoute);
+	}
+
 }
 
 #export ExampleAutoload;

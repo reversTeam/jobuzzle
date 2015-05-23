@@ -3,3 +3,4 @@ Body: true
 Client: true
 Notification: true
 Navigation: true
+Store: true

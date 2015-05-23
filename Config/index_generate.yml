@@ -1,6 +1,6 @@
 scripts : 
-    - Vendors/socket.io.js
     - Vendors/React.js
+    - Vendors/socket.io.js
     - Kernel/Config.js
     - Kernel/Router.js
     - Kernel/Utility.js
@@ -54,10 +54,15 @@ scripts :
     - Modules/Client/ClientAutoload.js
     - Modules/Client/Bundle/Websocket/Service/ClientWebsocketMainService.js
     - Modules/Client/Bundle/Auth/Service/ClientAuthMainService.js
+    - Modules/Navigation/NavigationAutoload.js
     - Modules/Notification/NotificationAutoload.js
-    - Modules/Notification/Bundle/Panel/Template/NotificationPanelMainTemplate.js
-    - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
     - Modules/User/UserAutoload.js
+    - Modules/Body/Bundle/Right/Template/BodyRightHeaderTemplate.js
+    - Modules/Notification/Bundle/Panel/Template/NotificationPanelMainTemplate.js
+    - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateHeaderView.js
+    - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
+    - Modules/Navigation/Bundle/Action/Service/NavigationActionLinkService.js
+    - Modules/Store/StoreAutoload.js
     - main.js
 styles : 
     - Assets/css/all.css

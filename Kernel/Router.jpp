@@ -56,11 +56,14 @@ class Router {
 
 		for (var i in routes) {
 			var match = routes[i].match(segments[index]);
-			if (match && segments[index + 1]) {
+			if (match && (segments[index + 1])) {
 				return this.concatResultMatch(match, this.matchRecusiveRoute(segments, routes[i].getRoutes(), index + 1));
 			} else if (match) {
-				result['controller'] = routes[i].getController();
-				result['method'] = routes[i].getMethod();
+				if (match !== true)
+					result = match;
+				result['actions'] = {};
+				result['actions']['controller'] = routes[i].getController();
+				result['actions']['method'] = routes[i].getMethod();
 				return result;
 			}
 		}
