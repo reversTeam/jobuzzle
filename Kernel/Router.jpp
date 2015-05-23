@@ -64,7 +64,6 @@ class Router {
 				result['actions'] = {};
 				result['actions']['controller'] = routes[i].getController();
 				result['actions']['method'] = routes[i].getMethod();
-				console.log(result);
 				return result;
 			}
 		}
