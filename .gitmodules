@@ -26,3 +26,7 @@
 	path = Modules/Store
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Store-Front.git
 	branch = master
+[submodule "Modules/Timeline"]
+	path = Modules/Timeline
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Timeline-Front.git
+	branch = master
