@@ -61,6 +61,12 @@ scripts :
     - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
     - Modules/Navigation/Bundle/Action/Service/NavigationActionLinkService.js
     - Modules/Store/StoreAutoload.js
+    - Modules/Navigation/Bundle/History/Service/NavigationHistoryMainService.js
+    - Modules/Navigation/Bundle/Title/Service/NavigationTitleChangeService.js
+    - Modules/Body/Bundle/Base/Template/BodyBaseMainView.js
+    - Modules/Body/Bundle/Base/Template/View/BodyBaseTemplateMainView.js
+    - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateBreadcrumView.js
+    - Modules/Body/Bundle/Right/Template/BodyRightViewBreadcrum.js
     - main.js
 styles : 
     - Assets/css/all.css
