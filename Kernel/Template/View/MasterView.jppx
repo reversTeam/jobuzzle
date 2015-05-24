@@ -31,7 +31,7 @@ class MasterView extends tmp {
 		var dispatcher = serviceLocator.get('Dispatcher');
 		dispatcher.trigger('Navigation:Link:onClick', {
 			url : url,
-			template : serviceLocator.get('TemplateManager').get(e.target.getAttribute('data-template'))
+			template : serviceLocator.get('TemplateManager').get(e.target.getAttribute('data-template').getView())
 		});
 	}
 
