@@ -9,7 +9,7 @@ class ExampleBookTemplateMainView extends MasterView {
 	}
 
 	render : function () {
-		return (<div id="book" key={this.props.key} data-url="/Author" data-template="example_author_main_template" onClick={this.link}>
+		return (<div id="book" key={this.props.key} data-url="/authors" data-template="example_author_main_template" onClick={this.link}>
 			Click Here for Author
 		</div>);
 	}
