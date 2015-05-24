@@ -1,19 +1,39 @@
 var tmp = React['createClass']({
+
+	"getInitialState": function () {
+		if (this.initialState) {
+			var obj = this.initialState();
+			obj.key = this.getKey();
+			return obj;
+		}
+		return {
+			key: this.getKey()
+		};
+	},
+
 	"render" : function () {
 		throw "It's an abstract view, you can't instancied an object if you don't have override render method"
 	}
+
 });
 
 class MasterView extends tmp {
 
-	reactInheritance = tmp;
 	_templateManager = undefined;
 
+	_allTemplate = {};
+
 	#default get, set for _templateManager;
+
+	_current_key_index = 0;
 
 	initialize : function (props, context) {
 		this.setTemplateManager(serviceLocator.get('TemplateManager'));
 		_super(props, context);
+	}
+
+	getKey: function () {
+		return this._template.getViewClassName() + (this._current_key_index++);
 	}
 
 	link : function (e) {
@@ -21,16 +41,32 @@ class MasterView extends tmp {
 			throw "You can't call directly link";
 		var url = e.target.getAttribute('data-url');
 		if (url == null || url == undefined)
-			throw "You cant redirect with an empty URL";
+			throw "You can't redirect with an empty URL";
 		var dispatcher = serviceLocator.get('Dispatcher');
-		dispatcher.trigger('Navigation:Link:onClick', {url : url});
+		dispatcher.trigger('Navigation:Link:onClick', {
+			url : url,
+			template : e.target.getAttribute('data-template')
+		});
 	}
 
-	getTemplate : function (template_name) {
-		return React['createElement'](this.getTemplateManager().get(template_name).getView(), null);
-	} 
+	getTemplate : function (template_name, params) {
+		if (!this._allTemplate[template_name])
+			this._allTemplate[template_name] = this.getUniqueTemplate(template_name, params);
+		return this._allTemplate[template_name];
+	}
+
+	getUniqueTemplate : function (template_name, params) {
+		var template = this.getTemplateManager().get(template_name);
+		if (!template)
+			throw "Template "+ template_name +" is invalid";
+		if (!params || params == null || params == undefined)
+			params = {};
+		params.key = this.getKey();
+		return React['createElement'](template.getView(this._template), params);
+	}
 
 	render = function () {
+		this.state.key = 'MasterView';
 		return React.createElement("div", {onClick: this.test.bind(this)}, this.state.n)
 	}
 
