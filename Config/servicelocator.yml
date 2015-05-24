@@ -8,7 +8,6 @@ invokables:
     EntityManager : Kernel/Managers/EntityManager
     Router : Kernel/Router
     Dispatcher : Kernel/Dispatcher/DispatcherBase
-
     ModuleInitializer : Kernel/Initializer/ModuleInitializer
 shared:
     Translator : false
