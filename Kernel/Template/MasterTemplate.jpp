@@ -20,6 +20,10 @@ class MasterTemplate {
 		return serviceLocator.get('Dispatcher');
 	}
 
+	onListenView : function () {
+		return serviceLocator.get('Dispatcher');	
+	}
+
 	getTemplate : function (template_name, parent) {
 		return React['createElement'](this.getTemplateManager().get(template_name).getView(parent), null);
 	} 
@@ -31,6 +35,7 @@ class MasterTemplate {
 			var tmp = function (props, context) {
 				window[self.getViewClassName()].call(this, props, context);
 				self._view = this;
+				self.onListenView.bind(self);
 			}
 			tmp.prototype = Object.create(window[this.getViewClassName()].prototype);
 			tmp.prototype._template = this;

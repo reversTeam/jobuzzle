@@ -1,8 +1,8 @@
 var tmp = React['createClass']({
 
 	"getInitialState": function () {
-		if (this.getInitialStateBis) {
-			var obj = this.getInitialStateBis();
+		if (this.initialState) {
+			var obj = this.initialState();
 			obj.key = this.getKey();
 			return obj;
 		}
@@ -20,6 +20,8 @@ var tmp = React['createClass']({
 class MasterView extends tmp {
 
 	_templateManager = undefined;
+
+	_allTemplate = {};
 
 	#default get, set for _templateManager;
 
@@ -47,11 +49,20 @@ class MasterView extends tmp {
 		});
 	}
 
-	getTemplate : function (template_name) {
+	getTemplate : function (template_name, params) {
+		if (!this._allTemplate[template_name])
+			this._allTemplate[template_name] = this.getUniqueTemplate(template_name, params);
+		return this._allTemplate[template_name];
+	}
+
+	getUniqueTemplate : function (template_name, params) {
 		var template = this.getTemplateManager().get(template_name);
 		if (!template)
 			throw "Template "+ template_name +" is invalid";
-		return React['createElement'](template.getView(this._template), {key : this.getKey() });
+		if (!params || params == null || params == undefined)
+			params = {};
+		params.key = this.getKey();
+		return React['createElement'](template.getView(this._template), params);
 	}
 
 	render = function () {
