@@ -31,7 +31,7 @@ class MasterView extends tmp {
 		var dispatcher = serviceLocator.get('Dispatcher');
 		dispatcher.trigger('Navigation:Link:onClick', {
 			url : url,
-			template : React['createElement'](serviceLocator.get('TemplateManager').get(e.target.getAttribute('data-template')).getView(), null)
+			template : e.target.getAttribute('data-template')
 		});
 	}
 
@@ -39,7 +39,7 @@ class MasterView extends tmp {
 		var template = this.getTemplateManager().get(template_name);
 		if (!template)
 			throw "Template "+ template_name +" is invalid";
-		return React['createElement'](template.getView(), null);
+		return React['createElement'](template.getView(this._template), null);
 	} 
 
 	render = function () {

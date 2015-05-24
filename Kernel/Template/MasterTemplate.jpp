@@ -20,15 +20,17 @@ class MasterTemplate {
 		return serviceLocator.get('Dispatcher');
 	}
 
-	getTemplate : function (template_name) {
-		return React['createElement'](this.getTemplateManager().get(template_name).getView(), null);
+	getTemplate : function (template_name, parent) {
+		return React['createElement'](this.getTemplateManager().get(template_name).getView(parent), null);
 	} 
 
-	getView : function () {
+	getView : function (parent) {
 		if (this._view_class == undefined) {
 			var self = this;
 			this._view = window[this.getViewClassName()];
 			var tmp = function (props, context) {
+				if (parent)
+					props['key'] = parent.getViewClassName();
 				window[self.getViewClassName()].call(this, props, context);
 				self._view = this;
 			}
