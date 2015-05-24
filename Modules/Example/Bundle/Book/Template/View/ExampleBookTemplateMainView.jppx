@@ -2,9 +2,15 @@
 
 class ExampleBookTemplateMainView extends MasterView {
 
+	linkAuthor : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+
+		dispatcher.trigger('Body:Content:change', { content : this.getTemplate('example_author_main_template') });
+	}
+
 	render : function () {
-		return (<div id="book">
-			Example -'\3e' Book View
+		return (<div id="book" data-url="/Author" data-template="example_author_main_template" onClick={this.link}>
+			Click Here for Author
 		</div>);
 	}
 

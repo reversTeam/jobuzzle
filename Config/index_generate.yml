@@ -61,6 +61,8 @@ scripts :
     - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
     - Modules/Navigation/Bundle/Action/Service/NavigationActionLinkService.js
     - Modules/Store/StoreAutoload.js
+    - Modules/Navigation/Bundle/History/Service/NavigationHistoryMainService.js
+    - Modules/Navigation/Bundle/Title/Service/NavigationTitleChangeService.js
     - main.js
 styles : 
     - Assets/css/all.css

@@ -1,7 +1,13 @@
 var tmp = React['createClass']({
+
+	"getInitialState" : function () {
+		return {};
+	},
+
 	"render" : function () {
 		throw "It's an abstract view, you can't instancied an object if you don't have override render method"
 	}
+
 });
 
 class MasterView extends tmp {
@@ -21,13 +27,19 @@ class MasterView extends tmp {
 			throw "You can't call directly link";
 		var url = e.target.getAttribute('data-url');
 		if (url == null || url == undefined)
-			throw "You cant redirect with an empty URL";
+			throw "You can't redirect with an empty URL";
 		var dispatcher = serviceLocator.get('Dispatcher');
-		dispatcher.trigger('Navigation:Link:onClick', {url : url});
+		dispatcher.trigger('Navigation:Link:onClick', {
+			url : url,
+			template : serviceLocator.get('TemplateManager').get(e.target.getAttribute('data-template'))
+		});
 	}
 
 	getTemplate : function (template_name) {
-		return React['createElement'](this.getTemplateManager().get(template_name).getView(), null);
+		var template = this.getTemplateManager().get(template_name);
+		if (!template)
+			throw "Template "+ template_name +" is invalid";
+		return React['createElement'](template.getView(), null);
 	} 
 
 	render = function () {
