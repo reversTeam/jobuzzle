@@ -29,8 +29,6 @@ class MasterTemplate {
 			var self = this;
 			this._view = window[this.getViewClassName()];
 			var tmp = function (props, context) {
-				if (parent)
-					props['key'] = parent.getViewClassName();
 				window[self.getViewClassName()].call(this, props, context);
 				self._view = this;
 			}
