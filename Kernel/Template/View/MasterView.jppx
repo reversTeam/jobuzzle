@@ -1,7 +1,14 @@
 var tmp = React['createClass']({
 
-	"getInitialState" : function () {
-		return {};
+	"getInitialState": function () {
+		if (this.getInitialStateBis) {
+			var obj = this.getInitialStateBis();
+			obj.key = this.getKey();
+			return obj;
+		}
+		return {
+			key: this.getKey()
+		};
 	},
 
 	"render" : function () {
@@ -12,14 +19,19 @@ var tmp = React['createClass']({
 
 class MasterView extends tmp {
 
-	reactInheritance = tmp;
 	_templateManager = undefined;
 
 	#default get, set for _templateManager;
 
+	_current_key_index = 0;
+
 	initialize : function (props, context) {
 		this.setTemplateManager(serviceLocator.get('TemplateManager'));
 		_super(props, context);
+	}
+
+	getKey: function () {
+		return this._template.getViewClassName() + (this._current_key_index++);
 	}
 
 	link : function (e) {
@@ -39,10 +51,11 @@ class MasterView extends tmp {
 		var template = this.getTemplateManager().get(template_name);
 		if (!template)
 			throw "Template "+ template_name +" is invalid";
-		return React['createElement'](template.getView(this._template), null);
-	} 
+		return React['createElement'](template.getView(this._template), {key : this.getKey() });
+	}
 
 	render = function () {
+		this.state.key = 'MasterView';
 		return React.createElement("div", {onClick: this.test.bind(this)}, this.state.n)
 	}
 

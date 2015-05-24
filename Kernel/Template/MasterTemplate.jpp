@@ -33,7 +33,8 @@ class MasterTemplate {
 				self._view = this;
 			}
 			tmp.prototype = Object.create(window[this.getViewClassName()].prototype);
-			tmp.prototype._template = this; 
+			tmp.prototype._template = this;
+			tmp._template_static = this;
 			this._view_class = tmp;
 		}
 
