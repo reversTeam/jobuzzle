@@ -1,0 +1,3 @@
+invokables :
+	example_book_main_collection : Book/Collection/ExampleBookMainCollection
+	example_author_main_collection : Book/Collection/ExampleAuthorMainCollection

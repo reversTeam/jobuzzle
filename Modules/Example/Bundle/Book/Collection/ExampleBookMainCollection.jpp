@@ -1,0 +1,8 @@
+#import (Config.path +"/Kernel/Collection/MasterCollection") = MasterCollection;
+
+
+class ExampleBookMainCollection extends MasterCollection {
+
+}
+
+#export ExampleBookMainCollection;
