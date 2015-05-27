@@ -1,0 +1,11 @@
+#import ('./MasterManager') = MasterManager;
+
+class CollectionManager extends MasterManager {
+
+	_name = 'CollectionManager';
+	_fileConf = 'collection';
+	_defaultShared = false;
+
+}
+
+#export CollectionManager;

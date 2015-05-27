@@ -20,6 +20,7 @@ scripts :
     - Kernel/Managers/TemplateManager.js
     - Kernel/Managers/ControllerManager.js
     - Kernel/Managers/EntityManager.js
+    - Kernel/Managers/CollectionManager.js
     - Kernel/Route/MasterRoute.js
     - Kernel/Service/MasterService.js
     - Kernel/Route/Type/MasterRouteType.js
@@ -43,6 +44,8 @@ scripts :
     - Modules/Body/BodyAutoload.js
     - Modules/Body/Bundle/Right/Template/BodyRightMainTemplate.js
     - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateMainView.js
+    - Modules/Body/Bundle/Right/Template/BodyRightHeaderTemplate.js
+    - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateHeaderView.js
     - Modules/Body/Bundle/Left/Template/BodyLeftMainTemplate.js
     - Modules/Body/Bundle/Left/Template/View/BodyLeftTemplateMainView.js
     - Modules/Body/Bundle/Left/Template/View/BodyLeftTemplateLogoView.js
