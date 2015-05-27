@@ -4,3 +4,4 @@ Client: true
 Notification: true
 Navigation: true
 Store: true
+Panel: true
