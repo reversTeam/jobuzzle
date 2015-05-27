@@ -83,6 +83,7 @@ scripts :
     - Modules/Store/StoreAutoload.js
     - Modules/Store/Bundle/Manager/Service/StoreManagerMainService.js
     - Modules/Example/Bundle/Author/Collection/ExampleAuthorMainCollection.js
+    - Modules/Example/Bundle/Book/Collection/ExampleBookMainCollection.js
     - main.js
 styles : 
     - Assets/css/all.css
