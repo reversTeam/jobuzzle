@@ -28,6 +28,7 @@ scripts :
     - Kernel/Route/Type/TranslationRouteType.js
     - Kernel/Route/Type/ParamsRouteType.js
     - Kernel/Controller/MasterController.js
+    - Kernel/Collection/MasterCollection.js
     - Kernel/Template/MasterTemplate.js
     - Kernel/Template/View/MasterView.js
     - Modules/Example/ExampleAutoload.js
@@ -63,7 +64,6 @@ scripts :
     - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateHeaderView.js
     - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
     - Modules/Navigation/Bundle/Action/Service/NavigationActionLinkService.js
-    - Modules/Store/StoreAutoload.js
     - Modules/Navigation/Bundle/History/Service/NavigationHistoryMainService.js
     - Modules/Navigation/Bundle/Title/Service/NavigationTitleChangeService.js
     - Modules/Body/Bundle/Base/Template/BodyBaseMainView.js
@@ -80,6 +80,9 @@ scripts :
     - Modules/Panel/Bundle/Filter/Template/View/PanelFilterTemplateAbstractView.js
     - Modules/Panel/Bundle/Filter/Template/View/PanelFilterTemplateMainView.js
     - Modules/Panel/Bundle/Filter/Template/View/PanelFilterTemplateActionView.js
+    - Modules/Store/StoreAutoload.js
+    - Modules/Store/Bundle/Manager/Service/StoreManagerMainService.js
+    - Modules/Example/Bundle/Author/Collection/ExampleAuthorMainCollection.js
     - main.js
 styles : 
     - Assets/css/all.css
