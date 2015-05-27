@@ -1,0 +1,7 @@
+class MasterCollection {
+
+	initilize : function () {
+
+	}
+}
+#export MasterCollection;

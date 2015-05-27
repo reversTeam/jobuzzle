@@ -5,6 +5,7 @@ invokables:
     ServiceManager : Kernel/Managers/ServiceManager
     TemplateManager : Kernel/Managers/TemplateManager
     ControllerManager : Kernel/Managers/ControllerManager
+    CollectionManager : Kernel/Managers/CollectionManager
     EntityManager : Kernel/Managers/EntityManager
     Router : Kernel/Router
     Dispatcher : Kernel/Dispatcher/DispatcherBase
