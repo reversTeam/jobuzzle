@@ -20,6 +20,7 @@ scripts :
     - Kernel/Managers/TemplateManager.js
     - Kernel/Managers/ControllerManager.js
     - Kernel/Managers/EntityManager.js
+    - Kernel/Managers/CollectionManager.js
     - Kernel/Route/MasterRoute.js
     - Kernel/Service/MasterService.js
     - Kernel/Route/Type/MasterRouteType.js
