@@ -69,6 +69,16 @@ scripts :
     - Modules/Body/Bundle/Base/Template/View/BodyBaseTemplateMainView.js
     - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateBreadcrumView.js
     - Modules/Body/Bundle/Right/Template/BodyRightViewBreadcrum.js
+    - Modules/Timeline/TimelineAutoload.js
+    - Modules/Navigation/Bundle/Resize/Service/NavigationResizeManageService.js
+    - Modules/Panel/PanelAutoload.js
+    - Modules/Panel/Bundle/Filter/Service/PanelFilterMainService.js
+    - Modules/Panel/Bundle/Filter/Template/PanelFilterAbstractTemplate.js
+    - Modules/Panel/Bundle/Filter/Template/PanelFilterMainTemplate.js
+    - Modules/Panel/Bundle/Filter/Template/PanelFilterActionTemplate.js
+    - Modules/Panel/Bundle/Filter/Template/View/PanelFilterTemplateAbstractView.js
+    - Modules/Panel/Bundle/Filter/Template/View/PanelFilterTemplateMainView.js
+    - Modules/Panel/Bundle/Filter/Template/View/PanelFilterTemplateActionView.js
     - main.js
 styles : 
     - Assets/css/all.css
