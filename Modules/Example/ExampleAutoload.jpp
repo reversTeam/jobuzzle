@@ -16,6 +16,13 @@ class ExampleAutoload extends MasterAutoload {
 		router.getRoute('book').getRoute('view').addRoute('author', bookRoute);
 	}
 
+	init : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+
+		dispatcher.trigger('Store:Manager:addCollection', { name : 'example_author_main_collection'} );
+		dispatcher.trigger('Store:Manager:addCollection', { name : 'example_book_main_collection'} );
+	}
+
 }
 
 #export ExampleAutoload;
