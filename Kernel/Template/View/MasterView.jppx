@@ -67,7 +67,7 @@ class MasterView extends tmp {
 
 	render = function () {
 		this.state.key = 'MasterView';
-		return React.createElement("div", {onClick: this.test.bind(this)}, this.state.n)
+		return React.createElement("div", {}, this.state.n)
 	}
 
 }
