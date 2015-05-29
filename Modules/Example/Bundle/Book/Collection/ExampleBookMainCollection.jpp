@@ -3,6 +3,8 @@
 
 class ExampleBookMainCollection extends MasterCollection {
 
+	_entityType = 'Book';
+
 }
 
 #export ExampleBookMainCollection;
