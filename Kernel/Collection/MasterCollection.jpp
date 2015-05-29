@@ -1,7 +1,52 @@
 class MasterCollection {
 
-	initilize : function () {
+	_entityType = 'Master';
+
+	#default get for _entityType;
+	#default get for _childs;
+	#default get, set for _parent;
+
+	initialize : function (parent) {
+		this._parent = null;
+		this._childs = {};
+	}
+
+	addChilds : function (childs) {
+		var collectionManager = serviceLocator.get('CollectionManager');
+		var collection = undefined;
+
+		for (var name in childs) {
+			collection = collectionManager.get(name);
+			collection.addChilds(childs[name]);
+			collection.setParent(this);
+			this._childs[collection.getEntityType()] = collection;
+		}
+	}
+
+	create : function () {
 
 	}
+
+	update : function () {
+
+	}
+
+	delete : function () {
+
+	}
+
+	createByStore : function () {
+
+	}
+
+	updateByStore : function () {
+
+	}
+
+	deleteByStore : function () {
+
+	}
+
 }
+
 #export MasterCollection;
