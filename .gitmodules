@@ -34,3 +34,7 @@
 	path = Modules/Panel
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Panel-Front.git
 	branch = master
+[submodule "Modules/Student"]
+	path = Modules/Student
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Student-Front.git
+	branch = master
