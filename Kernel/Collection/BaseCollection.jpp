@@ -1,0 +1,23 @@
+#import ('MasterCollection') = MasterCollection;
+
+class BaseCollection extends MasterCollection {
+
+	_entityType = 'Simple';
+
+	create : function (entity) {
+		if (!this._entity[entity.id]) {
+			this._entity[entity.id] = entity;
+			this.createByStorePropagation(entity);
+		} else {
+			this.update(entity.id, entity);
+		}
+		return true;
+	}
+
+	pushEntity : function (id, entity) {
+		this._entity[id] = entity;
+	}
+
+}
+
+#export BaseCollection;
