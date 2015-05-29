@@ -29,6 +29,7 @@ scripts :
     - Kernel/Route/Type/ParamsRouteType.js
     - Kernel/Controller/MasterController.js
     - Kernel/Collection/MasterCollection.js
+    - Kernel/Collection/BaseCollection.js
     - Kernel/Template/MasterTemplate.js
     - Kernel/Template/View/MasterView.js
     - Modules/Example/ExampleAutoload.js
@@ -84,6 +85,8 @@ scripts :
     - Modules/Store/Bundle/Manager/Service/StoreManagerMainService.js
     - Modules/Example/Bundle/Author/Collection/ExampleAuthorMainCollection.js
     - Modules/Example/Bundle/Book/Collection/ExampleBookMainCollection.js
+    - Modules/Student/StudentAutoload.js
+    - Modules/Student/Bundle/Data/Collection/StudentDataMainCollection.js
     - main.js
 styles : 
     - Assets/css/all.css
