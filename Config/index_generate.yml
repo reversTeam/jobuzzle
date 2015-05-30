@@ -87,6 +87,10 @@ scripts :
     - Modules/Example/Bundle/Book/Collection/ExampleBookMainCollection.js
     - Modules/Student/StudentAutoload.js
     - Modules/Student/Bundle/Data/Collection/StudentDataMainCollection.js
+    - Modules/Student/Bundle/Display/Service/StudentDisplayMainService.js
+    - Modules/Student/Bundle/Display/Template/StudentDisplayMainTemplate.js
+    - Modules/Student/Bundle/Display/Template/View/StudentDisplayTemplateMainView.js
+    - Modules/Student/Bundle/Data/Route/StudentDataMainRoute.js
     - main.js
 styles : 
     - Assets/css/all.css
