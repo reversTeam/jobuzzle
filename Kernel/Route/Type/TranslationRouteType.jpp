@@ -20,6 +20,17 @@ class TranslationRouteType extends MasterRouteType {
 		return false;
 	}
 
+	inject : function (segment, datas) {
+		if (segment != this.getName())
+			return false;
+		var reg = new RegExp('^'+ this._typePatternRoute +'$');
+		var translation_key = reg.exec(this._routeUrl);
+		if (translation_key) {
+			return serviceLocator.get('Translator').translateRoute(translation_key[1]);
+		}
+		return false;
+	}
+
 }
 
 #export TranslationRouteType;
