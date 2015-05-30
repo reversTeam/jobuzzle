@@ -34,14 +34,14 @@
 ### Clone du dépot
 
 ```bash
-git clone git@gitlab.jobuzzle.com:Jobuzzle/Framework-Front.git --recursive
+git clone git@gitlab.intra.jobuzzle.com:Jobuzzle/Framework-Front.git --recursive
 cd Framework-Front
 git submodule foreach --recursive git checkout -b g_remote origin/g_remote
 git submodule foreach --recursive git checkout master
 git checkout -b g_remote origin/g_remote
 git checkout -b front_remote origin/front_remote
-git remote add generic git@gitlab.jobuzzle.com:Generic/Framework.git
-git remote add front git@gitlab.jobuzzle.com:Front/Framework-Front.git
+git remote add generic git@gitlab.intra.jobuzzle.com:Generic/Framework.git
+git remote add front git@gitlab.intra.jobuzzle.com:Front/Framework-Front.git
 git submodule foreach --recursive npm install
 ```
 
