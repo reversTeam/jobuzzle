@@ -25,6 +25,19 @@ class ParamsRouteType extends MasterRouteType {
 		return false;
 	}
 
+	inject : function (segment, datas) {
+		if (segment != this.getName())
+			return false;
+		var reg = new RegExp('^'+ this._typePatternRoute +'$');
+		var params_key = reg.exec(this._routeUrl);
+
+		if (!params_key)
+			throw "You have bad configuration for you ParamsRoute";
+		if (!datas || !datas[params_key[1]])
+			throw "You can't build a params routes if you don't have good parameters";
+		return datas[params_key[1]];
+	}
+
 }
 
 #export ParamsRouteType;

@@ -1,7 +1,137 @@
 class MasterCollection {
 
-	initilize : function () {
+	_entityType = 'Master';
+	_sock = undefined;
 
+	#default get for _entityType;
+	#default get for _childs;
+	#default get, set for _parent;
+
+	initialize : function () {
+		var serviceManager = serviceLocator.get('ServiceManager');
+		this._sock = serviceManager.get('client_websocket_main_service');
+		this._protected = undefined;
+		this._parent = null;
+		this._childs = {};
+		this._entity = {};
 	}
+
+	addChilds : function (childs, store) {
+		var collectionManager = serviceLocator.get('CollectionManager');
+		var collection = undefined;
+
+		for (var name in childs) {
+			collection = collectionManager.get(name);
+			collection.addChilds(childs[name]);
+			collection.setParent(this);
+			this._childs[collection.getEntityType()] = collection;
+		}
+	}
+
+	getProtected : function () {
+		if (this._protected == undefined) {
+			this._protected = Config.collections.upload.protected;
+		}
+		return this._protected;
+	}
+
+	get : function (id) {
+		if (!this._entity[id])
+			return false;
+		return this._entity[id];
+	}
+
+	getAll : function (type) {
+		var ret = undefined;
+		if (type == undefined || type == this.getEntityType())
+			return this._entity;
+		for (i in this._childs) {
+			ret = this._childs[i].getAll(type)
+			if (ret)
+				return ret;
+		}
+		return false;
+	}
+
+	create : function (entity) {
+		if (this._entity[entity.id]) {
+			this.update(entity.id, entity);
+			return true;
+		}
+		else {
+			if (this.getEntityType() == entity.type || this.createByStorePropagation(entity)) {
+				this.pushEntity(entity.id, entity);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	createByStorePropagation : function (entity) {
+		for (var i in this._childs) {
+			ret = this._childs[i].create(entity) || this.getEntityType() == entity.type;
+			if (!ret)
+				continue ;
+			this.pushEntity(entity.id, entity);
+			return true;
+		}
+		return false;
+	}
+
+	update : function (id, datas) {
+		var dispatcher = serviceLocator.get('Dispatcher');
+		if (datas.type == this.getEntityType())
+			return this.updateEntity(id, datas);
+		for (var i in this._childs) {
+			if (this._childs[i].update(id, datas)) {
+				dispatcher.trigger('Store:'+ this.getEntityType() +':update', { id : id });
+				return true;
+			}
+		}
+		return false;
+	}
+
+	updateEntity : function (id, datas) {
+		for (var i in this._entity[id]) {
+			if ((this.getProtected().indexOf(i) == -1)
+				&& (!datas[id] || datas[i] != this._entity[id][i])) {
+				delete this._entity[id][i];
+			}
+		}
+		for (var i in datas) {
+			if (this.getProtected().indexOf(i) == -1)
+				this._entity[id][i] = datas[i];
+		}
+		dispatcher.trigger('Store:'+ this.getEntityType() +':update', { id : id });
+		return true;
+	}
+
+	delete : function (id) {
+		if (!this._entity[id])
+			return false;
+		for (var i in this._childs) {
+			if (this._childs[i].delete(id))
+				break;
+		}
+		if (this._entity[id]) {
+			var dispatcher = serviceLocator.get('Dispatcher');
+			for (var i in this._entity[id])
+				delete this._entity[id][i];
+			delete this._entity[id];
+			dispatcher.trigger('Store:'+ this.getEntityType() +':delete', { id : id });
+			return true;
+		}
+		return false;
+	}
+
+	pushEntity : function (id) {
+		var dispatcher = serviceLocator.get('Dispatcher');
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+
+		this._entity[id] = store.get(id);
+		dispatcher.trigger('Store:'+ this.getEntityType() +':create', {id : id});
+	}
+
 }
+
 #export MasterCollection;

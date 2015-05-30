@@ -11,4 +11,4 @@ invokables:
     Dispatcher : Kernel/Dispatcher/DispatcherBase
     ModuleInitializer : Kernel/Initializer/ModuleInitializer
 shared:
-    Translator : false
+    Translator : true

@@ -5,7 +5,7 @@ class ExampleAuthorTemplateMainView extends MasterView {
 	linkBook : function () {
 		var dispatcher = serviceLocator.get('Dispatcher');
 
-		dispatcher.trigger('Body:Content:change', { content : this.getTemplate('example_book_main_template') });
+		dispatcher.trigger('Body:Content:change', { content : 'example_book_main_template' });
 	}
 
 	render : function () {

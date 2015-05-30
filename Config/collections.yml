@@ -1,0 +1,6 @@
+upload:
+	protected:
+		- id
+		- parent_id
+		- create
+		- type

@@ -51,6 +51,18 @@ class MasterRouteType {
 		this._childs[name] = new req(name, route, parent);
 	}
 
+	build : function (segment, datas) {
+		if (!segment)
+			return false;
+		return this.inject(segment, datas);
+	}
+
+	inject : function (segment, datas) {
+		if (segment == this._routeUrl)
+			return segment;
+		return false;
+	}
+
 	getRoute : function (name) {
 		if (!this._childs[name])
 			return false;
@@ -95,7 +107,7 @@ class MasterRouteType {
 	}
 
 	parse : function (segment) {
-		throw 'You ca\'t call MasterRouteType Parse, please override function parse';
+		throw 'You can\'t call MasterRouteType Parse, please override function parse';
 	}
 
 }
