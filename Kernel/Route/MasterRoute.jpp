@@ -55,7 +55,7 @@ class MasterRoute {
 							"type" : 'Translation',
 							"route" : '{delete}',
 							"action" : {
-								"method" : 'detele'
+								"method" : 'delete'
 							}
 						}
 					}

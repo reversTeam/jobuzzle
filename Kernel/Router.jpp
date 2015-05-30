@@ -11,7 +11,7 @@ class Router {
 		if (!name || !routes)
 			throw 'You can\'t add empty route name or routes';
 		if (routes instanceof MasterRoute) {
-			this._routes[name] = this.build(name, routes);
+			this._routes[name] = this.buildRoute(name, routes);
 		}
 		else 
 			this._routes[name] = routes;
@@ -27,7 +27,16 @@ class Router {
 		return this._routes;
 	}
 
-	build : function (key, cur) {
+	build : function (str, datas) {
+		str = str.substr(1);
+		var segments = str.split('/');
+		var routes = this.getRoutes();
+		var result = this.buildRecusiveRoute(segments, routes, datas, 0);
+
+		return result;
+	}
+
+	buildRoute : function (key, cur) {
 		var routes = {};
 
 		if (cur instanceof MasterRoute)
@@ -51,11 +60,28 @@ class Router {
 		return result;
 	}
 
-	matchRecusiveRoute : function (segments, routes, index) {
-		var result = {};
+	buildRecusiveRoute : function (segments, routes, datas, index) {
+		var buildResult = undefined;
+		var childResult = undefined;
 
 		for (var i in routes) {
-			var match = routes[i].match(segments[index]);
+			buildResult = routes[i].build(segments[index], datas);
+			if (buildResult && segments[index + 1]) {
+				childResult = this.buildRecusiveRoute(segments, routes[i].getRoutes(), datas, index + 1);
+				if (childResult)
+					return '/'+ buildResult + childResult;
+			} else if (buildResult)
+				return '/'+ buildResult;
+		}
+		return false;
+	}
+
+	matchRecusiveRoute : function (segments, routes, index) {
+		var result = {};
+		var match = undefined;
+
+		for (var i in routes) {
+			match = routes[i].match(segments[index]);
 			if (match && (segments[index + 1])) {
 				return this.concatResultMatch(match, this.matchRecusiveRoute(segments, routes[i].getRoutes(), index + 1));
 			} else if (match) {

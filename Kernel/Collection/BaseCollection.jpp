@@ -14,6 +14,14 @@ class BaseCollection extends MasterCollection {
 		return true;
 	}
 
+	update : function (id, datas) {
+		if (!this._entity[id])
+			throw "You can't update that entity, because entity["+ id +"] not found";
+		if (!datas.type)
+			datas.type = this._entity[id].type;
+		_super(id, datas);
+	}
+
 	pushEntity : function (id, entity) {
 		this._entity[id] = entity;
 	}
