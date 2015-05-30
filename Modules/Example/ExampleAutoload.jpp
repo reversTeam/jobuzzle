@@ -17,10 +17,7 @@ class ExampleAutoload extends MasterAutoload {
 	}
 
 	init : function () {
-		var dispatcher = serviceLocator.get('Dispatcher');
-
-		dispatcher.trigger('Store:Manager:addCollection', { name : 'example_author_main_collection'} );
-		dispatcher.trigger('Store:Manager:addCollection', { name : 'example_book_main_collection'} );
+		
 	}
 
 }
