@@ -11,3 +11,5 @@ Data: true
 BaseUser: true
 NamedData: true
 Institute: true
+Company: true
+School: true
