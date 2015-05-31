@@ -58,3 +58,11 @@
 	path = Modules/Institute
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Institute-Front.git
 	branch = master
+[submodule "Modules/Company"]
+	path = Modules/Company
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Company-Front.git
+	branch = master
+[submodule "Modules/School"]
+	path = Modules/School
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/School-Front.git
+	branch = master
