@@ -105,6 +105,8 @@ scripts :
     - Modules/Student/Bundle/Data/Entity/StudentDataMainEntity.js
     - Modules/NamedData/Bundle/Data/Collection/NamedDataDataMainCollection.js
     - Modules/NamedData/Bundle/Data/Entity/NamedDataDataMainEntity.js
+    - Modules/Institute/Bundle/Data/Entity/InstituteDataMainEntity.js
+    - Modules/Institute/Bundle/Data/Collection/InstituteDataMainCollection.js
     - main.js
 styles : 
     - Assets/css/all.css
