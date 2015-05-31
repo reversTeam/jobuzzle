@@ -135,7 +135,8 @@ class MasterCollection {
 		}
 		else {
 			var entityClass = serviceLocator.get('EntityManager').get(this.getEntityClass());
-			this._entity[id] = entityClass.hydrate(entity);
+			entityClass.hydrate(entity);
+			this._entity[id] = entityClass;
 		}
 		dispatcher.trigger('Store:'+ this.getEntityType() +':create', {id : id});
 		return this._entity[id];
