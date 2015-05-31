@@ -1,0 +1,24 @@
+class MasterEntity {
+
+	initialize : function () {
+		this._id = undefined;
+	}
+
+	public hydrate : function (datas) {
+		if (datas.id)
+			this.setId(datas.id);
+	}
+
+	public getId : function () {
+		return this._id;
+	}
+
+	public setId : function (id) {
+		this._id = id;
+
+		return this;
+	}
+
+}
+
+#export MasterEntity;
