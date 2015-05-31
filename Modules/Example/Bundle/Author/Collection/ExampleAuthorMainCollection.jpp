@@ -1,6 +1,6 @@
-#import (Config.path +"/Kernel/Collection/BaseCollection") = BaseCollection;
+#import (Config.path +"/Kernel/Collection/MasterCollection") = MasterCollection;
 
-class ExampleAuthorMainCollection extends BaseCollection {
+class ExampleAuthorMainCollection extends MasterCollection {
 
 	_entityType = 'Author';
 
