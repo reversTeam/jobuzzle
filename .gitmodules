@@ -54,3 +54,7 @@
 	path = Modules/NamedData
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/NamedData-Front.git
 	branch = master
+[submodule "Modules/Institute"]
+	path = Modules/Institute
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Institute-Front.git
+	branch = master

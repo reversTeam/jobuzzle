@@ -46,6 +46,7 @@ scripts :
     - Modules/NamedData/NamedDataAutoload.js
     - Modules/BaseUser/BaseUserAutoload.js
     - Modules/Student/StudentAutoload.js
+    - Modules/Institute/InstituteAutoload.js
     - Modules/Example/Bundle/Book/Route/ExampleBookMainRoute.js
     - Modules/Example/Bundle/Book/Service/ExampleBookMainService.js
     - Modules/Example/Bundle/Author/Route/ExampleAuthorMainRoute.js
@@ -104,6 +105,8 @@ scripts :
     - Modules/Student/Bundle/Data/Entity/StudentDataMainEntity.js
     - Modules/NamedData/Bundle/Data/Collection/NamedDataDataMainCollection.js
     - Modules/NamedData/Bundle/Data/Entity/NamedDataDataMainEntity.js
+    - Modules/Institute/Bundle/Data/Entity/InstituteDataMainEntity.js
+    - Modules/Institute/Bundle/Data/Collection/InstituteDataMainCollection.js
     - main.js
 styles : 
     - Assets/css/all.css
