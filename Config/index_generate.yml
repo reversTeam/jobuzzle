@@ -43,6 +43,7 @@ scripts :
     - Modules/Store/StoreAutoload.js
     - Modules/Element/ElementAutoload.js
     - Modules/Data/DataAutoload.js
+    - Modules/NamedData/NamedDataAutoload.js
     - Modules/BaseUser/BaseUserAutoload.js
     - Modules/Student/StudentAutoload.js
     - Modules/Example/Bundle/Book/Route/ExampleBookMainRoute.js
@@ -101,6 +102,8 @@ scripts :
     - Modules/Student/Bundle/Display/Template/View/StudentDisplayTemplateMainView.js
     - Modules/Student/Bundle/Data/Route/StudentDataMainRoute.js
     - Modules/Student/Bundle/Data/Entity/StudentDataMainEntity.js
+    - Modules/NamedData/Bundle/Data/Collection/NamedDataDataMainCollection.js
+    - Modules/NamedData/Bundle/Data/Entity/NamedDataDataMainEntity.js
     - main.js
 styles : 
     - Assets/css/all.css
