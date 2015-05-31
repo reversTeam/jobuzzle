@@ -85,6 +85,15 @@ scripts :
     - Modules/Store/Bundle/Manager/Service/StoreManagerMainService.js
     - Modules/Example/Bundle/Author/Collection/ExampleAuthorMainCollection.js
     - Modules/Example/Bundle/Book/Collection/ExampleBookMainCollection.js
+    - Modules/Element/ElementAutoload.js
+    - Modules/Element/Bundle/Data/Collection/ElementDataMainCollection.js
+    - Modules/Element/Bundle/Data/Entity/ElementDataMainEntity.js
+    - Modules/Data/DataAutoload.js
+    - Modules/Data/Bundle/Data/Collection/DataDataMainCollection.js
+    - Modules/Data/Bundle/Data/Entity/DataDataMainEntity.js
+    - Modules/BaseUser/BaseUserAutoload.js
+    - Modules/BaseUser/Bundle/Data/Collection/BaseUserDataMainCollection.js
+    - Modules/BaseUser/Bundle/Data/Entity/BaseUserDataMainEntity.js
     - Modules/Student/StudentAutoload.js
     - Modules/Student/Bundle/Data/Collection/StudentDataMainCollection.js
     - Modules/Student/Bundle/Display/Service/StudentDisplayMainService.js

@@ -38,3 +38,15 @@
 	path = Modules/Student
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Student-Front.git
 	branch = master
+[submodule "Modules/Element"]
+	path = Modules/Element
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Element-Front.git
+	branch = master
+[submodule "Modules/Data"]
+	path = Modules/Data
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Data-Front.git
+	branch = master
+[submodule "Modules/BaseUser"]
+	path = Modules/BaseUser
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/BaseUser-Front.git
+	branch = master

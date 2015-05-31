@@ -6,3 +6,6 @@ Navigation: true
 Store: true
 Panel: true
 Student: true
+Element: true
+Data: true
+BaseUser: true
