@@ -42,3 +42,7 @@
 	path = Modules/Element
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Element-Front.git
 	branch = master
+[submodule "Modules/Data"]
+	path = Modules/Data
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Data-Front.git
+	branch = master
