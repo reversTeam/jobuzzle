@@ -1,5 +1,10 @@
 class MasterEntity {
 
+	_type = 'Master';
+
+	#default get for _type;
+	#default get, set for _id;
+
 	initialize : function () {
 		this._id = undefined;
 	}
@@ -7,16 +12,6 @@ class MasterEntity {
 	public hydrate : function (datas) {
 		if (datas.id)
 			this.setId(datas.id);
-	}
-
-	public getId : function () {
-		return this._id;
-	}
-
-	public setId : function (id) {
-		this._id = id;
-
-		return this;
 	}
 
 }
