@@ -91,6 +91,9 @@ scripts :
     - Modules/Data/DataAutoload.js
     - Modules/Data/Bundle/Data/Collection/DataDataMainCollection.js
     - Modules/Data/Bundle/Data/Entity/DataDataMainEntity.js
+    - Modules/BaseUser/BaseUserAutoload.js
+    - Modules/BaseUser/Bundle/Data/Collection/BaseUserDataMainCollection.js
+    - Modules/BaseUser/Bundle/Data/Entity/BaseUserDataMainEntity.js
     - Modules/Student/StudentAutoload.js
     - Modules/Student/Bundle/Data/Collection/StudentDataMainCollection.js
     - Modules/Student/Bundle/Display/Service/StudentDisplayMainService.js
