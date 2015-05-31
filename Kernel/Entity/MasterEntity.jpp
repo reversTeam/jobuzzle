@@ -1,5 +1,8 @@
 class MasterEntity {
 
+	_type = 'Master';
+
+	#default get for _type;
 	#default get, set for _id;
 
 	initialize : function () {
