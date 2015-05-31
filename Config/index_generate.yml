@@ -29,7 +29,7 @@ scripts :
     - Kernel/Route/Type/ParamsRouteType.js
     - Kernel/Controller/MasterController.js
     - Kernel/Collection/MasterCollection.js
-    - Kernel/Collection/BaseCollection.js
+    - Kernel/Entity/MasterEntity.js
     - Kernel/Template/MasterTemplate.js
     - Kernel/Template/View/MasterView.js
     - Modules/Example/ExampleAutoload.js
@@ -91,6 +91,7 @@ scripts :
     - Modules/Student/Bundle/Display/Template/StudentDisplayMainTemplate.js
     - Modules/Student/Bundle/Display/Template/View/StudentDisplayTemplateMainView.js
     - Modules/Student/Bundle/Data/Route/StudentDataMainRoute.js
+    - Modules/Student/Bundle/Data/Entity/StudentDataMainEntity.js
     - main.js
 styles : 
     - Assets/css/all.css
