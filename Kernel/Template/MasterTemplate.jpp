@@ -37,6 +37,8 @@ class MasterTemplate {
 				self._view = this;
 				self.onListenView.bind(self);
 			}
+			if (window[this.getViewClassName()] == undefined)
+				throw "Cannot be create "+ this.getViewClassName() +" Object";
 			tmp.prototype = Object.create(window[this.getViewClassName()].prototype);
 			tmp.prototype._template = this;
 			tmp._template_static = this;
