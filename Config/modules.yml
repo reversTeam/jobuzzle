@@ -8,6 +8,7 @@ Panel: true
 Student: true
 Element: true
 Data: true
+User : true
 BaseUser: true
 NamedData: true
 Institute: true

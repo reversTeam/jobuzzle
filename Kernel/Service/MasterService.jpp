@@ -1,5 +1,9 @@
 class MasterService {
 
+	_store = undefined;
+
+	#default get, set for _store;
+
 }
 
 #export MasterService;

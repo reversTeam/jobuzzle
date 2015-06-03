@@ -12,3 +12,4 @@ invokables:
     ModuleInitializer : Kernel/Initializer/ModuleInitializer
 shared:
     Translator : true
+    Translation : true

@@ -95,24 +95,50 @@ scripts :
     - Modules/Example/Bundle/Book/Collection/ExampleBookMainCollection.js
     - Modules/Element/Bundle/Data/Collection/ElementDataMainCollection.js
     - Modules/Element/Bundle/Data/Entity/ElementDataMainEntity.js
+    - Modules/Element/Bundle/Data/Route/ElementDataMainRoute.js
+    - Modules/Element/Bundle/Data/Template/ElementDataTimelineTemplate.js
+    - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateTimelineView.js
     - Modules/Data/Bundle/Data/Collection/DataDataMainCollection.js
     - Modules/Data/Bundle/Data/Entity/DataDataMainEntity.js
+    - Modules/Data/Bundle/Data/Route/DataDataMainRoute.js
+    - Modules/Data/Bundle/Data/Template/DataDataTimelineTemplate.js
+    - Modules/Data/Bundle/Data/Template/View/DataDataTemplateTimelineView.js
     - Modules/BaseUser/Bundle/Data/Collection/BaseUserDataMainCollection.js
     - Modules/BaseUser/Bundle/Data/Entity/BaseUserDataMainEntity.js
+    - Modules/BaseUser/Bundle/Data/Route/BaseUserDataMainRoute.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataTimelineTemplate.js
+    - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateTimelineView.js
     - Modules/Student/Bundle/Data/Collection/StudentDataMainCollection.js
     - Modules/Student/Bundle/Display/Service/StudentDisplayMainService.js
     - Modules/Student/Bundle/Display/Template/StudentDisplayMainTemplate.js
     - Modules/Student/Bundle/Display/Template/View/StudentDisplayTemplateMainView.js
     - Modules/Student/Bundle/Data/Route/StudentDataMainRoute.js
     - Modules/Student/Bundle/Data/Entity/StudentDataMainEntity.js
+    - Modules/Student/Bundle/Data/Template/StudentDataTimelineTemplate.js
+    - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateTimelineView.js
     - Modules/NamedData/Bundle/Data/Collection/NamedDataDataMainCollection.js
     - Modules/NamedData/Bundle/Data/Entity/NamedDataDataMainEntity.js
+    - Modules/NamedData/Bundle/Data/Route/NamedDataDataMainRoute.js
+    - Modules/NamedData/Bundle/Data/Template/NamedDataDataTimelineTemplate.js
+    - Modules/NamedData/Bundle/Data/Template/View/NamedDataDataTemplateTimelineView.js
     - Modules/Institute/Bundle/Data/Entity/InstituteDataMainEntity.js
     - Modules/Institute/Bundle/Data/Collection/InstituteDataMainCollection.js
+    - Modules/Institute/Bundle/Data/Route/InstituteDataMainRoute.js
+    - Modules/Institute/Bundle/Data/Template/InstituteDataTimelineTemplate.js
+    - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateTimelineView.js
     - Modules/School/Bundle/Data/Collection/SchoolDataMainCollection.js
     - Modules/School/Bundle/Data/Entity/SchoolDataMainEntity.js
+    - Modules/School/Bundle/Data/Route/SchoolDataMainRoute.js
+    - Modules/School/Bundle/Data/Template/SchoolDataTimelineTemplate.js
+    - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateTimelineView.js
     - Modules/Company/Bundle/Data/Collection/CompanyDataMainCollection.js
     - Modules/Company/Bundle/Data/Entity/CompanyDataMainEntity.js
+    - Modules/Company/Bundle/Data/Route/CompanyDataMainRoute.js
+    - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateTimelineView.js
+    - Modules/Company/Bundle/Data/Template/CompanyDataTimelineTemplate.js
+    - Modules/User/Bundle/Service/UserManagerMainService.js
+    - Modules/Navigation/Bundle/Cookie/Service/NavigationCookieMainService.js
+    - Modules/Navigation/Bundle/Route/NavigationRouteMainService.js
     - main.js
 styles : 
     - Assets/css/all.css

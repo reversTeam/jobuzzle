@@ -2,11 +2,13 @@
 
 class ExampleBookMainRoute extends MasterRoute {
 
+	name = 'book';
+
 	baseName = 'Book';
 	baseRoute = '{books}';
 	baseController = 'example_book_main_controller';
 
-	paramName : 'book_id';
+	paramName = 'book_id';
 
 }
 
