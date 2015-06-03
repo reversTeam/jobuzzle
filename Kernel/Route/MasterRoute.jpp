@@ -1,5 +1,6 @@
 class MasterRoute {
 
+	name : 'master';
 	baseRoute : '{masters}';
 	baseController : 'Master';
 	baseMethod : 'search';
@@ -7,6 +8,7 @@ class MasterRoute {
 	paramName : 'master_id';
 	paramRegex : '[0-9]+';
 
+	#default get for name;
 	#default get for baseRoute;
 	#default get for baseController;
 	#default get for baseMethod;
