@@ -144,7 +144,6 @@ scripts :
     - Modules/Company/Bundle/Data/Route/CompanyDataMainRoute.js
     - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateTimelineView.js
     - Modules/Company/Bundle/Data/Template/CompanyDataTimelineTemplate.js
-    - Modules/User/Bundle/Service/UserManagerMainService.js
     - Modules/Navigation/Bundle/Cookie/Service/NavigationCookieMainService.js
     - Modules/Navigation/Bundle/Route/NavigationRouteMainService.js
     - Modules/User/Bundle/Manager/Service/UserManagerMainService.js
