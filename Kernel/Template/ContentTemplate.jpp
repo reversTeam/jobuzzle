@@ -1,0 +1,26 @@
+#import ('./MasterTemplate') = MasterTemplate;
+
+class ContentTemplate extends MasterTemplate {
+
+	_viewClassName = 'ContentView';
+
+	intitialize : function () {
+		_super();
+		this._visibility = false;
+	}
+
+	getVisibility : function () {
+		return this._visibility;
+	}
+
+	visible : function () {
+		this._visibility = true;
+	}
+
+	invisible : function () {
+		this._visibility = false;	
+	}
+
+}
+
+#export ContentTemplate;
