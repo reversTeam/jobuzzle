@@ -1,3 +1,6 @@
 invokables:
 	example_author_main_template : Author/Template/ExampleAuthorMainTemplate
 	example_book_main_template : Book/Template/ExampleBookMainTemplate
+shared :
+	example_author_main_template : true
+	example_book_main_template : true 
