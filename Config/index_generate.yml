@@ -32,6 +32,8 @@ scripts :
     - Kernel/Entity/MasterEntity.js
     - Kernel/Template/MasterTemplate.js
     - Kernel/Template/View/MasterView.js
+    - Kernel/Template/ContentTemplate.js
+    - Kernel/Template/View/ContentView.js
     - Modules/Example/ExampleAutoload.js
     - Modules/Body/BodyAutoload.js
     - Modules/Client/ClientAutoload.js
@@ -98,16 +100,22 @@ scripts :
     - Modules/Element/Bundle/Data/Route/ElementDataMainRoute.js
     - Modules/Element/Bundle/Data/Template/ElementDataTimelineTemplate.js
     - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateTimelineView.js
+    - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateMiniatureView.js
+    - Modules/Element/Bundle/Data/Template/ElementDataMiniatureTemplate.js
     - Modules/Data/Bundle/Data/Collection/DataDataMainCollection.js
     - Modules/Data/Bundle/Data/Entity/DataDataMainEntity.js
     - Modules/Data/Bundle/Data/Route/DataDataMainRoute.js
     - Modules/Data/Bundle/Data/Template/DataDataTimelineTemplate.js
     - Modules/Data/Bundle/Data/Template/View/DataDataTemplateTimelineView.js
+    - Modules/Data/Bundle/Data/Template/DataDataMiniatureTemplate.js
+    - Modules/Data/Bundle/Data/Template/View/DataDataTemplateMiniatureView.js
     - Modules/BaseUser/Bundle/Data/Collection/BaseUserDataMainCollection.js
     - Modules/BaseUser/Bundle/Data/Entity/BaseUserDataMainEntity.js
     - Modules/BaseUser/Bundle/Data/Route/BaseUserDataMainRoute.js
     - Modules/BaseUser/Bundle/Data/Template/BaseUserDataTimelineTemplate.js
     - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateTimelineView.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataMiniatureTemplate.js
+    - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateMiniatureView.js
     - Modules/Student/Bundle/Data/Collection/StudentDataMainCollection.js
     - Modules/Student/Bundle/Display/Service/StudentDisplayMainService.js
     - Modules/Student/Bundle/Display/Template/StudentDisplayMainTemplate.js
@@ -139,6 +147,10 @@ scripts :
     - Modules/User/Bundle/Service/UserManagerMainService.js
     - Modules/Navigation/Bundle/Cookie/Service/NavigationCookieMainService.js
     - Modules/Navigation/Bundle/Route/NavigationRouteMainService.js
+    - Modules/User/Bundle/Manager/Service/UserManagerMainService.js
+    - Modules/Navigation/Bundle/Loader/Template/NavigationLoaderMainTemplate.js
+    - Modules/Navigation/Bundle/Loader/Template/View/NavigationLoaderTemplateMainView.js
+    - Modules/Navigation/Bundle/Loader/Service/NavigationLoaderMainService.js
     - main.js
 styles : 
     - Assets/css/all.css

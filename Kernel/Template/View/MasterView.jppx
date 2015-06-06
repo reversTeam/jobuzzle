@@ -22,6 +22,7 @@ class MasterView extends tmp {
 	_templateManager = undefined;
 
 	_allTemplate = {};
+	_allView = {};
 
 	#default get, set for _templateManager;
 
@@ -50,8 +51,9 @@ class MasterView extends tmp {
 	}
 
 	getTemplate : function (template_name, params) {
-		if (!this._allTemplate[template_name])
+		if (!this._allTemplate[template_name]) {
 			this._allTemplate[template_name] = this.getUniqueTemplate(template_name, params);
+		}
 		return this._allTemplate[template_name];
 	}
 
@@ -62,7 +64,7 @@ class MasterView extends tmp {
 		if (!params || params == null || params == undefined)
 			params = {};
 		params.key = this.getKey();
-		return React['createElement'](template.getView(this._template), params);
+		return React['createElement'](template.getView(), params);
 	}
 
 	render = function () {
