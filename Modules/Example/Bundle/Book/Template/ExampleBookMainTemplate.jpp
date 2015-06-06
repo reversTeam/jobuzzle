@@ -1,6 +1,6 @@
-#import (Config.path +'/Kernel/Template/MasterTemplate') = MasterTemplate;
+#import (Config.path +'/Kernel/Template/ContentTemplate') = ContentTemplate;
 
-class ExampleBookMainTemplate extends MasterTemplate {
+class ExampleBookMainTemplate extends ContentTemplate {
 
 	_viewClassName = 'ExampleBookTemplateMainView';
 
