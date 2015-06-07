@@ -25,6 +25,10 @@ class MasterAutoload {
 		
 	}
 
+	prepare : function () {
+		
+	}
+
 	initManagers : function () {
 		var managers = Config['managers'];
 		var len = managers.length;

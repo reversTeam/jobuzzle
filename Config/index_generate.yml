@@ -102,6 +102,18 @@ scripts :
     - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateTimelineView.js
     - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateMiniatureView.js
     - Modules/Element/Bundle/Data/Template/ElementDataMiniatureTemplate.js
+    - Modules/Element/Bundle/Data/Controller/ElementDataMainController.js
+    - Modules/Element/Bundle/Data/Service/ElementDataMainService.js
+    - Modules/Element/Bundle/Data/Template/ElementDataSearchTemplate.js
+    - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateSearchView.js
+    - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateCreateView.js
+    - Modules/Element/Bundle/Data/Template/ElementDataCreateTemplate.js
+    - Modules/Element/Bundle/Data/Template/ElementDataViewTemplate.js
+    - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateViewView.js
+    - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateUpdateView.js
+    - Modules/Element/Bundle/Data/Template/ElementDataUpdateTemplate.js
+    - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateDeleteView.js
+    - Modules/Element/Bundle/Data/Template/ElementDataDeleteTemplate.js
     - Modules/Data/Bundle/Data/Collection/DataDataMainCollection.js
     - Modules/Data/Bundle/Data/Entity/DataDataMainEntity.js
     - Modules/Data/Bundle/Data/Route/DataDataMainRoute.js
@@ -109,6 +121,18 @@ scripts :
     - Modules/Data/Bundle/Data/Template/View/DataDataTemplateTimelineView.js
     - Modules/Data/Bundle/Data/Template/DataDataMiniatureTemplate.js
     - Modules/Data/Bundle/Data/Template/View/DataDataTemplateMiniatureView.js
+    - Modules/Data/Bundle/Data/Controller/DataDataMainController.js
+    - Modules/Data/Bundle/Data/Service/DataDataMainService.js
+    - Modules/Data/Bundle/Data/Template/DataDataSearchTemplate.js
+    - Modules/Data/Bundle/Data/Template/View/DataDataTemplateSearchView.js
+    - Modules/Data/Bundle/Data/Template/View/DataDataTemplateViewView.js
+    - Modules/Data/Bundle/Data/Template/DataDataViewTemplate.js
+    - Modules/Data/Bundle/Data/Template/DataDataCreateTemplate.js
+    - Modules/Data/Bundle/Data/Template/View/DataDataTemplateCreateView.js
+    - Modules/Data/Bundle/Data/Template/View/DataDataTemplateUpdateView.js
+    - Modules/Data/Bundle/Data/Template/View/DataDataTemplateDeleteView.js
+    - Modules/Data/Bundle/Data/Template/DataDataUpdateTemplate.js
+    - Modules/Data/Bundle/Data/Template/DataDataDeleteTemplate.js
     - Modules/BaseUser/Bundle/Data/Collection/BaseUserDataMainCollection.js
     - Modules/BaseUser/Bundle/Data/Entity/BaseUserDataMainEntity.js
     - Modules/BaseUser/Bundle/Data/Route/BaseUserDataMainRoute.js
@@ -116,6 +140,18 @@ scripts :
     - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateTimelineView.js
     - Modules/BaseUser/Bundle/Data/Template/BaseUserDataMiniatureTemplate.js
     - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateMiniatureView.js
+    - Modules/BaseUser/Bundle/Data/Controller/BaseUserDataMainController.js
+    - Modules/BaseUser/Bundle/Data/Service/BaseUserDataMainService.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataViewTemplate.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataUserSearchTemplate.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataCreateTemplate.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataUpdateTemplate.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataDeleteTemplate.js
+    - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateSearchView.js
+    - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateViewView.js
+    - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateCreateView.js
+    - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateUpdateView.js
+    - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateDeleteView.js
     - Modules/Student/Bundle/Data/Collection/StudentDataMainCollection.js
     - Modules/Student/Bundle/Display/Service/StudentDisplayMainService.js
     - Modules/Student/Bundle/Display/Template/StudentDisplayMainTemplate.js
@@ -124,32 +160,94 @@ scripts :
     - Modules/Student/Bundle/Data/Entity/StudentDataMainEntity.js
     - Modules/Student/Bundle/Data/Template/StudentDataTimelineTemplate.js
     - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateTimelineView.js
+    - Modules/Student/Bundle/Data/Controller/StudentDataMainController.js
+    - Modules/Student/Bundle/Display/Controller/StudentDisplayMainController.js
+    - Modules/Student/Bundle/Data/Service/StudentDataMainService.js
+    - Modules/Student/Bundle/Data/Template/StudentDataSearchTemplate.js
+    - Modules/Student/Bundle/Data/Template/StudentDataViewTemplate.js
+    - Modules/Student/Bundle/Data/Template/StudentDataCreateTemplate.js
+    - Modules/Student/Bundle/Data/Template/StudentDataUpdateTemplate.js
+    - Modules/Student/Bundle/Data/Template/StudentDataDeleteTemplate.js
+    - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateSearchView.js
+    - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateViewView.js
+    - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateCreateView.js
+    - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateUpdateView.js
+    - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateDeleteView.js
     - Modules/NamedData/Bundle/Data/Collection/NamedDataDataMainCollection.js
     - Modules/NamedData/Bundle/Data/Entity/NamedDataDataMainEntity.js
     - Modules/NamedData/Bundle/Data/Route/NamedDataDataMainRoute.js
     - Modules/NamedData/Bundle/Data/Template/NamedDataDataTimelineTemplate.js
     - Modules/NamedData/Bundle/Data/Template/View/NamedDataDataTemplateTimelineView.js
+    - Modules/NamedData/Bundle/Data/Template/NamedDataDataSearchTemplate.js
+    - Modules/NamedData/Bundle/Data/Template/NamedDataDataViewTemplate.js
+    - Modules/NamedData/Bundle/Data/Template/NamedDataDataCreateTemplate.js
+    - Modules/NamedData/Bundle/Data/Template/NamedDataDataUpdateTemplate.js
+    - Modules/NamedData/Bundle/Data/Template/NamedDataDataDeleteTemplate.js
+    - Modules/NamedData/Bundle/Data/Template/View/NamedDataDataTemplateSearchView.js
+    - Modules/NamedData/Bundle/Data/Template/View/NamedDataDataTemplateViewView.js
+    - Modules/NamedData/Bundle/Data/Template/View/NamedDataDataTemplateCreateView.js
+    - Modules/NamedData/Bundle/Data/Template/View/NamedDataDataTemplateUpdateView.js
+    - Modules/NamedData/Bundle/Data/Template/View/NamedDataDataTemplateDeleteView.js
+    - Modules/NamedData/Bundle/Data/Controller/NamedDataDataMainController.js
+    - Modules/NamedData/Bundle/Data/Service/NamedDataDataMainService.js
     - Modules/Institute/Bundle/Data/Entity/InstituteDataMainEntity.js
     - Modules/Institute/Bundle/Data/Collection/InstituteDataMainCollection.js
     - Modules/Institute/Bundle/Data/Route/InstituteDataMainRoute.js
     - Modules/Institute/Bundle/Data/Template/InstituteDataTimelineTemplate.js
     - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateTimelineView.js
+    - Modules/Institute/Bundle/Data/Service/InstituteDataMainService.js
+    - Modules/Institute/Bundle/Data/Controller/InstituteDataMainController.js
+    - Modules/Institute/Bundle/Data/Template/InstituteDataSearchTemplate.js
+    - Modules/Institute/Bundle/Data/Template/InstituteDataViewTemplate.js
+    - Modules/Institute/Bundle/Data/Template/InstituteDataCreateTemplate.js
+    - Modules/Institute/Bundle/Data/Template/InstituteDataUpdateTemplate.js
+    - Modules/Institute/Bundle/Data/Template/InstituteDataDeleteTemplate.js
+    - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateSearchView.js
+    - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateViewView.js
+    - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateCreateView.js
+    - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateUpdateView.js
+    - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateDeleteView.js
     - Modules/School/Bundle/Data/Collection/SchoolDataMainCollection.js
     - Modules/School/Bundle/Data/Entity/SchoolDataMainEntity.js
     - Modules/School/Bundle/Data/Route/SchoolDataMainRoute.js
     - Modules/School/Bundle/Data/Template/SchoolDataTimelineTemplate.js
     - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateTimelineView.js
+    - Modules/School/Bundle/Data/Controller/SchoolDataMainController.js
+    - Modules/School/Bundle/Data/Service/SchoolDataMainService.js
+    - Modules/School/Bundle/Data/Template/SchoolDataSearchTemplate.js
+    - Modules/School/Bundle/Data/Template/SchoolDataViewTemplate.js
+    - Modules/School/Bundle/Data/Template/SchoolDataCreateTemplate.js
+    - Modules/School/Bundle/Data/Template/SchoolDataUpdateTemplate.js
+    - Modules/School/Bundle/Data/Template/SchoolDataDeleteTemplate.js
+    - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateCreateView.js
+    - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateDeleteView.js
+    - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateSearchView.js
+    - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateUpdateView.js
+    - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateViewView.js
     - Modules/Company/Bundle/Data/Collection/CompanyDataMainCollection.js
     - Modules/Company/Bundle/Data/Entity/CompanyDataMainEntity.js
     - Modules/Company/Bundle/Data/Route/CompanyDataMainRoute.js
     - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateTimelineView.js
     - Modules/Company/Bundle/Data/Template/CompanyDataTimelineTemplate.js
+    - Modules/Company/Bundle/Data/Controller/CompanyDataMainController.js
+    - Modules/Company/Bundle/Data/Service/CompanyDataMainService.js
+    - Modules/Company/Bundle/Data/Template/CompanyDataSearchTemplate.js
+    - Modules/Company/Bundle/Data/Template/CompanyDataViewTemplate.js
+    - Modules/Company/Bundle/Data/Template/CompanyDataCreateTemplate.js
+    - Modules/Company/Bundle/Data/Template/CompanyDataUpdateTemplate.js
+    - Modules/Company/Bundle/Data/Template/CompanyDataDeleteTemplate.js
+    - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateSearchView.js
+    - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateViewView.js
+    - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateCreateView.js
+    - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateUpdateView.js
+    - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateDeleteView.js
     - Modules/Navigation/Bundle/Cookie/Service/NavigationCookieMainService.js
     - Modules/Navigation/Bundle/Route/NavigationRouteMainService.js
-    - Modules/User/Bundle/Manager/Service/UserManagerMainService.js
     - Modules/Navigation/Bundle/Loader/Template/NavigationLoaderMainTemplate.js
     - Modules/Navigation/Bundle/Loader/Template/View/NavigationLoaderTemplateMainView.js
     - Modules/Navigation/Bundle/Loader/Service/NavigationLoaderMainService.js
+    - Modules/Navigation/Bundle/Scroll/Service/NavigationScrollMainService.js
+    - Modules/User/Bundle/Manager/Service/UserManagerMainService.js
     - main.js
 styles : 
     - Assets/css/all.css

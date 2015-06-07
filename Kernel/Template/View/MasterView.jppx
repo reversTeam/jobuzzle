@@ -44,10 +44,7 @@ class MasterView extends tmp {
 		if (url == null || url == undefined)
 			throw "You can't redirect with an empty URL";
 		var dispatcher = serviceLocator.get('Dispatcher');
-		dispatcher.trigger('Navigation:Link:onClick', {
-			url : url,
-			template : e.target.getAttribute('data-template')
-		});
+		dispatcher.trigger('Navigation:Link:onClick', url);
 	}
 
 	getTemplate : function (template_name, params) {

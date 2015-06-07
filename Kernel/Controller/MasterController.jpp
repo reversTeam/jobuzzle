@@ -1,9 +1,20 @@
 class MasterController {
 
-	initialize : function () {
-		console.log('Controller has been instancied');
-	}
+	_serviceName = 'MasterService';
+	_service = undefined;
+	_serviceManager = undefined;
+	
 
+	#default get for _serviceManager;
+	#default get for _serviceName;
+	#default get for _service;
+	
+
+	initialize : function () {
+		var serviceManager = serviceLocator.get('ServiceManager');
+		this._serviceManager = serviceManager;
+		this._service = serviceManager.get(this.getServiceName());
+	}
 
 	public update : function () {
 		console.log('Entity is update by Controller');
