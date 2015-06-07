@@ -5,6 +5,7 @@ class ContentView extends MasterView {
 	render : function () {
 		if (!this._template.getVisibility())
 			return null;
+		return this.display();
 	}
 
 }
