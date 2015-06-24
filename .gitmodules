@@ -66,3 +66,7 @@
 	path = Modules/School
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/School-Front.git
 	branch = master
+[submodule "Modules/Filter"]
+	path = Modules/Filter
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Filter-Front.git
+	branch = master

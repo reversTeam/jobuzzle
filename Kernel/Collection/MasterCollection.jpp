@@ -69,9 +69,11 @@ class MasterCollection {
 			var entityClass = serviceLocator.get('EntityManager').get(this.getEntityClass());
 			entityClass.hydrate(entity);
 			this._entity[entity.id] = entityClass;
+			dispatcher.trigger('Store:'+ this.getEntityType() +'-'+ entity.id +':create');
 			events.push(this.getEntityType());
 			while (parent != null) {
 				parent._entity[entity.id] = this._entity[entity.id];
+				dispatcher.trigger('Store:'+ parent.getEntityType() +'-'+ entity.id +':create');
 				events.push(parent.getEntityType());
 				parent = parent.getParent();
 			}
