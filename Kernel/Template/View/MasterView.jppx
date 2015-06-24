@@ -41,8 +41,16 @@ class MasterView extends tmp {
 		if (e == undefined || e == null || e.target == undefined || e.target == null)
 			throw "You can't call directly link";
 		var url = e.target.getAttribute('data-url');
-		if (url == null || url == undefined)
+		var parent = e.target.parentElement;
+		while (!url && parent) {
+			url = parent.getAttribute('data-url');
+			if (url)
+				break ;
+			parent = parent.parentElement;
+		}
+		if (url == null || url == undefined) {
 			throw "You can't redirect with an empty URL";
+		}
 		var dispatcher = serviceLocator.get('Dispatcher');
 		dispatcher.trigger('Navigation:Link:onClick', url);
 	}

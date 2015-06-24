@@ -8,6 +8,8 @@ class ContentView extends MasterView {
 		return this.display();
 	}
 
+	onVisible : function() {}
+
 }
 
 #export ContentView;
