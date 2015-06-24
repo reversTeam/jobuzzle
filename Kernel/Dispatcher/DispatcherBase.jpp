@@ -45,7 +45,9 @@ class DispatcherBase extends MasterDispatcher {
 		if (i == len) {
 			if (events._listeners) {
 				for (var j = 0; j < events._listeners.length; ++j) {
-					if (events._listeners[j].obj === obj) {
+					if (events._listeners[j] == undefined)
+						delete events._listeners[j];
+					else if (events._listeners[j].obj === obj) {
 						delete events._listeners[j];
 						break ;
 					}

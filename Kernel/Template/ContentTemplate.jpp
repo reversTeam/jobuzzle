@@ -14,6 +14,10 @@ class ContentTemplate extends MasterTemplate {
 	}
 
 	visible : function () {
+		if (this._view && this._view.onVisible) {
+			console.log(this._view);
+			this._view.onVisible();
+		}
 		this._visibility = true;
 	}
 

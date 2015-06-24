@@ -248,6 +248,24 @@ scripts :
     - Modules/Navigation/Bundle/Loader/Service/NavigationLoaderMainService.js
     - Modules/Navigation/Bundle/Scroll/Service/NavigationScrollMainService.js
     - Modules/User/Bundle/Manager/Service/UserManagerMainService.js
+    - Modules/Filter/Bundle/Data/Collection/FilterDataMainCollection.js
+    - Modules/Filter/Bundle/Data/Controller/FilterDataMainController.js
+    - Modules/Filter/Bundle/Data/Entity/FilterDataMainEntity.js
+    - Modules/Filter/Bundle/Data/Route/FilterDataMainRoute.js
+    - Modules/Filter/Bundle/Data/Service/FilterDataMainService.js
+    - Modules/Filter/Bundle/Data/Template/FilterDataCreateTemplate.js
+    - Modules/Filter/Bundle/Data/Template/FilterDataDeleteTemplate.js
+    - Modules/Filter/Bundle/Data/Template/FilterDataSearchTemplate.js
+    - Modules/Filter/Bundle/Data/Template/FilterDataTimelineTemplate.js
+    - Modules/Filter/Bundle/Data/Template/FilterDataUpdateTemplate.js
+    - Modules/Filter/Bundle/Data/Template/FilterDataViewTemplate.js
+    - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateCreateView.js
+    - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateDeleteView.js
+    - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateSearchView.js
+    - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateTimelineView.js
+    - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateUpdateView.js
+    - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateViewView.js
+    - Modules/Filter/FilterAutoload.js
     - main.js
 styles : 
     - Assets/css/all.css
