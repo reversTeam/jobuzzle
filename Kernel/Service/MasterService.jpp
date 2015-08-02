@@ -1,8 +1,10 @@
 class MasterService {
 
 	_store = undefined;
+	_entityType = undefined;
 
 	#default get, set for _store;
+	#default get for _entityType;
 
 }
 
