@@ -73,9 +73,7 @@ scripts :
     - Modules/Body/Bundle/Cover/Template/View/BodyCoverTemplateMainView.js
     - Modules/Client/Bundle/Websocket/Service/ClientWebsocketMainService.js
     - Modules/Client/Bundle/Auth/Service/ClientAuthMainService.js
-    - Modules/Body/Bundle/Right/Template/BodyRightHeaderTemplate.js
     - Modules/Notification/Bundle/Panel/Template/NotificationPanelMainTemplate.js
-    - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateHeaderView.js
     - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
     - Modules/Navigation/Bundle/Action/Service/NavigationActionLinkService.js
     - Modules/Navigation/Bundle/History/Service/NavigationHistoryMainService.js
@@ -267,5 +265,5 @@ scripts :
     - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateViewView.js
     - Modules/Filter/FilterAutoload.js
     - main.js
-styles : 
+styles :
     - Assets/css/all.css

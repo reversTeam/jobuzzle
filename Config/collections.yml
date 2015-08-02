@@ -1,5 +1,5 @@
 upload:
-	protected:
+	protect:
 		- id
 		- parent_id
 		- create
