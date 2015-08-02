@@ -3,6 +3,10 @@
 class ContentTemplate extends MasterTemplate {
 
 	_viewClassName = 'ContentView';
+	_serviceName = undefined;
+
+	#default get for _serviceName;
+
 
 	intitialize : function () {
 		_super();
@@ -15,7 +19,6 @@ class ContentTemplate extends MasterTemplate {
 
 	visible : function () {
 		if (this._view && this._view.onVisible) {
-			console.log(this._view);
 			this._view.onVisible();
 		}
 		this._visibility = true;
@@ -23,6 +26,12 @@ class ContentTemplate extends MasterTemplate {
 
 	invisible : function () {
 		this._visibility = false;	
+	}
+
+	getService : function () {
+		var serviceManager = serviceLocator.get('ServiceManager');
+
+		return serviceManager.get(this.getServiceName());
 	}
 
 }

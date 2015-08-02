@@ -12,7 +12,7 @@ class MasterCollection {
 	initialize : function () {
 		var serviceManager = serviceLocator.get('ServiceManager');
 		this._sock = serviceManager.get('client_websocket_main_service');
-		this._protected = undefined;
+		this._protect = undefined;
 		this._parent = null;
 		this._childs = {};
 		this._entity = {};
@@ -30,11 +30,11 @@ class MasterCollection {
 		}
 	}
 
-	getProtected : function () {
-		if (this._protected == undefined) {
-			this._protected = Config.collections.upload.protected;
+	getProtect : function () {
+		if (this._protect == undefined) {
+			this._protect = Config.collections.upload.protect;
 		}
-		return this._protected;
+		return this._protect;
 	}
 
 	get : function (id) {
@@ -104,7 +104,7 @@ class MasterCollection {
 	updateEntity : function (id, datas) {
 		var fn = '';
 		for (var i in datas) {
-			if (this.getProtected().indexOf(i) == -1)
+			if (this.getProtect().indexOf(i) == -1)
 				fn = 'set'+ i.charAt(0).toUpperCase() + i.substr(1);
 				if (typeof this._entity[id][fn] == 'function')
 					this._entity[id][fn](datas[i]);
@@ -113,7 +113,7 @@ class MasterCollection {
 		return true;
 	}
 
-	delete : function (id) {
+	remove : function (id) {
 		if (!this._entity[id])
 			return false;
 		var dispatcher = serviceLocator.get('Dispatcher');
