@@ -1,4 +1,4 @@
-@keyframes fadeIn {
+@include keyframes(fadeIn) {
 	25%		{ opacity: 0.25; }
 	50%		{ opacity: 0.50; }
 	75%		{ opacity: 0.75; }
