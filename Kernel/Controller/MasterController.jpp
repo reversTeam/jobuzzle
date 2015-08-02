@@ -3,12 +3,15 @@ class MasterController {
 	_serviceName = 'MasterService';
 	_service = undefined;
 	_serviceManager = undefined;
+	_entityType = undefined;
+	_url = undefined;
 	
 
 	#default get for _serviceManager;
 	#default get for _serviceName;
 	#default get for _service;
-	
+	#default get for _entityType;
+	#default get for _url;
 
 	initialize : function () {
 		var serviceManager = serviceLocator.get('ServiceManager');
@@ -16,9 +19,52 @@ class MasterController {
 		this._service = serviceManager.get(this.getServiceName());
 	}
 
-	public update : function () {
-		console.log('Entity is update by Controller');
+	getCollection : function () {
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+
+		return store.getAll(this.getEntityType());
 	}
+
+	loadEntity : function (key, value) {
+		var self = this;
+		var router = serviceLocator.get('Router');
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+		var filterMethod = 'filterBy';
+		var tmp = key.split('_')[1];
+		var filter = {};
+		var dispatcher = serviceLocator.get('Dispatcher');
+		filterMethod += tmp.charAt(0).toUpperCase() + tmp.slice(1);
+		filter[filterMethod] = value;
+		var url = router.build('/'+ this.getUrl());
+		store.request(url, {
+			filter : [
+				filter
+			]
+		}, function (response) {
+			if (response.result.length) {
+				var entity = store.get(response['result'][0]['id']);
+				dispatcher.trigger(self.getEntityType() +':view:changeEntity', {entity : entity});
+			}
+		});
+	}
+
+	getEntity : function (params) {
+		var collection = this.getCollection();
+		var keys = Object.keys(params);
+		var len = keys.length;
+		var reg = new RegExp('^'+ this.getUrl() +'_[a-z]+$');
+		var findMethod = 'findBy';
+
+		for (var i = 0; i < len; ++i) {
+			if (reg.test(keys[i])) {
+				var tmp = keys[i].split('_')[1];
+				findMethod += tmp.charAt(0).toUpperCase() + tmp.slice(1);
+				return collection[findMethod](params[keys[i]]) || this.loadEntity(keys[i], params[keys[i]]);
+			}
+		}
+		return false;
+	}
+
 }
 
 #export MasterController;
