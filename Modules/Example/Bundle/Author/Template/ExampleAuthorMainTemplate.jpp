@@ -1,5 +1,3 @@
-#import (Config.path +'/Kernel/Template/ContentTemplate') = ContentTemplate;
-
 class ExampleAuthorMainTemplate extends ContentTemplate {
 
 	_viewClassName = 'ExampleAuthorTemplateMainView';
@@ -10,5 +8,3 @@ class ExampleAuthorMainTemplate extends ContentTemplate {
 
 
 }
-
-#export ExampleAuthorMainTemplate;

@@ -1,5 +1,3 @@
-#import (Config.path +'/Kernel/Factory/MasterFactory') = MasterFactory;
-
 class ExampleBookServiceMainFactory extends MasterFactory {
 
 	invokableClassName = 'example_book_main_service';
@@ -21,5 +19,3 @@ class ExampleBookServiceMainFactory extends MasterFactory {
 	}
 
 }
-
-#export ExampleBookServiceMainFactory;

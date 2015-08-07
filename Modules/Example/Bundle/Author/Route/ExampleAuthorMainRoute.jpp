@@ -1,5 +1,3 @@
-#import (Config.path +'/Kernel/Route/MasterRoute') = MasterRoute;
-
 class ExampleAuthorMainRoute extends MasterRoute {
 
 	name = 'author';
@@ -12,5 +10,3 @@ class ExampleAuthorMainRoute extends MasterRoute {
 	paramRegex = '[a-z0-9-]+';
 
 }
-
-#export ExampleAuthorMainRoute;

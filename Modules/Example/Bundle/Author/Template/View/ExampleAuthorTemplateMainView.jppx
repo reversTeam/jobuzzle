@@ -1,5 +1,3 @@
-#import (Config.path +'/Kernel/Template/View/MasterView') = ContentView;
-
 class ExampleAuthorTemplateMainView extends ContentView {
 
 	linkBook : function () {
@@ -17,5 +15,3 @@ class ExampleAuthorTemplateMainView extends ContentView {
 	}
 
 }
-
-#export BodyRightTemplateMainView;

@@ -1,5 +1,3 @@
-#import (Config.path +'/Kernel/Service/MasterService') = MasterService;
-
 class ExampleAuthorMainService extends MasterService {
 
 	_lastName = '';
@@ -18,5 +16,3 @@ class ExampleAuthorMainService extends MasterService {
 	}
 
 }
-
-#export ExampleAuthorMainService;
