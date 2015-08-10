@@ -1,8 +1,28 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:03:33
+**************************************************************/
+
 class MasterFactory {
 
+	/**
+	* Invokable class name for instanciate
+	**/
 	invokableClassName = 'masterClass';
+
 	#default get, set for invokableClassName;
 
+	/**
+	* Call when factory is create for initialized
+	* invokable object
+	**/
 	create : function (serviceManager) {
 		var obj = serviceManager.getInvokables(this.getInvokableClassName());
 		return obj;

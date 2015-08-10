@@ -1,14 +1,32 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:04:22
+**************************************************************/
+
 #import ('fs') = fs;
 #import ('./MasterInitializer') = MasterInitializer;
 #import ('../Utility') = Utility;
 
 class ModuleInitializer extends MasterInitializer {
 
+	/**
+	* Initialize module
+	**/
 	initialize : function () {
 		_super();
 		this.loadModules();
 	}
 
+	/**
+	* Call autoload module
+	**/
 	loadModules : function () {
 		var basePath = Config['path'] +'/Modules';
 		var req = undefined;

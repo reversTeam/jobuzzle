@@ -1,3 +1,15 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:23:07
+**************************************************************/
+
 class MasterRoute {
 
 	name : 'master';
@@ -18,10 +30,16 @@ class MasterRoute {
 
 	#default get for _routes;
 
+	/**
+	* Registerd route
+	**/
 	initialize : function () {
 		this._routes = this.getRoutesFromArray();
 	}
 
+	/**
+	* Get route from array
+	**/
 	getRoutesFromArray : function () {
 		return {
 			"type" : 'Translation',
@@ -66,6 +84,9 @@ class MasterRoute {
 		};
 	}
 
+	/**
+	* Get params for current route
+	**/
 	getParams : function () {
 		var tab = {}
 		tab[this.getParamName()] = this.getParamRegex();

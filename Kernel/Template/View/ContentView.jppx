@@ -1,7 +1,24 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:24:10
+**************************************************************/
+
 #import ('./MasterView') = MasterView;
 
 class ContentView extends MasterView {
 
+	/**
+	* Overide render if element is not visible
+	* return null
+	* else call display method
+	**/
 	render : function () {
 		if (!this._template.getVisibility())
 			return null;
