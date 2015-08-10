@@ -1,19 +1,49 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:37:17
+**************************************************************/
+
 class Translator {
 
+	/**
+	* Default langage
+	**/
 	_defaultLang = 'EN_us';
+
+	/**
+	* Current langage
+	**/
 	_currentLang = 'EN_us';
+
+	/**
+	* translations
+	**/
 	_translation = {};
+
 
 	#default get, set for _currentLang;
 	#default get, set for _defaultLang;
 	#default get, set for _translation;
 
+	/**
+	* Initialize
+	**/
 	initialize: function() {
 		this.setTranslation(serviceLocator.get('Translation'));
 		this.setDefaultLang(Config['language']['default']);
 		this.setCurrentLang(Config['language']['default']);
 	}
 
+	/**
+	* Call for translate key by word
+	**/
 	translate : function(key, params) {
 		var ret = this._translation.getTranslation(key, this.getCurrentLang());
 		if (!ret)
@@ -25,6 +55,9 @@ class Translator {
 		return ret;
 	}
 
+	/**
+	* Using for translate route
+	**/
 	translateRoute : function (key) {
 		var ret = this._translation.getTranslationRoute(key, this.getCurrentLang());
 		if (!ret)
@@ -34,6 +67,9 @@ class Translator {
 		return ret;
 	}
 
+	/**
+	* Method for inject variable in translation
+	**/
 	injectVars : function (str, params) {
 		for (var i in params) {
 			str = str.replace(new RegExp('{{'+ i +'}}'), params[i]);

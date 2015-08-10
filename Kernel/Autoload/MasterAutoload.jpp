@@ -1,9 +1,34 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 15:44:23
+**************************************************************/
+
+/**
+* MasterAutoload : Is a class base for initialize
+* your modules
+**/
 class MasterAutoload {
 
+	/**
+	* Name of your module
+	**/
 	confModuleName = '';
 
 	#default get, set for confModuleName;
 
+	/**
+	* initialize is constructor of your class
+	* Get module config
+	* registered translation module
+	* registered managers module
+	**/
 	initialize : function () {
 		if (!Config['modules'] || !Config['modules'][this.getConfModuleName()])
 			return ;
@@ -17,10 +42,16 @@ class MasterAutoload {
 		this.initManagers();
 	}
 
+	/**
+	* Method call when Module is create
+	**/
 	onBootstrap : function () {
 
 	}
 
+	/**
+	* Method call when all module is registered
+	**/
 	init : function () {
 		
 	}
@@ -29,6 +60,10 @@ class MasterAutoload {
 		
 	}
 
+	/**
+	* initManagers : get all managers config
+	* registered manager module in ServiceManager
+	**/
 	initManagers : function () {
 		var managers = Config['managers'];
 		var len = managers.length;
@@ -42,6 +77,10 @@ class MasterAutoload {
 		}
 	}
 
+	/**
+	* Method call by initManagers
+	* Registered your managers Module
+	**/
 	addInManager : function (manager, confManager) {
 		if (confManager['shared']) {
 			for (var i in confManager['shared']) {

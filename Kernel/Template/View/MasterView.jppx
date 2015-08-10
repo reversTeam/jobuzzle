@@ -1,5 +1,20 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:27:15
+**************************************************************/
+
 var tmp = React['createClass']({
 
+	/**
+	* Initial state for react
+	**/
 	"getInitialState": function () {
 		if (this.initialState) {
 			var obj = this.initialState();
@@ -11,6 +26,9 @@ var tmp = React['createClass']({
 		};
 	},
 
+	/**
+	* render for react
+	**/
 	"render" : function () {
 		throw "It's an abstract view, you can't instancied an object if you don't have override render method"
 	}
@@ -28,15 +46,24 @@ class MasterView extends tmp {
 
 	_current_key_index = 0;
 
+	/**
+	*  Bullshit react
+	**/
 	initialize : function (props, context) {
 		this.setTemplateManager(serviceLocator.get('TemplateManager'));
 		_super(props, context);
 	}
 
+	/**
+	* Return key for optimise react js
+	**/
 	getKey: function () {
 		return this._template.getViewClassName() + (this._current_key_index++);
 	}
 
+	/**
+	* Method for create an link
+	**/
 	link : function (e) {
 		if (e == undefined || e == null || e.target == undefined || e.target == null)
 			throw "You can't call directly link";
@@ -55,6 +82,9 @@ class MasterView extends tmp {
 		dispatcher.trigger('Navigation:Link:onClick', url);
 	}
 
+	/**
+	* Get a template
+	**/
 	getTemplate : function (template_name, params) {
 		if (!this._allTemplate[template_name]) {
 			this._allTemplate[template_name] = this.getUniqueTemplate(template_name, params);
@@ -62,6 +92,9 @@ class MasterView extends tmp {
 		return this._allTemplate[template_name];
 	}
 
+	/**
+	* Get an template
+	**/
 	getUniqueTemplate : function (template_name, params) {
 		var template = this.getTemplateManager().get(template_name);
 		if (!template)
@@ -72,6 +105,9 @@ class MasterView extends tmp {
 		return React['createElement'](template.getView(), params);
 	}
 
+	/**
+	* Defautl render
+	**/
 	render = function () {
 		this.state.key = 'MasterView';
 		return React.createElement("div", {}, this.state.n)

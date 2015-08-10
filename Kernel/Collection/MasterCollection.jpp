@@ -1,14 +1,44 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 15:56:41
+**************************************************************/
+
 class MasterCollection {
 
 	_entityType = 'Master';
 	_entityClass = 'Master';
 	_sock = undefined;
 
+	/**
+	* Name Type : identity by type for entity 
+	**/
 	#default get for _entityType;
+
+	/**
+	* ClassName
+	**/
 	#default get for _entityClass;
+
+	/**
+	* Childs collection
+	**/
 	#default get for _childs;
+
+	/**
+	* Parent collection
+	**/
 	#default get, set for _parent;
 
+	/**
+	* Initialize collection register socket
+	**/
 	initialize : function () {
 		var serviceManager = serviceLocator.get('ServiceManager');
 		this._sock = serviceManager.get('client_websocket_main_service');
@@ -18,6 +48,9 @@ class MasterCollection {
 		this._entity = {};
 	}
 
+	/**
+	* Add an child collection in current collection
+	**/
 	addChilds : function (childs, store) {
 		var collectionManager = serviceLocator.get('CollectionManager');
 		var collection = undefined;
@@ -30,6 +63,9 @@ class MasterCollection {
 		}
 	}
 
+	/**
+	* Get attribute protect configuration for collection
+	**/
 	getProtect : function () {
 		if (this._protect == undefined) {
 			this._protect = Config.collections.upload.protect;
@@ -37,12 +73,19 @@ class MasterCollection {
 		return this._protect;
 	}
 
+	/**
+	* Get an entity by id
+	**/
 	get : function (id) {
 		if (!this._entity[id])
 			return false;
 		return this._entity[id];
 	}
 
+	/**
+	* Method for get an collection
+	* by default return the master collection
+	**/
 	getAll : function (type) {
 		var ret = undefined;
 		if (type == undefined || type == this.getEntityType())
@@ -55,6 +98,14 @@ class MasterCollection {
 		return false;
 	}
 
+	/**
+	* Method call when an new element is add
+	* Check if exist, if exist send for update
+	* else add in colleciton, register for all parent
+	* and send event for creation element
+	* Store:ENTITY_TYPE:create
+	* same for all parent type
+	**/
 	create : function (entity) {
 		var child = undefined;
 		var parent = this.getParent();
@@ -82,6 +133,13 @@ class MasterCollection {
 		return false;
 	}
 
+	/**
+	* Mehtod is call when entity is update
+	* Send event by Dispatcher :
+	* 	- Store:ENTITY_TYPE:update
+	* 	- Store:ENTITY_TYPE-ENTITY_ID:update
+	* And send same event for all parent type
+	**/
 	update : function (id, datas) {
 		if (!this.get(id))
 			return false;
@@ -101,6 +159,12 @@ class MasterCollection {
 		return true;
 	}
 
+	/**
+	* Method call by update
+	* Update an entity in collection
+	* Check if attribut update is not protect
+	* if entity have callback call that callback
+	**/
 	updateEntity : function (id, datas) {
 		var fn = '';
 		for (var i in datas) {
@@ -113,6 +177,12 @@ class MasterCollection {
 		return true;
 	}
 
+	/**
+	* Delete an entity in collection
+	* Send event :
+	*	- Store:ENTITY_TYPE:delete
+	*	- Storde:ENTITY_TYPE-ENTITY_ID:delete
+	**/
 	remove : function (id) {
 		if (!this._entity[id])
 			return false;
