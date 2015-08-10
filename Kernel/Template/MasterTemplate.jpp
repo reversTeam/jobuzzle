@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:33:59
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:28:43
 **************************************************************/
 
 #import (Config.path +'/Kernel/Utility') = Utility;
@@ -23,23 +23,38 @@ class MasterTemplate {
 	#default get for _viewClassName;
 	#default set, get for _templateManager;
 
+	/**
+	* initialize
+	**/
 	initialize : function () {
 		this.setTemplateManager(serviceLocator.get('TemplateManager'));
 		this.onListen();
 	}
 
+	/**
+	* for listen
+	**/
 	onListen : function () {
 		return serviceLocator.get('Dispatcher');
 	}
 
+	/**
+	* for listen when view is init
+	**/
 	onListenView : function () {
 		return serviceLocator.get('Dispatcher');	
 	}
 
+	/**
+	* get template view
+	**/
 	getTemplate : function (template_name, parent) {
 		return React['createElement'](this.getTemplateManager().get(template_name).getView(parent), null);
 	} 
 
+	/**
+	* Bullshit react
+	**/
 	getView : function (parent) {
 		if (this._view_class == undefined) {
 			var self = this;

@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:33:59
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:22:21
 **************************************************************/
 
 #import ('../MasterRoute') = MasterRoute;
@@ -26,6 +26,9 @@ class MasterRouteType {
 
 	_typePatternRoute = null;
 
+	/**
+	* Initialize object
+	**/
 	initialize : function (name, routes, parent) {
 		if (!routes || !routes['action'] || !routes['action']['method'])
 			throw 'You can\'t create an empty route or route with empty action method';
@@ -39,6 +42,9 @@ class MasterRouteType {
 		this.createChilds(routes['childs']);
 	}
 
+	/**
+	* Get current controller
+	**/
 	getController : function () {
 		if (this._controller)
 			return this._controller;
@@ -48,6 +54,9 @@ class MasterRouteType {
 			throw 'You don\'t teach controller for your route';
 	}
 
+	/**
+	* Add a child route
+	**/
 	createChilds : function (childs) {
 		if (!childs)
 			return ;
@@ -56,6 +65,9 @@ class MasterRouteType {
 		}
 	}
 
+	/**
+	* Add an route
+	**/
 	addRoute : function (name, route, parent, type) {
 		if (route instanceof MasterRoute)
 			route = route.getRoutes();
@@ -63,34 +75,52 @@ class MasterRouteType {
 		this._childs[name] = new req(name, route, parent);
 	}
 
+	/**
+	* Build a route with route and params
+	**/
 	build : function (segment, datas) {
 		if (!segment)
 			return false;
 		return this.inject(segment, datas);
 	}
 
+	/**
+	* Inject params in segment route
+	**/
 	inject : function (segment, datas) {
 		if (segment == this._routeUrl)
 			return segment;
 		return false;
 	}
 
+	/**
+	* Get current route
+	**/
 	getRoute : function (name) {
 		if (!this._childs[name])
 			return false;
 		return this._childs[name];
 	}
 
+	/**
+	* Get Childs routes
+	**/
 	getRoutes : function () {
 		return this.getChilds();
 	}
 
+	/**
+	* Set the name for the route
+	**/
 	setName : function (name) {
 		if (!name)
 			throw 'You don\'t teach name for your route';
 		this._name = name;
 	}
 
+	/**
+	* Add route url and check type
+	**/
 	setRouteUrl : function (route) {
 		if (!route)
 			throw 'You don\'t teach pattern for your route';
@@ -100,6 +130,9 @@ class MasterRouteType {
 			throw '"'+ route +'" it\'s not a good type for your route'; 
 	}
 
+	/**
+	* add options route
+	**/
 	setOptions : function (options) {
 		this._options = null;
 		if (options) {
@@ -107,6 +140,9 @@ class MasterRouteType {
 		}	
 	}
 
+	/**
+	*
+	**/
 	match : function (segment) {
 		if (!segment)
 			return false;
@@ -118,6 +154,9 @@ class MasterRouteType {
 		return false;
 	}
 
+	/**
+	* 
+	**/
 	parse : function (segment) {
 		throw 'You can\'t call MasterRouteType Parse, please override function parse';
 	}

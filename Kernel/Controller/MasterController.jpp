@@ -7,15 +7,34 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:33:59
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:00:38
 **************************************************************/
 
 class MasterController {
 
+	/**
+	* Service name
+	**/
 	_serviceName = 'MasterService';
+
+	/**
+	* Service object
+	**/
 	_service = undefined;
+
+	/**
+	* Service manager
+	**/
 	_serviceManager = undefined;
+
+	/**
+	* Entity type name
+	**/
 	_entityType = undefined;
+
+	/**
+	* Object url
+	**/
 	_url = undefined;
 	
 
@@ -25,18 +44,28 @@ class MasterController {
 	#default get for _entityType;
 	#default get for _url;
 
+	/**
+	* Initialize : Register service manager and get service
+	**/
 	initialize : function () {
 		var serviceManager = serviceLocator.get('ServiceManager');
 		this._serviceManager = serviceManager;
 		this._service = serviceManager.get(this.getServiceName());
 	}
 
+	/**
+	* Get collection
+	**/
 	getCollection : function () {
 		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
 
 		return store.getAll(this.getEntityType());
 	}
 
+	/**
+	* Build route and get current element if
+	* collection is empty
+	**/
 	loadEntity : function (key, value) {
 		var self = this;
 		var router = serviceLocator.get('Router');
@@ -60,6 +89,9 @@ class MasterController {
 		});
 	}
 
+	/**
+	* Get entity in collection or load entity
+	**/
 	getEntity : function (params) {
 		var collection = this.getCollection();
 		var keys = Object.keys(params);

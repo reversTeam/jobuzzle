@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:33:59
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:04:22
 **************************************************************/
 
 #import ('fs') = fs;
@@ -16,11 +16,17 @@
 
 class ModuleInitializer extends MasterInitializer {
 
+	/**
+	* Initialize module
+	**/
 	initialize : function () {
 		_super();
 		this.loadModules();
 	}
 
+	/**
+	* Call autoload module
+	**/
 	loadModules : function () {
 		var basePath = Config['path'] +'/Modules';
 		var req = undefined;

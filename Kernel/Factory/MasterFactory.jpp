@@ -7,14 +7,22 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:33:59
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:03:33
 **************************************************************/
 
 class MasterFactory {
 
+	/**
+	* Invokable class name for instanciate
+	**/
 	invokableClassName = 'masterClass';
+
 	#default get, set for invokableClassName;
 
+	/**
+	* Call when factory is create for initialized
+	* invokable object
+	**/
 	create : function (serviceManager) {
 		var obj = serviceManager.getInvokables(this.getInvokableClassName());
 		return obj;

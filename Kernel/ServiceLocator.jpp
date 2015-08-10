@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:33:59
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:32:15
 **************************************************************/
 
 #import ('fs') = fs;
@@ -19,6 +19,9 @@ class ServiceLocator {
 
 	#default get, set for _defaultShared;
 
+	/**
+	* Initialize attribute
+	**/
 	initialize : function () {
 		this._all = {};
 		this._all['invokables'] = {};
@@ -28,6 +31,9 @@ class ServiceLocator {
 		this._static = {};
 	}
 
+	/**
+	* Register all managers
+	**/
 	init : function () {
 		if (!Config['servicelocator'])
 			return ;
@@ -51,6 +57,9 @@ class ServiceLocator {
 		}
 	}
 
+	/**
+	* Call for get manager
+	**/
 	get : function (key) {
 		var shared = this.isShared(key);
 		if (shared && this._static[key])
@@ -65,6 +74,9 @@ class ServiceLocator {
 		return obj;
 	}
 
+	/**
+	* Add an manager
+	**/
 	add : function (key, value, type) {
 		var pathfile = Config['path'] +'/'+ value;
 		var req = {};
@@ -82,16 +94,25 @@ class ServiceLocator {
 
 	}
 
+	/**
+	* add shared manager
+	**/
 	addShared : function (key, value) {
 		this._all['shared'][key] = value;
 	}
 
+	/**
+	* check if manager is shared
+	**/
 	isShared : function (key) {
 		if (this._all['shared'][key] != undefined)
 			return this._all['shared'][key];
 		return this.getDefaultShared();
 	}
 
+	/**
+	* get an invokable manager
+	**/
 	getInvokables : function (key) {
 		if (this._all['invokables'][key]) {
 			return this.getObject(this._all['invokables'][key], 'invokables');
@@ -99,6 +120,9 @@ class ServiceLocator {
 		return false;
 	}
 
+	/**
+	* get a factory manager
+	**/
 	getFactory : function (key) {
 		if (this._all['factories'][key]) {
 			var obj = this.getObject(this._all['factories'][key], 'factories');
@@ -109,6 +133,9 @@ class ServiceLocator {
 		return false;
 	}
 
+	/**
+	* Get an object all type
+	**/
 	getObject : function (pathFile, type) {
 		var pathToFile = Config['path'] +'/'+ pathFile;
 		var req = {};
