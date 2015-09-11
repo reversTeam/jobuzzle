@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:33:59
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 17:46:49
 **************************************************************/
 
 # import('./DispatcherMaster') = MasterDispatcher;
@@ -31,7 +31,7 @@ class DispatcherBase extends MasterDispatcher {
 			if (!events._listeners)
 				events._listeners = [];
 			for (var j = 0; j < events._listeners.length; ++j) {
-				if (events._listeners[j].obj === obj)
+				if (!events._listeners[j] || events._listeners[j].obj === obj)
 					return ;
 			}
 			events._listeners.push({
@@ -59,7 +59,7 @@ class DispatcherBase extends MasterDispatcher {
 				for (var j = 0; j < events._listeners.length; ++j) {
 					if (events._listeners[j] == undefined)
 						delete events._listeners[j];
-					else if (events._listeners[j].obj === obj) {
+					else if (!events._listeners[j] || events._listeners[j].obj === obj) {
 						delete events._listeners[j];
 						break ;
 					}
