@@ -134,6 +134,7 @@ scripts :
     - Modules/BaseUser/Bundle/Data/Collection/BaseUserDataMainCollection.js
     - Modules/BaseUser/Bundle/Data/Entity/BaseUserDataMainEntity.js
     - Modules/BaseUser/Bundle/Data/Route/BaseUserDataMainRoute.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataSearchTemplate.js
     - Modules/BaseUser/Bundle/Data/Template/BaseUserDataTimelineTemplate.js
     - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateTimelineView.js
     - Modules/BaseUser/Bundle/Data/Template/BaseUserDataMiniatureTemplate.js
@@ -263,7 +264,6 @@ scripts :
     - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateUpdateView.js
     - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateViewView.js
     - Modules/Filter/FilterAutoload.js
-    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataSearchTemplate.js
     - main.js
 styles : 
     - Assets/css/all.css
