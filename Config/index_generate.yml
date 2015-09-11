@@ -1,15 +1,3 @@
-###############################################################
-#     ####         #                               #          # Jobuzzle - Copyright All rights reserved
-#     ####         #                               #          #
-#       ##  #####  ######  #     # ####### ####### #  #####   # @Author: revers
-#       ## #     # #     # #     #      #       #  # #     #  #
-#       ## #     # #     # #     #     #       #   # #     #  # @Date:   2015-08-02 13:52:32
-#       ## #     # #     # #     #    #       #    # #     #  #
-#       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
-#  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-08-08 14:33:22
-###############################################################
-
 scripts : 
     - Vendors/React.js
     - Vendors/socket.io.js
@@ -153,7 +141,6 @@ scripts :
     - Modules/BaseUser/Bundle/Data/Controller/BaseUserDataMainController.js
     - Modules/BaseUser/Bundle/Data/Service/BaseUserDataMainService.js
     - Modules/BaseUser/Bundle/Data/Template/BaseUserDataViewTemplate.js
-    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataUserSearchTemplate.js
     - Modules/BaseUser/Bundle/Data/Template/BaseUserDataCreateTemplate.js
     - Modules/BaseUser/Bundle/Data/Template/BaseUserDataUpdateTemplate.js
     - Modules/BaseUser/Bundle/Data/Template/BaseUserDataDeleteTemplate.js
@@ -276,6 +263,7 @@ scripts :
     - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateUpdateView.js
     - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateViewView.js
     - Modules/Filter/FilterAutoload.js
+    - Modules/BaseUser/Bundle/Data/Template/BaseUserDataSearchTemplate.js
     - main.js
-styles :
+styles : 
     - Assets/css/all.css
