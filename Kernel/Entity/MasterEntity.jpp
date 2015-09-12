@@ -7,28 +7,25 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:02:13
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 01:05:39
 **************************************************************/
 
 class MasterEntity {
 
-	_type = 'Master';
-
-	#default get for _type;
-	#default get, set for _id;
+	public _type = 'Master';
 
 	initialize : function () {
-		this._id = undefined;
-		this.templates = {};
-		this.view = {};
+		this['_id'] = undefined;
+		this['templates'] = {};
+		this['view'] = {};
 	}
 
 	/**
 	* Method call when entity is load
 	**/
 	public hydrate : function (datas) {
-		if (datas.id) {
-			this.setId(datas.id);
+		if (datas['id']) {
+			this.setId(datas['id']);
 			this.onListen();
 		}
 	}
@@ -51,6 +48,20 @@ class MasterEntity {
 		for (var i in this.templates) {
 			this.templates[i].update();
 		}
+	}
+
+	public getId : function () {
+		return this['_id'];
+	}
+
+	public setId : function (id) {
+		this['_id'] = id;
+
+		return this;
+	}
+
+	public getType : function () {
+		return this['_type'];
 	}
 
 }

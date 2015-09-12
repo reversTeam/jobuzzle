@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:03:33
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 23:33:10
 **************************************************************/
 
 class MasterFactory {
@@ -23,7 +23,7 @@ class MasterFactory {
 	* Call when factory is create for initialized
 	* invokable object
 	**/
-	create : function (serviceManager) {
+	public create : function (serviceManager) {
 		var obj = serviceManager.getInvokables(this.getInvokableClassName());
 		return obj;
 	}

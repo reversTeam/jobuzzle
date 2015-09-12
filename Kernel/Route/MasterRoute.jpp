@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:23:07
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 20:41:04
 **************************************************************/
 
 class MasterRoute {
@@ -75,7 +75,7 @@ class MasterRoute {
 							"type" : 'Translation',
 							"route" : '{delete}',
 							"action" : {
-								"method" : 'delete'
+								"method" : 'remove'
 							}
 						}
 					}

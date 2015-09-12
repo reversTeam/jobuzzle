@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 17:46:49
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 22:07:13
 **************************************************************/
 
 # import('./DispatcherMaster') = MasterDispatcher;
@@ -89,7 +89,7 @@ class DispatcherBase extends MasterDispatcher {
 					params.push(arr_params[j]);
 				for (var j = 0; j < events._listeners.length; ++j) {
 					if (events._listeners[j])
-						events._listeners[j].callback.apply(events._listeners[j].obj, params);
+						events._listeners[j]['callback'].apply(events._listeners[j].obj, params);
 				}
 			}
 		}

@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:00:38
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 14:14:33
 **************************************************************/
 
 class MasterController {
@@ -78,13 +78,13 @@ class MasterController {
 		filter[filterMethod] = value;
 		var url = router.build('/'+ this.getUrl());
 		store.request(url, {
-			filter : [
+			'filter' : [
 				filter
 			]
 		}, function (response) {
 			if (response.result.length) {
 				var entity = store.get(response['result'][0]['id']);
-				dispatcher.trigger(self.getEntityType() +':view:changeEntity', {entity : entity});
+				dispatcher.trigger(self.getEntityType() +':view:changeEntity', {'entity' : entity});
 			}
 		});
 	}
@@ -103,6 +103,7 @@ class MasterController {
 			if (reg.test(keys[i])) {
 				var tmp = keys[i].split('_')[1];
 				findMethod += tmp.charAt(0).toUpperCase() + tmp.slice(1);
+
 				return collection[findMethod](params[keys[i]]) || this.loadEntity(keys[i], params[keys[i]]);
 			}
 		}

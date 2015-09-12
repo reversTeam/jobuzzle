@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:33:59
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:28:08
 **************************************************************/
 
 #import ('./MasterTemplate') = MasterTemplate;
@@ -22,22 +22,22 @@ class ContentTemplate extends MasterTemplate {
 
 	intitialize : function () {
 		_super();
-		this._visibility = false;
+		this['_visibility'] = false;
 	}
 
-	getVisibility : function () {
-		return this._visibility;
+	public getVisibility : function () {
+		return this['_visibility'];
 	}
 
-	visible : function () {
+	public visible : function () {
 		if (this._view && this._view.onVisible) {
 			this._view.onVisible();
 		}
-		this._visibility = true;
+		this['_visibility'] = true;
 	}
 
-	invisible : function () {
-		this._visibility = false;	
+	public invisible : function () {
+		this['_visibility'] = false;	
 	}
 
 	getService : function () {

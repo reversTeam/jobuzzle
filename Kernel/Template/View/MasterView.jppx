@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:27:15
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 18:00:26
 **************************************************************/
 
 var tmp = React['createClass']({
@@ -39,6 +39,7 @@ class MasterView extends tmp {
 
 	_templateManager = undefined;
 
+	public _template = undefined;
 	_allTemplate = {};
 	_allView = {};
 
@@ -58,13 +59,14 @@ class MasterView extends tmp {
 	* Return key for optimise react js
 	**/
 	getKey: function () {
-		return this._template.getViewClassName() + (this._current_key_index++);
+		return this['_template'].getViewClassName() + (this._current_key_index++);
 	}
 
 	/**
 	* Method for create an link
 	**/
-	link : function (e) {
+	public link : function (e) {
+		console.log('ON LINK');
 		if (e == undefined || e == null || e.target == undefined || e.target == null)
 			throw "You can't call directly link";
 		var url = e.target.getAttribute('data-url');
@@ -108,9 +110,9 @@ class MasterView extends tmp {
 	/**
 	* Defautl render
 	**/
-	render = function () {
+	public render = function () {
 		this.state.key = 'MasterView';
-		return React.createElement("div", {}, this.state.n)
+		return React['createElement']("div", {}, this.state.n)
 	}
 
 }

@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 16:24:10
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:30:23
 **************************************************************/
 
 #import ('./MasterView') = MasterView;
@@ -19,8 +19,8 @@ class ContentView extends MasterView {
 	* return null
 	* else call display method
 	**/
-	render : function () {
-		if (!this._template.getVisibility())
+	public render : function () {
+		if (!this['_template']['getVisibility']())
 			return null;
 		return this.display();
 	}

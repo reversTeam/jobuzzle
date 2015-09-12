@@ -7,14 +7,14 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 14:27:22
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 01:11:34
 **************************************************************/
 
 class MasterCollection {
 
-	_entityType = 'Master';
-	_entityClass = 'Master';
-	_sock = undefined;
+	public _entityType = 'Master';
+	public _entityClass = 'Master';
+	public _sock = undefined;
 
 	/**
 	* Name Type : identity by type for entity 
@@ -41,11 +41,11 @@ class MasterCollection {
 	**/
 	initialize : function () {
 		var serviceManager = serviceLocator.get('ServiceManager');
-		this._sock = serviceManager.get('client_websocket_main_service');
-		this._protect = undefined;
-		this._parent = null;
-		this._childs = {};
-		this._entity = {};
+		this['_sock'] = serviceManager.get('client_websocket_main_service');
+		this['_protect'] = undefined;
+		this['_parent'] = null;
+		this['_childs'] = {};
+		this['_entity'] = {};
 	}
 
 	/**
@@ -59,7 +59,7 @@ class MasterCollection {
 			collection = collectionManager.get(name);
 			collection.addChilds(childs[name]);
 			collection.setParent(this);
-			this._childs[collection.getEntityType()] = collection;
+			this['_childs'][collection.getEntityType()] = collection;
 		}
 	}
 
@@ -67,19 +67,19 @@ class MasterCollection {
 	* Get attribute protect configuration for collection
 	**/
 	getProtect : function () {
-		if (this._protect == undefined) {
-			this._protect = Config.collections.upload.protect;
+		if (this['_protect'] == undefined) {
+			this['_protect'] = Config['collections']['upload']['protect'];
 		}
-		return this._protect;
+		return this['_protect'];
 	}
 
 	/**
 	* Get an entity by id
 	**/
 	get : function (id) {
-		if (!this._entity[id])
+		if (!this['_entity'][id])
 			return false;
-		return this._entity[id];
+		return this['_entity'][id];
 	}
 
 	/**
@@ -90,8 +90,8 @@ class MasterCollection {
 		var ret = undefined;
 		if (type == undefined || type == this.getEntityType())
 			return this;
-		for (i in this._childs) {
-			ret = this._childs[i].getAll(type)
+		for (i in this['_childs']) {
+			ret = this['_childs'][i].getAll(type)
 			if (ret)
 				return ret;
 		}
@@ -106,24 +106,24 @@ class MasterCollection {
 	* Store:ENTITY_TYPE:create
 	* same for all parent type
 	**/
-	create : function (entity) {
+	public create : function (entity) {
 		var child = undefined;
 		var parent = this.getParent();
 		var dispatcher = serviceLocator.get('Dispatcher');
 		var events = [];
 
-		if (this._entity[entity.id]) {
+		if (this['_entity'][entity.id]) {
 			this.update(entity.id, entity);
 			return true;
 		}
 		else {
 			var entityClass = serviceLocator.get('EntityManager').get(this.getEntityClass());
 			entityClass.hydrate(entity);
-			this._entity[entity.id] = entityClass;
+			this['_entity'][entity.id] = entityClass;
 			dispatcher.trigger('Store:'+ this.getEntityType() +'-'+ entity.id +':create');
 			events.push(this.getEntityType());
 			while (parent != null) {
-				parent._entity[entity.id] = this._entity[entity.id];
+				parent['_entity'][entity.id] = this['_entity'][entity.id];
 				dispatcher.trigger('Store:'+ parent.getEntityType() +'-'+ entity.id +':create');
 				events.push(parent.getEntityType());
 				parent = parent.getParent();
@@ -140,7 +140,7 @@ class MasterCollection {
 	* 	- Store:ENTITY_TYPE-ENTITY_ID:update
 	* And send same event for all parent type
 	**/
-	update : function (id, datas) {
+	public update : function (id, datas) {
 		if (!this.get(id))
 			return false;
 		var dispatcher = serviceLocator.get('Dispatcher');
@@ -149,11 +149,11 @@ class MasterCollection {
 		var parent = collection.getParent();
 		collection.updateEntity(id, datas);
 		dispatcher.trigger('Store:'+ collection.getEntityType() +'-'+ id +':update');
-		dispatcher.trigger('Store:'+ collection.getEntityType() +':update', { id : id });
+		dispatcher.trigger('Store:'+ collection.getEntityType() +':update', { 'id' : id });
 
 		while (parent) {
 			dispatcher.trigger('Store:'+ parent.getEntityType() +'-'+ id +':update');
-			dispatcher.trigger('Store:'+ parent.getEntityType() +':update', { id : id });
+			dispatcher.trigger('Store:'+ parent.getEntityType() +':update', { 'id' : id });
 			parent = parent.getParent();
 		}
 		return true;
@@ -170,8 +170,8 @@ class MasterCollection {
 		for (var i in datas) {
 			if (this.getProtect().indexOf(i) == -1)
 				fn = 'set'+ i.charAt(0).toUpperCase() + i.substr(1);
-				if (typeof this._entity[id][fn] == 'function')
-					this._entity[id][fn](datas[i]);
+				if (typeof this['_entity'][id][fn] == 'function')
+					this['_entity'][id][fn](datas[i]);
 		}
 		
 		return true;
@@ -183,19 +183,19 @@ class MasterCollection {
 	*	- Store:ENTITY_TYPE:delete
 	*	- Storde:ENTITY_TYPE-ENTITY_ID:delete
 	**/
-	remove : function (id) {
-		if (!this._entity[id])
+	public remove : function (id) {
+		if (!this['_entity'][id])
 			return false;
 		var dispatcher = serviceLocator.get('Dispatcher');
 		var type = this.get(id).getType();
 		var collection = this.getAll(type);
 
-		for (var i in this._entity[id])
-				delete this._entity[id][i];
+		for (var i in this['_entity'][id])
+				delete this['_entity'][id][i];
 		while (collection) {
-			delete collection._entity[id];
+			delete collection['_entity'][id];
 			dispatcher.trigger('Store:'+ collection.getEntityType() +'-'+ id +':delete');
-			dispatcher.trigger('Store:'+ collection.getEntityType() +':delete', { id : id });
+			dispatcher.trigger('Store:'+ collection.getEntityType() +':delete', { 'id' : id });
 			collection = collection.getParent();
 		}
 	}
