@@ -267,3 +267,5 @@ scripts :
     - main.js
 styles : 
     - Assets/css/all.css
+vendors:
+    - socket.io.js
