@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:08
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 13:57:21
 **************************************************************/
 
 class ExampleAuthorTemplateMainView extends ContentView {
@@ -15,10 +15,10 @@ class ExampleAuthorTemplateMainView extends ContentView {
 	linkBook : function () {
 		var dispatcher = serviceLocator.get('Dispatcher');
 
-		dispatcher.trigger('Body:Content:change', { content : 'example_book_main_template' });
+		dispatcher.trigger('Body:Content:change', { 'content' : 'example_book_main_template' });
 	}
 
-	render : function () {
+	public render : function () {
 		if (!this._template.getVisibility())
 			return null;
 		return (<div id="author" key={this.props.key} data-url="/books" data-template="example_book_main_template" onClick={this.link}>

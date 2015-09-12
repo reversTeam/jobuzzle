@@ -7,14 +7,14 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:30:08
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:49:04
 **************************************************************/
 
 class ExampleAutoload extends MasterAutoload {
 
 	confModuleName = 'Example';
 
-	onBootstrap : function () {
+	public onBootstrap : function () {
 		var routeManager = serviceLocator.get('RouteManager');
 		var router = serviceLocator.get('Router');
 		var authorRoute = routeManager.get('example_author_main_route');
@@ -26,7 +26,7 @@ class ExampleAutoload extends MasterAutoload {
 		router.getRoute('book').getRoute('view').addRoute('author', bookRoute);
 	}
 
-	init : function () {
+	public init : function () {
 		
 	}
 
