@@ -1,6 +1,7 @@
 {
 	"commands": {
 		"Script": "0.0.1",
-		"ModelGenerator": "0.0.2"
+		"ModelGenerator": "0.0.2",
+		"Watcher" : "dev"
 	}
 }

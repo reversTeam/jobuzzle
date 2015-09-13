@@ -1,7 +1,3 @@
-[submodule "Watcher"]
-	path = Watcher
-	url = git@gitlab.jobuzzle.com:Jobuzzle/Watcher.git
-	branch = master
 [submodule "Modules/Body"]
 	path = Modules/Body
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Body.git
