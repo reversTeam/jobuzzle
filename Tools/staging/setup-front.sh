@@ -13,5 +13,5 @@
 
 
 puzzle git current --recursive --skip-base branch move staging
-(cd Watcher && node main 10)
+(cd Watcher && node main 30)
 cp Tools/staging/.htaccess Build/client/
