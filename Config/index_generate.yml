@@ -21,6 +21,9 @@ scripts :
     - Kernel/Managers/ControllerManager.js
     - Kernel/Managers/EntityManager.js
     - Kernel/Managers/CollectionManager.js
+    - Kernel/Managers/FormManager.js
+    - Kernel/Managers/HelperManager.js
+    - Kernel/Managers/FormElementManger.js
     - Kernel/Route/MasterRoute.js
     - Kernel/Service/MasterService.js
     - Kernel/Route/Type/MasterRouteType.js
@@ -34,6 +37,14 @@ scripts :
     - Kernel/Template/View/MasterView.js
     - Kernel/Template/ContentTemplate.js
     - Kernel/Template/View/ContentView.js
+    - Kernel/Template/View/FormView.js
+    - Kernel/Template/FormTemplate.js
+    - Kernel/Helper/View/MasterHelperView.js
+    - Kernel/Helper/MasterHelper.js
+    - Kernel/From/MasterForm.js
+    - Kernel/From/MasterFormFieldset.js
+    - Kernel/From/Element/MasterElement.js
+    - Kernel/From/Element/View/MasterElementView.js
     - Modules/Example/ExampleAutoload.js
     - Modules/Body/BodyAutoload.js
     - Modules/Client/ClientAutoload.js
@@ -112,6 +123,18 @@ scripts :
     - Modules/Element/Bundle/Data/Template/ElementDataUpdateTemplate.js
     - Modules/Element/Bundle/Data/Template/View/ElementDataTemplateDeleteView.js
     - Modules/Element/Bundle/Data/Template/ElementDataDeleteTemplate.js
+    - Modules/Element/Bundle/Data/Form/ElementDataCreateForm.js
+    - Modules/Element/Bundle/Data/Form/ElementDataEditForm.js
+    - Modules/Element/Bundle/Data/Form/ElementDataSearchForm.js
+    - Modules/Element/Bundle/Data/Form/ElementDataFieldsetForm.js
+    - Modules/Element/Bundle/Data/Helper/CreateFormHelper.js
+    - Modules/Element/Bundle/Data/Helper/View/CreateFormHelperView.js
+    - Modules/Element/Bundle/Data/Form/Element/TextFormElement.js
+    - Modules/Element/Bundle/Data/Form/Element/View/TextFormElementView.js
+    - Modules/Element/Bundle/Data/Form/Element/View/ButtonFormElementView.js
+    - Modules/Element/Bundle/Data/Form/Element/ButtonFormElement.js
+    - Modules/Element/Bundle/Data/Form/Element/View/SelectFormElementView.js
+    - Modules/Element/Bundle/Data/Form/Element/SelectFormElement.js
     - Modules/Data/Bundle/Data/Collection/DataDataMainCollection.js
     - Modules/Data/Bundle/Data/Entity/DataDataMainEntity.js
     - Modules/Data/Bundle/Data/Route/DataDataMainRoute.js
@@ -131,6 +154,10 @@ scripts :
     - Modules/Data/Bundle/Data/Template/View/DataDataTemplateDeleteView.js
     - Modules/Data/Bundle/Data/Template/DataDataUpdateTemplate.js
     - Modules/Data/Bundle/Data/Template/DataDataDeleteTemplate.js
+    - Modules/Data/Bundle/Data/Form/DataDataCreateForm.js
+    - Modules/Data/Bundle/Data/Form/DataDataEditForm.js
+    - Modules/Data/Bundle/Data/Form/DataDataFieldsetForm.js
+    - Modules/Data/Bundle/Data/Form/DataDataSearchForm.js
     - Modules/BaseUser/Bundle/Data/Collection/BaseUserDataMainCollection.js
     - Modules/BaseUser/Bundle/Data/Entity/BaseUserDataMainEntity.js
     - Modules/BaseUser/Bundle/Data/Route/BaseUserDataMainRoute.js
@@ -150,6 +177,10 @@ scripts :
     - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateCreateView.js
     - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateUpdateView.js
     - Modules/BaseUser/Bundle/Data/Template/View/BaseUserDataTemplateDeleteView.js
+    - Modules/BaseUser/Bundle/Data/Form/BaseUserCreateForm.js
+    - Modules/BaseUser/Bundle/Data/Form/BaseUserSearchForm.js
+    - Modules/BaseUser/Bundle/Data/Form/BaseUserEditForm.js
+    - Modules/BaseUser/Bundle/Data/Form/BaseUserFieldsetForm.js
     - Modules/Student/Bundle/Data/Collection/StudentDataMainCollection.js
     - Modules/Student/Bundle/Display/Service/StudentDisplayMainService.js
     - Modules/Student/Bundle/Display/Template/StudentDisplayMainTemplate.js
@@ -171,6 +202,10 @@ scripts :
     - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateCreateView.js
     - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateUpdateView.js
     - Modules/Student/Bundle/Data/Template/View/StudentDataTemplateDeleteView.js
+    - Modules/Student/Bundle/Data/Form/StudentCreateForm.js
+    - Modules/Student/Bundle/Data/Form/StudentEditForm.js
+    - Modules/Student/Bundle/Data/Form/StudentSearchForm.js
+    - Modules/Student/Bundle/Data/Form/StudentFieldsetForm.js
     - Modules/NamedData/Bundle/Data/Collection/NamedDataDataMainCollection.js
     - Modules/NamedData/Bundle/Data/Entity/NamedDataDataMainEntity.js
     - Modules/NamedData/Bundle/Data/Route/NamedDataDataMainRoute.js
@@ -240,7 +275,7 @@ scripts :
     - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateUpdateView.js
     - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateDeleteView.js
     - Modules/Navigation/Bundle/Cookie/Service/NavigationCookieMainService.js
-    - Modules/Navigation/Bundle/Route/NavigationRouteMainService.js
+    - Modules/Navigation/Bundle/Route/Service/NavigationRouteMainService.js
     - Modules/Navigation/Bundle/Loader/Template/NavigationLoaderMainTemplate.js
     - Modules/Navigation/Bundle/Loader/Template/View/NavigationLoaderTemplateMainView.js
     - Modules/Navigation/Bundle/Loader/Service/NavigationLoaderMainService.js
@@ -267,5 +302,5 @@ scripts :
     - main.js
 styles : 
     - Assets/css/all.css
-vendors:
+vendors : 
     - socket.io.js

@@ -7,7 +7,7 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-08-08 14:33:22
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-09-15 18:31:30
 ###############################################################
 
 invokables:
@@ -19,6 +19,9 @@ invokables:
     ControllerManager : Kernel/Managers/ControllerManager
     CollectionManager : Kernel/Managers/CollectionManager
     EntityManager : Kernel/Managers/EntityManager
+    FormManager : Kernel/Managers/FormManager
+    HelperManager : Kernel/Managers/HelperManager
+    FormElementManager : Kernel/Managers/FormElementManager
     Router : Kernel/Router
     Dispatcher : Kernel/Dispatcher/DispatcherBase
     ModuleInitializer : Kernel/Initializer/ModuleInitializer
