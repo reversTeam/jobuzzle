@@ -1,0 +1,53 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 14:05:27
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 20:22:57
+**************************************************************/
+
+class MasterForm {
+
+	public _formName = undefined;
+	public _elementsDisplay = {};
+	public _elementsInput = {};
+
+	initialize : function () {
+		
+	}
+
+	public getElementsDisplay : function () {
+		return this['_elementsDisplay'];
+	}
+
+	public setElementsDisplay : function (elementDisplay) {
+		this['_elementsDisplay'] = elementDisplay;
+
+		return this;
+	}
+
+	public getElementsInput : function () {
+		return this['_elementInput'];
+	}
+
+	public setElementsInput : function (elementsInput) {
+		this['_elementsInput'] = elementsInput;
+
+		return this;
+	}
+
+	public getFormName : function () {
+		return this['_formName'];
+	}
+
+	public setFormName : function (formName) {
+		this['_formName'] = formName;
+
+		return this;
+	}
+
+}

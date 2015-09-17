@@ -1,0 +1,100 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 15:04:29
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 20:24:50
+**************************************************************/
+
+class MasterFormFieldset extends MasterForm {
+
+	public _createFormName = undefined;
+	public _searchFormName = undefined;
+	public _editFormName = undefined;
+
+	public _createForm = undefined;
+	public _searchForm = undefined;
+	public _editForm = undefined;
+
+	initialize : function () {
+		_super();
+		var formManager = serviceLocator.get('FormManager');
+
+		this.setCreateForm(formManager.get(this['_createFormName']));
+		this.setSearchForm(formManager.get(this['_searchFormName']));
+		this.setEditForm(formManager.get(this['_editFormName']));
+
+		this.getCreateForm().setElementsDisplay(this.getElementsDisplay());
+		this.getSearchForm().setElementsDisplay(this.getElementsDisplay());
+		this.getEditForm().setElementsDisplay(this.getElementsDisplay());
+
+		this.getCreateForm().setFormName(this['_formName']);
+		this.getSearchForm().setFormName(this['_formName']);
+		this.getEditForm().setFormName(this['_formName']);
+	}
+
+	public getCreateFormName : function () {
+		return this['_createFormName'];
+	}
+
+	public setCreateFormName : function (createFormName) {
+		this['_createFormName'] = createFormName;
+
+		return this;
+	}
+
+	public getSearchFormName : function () {
+		return this['_searchFormName'];
+	}
+
+	public setSearchFormName : function (searchFromName) {
+		this['_searchFormName'] = searchFromName;
+
+		return this;
+	}
+
+	public getEditFormName : function () {
+		return this['_editFormName'];
+	}
+
+	public setEditFormName : function (editFormName) {
+		this['_editFormName'] = editFormName;
+
+		return this;
+	}
+
+	public getCreateForm : function () {
+		return this['_createForm'];
+	}
+
+	public setCreateForm : function (createForm) {
+		this['_createForm'] = createForm;
+
+		return this;
+	}
+
+	public getSearchForm : function (){
+		return this['_searchForm'];
+	}
+
+	public setSearchForm : function (searchForm) {
+		this['_searchForm'] = searchForm;
+
+		return this;
+	}
+
+	public getEditForm : function () {
+		return this['_editForm'];
+	}
+
+	public setEditForm : function (editForm) {
+		this['_editForm'] = editForm;
+
+		return this;
+	}
+
+}

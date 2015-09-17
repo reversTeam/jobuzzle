@@ -1,0 +1,38 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 18:38:12
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-17 12:56:28
+**************************************************************/
+
+class MasterHelperView extends MasterView {
+
+	_formElements = {};
+	_formElementsView = {};
+
+	getFormElement : function (formElementName, params, name) {
+		var formElementManager = serviceLocator.get('FormElementManager');
+		var key = formElementName +'_'+ params['namespace'] +'_'+ name;
+
+		if (!this['_formElements'][key]) {
+			this['_formElements'][key] = formElementManager.get(formElementName);
+			this['_formElements'][key].injectParams(params);
+			this['_formElements'][key].setTarget(name);
+			this['_formElements'][key].setIdentifier(key);
+			this['_formElementsView'][key] = React.createElement(this['_formElements'][key].getView(), {'key' : key});
+		}
+		return this['_formElementsView'][key];
+	}
+
+	getFormElementTemplate : function (formElementName, namespace, name) {
+		var key = formElementName +'_'+ namespace +'_'+ name;
+		if (this['_formElements'][key])
+			return this['_formElements'][key];
+	}
+
+}

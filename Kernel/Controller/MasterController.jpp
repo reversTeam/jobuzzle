@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 14:14:33
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 23:34:02
 **************************************************************/
 
 class MasterController {
@@ -84,7 +84,7 @@ class MasterController {
 		}, function (response) {
 			if (response.result.length) {
 				var entity = store.get(response['result'][0]['id']);
-				dispatcher.trigger(self.getEntityType() +':view:changeEntity', {'entity' : entity});
+				dispatcher.trigger(self.getEntityType() +':load:entity', {'entity' : entity});
 			}
 		});
 	}

@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 17:05:05
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 19:03:15
 **************************************************************/
 
 #import (Config.path +'/Kernel/Utility') = Utility;
@@ -50,7 +50,7 @@ class MasterTemplate {
 	**/
 	getTemplate : function (template_name, parent) {
 		return React['createElement'](this.getTemplateManager().get(template_name).getView(parent), null);
-	} 
+	}
 
 	/**
 	* Bullshit react

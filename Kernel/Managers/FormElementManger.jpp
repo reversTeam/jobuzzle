@@ -3,26 +3,21 @@
 *     ####         #                               #          *
 *       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
 *       ## #     # #     # #     #      #       #  # #     #  *
-*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 18:34:03
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 22:14:45
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 18:36:52
 **************************************************************/
 
-class ContentView extends MasterView {
+#import ('./MasterManager') = MasterManager;
 
-	/**
-	* Overide render if element is not visible
-	* return null
-	* else call display method
-	**/
-	public render : function () {
-		if (!this['_template']['getVisibility']())
-			return null;
-		return this.display();
-	}
+class FormElementManager extends MasterManager {
 
-	onVisible : function() {}
+	_name = 'FormElementManager';
+	_fileConf = 'form_element';
+	_defaultShared = false;
 
 }
+
+#export FormElementManager;

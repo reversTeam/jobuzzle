@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-12 01:11:34
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-13 17:59:05
 **************************************************************/
 
 class MasterCollection {
@@ -180,8 +180,8 @@ class MasterCollection {
 	/**
 	* Delete an entity in collection
 	* Send event :
-	*	- Store:ENTITY_TYPE:delete
-	*	- Storde:ENTITY_TYPE-ENTITY_ID:delete
+	*	- Store:ENTITY_TYPE:remove
+	*	- Storde:ENTITY_TYPE-ENTITY_ID:remove
 	**/
 	public remove : function (id) {
 		if (!this['_entity'][id])
@@ -194,8 +194,8 @@ class MasterCollection {
 				delete this['_entity'][id][i];
 		while (collection) {
 			delete collection['_entity'][id];
-			dispatcher.trigger('Store:'+ collection.getEntityType() +'-'+ id +':delete');
-			dispatcher.trigger('Store:'+ collection.getEntityType() +':delete', { 'id' : id });
+			dispatcher.trigger('Store:'+ collection.getEntityType() +'-'+ id +':remove');
+			dispatcher.trigger('Store:'+ collection.getEntityType() +':remove', { 'id' : id });
 			collection = collection.getParent();
 		}
 	}

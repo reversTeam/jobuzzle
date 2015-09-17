@@ -3,26 +3,14 @@
 *     ####         #                               #          *
 *       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
 *       ## #     # #     # #     #      #       #  # #     #  *
-*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-08 11:13:11
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 22:25:31
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 22:14:45
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 22:44:45
 **************************************************************/
 
-class ContentView extends MasterView {
+class MasterElementView extends MasterView {
 
-	/**
-	* Overide render if element is not visible
-	* return null
-	* else call display method
-	**/
-	public render : function () {
-		if (!this['_template']['getVisibility']())
-			return null;
-		return this.display();
-	}
-
-	onVisible : function() {}
 
 }

@@ -1,0 +1,129 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 22:25:07
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-17 14:43:08
+**************************************************************/
+
+class MasterElement extends MasterTemplate {
+
+	initialize : function () {
+		_super();
+		this['_namespace'] = undefined;
+		this['_params'] = {};
+		this['_type'] = undefined;
+		this['_label'] = undefined;
+		this['_value'] = undefined;
+		this['_visibility'] = true;
+		this['_options'] = {};
+		this['_attributes'] = {};
+		this['_identifier'] = undefined;
+		this['_target'] = undefined;
+	}
+
+	public injectParams : function (params) {
+		for (var i in params) {
+			var setter = 'set' + i[0].toUpperCase() + i.substr(1, i.length - 1);
+			if (typeof this[setter] == 'function')
+				this[setter](params[i]);
+		}
+
+		return this;
+	}
+
+	public getTarget : function () {
+		return this['_target'];
+	}
+
+	public setTarget : function (target) {
+		this['_target'] = target;
+
+		return this;
+	}
+
+	public getIdentifier : function () {
+		return this['_identifier'];
+	}
+
+	public setIdentifier : function (keySearch) {
+		this['_identifier'] = keySearch;
+
+		return this;
+	}
+
+	public getNamespace : function () {
+		return this['_namespace'];
+	}
+
+	public setNamespace : function (namespace) {
+		this['_namespace'] = namespace;
+
+		return this;
+	}
+
+	public getType : function () {
+		return this['_type'];
+	}
+
+	public setType : function (type) {
+		this['_type'] = type;
+
+		return this;
+	}
+
+	public getValue : function () {
+		return this['_value'];
+	}
+
+	public setValue : function (value) {
+		this['_value'] = value;
+
+		return this;
+	}
+
+	public getLabel : function () {
+		return this['_label'];
+	}
+
+	public setLabel : function (label) {
+		this['_label'] = label;
+
+		return this;
+	}
+
+	public getVisibility : function () {
+		return this['_visibility'];
+	}
+
+	public setVisibility : function (visibility) {
+		this['_visibility'] = visibility;
+
+		return this;
+	}
+
+	public getOptions : function () {
+		return this['_options'];
+	}
+
+	public setOptions : function (options) {
+		this['_options'] = options;
+
+		return this;
+	}
+
+	public getAttributes : function () {
+		return this['_attributes'];
+	}
+
+	public setAttributes : function (attributes) {
+		this['_attributes'] = attributes;
+
+		return this;
+	}
+
+}
