@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-08-08 14:36:02
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 13:08:58
 **************************************************************/
 
 @import "vars/all";
@@ -31,4 +31,12 @@ body, html {
 	-ms-user-select: none;
 	-o-user-select: none;
 	user-select: none;
+}
+
+[data-url] {
+	cursor: pointer;
+}
+
+.inline {
+	display: inline-block;
 }
