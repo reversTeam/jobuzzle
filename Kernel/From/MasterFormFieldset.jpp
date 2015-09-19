@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 20:24:50
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-19 16:45:09
 **************************************************************/
 
 class MasterFormFieldset extends MasterForm {
@@ -16,13 +16,13 @@ class MasterFormFieldset extends MasterForm {
 	public _searchFormName = undefined;
 	public _editFormName = undefined;
 
-	public _createForm = undefined;
-	public _searchForm = undefined;
-	public _editForm = undefined;
-
 	initialize : function () {
 		_super();
 		var formManager = serviceLocator.get('FormManager');
+
+		this['_createForm'] = undefined;
+		this['_searchForm'] = undefined;
+		this['_editForm'] = undefined;
 
 		this.setCreateForm(formManager.get(this['_createFormName']));
 		this.setSearchForm(formManager.get(this['_searchFormName']));

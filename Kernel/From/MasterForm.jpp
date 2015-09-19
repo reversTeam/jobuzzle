@@ -7,17 +7,16 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 20:22:57
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-19 16:46:12
 **************************************************************/
 
 class MasterForm {
 
-	public _formName = undefined;
-	public _elementsDisplay = {};
-	public _elementsInput = {};
+	public _formName = undefined; 
 
 	initialize : function () {
-		
+		this['_elementsDisplay'] = {};
+		this['_elementsInput'] = {};
 	}
 
 	public getElementsDisplay : function () {

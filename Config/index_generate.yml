@@ -223,6 +223,10 @@ scripts :
     - Modules/NamedData/Bundle/Data/Template/View/NamedDataDataTemplateDeleteView.js
     - Modules/NamedData/Bundle/Data/Controller/NamedDataDataMainController.js
     - Modules/NamedData/Bundle/Data/Service/NamedDataDataMainService.js
+    - Modules/NamedData/Bundle/Data/Form/NamedDataDataCreateForm.js
+    - Modules/NamedData/Bundle/Data/Form/NamedDataDataEditForm.js
+    - Modules/NamedData/Bundle/Data/Form/NamedDataDataFieldsetForm.js
+    - Modules/NamedData/Bundle/Data/Form/NamedDataDataSearchForm.js
     - Modules/Institute/Bundle/Data/Entity/InstituteDataMainEntity.js
     - Modules/Institute/Bundle/Data/Collection/InstituteDataMainCollection.js
     - Modules/Institute/Bundle/Data/Route/InstituteDataMainRoute.js
@@ -240,6 +244,10 @@ scripts :
     - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateCreateView.js
     - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateUpdateView.js
     - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateDeleteView.js
+    - Modules/Institute/Bundle/Data/Form/InstituteDataFieldsetForm.js
+    - Modules/Institute/Bundle/Data/Form/InstituteDataCreateForm.js
+    - Modules/Institute/Bundle/Data/Form/InstituteDataEditForm.js
+    - Modules/Institute/Bundle/Data/Form/InstituteDataSearchForm.js
     - Modules/School/Bundle/Data/Collection/SchoolDataMainCollection.js
     - Modules/School/Bundle/Data/Entity/SchoolDataMainEntity.js
     - Modules/School/Bundle/Data/Route/SchoolDataMainRoute.js
@@ -274,6 +282,10 @@ scripts :
     - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateCreateView.js
     - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateUpdateView.js
     - Modules/Company/Bundle/Data/Template/View/CompanyDataTemplateDeleteView.js
+    - Modules/Company/Bundle/Data/Form/CompanyDataCreateForm.js
+    - Modules/Company/Bundle/Data/Form/CompanyDataEditForm.js
+    - Modules/Company/Bundle/Data/Form/CompanyDataFieldsetForm.js
+    - Modules/Company/Bundle/Data/Form/CompanyDataSearchForm.js
     - Modules/Navigation/Bundle/Cookie/Service/NavigationCookieMainService.js
     - Modules/Navigation/Bundle/Route/Service/NavigationRouteMainService.js
     - Modules/Navigation/Bundle/Loader/Template/NavigationLoaderMainTemplate.js
@@ -299,6 +311,10 @@ scripts :
     - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateUpdateView.js
     - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateViewView.js
     - Modules/Filter/FilterAutoload.js
+    - Modules/Filter/Bundle/Data/Form/FilterDataFieldsetForm.js
+    - Modules/Filter/Bundle/Data/Form/FilterDataCreateForm.js
+    - Modules/Filter/Bundle/Data/Form/FilterDataEditForm.js
+    - Modules/Filter/Bundle/Data/Form/FilterDataSearchForm.js
     - main.js
 styles : 
     - Assets/css/all.css
