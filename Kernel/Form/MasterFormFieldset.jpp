@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-19 16:45:09
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 14:46:02
 **************************************************************/
 
 class MasterFormFieldset extends MasterForm {
@@ -28,13 +28,21 @@ class MasterFormFieldset extends MasterForm {
 		this.setSearchForm(formManager.get(this['_searchFormName']));
 		this.setEditForm(formManager.get(this['_editFormName']));
 
-		this.getCreateForm().setElementsDisplay(this.getElementsDisplay());
-		this.getSearchForm().setElementsDisplay(this.getElementsDisplay());
-		this.getEditForm().setElementsDisplay(this.getElementsDisplay());
+		var createForm = this.getCreateForm();
+		var editForm = this.getEditForm();
+		var searchForm = this.getSearchForm();
 
-		this.getCreateForm().setFormName(this['_formName']);
-		this.getSearchForm().setFormName(this['_formName']);
-		this.getEditForm().setFormName(this['_formName']);
+		editForm.injectElementsDisplay(this.getElementsDisplay());
+		searchForm.injectElementsDisplay(this.getElementsDisplay());
+		createForm.injectElementsDisplay(this.getElementsDisplay());
+
+		editForm.injectElementsInput(this.getElementsInput());
+		searchForm.injectElementsInput(this.getElementsInput());
+		createForm.injectElementsInput(this.getElementsInput());
+
+		editForm.setFormName(this['_formName']);
+		searchForm.setFormName(this['_formName']);
+		createForm.setFormName(this['_formName']);
 	}
 
 	public getCreateFormName : function () {

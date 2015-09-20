@@ -1,0 +1,67 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-20 01:44:43
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 14:52:03
+**************************************************************/
+
+class MasterFormElementView extends MasterElementView {
+
+	initialState : function () {
+		var state = {};
+		
+		state['value'] = '';
+		state['error'] = false;
+		state['messages'] = [];
+
+		return state;
+	}
+
+	changeValue : function (e) {
+		this._template.setValue(e.target.value);
+	}
+
+	addMessage : function (message) {
+		var messages = this.state.messages;
+
+		messages.push(message);
+		this.setState({ 'messages' : messages });
+	}
+
+	resetMessages : function () {
+		delete this.state.messages;
+		this.state.messages = [];
+		this.setState({ 'messages' : [] });
+	}
+
+	showError : function () {
+		this.setState({ 'error' : true });
+	}
+
+	hideError : function () {
+		this.resetMessages();
+		this.setState({ 'error' : false });	
+	}
+
+	render : function () {
+		var errorClassName = 'errorMessage'+(this.state.error ? ' visible' : '' );
+		var messages = this.state.messages;
+		var translator = serviceLocator.get('Translator');
+		var i = 0;
+
+		return <div className="form">
+			{this.display()}
+			<ul className={errorClassName} key={this.getKey()}>
+				{ messages.map(function(message){
+					return <li key={++i}>{translator.translate(message)}</li>
+				}) }
+			</ul>
+		</div>
+	}
+
+}

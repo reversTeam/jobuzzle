@@ -3,14 +3,29 @@
 *     ####         #                               #          *
 *       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
 *       ## #     # #     # #     #      #       #  # #     #  *
-*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 22:25:31
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-20 01:44:56
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 22:44:45
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 02:28:52
 **************************************************************/
 
-class MasterElementView extends MasterView {
+class MasterFormElement extends MasterElement {
 
+	public addMessage : function (message) {
+		this._view.addMessage(message);
+	}
+
+	public resetMessages : function () {
+		this._view.resetMessages();
+	} 
+
+	public showError : function () {
+		this._view.showError();
+	}
+
+	public hideError : function () {
+		this._view.hideError();
+	}
 
 }

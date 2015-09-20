@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-19 16:46:12
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 14:45:38
 **************************************************************/
 
 class MasterForm {
@@ -17,6 +17,18 @@ class MasterForm {
 	initialize : function () {
 		this['_elementsDisplay'] = {};
 		this['_elementsInput'] = {};
+	}
+
+	public injectElementsDisplay : function (elementsDisplay) {
+		for (var i in elementsDisplay) {
+			this['_elementsDisplay'][i] = elementsDisplay[i];
+		}
+	}
+
+	public injectElementsInput : function (elementsInput) {
+		for (var i in elementsInput) {
+			this['_elementsInput'][i] = elementsInput[i];
+		}
 	}
 
 	public getElementsDisplay : function () {
@@ -30,7 +42,7 @@ class MasterForm {
 	}
 
 	public getElementsInput : function () {
-		return this['_elementInput'];
+		return this['_elementsInput'];
 	}
 
 	public setElementsInput : function (elementsInput) {
