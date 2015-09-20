@@ -1,6 +1,4 @@
 scripts : 
-    - Vendors/React.js
-    - Vendors/socket.io.js
     - Kernel/Config.js
     - Kernel/Router.js
     - Kernel/Utility.js
@@ -329,4 +327,5 @@ scripts :
 styles : 
     - Assets/css/all.css
 vendors : 
+    - Vendors/React.js
     - socket.io.js
