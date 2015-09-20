@@ -43,12 +43,12 @@ scripts :
     - Kernel/Template/FormTemplate.js
     - Kernel/Helper/View/MasterHelperView.js
     - Kernel/Helper/MasterHelper.js
-    - Kernel/From/MasterForm.js
-    - Kernel/From/MasterFormFieldset.js
-    - Kernel/From/Element/MasterElement.js
-    - Kernel/From/Element/MasterFormElement.js
-    - Kernel/From/Element/View/MasterElementView.js
-    - Kernel/From/Element/View/MasterFormElementView.js
+    - Kernel/Form/MasterForm.js
+    - Kernel/Form/MasterFormFieldset.js
+    - Kernel/Form/Element/MasterElement.js
+    - Kernel/Form/Element/MasterFormElement.js
+    - Kernel/Form/Element/View/MasterElementView.js
+    - Kernel/Form/Element/View/MasterFormElementView.js
     - Kernel/Filters/MasterFilter.js
     - Kernel/Validators/MasterValidator.js
     - Modules/Example/ExampleAutoload.js
