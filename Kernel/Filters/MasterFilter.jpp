@@ -3,28 +3,29 @@
 *     ####         #                               #          *
 *       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
 *       ## #     # #     # #     #      #       #  # #     #  *
-*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 18:38:30
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-20 00:24:48
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 13:43:53
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 00:34:03
 **************************************************************/
 
-class MasterHelper extends MasterTemplate {
-
-	public _viewClassName = 'MasterHelperView';
+class MasterFilter {
 
 	initialize : function () {
-		_super();
-		this['_params'] = {};
+		this['_options'] = undefined;
 	}
 
-	public injectParams : function (params) {
-		for (var i in params) {
-			var setter = 'set' + i[0].toUpperCase() + i.substr(1, i.length - 1);
-			if (typeof this[setter] == 'function')
-				this[setter](params[i]);
-		}
+	public filtered : function (element) {
+		throw "You can't not override filtered method in your filter";
+	}
+
+	public getOptions : function () {
+		return this['_options'];
+	}
+
+	public setOptions : function (options) {
+		this['_options'] = options;
 
 		return this;
 	}

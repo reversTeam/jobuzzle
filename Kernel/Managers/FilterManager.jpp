@@ -3,30 +3,17 @@
 *     ####         #                               #          *
 *       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
 *       ## #     # #     # #     #      #       #  # #     #  *
-*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-15 18:38:30
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-20 00:23:00
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 13:43:53
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 00:23:48
 **************************************************************/
 
-class MasterHelper extends MasterTemplate {
+class FilterManager extends MasterManager {
 
-	public _viewClassName = 'MasterHelperView';
-
-	initialize : function () {
-		_super();
-		this['_params'] = {};
-	}
-
-	public injectParams : function (params) {
-		for (var i in params) {
-			var setter = 'set' + i[0].toUpperCase() + i.substr(1, i.length - 1);
-			if (typeof this[setter] == 'function')
-				this[setter](params[i]);
-		}
-
-		return this;
-	}
+	_name = 'FilterManager';
+	_fileConf = 'filter';
+	_defaultShared = false;
 
 }

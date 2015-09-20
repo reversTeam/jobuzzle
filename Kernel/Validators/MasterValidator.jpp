@@ -1,0 +1,72 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-20 00:25:28
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 01:32:29
+**************************************************************/
+
+class MasterValidator {
+
+	initialize : function () {
+		this['_options'] = undefined;
+		this['_context'] = undefined;
+		this['_element'] = undefined;
+	}
+
+	public isValid : function () {
+		throw "You can't create Validator and not override isValid method";
+	}
+
+	public setMessage : function (message) {
+		var element = this.getElement();
+
+		element.addMessage(message);
+		return this;
+	}
+
+	public getInput : function (targetName) {
+		var inputs = this.getContext();
+
+		for (var i in inputs) {
+			if (inputs[i].getTarget() == targetName)
+				return inputs[i];
+		}
+		return false;
+	}
+
+	public getElement : function () {
+		return this['_element'];
+	}
+
+	public setElement : function (element) {
+		this['_element'] = element;
+
+		return this;
+	}
+
+	public getOptions : function () {
+		return this['_options'];
+	}
+
+	public setOptions : function (options) {
+		this['_options'] = options;
+
+		return this;
+	}
+
+	public getContext : function () {
+		return this['_context'];
+	}
+
+	public setContext : function (context) {
+		this['_context'] = context;
+
+		return this;
+	}
+
+}

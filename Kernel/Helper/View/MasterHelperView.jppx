@@ -7,17 +7,20 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-17 12:56:28
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 13:49:51
 **************************************************************/
 
 class MasterHelperView extends MasterView {
 
-	_formElements = {};
-	_formElementsView = {};
+	initialize : function () {
+		_super();
+		this['_formElements'] = {};
+		this['_formElementsView'] = {};
+	}
 
-	getFormElement : function (formElementName, params, name) {
+	getFormElement : function (formElementName, formName, params, name) {
 		var formElementManager = serviceLocator.get('FormElementManager');
-		var key = formElementName +'_'+ params['namespace'] +'_'+ name;
+		var key = formName +'_'+ formElementName +'_'+ params['namespace'] +'_'+ name;
 
 		if (!this['_formElements'][key]) {
 			this['_formElements'][key] = formElementManager.get(formElementName);
@@ -29,8 +32,8 @@ class MasterHelperView extends MasterView {
 		return this['_formElementsView'][key];
 	}
 
-	getFormElementTemplate : function (formElementName, namespace, name) {
-		var key = formElementName +'_'+ namespace +'_'+ name;
+	getFormElementTemplate : function (formElementName, formName, namespace, name) {
+		var key = formName +'_'+ formElementName +'_'+ namespace +'_'+ name;
 		if (this['_formElements'][key])
 			return this['_formElements'][key];
 	}
