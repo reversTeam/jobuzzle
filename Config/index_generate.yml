@@ -24,6 +24,8 @@ scripts :
     - Kernel/Managers/FormManager.js
     - Kernel/Managers/HelperManager.js
     - Kernel/Managers/FormElementManger.js
+    - Kernel/Managers/FilterManager.js
+    - Kernel/Managers/ValidatorManager.js
     - Kernel/Route/MasterRoute.js
     - Kernel/Service/MasterService.js
     - Kernel/Route/Type/MasterRouteType.js
@@ -44,7 +46,11 @@ scripts :
     - Kernel/From/MasterForm.js
     - Kernel/From/MasterFormFieldset.js
     - Kernel/From/Element/MasterElement.js
+    - Kernel/From/Element/MasterFormElement.js
     - Kernel/From/Element/View/MasterElementView.js
+    - Kernel/From/Element/View/MasterFormElementView.js
+    - Kernel/Filters/MasterFilter.js
+    - Kernel/Validators/MasterValidator.js
     - Modules/Example/ExampleAutoload.js
     - Modules/Body/BodyAutoload.js
     - Modules/Client/ClientAutoload.js
@@ -135,6 +141,10 @@ scripts :
     - Modules/Element/Bundle/Data/Form/Element/ButtonFormElement.js
     - Modules/Element/Bundle/Data/Form/Element/View/SelectFormElementView.js
     - Modules/Element/Bundle/Data/Form/Element/SelectFormElement.js
+    - Modules/Element/Bundle/Data/Filter/ElementDataTrimFilter.js
+    - Modules/Element/Bundle/Data/Filter/ElementDataIntFilter.js
+    - Modules/Element/Bundle/Data/Validator/ElementDataMinusDateNowValidator.js
+    - Modules/Element/Bundle/Data/Validator/ElementDataMoreDateValidator.js
     - Modules/Data/Bundle/Data/Collection/DataDataMainCollection.js
     - Modules/Data/Bundle/Data/Entity/DataDataMainEntity.js
     - Modules/Data/Bundle/Data/Route/DataDataMainRoute.js

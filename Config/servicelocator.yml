@@ -7,7 +7,7 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-09-15 18:31:30
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-09-20 00:22:10
 ###############################################################
 
 invokables:
@@ -22,6 +22,8 @@ invokables:
     FormManager : Kernel/Managers/FormManager
     HelperManager : Kernel/Managers/HelperManager
     FormElementManager : Kernel/Managers/FormElementManager
+    FilterManager : Kernel/Managers/FilterManager
+    ValidatorManager : Kernel/Managers/ValidatorManager
     Router : Kernel/Router
     Dispatcher : Kernel/Dispatcher/DispatcherBase
     ModuleInitializer : Kernel/Initializer/ModuleInitializer
