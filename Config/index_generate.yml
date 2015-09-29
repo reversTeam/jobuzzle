@@ -330,6 +330,30 @@ scripts :
     - Modules/Filter/Bundle/Data/Form/FilterDataCreateForm.js
     - Modules/Filter/Bundle/Data/Form/FilterDataEditForm.js
     - Modules/Filter/Bundle/Data/Form/FilterDataSearchForm.js
+    - Modules/Skill/SkillAutoload.js
+    - Modules/Skill/Bundle/Data/Collection/SkillDataMainCollection.js
+    - Modules/Skill/Bundle/Data/Controller/SkillDataMainController.js
+    - Modules/Skill/Bundle/Data/Entity/SkillDataMainEntity.js
+    - Modules/Skill/Bundle/Data/Form/SkillDataCreateForm.js
+    - Modules/Skill/Bundle/Data/Form/SkillDataEditForm.js
+    - Modules/Skill/Bundle/Data/Form/SkillDataSearchForm.js
+    - Modules/Skill/Bundle/Data/Form/SkillDataFieldsetForm.js
+    - Modules/Skill/Bundle/Data/Route/SkillDataMainRoute.js
+    - Modules/Skill/Bundle/Data/Service/SkillDataMainService.js
+    - Modules/Skill/Bundle/Data/Template/SkillDataCreateTemplate.js
+    - Modules/Skill/Bundle/Data/Template/SkillDataDeleteTemplate.js
+    - Modules/Skill/Bundle/Data/Template/SkillDataMiniatureTemplate.js
+    - Modules/Skill/Bundle/Data/Template/SkillDataSearchTemplate.js
+    - Modules/Skill/Bundle/Data/Template/SkillDataTimelineTemplate.js
+    - Modules/Skill/Bundle/Data/Template/SkillDataUpdateTemplate.js
+    - Modules/Skill/Bundle/Data/Template/SkillDataViewTemplate.js
+    - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateCreateView.js
+    - Modules/Skill/Bundle/Data/Template/View/SkilDataTemplateDeleteView.js
+    - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateMiniatureView.js
+    - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateSearchView.js
+    - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateTimelineView.js
+    - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateUpdateView.js
+    - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateViewView.js
     - main.js
 styles : 
     - Assets/css/all.css
