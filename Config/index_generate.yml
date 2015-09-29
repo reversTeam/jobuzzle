@@ -273,6 +273,10 @@ scripts :
     - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateSearchView.js
     - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateUpdateView.js
     - Modules/School/Bundle/Data/Template/View/SchoolDataTemplateViewView.js
+    - Modules/School/Bundle/Data/Form/SchoolDataCreateForm.js
+    - Modules/School/Bundle/Data/Form/SchoolDataEditForm.js
+    - Modules/School/Bundle/Data/Form/SchoolDataFieldsetForm.js
+    - Modules/School/Bundle/Data/Form/SchoolDataSearchForm.js
     - Modules/Company/Bundle/Data/Collection/CompanyDataMainCollection.js
     - Modules/Company/Bundle/Data/Entity/CompanyDataMainEntity.js
     - Modules/Company/Bundle/Data/Route/CompanyDataMainRoute.js
@@ -300,6 +304,9 @@ scripts :
     - Modules/Navigation/Bundle/Loader/Template/View/NavigationLoaderTemplateMainView.js
     - Modules/Navigation/Bundle/Loader/Service/NavigationLoaderMainService.js
     - Modules/Navigation/Bundle/Scroll/Service/NavigationScrollMainService.js
+    - Modules/Navigation/Bundle/Error/Service/NavigationErrorMainService.js
+    - Modules/Navigation/Bundle/Error/Template/NavigationError404Template.js
+    - Modules/Navigation/Bundle/Error/Template/View/NavigationErrorTemplate404View.js
     - Modules/User/Bundle/Manager/Service/UserManagerMainService.js
     - Modules/Filter/Bundle/Data/Collection/FilterDataMainCollection.js
     - Modules/Filter/Bundle/Data/Controller/FilterDataMainController.js
