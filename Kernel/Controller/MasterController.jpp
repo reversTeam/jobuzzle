@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 23:34:02
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-29 10:21:39
 **************************************************************/
 
 class MasterController {
@@ -98,6 +98,7 @@ class MasterController {
 		var len = keys.length;
 		var reg = new RegExp('^'+ this.getUrl() +'_[a-z]+$');
 		var findMethod = 'findBy';
+		console.log(params, reg);
 
 		for (var i = 0; i < len; ++i) {
 			if (reg.test(keys[i])) {
