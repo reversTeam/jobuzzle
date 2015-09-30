@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 22:59:19
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 23:52:55
 **************************************************************/
 
 class MasterCollection {
@@ -15,6 +15,7 @@ class MasterCollection {
 	public _entityType = 'Master';
 	public _entityClass = 'Master';
 	public _sock = undefined;
+	_events = {};
 
 	/**
 	* Name Type : identity by type for entity 
@@ -133,6 +134,15 @@ class MasterCollection {
 		return false;
 	}
 
+	public sendUpdateEvent : function (type) {
+		if (this._events[type])
+			clearInterval(this._events[type]);
+		this._events[type] = setTimeout(function() {
+			var dispatcher = serviceLocator.get('Dispatcher');
+			dispatcher.trigger('Store:'+ type +':update');
+		}, 150);
+	}
+
 	/**
 	* Mehtod is call when entity is update
 	* Send event by Dispatcher :
@@ -153,7 +163,7 @@ class MasterCollection {
 
 		while (parent) {
 			dispatcher.trigger('Store:'+ parent.getEntityType() +'-'+ id +':update');
-			dispatcher.trigger('Store:'+ parent.getEntityType() +':update', { 'id' : id });
+			this.sendUpdateEvent(parent.getEntityType());
 			parent = parent.getParent();
 		}
 		return true;
