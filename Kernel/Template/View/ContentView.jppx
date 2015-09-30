@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-25 00:16:32
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 23:25:03
 **************************************************************/
 
 class ContentView extends MasterView {
@@ -21,6 +21,26 @@ class ContentView extends MasterView {
 		if (!this['_template']['getVisibility']())
 			return null;
 		return this.display();
+	}
+
+	public getElementEntity : function (entityId) {
+		var serviceManager = serviceLocator.get('ServiceManager');
+		var store = serviceManager.get('store_manager_main_service');
+		var elementCollection = store.getCollection('Element');
+		var entity = elementCollection.get(entityId);
+
+		if (!entity) {
+			var router = serviceLocator.get('Router');
+
+			store.request(router.build('/element/view', { 'element_id' : entityId }), {}, function (datas) {
+				var element = datas['result'][0];
+				var serviceEntity = serviceManager.get(element['type'].toLowerCase() +'_data_main_service')
+				var fn = 'get'+ element['type'] +'Entity';
+				serviceEntity[fn](element['id']);
+			});
+		}
+
+		return entity;
 	}
 
 	onVisible : function() {}
