@@ -348,12 +348,60 @@ scripts :
     - Modules/Skill/Bundle/Data/Template/SkillDataUpdateTemplate.js
     - Modules/Skill/Bundle/Data/Template/SkillDataViewTemplate.js
     - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateCreateView.js
-    - Modules/Skill/Bundle/Data/Template/View/SkilDataTemplateDeleteView.js
+    - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateDeleteView.js
     - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateMiniatureView.js
     - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateSearchView.js
     - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateTimelineView.js
     - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateUpdateView.js
     - Modules/Skill/Bundle/Data/Template/View/SkillDataTemplateViewView.js
+    - Modules/Link/LinkAutoload.js
+    - Modules/Link/Bundle/Data/Collection/LinkDataMainCollection.js
+    - Modules/Link/Bundle/Data/Controller/LinkDataMainController.js
+    - Modules/Link/Bundle/Data/Entity/LinkDataMainEntity.js
+    - Modules/Link/Bundle/Data/Form/LinkDataCreateForm.js
+    - Modules/Link/Bundle/Data/Form/LinkDataEditForm.js
+    - Modules/Link/Bundle/Data/Form/LinkDataFieldsetForm.js
+    - Modules/Link/Bundle/Data/Form/LinkDataSearchForm.js
+    - Modules/Link/Bundle/Data/Route/LinkDataMainRoute.js
+    - Modules/Link/Bundle/Data/Service/LinkDataMainService.js
+    - Modules/Link/Bundle/Data/Template/LinkDataCreateTemplate.js
+    - Modules/Link/Bundle/Data/Template/LinkDataDeleteTemplate.js
+    - Modules/Link/Bundle/Data/Template/LinkDataMiniatureTemplate.js
+    - Modules/Link/Bundle/Data/Template/LinkDataSearchTemplate.js
+    - Modules/Link/Bundle/Data/Template/LinkDataTimelineTemplate.js
+    - Modules/Link/Bundle/Data/Template/LinkDataUpdateTemplate.js
+    - Modules/Link/Bundle/Data/Template/LinkDataViewTemplate.js
+    - Modules/Link/Bundle/Data/Template/View/LinkDataTemplateCreateView.js
+    - Modules/Link/Bundle/Data/Template/View/LinkDataTemplateDeleteView.js
+    - Modules/Link/Bundle/Data/Template/View/LinkDataTemplateMiniatureView.js
+    - Modules/Link/Bundle/Data/Template/View/LinkDataTemplateSearchView.js
+    - Modules/Link/Bundle/Data/Template/View/LinkDataTemplateTimelineView.js
+    - Modules/Link/Bundle/Data/Template/View/LinkDataTemplateUpdateView.js
+    - Modules/Link/Bundle/Data/Template/View/LinkDataTemplateViewView.js
+    - Modules/SkillLink/SkillLinkAutoload.js
+    - Modules/SkillLink/Bundle/Data/Collection/SkillLinkDataMainCollection.js
+    - Modules/SkillLink/Bundle/Data/Controller/SkillLinkDataMainController.js
+    - Modules/SkillLink/Bundle/Data/Entity/SkillLinkDataMainEntity.js
+    - Modules/SkillLink/Bundle/Data/Form/SkillLinkDataCreateForm.js
+    - Modules/SkillLink/Bundle/Data/Form/SkillLinkDataEditForm.js
+    - Modules/SkillLink/Bundle/Data/Form/SkillLinkDataFieldsetForm.js
+    - Modules/SkillLink/Bundle/Data/Form/SkillLinkDataSearchForm.js
+    - Modules/SkillLink/Bundle/Data/Route/SkillLinkDataMainRoute.js
+    - Modules/SkillLink/Bundle/Data/Service/SkillLinkDataMainService.js
+    - Modules/SkillLink/Bundle/Data/Template/SkillLinkDataCreateTemplate.js
+    - Modules/SkillLink/Bundle/Data/Template/SkillLinkDataDeleteTemplate.js
+    - Modules/SkillLink/Bundle/Data/Template/SkillLinkDataMiniatureTemplate.js
+    - Modules/SkillLink/Bundle/Data/Template/SkillLinkDataSearchTemplate.js
+    - Modules/SkillLink/Bundle/Data/Template/SkillLinkDataTimelineTemplate.js
+    - Modules/SkillLink/Bundle/Data/Template/SkillLinkDataUpdateTemplate.js
+    - Modules/SkillLink/Bundle/Data/Template/SkillLinkDataViewTemplate.js
+    - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateCreateView.js
+    - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateDeleteView.js
+    - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateMiniatureView.js
+    - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateSearchView.js
+    - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateTimelineView.js
+    - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateUpdateView.js
+    - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateViewView.js
     - main.js
 styles : 
     - Assets/css/all.css

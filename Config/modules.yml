@@ -7,7 +7,7 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-09-29 15:28:40
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-09-30 12:46:54
 ###############################################################
 
 Example: true
@@ -28,3 +28,5 @@ Company: true
 School: true
 Filter: true
 Skill: true
+Link: true
+SkillLink: true
