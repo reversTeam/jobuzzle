@@ -70,3 +70,6 @@
 	path = Modules/Skill
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Skill-Front.git
 	branch = master
+[submodule "Modules/Link"]
+	path = Modules/Link
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Link-Front.git
