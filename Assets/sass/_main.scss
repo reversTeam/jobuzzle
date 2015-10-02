@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-15 13:08:58
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-02 15:42:26
 **************************************************************/
 
 @import "vars/all";
@@ -39,4 +39,18 @@ body, html {
 
 .inline {
 	display: inline-block;
+}
+
+div.loader_content_view {
+	position : relative;
+	width : 100%;
+	min-height: 200px;
+
+	div.loader {
+		position: absolute;
+		width : 52px;
+		left : 50%;
+		top : 150px;
+		margin-left : -26px;
+	}
 }
