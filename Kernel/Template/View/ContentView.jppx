@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 23:25:03
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-02 15:36:44
 **************************************************************/
 
 class ContentView extends MasterView {
@@ -20,29 +20,23 @@ class ContentView extends MasterView {
 	public render : function () {
 		if (!this['_template']['getVisibility']())
 			return null;
+		if (!this['_template']['isReady']() && this._template['_hasLoader']) {
+			return <div className="loader_content_view">
+				{this.getTemplate('navigation_loader_main_template')}
+			</div>;
+		}
 		return this.display();
 	}
 
-	public getElementEntity : function (entityId) {
-		var serviceManager = serviceLocator.get('ServiceManager');
-		var store = serviceManager.get('store_manager_main_service');
-		var elementCollection = store.getCollection('Element');
-		var entity = elementCollection.get(entityId);
-
-		if (!entity) {
-			var router = serviceLocator.get('Router');
-
-			store.request(router.build('/element/view', { 'element_id' : entityId }), {}, function (datas) {
-				var element = datas['result'][0];
-				var serviceEntity = serviceManager.get(element['type'].toLowerCase() +'_data_main_service')
-				var fn = 'get'+ element['type'] +'Entity';
-				serviceEntity[fn](element['id']);
-			});
-		}
-
-		return entity;
+	public getService : function () {
+		return this._template.getService();
 	}
 
 	onVisible : function() {}
+
+	onInvisible : function () {
+		if (this._template['isReady']() && this._template['_hasLoader'])
+			this._template['setReady'](false);
+	}
 
 }

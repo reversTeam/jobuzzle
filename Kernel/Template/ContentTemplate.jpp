@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 16:28:41
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-02 15:29:29
 **************************************************************/
 
 #import ('./MasterTemplate') = MasterTemplate;
@@ -16,6 +16,8 @@ class ContentTemplate extends MasterTemplate {
 
 	public _serviceName = undefined;
 	_viewClassName = 'ContentView';
+	_isReady = false;
+	_hasLoader = true;
 
 	intitialize : function () {
 		_super();
@@ -27,15 +29,28 @@ class ContentTemplate extends MasterTemplate {
 	}
 
 	public visible : function () {
-		if (this._view && this._view.onVisible) {
+		if (this._view && typeof this._view.onVisible == 'function')
 			this._view.onVisible();
-		}
 		this['_visibility'] = true;
 	}
 
 	public invisible : function () {
-		this['_visibility'] = false;	
+		if (this._view && typeof this._view.onInvisible == 'function')
+			this._view.onInvisible();
+		this['_visibility'] = false;
 	}
+
+	public isReady : function () {
+		if (this._view)
+			return this._isReady;
+		return false;
+	}
+
+	public setReady : function (state) {
+		this['_isReady'] = state;
+
+		return this;
+	} 
 
 	public getService : function () {
 		var serviceManager = serviceLocator.get('ServiceManager');

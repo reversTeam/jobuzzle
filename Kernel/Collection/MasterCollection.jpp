@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 23:52:55
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-01 15:50:42
 **************************************************************/
 
 class MasterCollection {
@@ -159,7 +159,7 @@ class MasterCollection {
 		var parent = collection.getParent();
 		collection.updateEntity(id, datas);
 		dispatcher.trigger('Store:'+ collection.getEntityType() +'-'+ id +':update');
-		dispatcher.trigger('Store:'+ collection.getEntityType() +':update', { 'id' : id });
+		this.sendUpdateEvent(collection.getEntityType());
 
 		while (parent) {
 			dispatcher.trigger('Store:'+ parent.getEntityType() +'-'+ id +':update');

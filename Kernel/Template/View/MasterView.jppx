@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 13:13:39
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-02 18:23:40
 **************************************************************/
 
 var tmp = React['createClass']({
@@ -35,6 +35,8 @@ var tmp = React['createClass']({
 
 });
 
+var currentKeyForTemplateReact = 0;
+
 class MasterView extends tmp {
 
 	_templateManager = undefined;
@@ -52,6 +54,10 @@ class MasterView extends tmp {
 	**/
 	initialize : function (props, context) {
 		this.setTemplateManager(serviceLocator.get('TemplateManager'));
+		if (!props)
+			props = {};
+		if (!props['key'] || props['key'] == null)
+			props['key'] = currentKeyForTemplateReact++;
 		_super(props, context);
 	}
 

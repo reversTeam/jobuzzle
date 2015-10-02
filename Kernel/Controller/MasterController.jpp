@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 16:14:33
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-01 19:20:44
 **************************************************************/
 
 class MasterController {
@@ -51,6 +51,13 @@ class MasterController {
 		var serviceManager = serviceLocator.get('ServiceManager');
 		this._serviceManager = serviceManager;
 		this._service = serviceManager.get(this.getServiceName());
+		this.onListen();
+	}
+
+	onListen : function () {
+		var dispatcher = serviceLocator.get('Dispatcher');
+
+		return dispatcher;
 	}
 
 	/**
@@ -63,33 +70,6 @@ class MasterController {
 	}
 
 	/**
-	* Build route and get current element if
-	* collection is empty
-	**/
-	loadEntity : function (key, value) {
-		var self = this;
-		var router = serviceLocator.get('Router');
-		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
-		var filterMethod = 'filterBy';
-		var tmp = key.split('_')[1];
-		var filter = {};
-		var dispatcher = serviceLocator.get('Dispatcher');
-		filterMethod += tmp.charAt(0).toUpperCase() + tmp.slice(1);
-		filter[filterMethod] = value;
-		var url = router.build('/'+ this.getUrl());
-		store.request(url, {
-			'filter' : [
-				filter
-			]
-		}, function (response) {
-			if (response.result.length) {
-				var entity = store.get(response['result'][0]['id']);
-				dispatcher.trigger(self.getEntityType() +':load:entity', {'entity' : entity});
-			}
-		});
-	}
-
-	/**
 	* Get entity in collection or load entity
 	**/
 	getEntity : function (params) {
@@ -98,14 +78,13 @@ class MasterController {
 		var len = keys.length;
 		var reg = new RegExp('^'+ this.getUrl() +'_[a-z]+$');
 		var findMethod = 'findBy';
-		console.log(params, reg);
 
 		for (var i = 0; i < len; ++i) {
 			if (reg.test(keys[i])) {
 				var tmp = keys[i].split('_')[1];
 				findMethod += tmp.charAt(0).toUpperCase() + tmp.slice(1);
 
-				return collection[findMethod](params[keys[i]]) || this.loadEntity(keys[i], params[keys[i]]);
+				return collection[findMethod](params[keys[i]]);
 			}
 		}
 		return false;
