@@ -402,6 +402,28 @@ scripts :
     - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateTimelineView.js
     - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateUpdateView.js
     - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateViewView.js
+    - Modules/Project/ProjectAutoload.js
+    - Modules/Project/Bundle/Data/Collection/ProjectDataMainCollection.js
+    - Modules/Project/Bundle/Data/Controller/ProjectDataMainController.js
+    - Modules/Project/Bundle/Data/Entity/ProjectDataMainEntity.js
+    - Modules/Project/Bundle/Data/Form/ProjectDataCreateForm.js
+    - Modules/Project/Bundle/Data/Form/ProjectDataEditForm.js
+    - Modules/Project/Bundle/Data/Form/ProjectDataFieldsetForm.js
+    - Modules/Project/Bundle/Data/Form/ProjectDataSearchForm.js
+    - Modules/Project/Bundle/Data/Route/ProjectDataMainRoute.js
+    - Modules/Project/Bundle/Data/Service/ProjectDataMainService.js
+    - Modules/Project/Bundle/Data/Template/ProjectDataCreateTemplate.js
+    - Modules/Project/Bundle/Data/Template/ProjectDataDeleteTemplate.js
+    - Modules/Project/Bundle/Data/Template/ProjectDataSearchTemplate.js
+    - Modules/Project/Bundle/Data/Template/ProjectDataTimelineTemplate.js
+    - Modules/Project/Bundle/Data/Template/ProjectDataUpdateTemplate.js
+    - Modules/Project/Bundle/Data/Template/ProjectDataViewTemplate.js
+    - Modules/Project/Bundle/Data/Template/View/ProjectDataTemplateCreateView.js
+    - Modules/Project/Bundle/Data/Template/View/ProjectDataTemplateDeleteView.js
+    - Modules/Project/Bundle/Data/Template/View/ProjectDataTemplateSearchView.js
+    - Modules/Project/Bundle/Data/Template/View/ProjectDataTemplateTimelineView.js
+    - Modules/Project/Bundle/Data/Template/View/ProjectDataTemplateUpdateView.js
+    - Modules/Project/Bundle/Data/Template/View/ProjectDataTemplateViewView.js
     - main.js
 styles : 
     - Assets/css/all.css
