@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-01 20:57:34
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-03 22:49:42
 **************************************************************/
 
 #import ('./Route/MasterRoute') = MasterRoute;
@@ -76,7 +76,7 @@ class Router {
 		var str = (typeof str === 'string') ? ('/'+ str) : '';
 
 		var datas = {};
-		while (cur && cur.getParentid()) {
+		while (cur && cur.getParentidEntityRoute()) {
 			var type = cur.getType();
 			var route = routeManager.get(type.toLowerCase() + '_data_main_route');
 			var routeView = route.getRoutes()['childs']['view']['route'].substr(1);
@@ -90,7 +90,7 @@ class Router {
 					return null;
 				datas[routeView] = cur[method]();
 			}
-			cur = cur.getParent();
+			cur = cur.getParentEntityRoute();
 		}
 		return this.buildRecusiveRoute(str.substr(1).split('/'), this.getRoutes(), datas, 0);
 	}
@@ -167,7 +167,7 @@ class Router {
 		var filter = {};
 		filterMethod += type.charAt(0).toUpperCase() + type.slice(1);
 		filter[filterMethod] = segment;
-		this.setLastEntityType(elementType.charAt(0).toUpperCase() + elementType.substr(1));
+		this.setLastEntityType(elementType);
 		store.request(router.build('/'+ elementType), {
 			'filter' : [
 				filter
@@ -176,9 +176,11 @@ class Router {
 			if (response.result.length) {
 				var entity = store.get(response['result'][0]['id']);
 
-				if (entity.getType() == self.getLastEntityType())
+				if (entity.getType().toLowerCase() == self.getLastEntityType())
 					dispatcher.trigger('Router:setParentEntity:'+ self.getLastRouteName(), {'entity' : entity});
-				dispatcher.trigger(elementType.charAt(0).toUpperCase() + elementType.substr(1) +':load:entity', {'entity' : entity});
+				dispatcher.trigger(elementType.toLowerCase() +':load:entity', {'entity' : entity});
+			} else {
+				dispatcher.trigger('Error:url:404');
 			}
 		});
 		this._currentParams[key] = segment;
@@ -206,7 +208,7 @@ class Router {
 				if (match !== true)
 					result = match;
 				var entityType = routes[i].getController().split('_')[0];
-				this.setLastRouteName(entityType.charAt(0).toUpperCase() + entityType.substr(1));;
+				this.setLastRouteName(entityType.toLowerCase());
 				result['actions'] = {};
 				result['actions']['controller'] = routes[i].getController();
 				result['actions']['method'] = routes[i].getMethod();
