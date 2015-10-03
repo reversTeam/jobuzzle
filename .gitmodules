@@ -76,3 +76,6 @@
 [submodule "Modules/SkillLink"]
 	path = Modules/SkillLink
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/SkillLink-Front.git
+[submodule "Modules/Project"]
+	path = Modules/Project
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Project-Front.git
