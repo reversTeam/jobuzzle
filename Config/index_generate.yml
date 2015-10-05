@@ -49,10 +49,23 @@ scripts :
     - Kernel/Form/Element/View/MasterFormElementView.js
     - Kernel/Filters/MasterFilter.js
     - Kernel/Validators/MasterValidator.js
+    - Modules/Navigation/NavigationAutoload.js
+    - Modules/Navigation/Bundle/Action/Service/NavigationActionLinkService.js
+    - Modules/Navigation/Bundle/History/Service/NavigationHistoryMainService.js
+    - Modules/Navigation/Bundle/Title/Service/NavigationTitleChangeService.js
+    - Modules/Navigation/Bundle/Resize/Service/NavigationResizeManageService.js
+    - Modules/Navigation/Bundle/Cookie/Service/NavigationCookieMainService.js
+    - Modules/Navigation/Bundle/Route/Service/NavigationRouteMainService.js
+    - Modules/Navigation/Bundle/Loader/Template/NavigationLoaderMainTemplate.js
+    - Modules/Navigation/Bundle/Loader/Template/View/NavigationLoaderTemplateMainView.js
+    - Modules/Navigation/Bundle/Loader/Service/NavigationLoaderMainService.js
+    - Modules/Navigation/Bundle/Scroll/Service/NavigationScrollMainService.js
+    - Modules/Navigation/Bundle/Error/Service/NavigationErrorMainService.js
+    - Modules/Navigation/Bundle/Error/Template/NavigationError404Template.js
+    - Modules/Navigation/Bundle/Error/Template/View/NavigationErrorTemplate404View.js
     - Modules/Example/ExampleAutoload.js
     - Modules/Body/BodyAutoload.js
     - Modules/Client/ClientAutoload.js
-    - Modules/Navigation/NavigationAutoload.js
     - Modules/User/UserAutoload.js
     - Modules/Timeline/TimelineAutoload.js
     - Modules/Notification/NotificationAutoload.js
@@ -90,14 +103,10 @@ scripts :
     - Modules/Client/Bundle/Auth/Service/ClientAuthMainService.js
     - Modules/Notification/Bundle/Panel/Template/NotificationPanelMainTemplate.js
     - Modules/Notification/Bundle/Panel/Template/View/NotificationPanelTemplateMainView.js
-    - Modules/Navigation/Bundle/Action/Service/NavigationActionLinkService.js
-    - Modules/Navigation/Bundle/History/Service/NavigationHistoryMainService.js
-    - Modules/Navigation/Bundle/Title/Service/NavigationTitleChangeService.js
     - Modules/Body/Bundle/Base/Template/BodyBaseMainView.js
     - Modules/Body/Bundle/Base/Template/View/BodyBaseTemplateMainView.js
     - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateBreadcrumView.js
     - Modules/Body/Bundle/Right/Template/BodyRightViewBreadcrum.js
-    - Modules/Navigation/Bundle/Resize/Service/NavigationResizeManageService.js
     - Modules/Panel/Bundle/Filter/Service/PanelFilterMainService.js
     - Modules/Panel/Bundle/Filter/Template/PanelFilterAbstractTemplate.js
     - Modules/Panel/Bundle/Filter/Template/PanelFilterMainTemplate.js
@@ -298,15 +307,6 @@ scripts :
     - Modules/Company/Bundle/Data/Form/CompanyDataEditForm.js
     - Modules/Company/Bundle/Data/Form/CompanyDataFieldsetForm.js
     - Modules/Company/Bundle/Data/Form/CompanyDataSearchForm.js
-    - Modules/Navigation/Bundle/Cookie/Service/NavigationCookieMainService.js
-    - Modules/Navigation/Bundle/Route/Service/NavigationRouteMainService.js
-    - Modules/Navigation/Bundle/Loader/Template/NavigationLoaderMainTemplate.js
-    - Modules/Navigation/Bundle/Loader/Template/View/NavigationLoaderTemplateMainView.js
-    - Modules/Navigation/Bundle/Loader/Service/NavigationLoaderMainService.js
-    - Modules/Navigation/Bundle/Scroll/Service/NavigationScrollMainService.js
-    - Modules/Navigation/Bundle/Error/Service/NavigationErrorMainService.js
-    - Modules/Navigation/Bundle/Error/Template/NavigationError404Template.js
-    - Modules/Navigation/Bundle/Error/Template/View/NavigationErrorTemplate404View.js
     - Modules/User/Bundle/Manager/Service/UserManagerMainService.js
     - Modules/Filter/Bundle/Data/Collection/FilterDataMainCollection.js
     - Modules/Filter/Bundle/Data/Controller/FilterDataMainController.js
