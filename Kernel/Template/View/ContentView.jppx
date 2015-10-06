@@ -7,10 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-03 21:11:41
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-06 16:39:37
 **************************************************************/
 
 class ContentView extends MasterView {
+
+	_nbCdn = 0;
 
 	/**
 	* Overide render if element is not visible
@@ -30,6 +32,10 @@ class ContentView extends MasterView {
 
 	public getService : function () {
 		return this._template.getService();
+	}
+
+	public getUrlAsset : function (assets) {
+		return 'https:' + assets;
 	}
 
 	onVisible : function() {}
