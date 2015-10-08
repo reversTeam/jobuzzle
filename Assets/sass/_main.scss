@@ -7,13 +7,17 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-04 11:19:24
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-07 10:54:03
 **************************************************************/
 
 @import "vars/all";
 @import "mixins/all";
 @import "vendors/all";
 @import "font/all";
+
+html {
+	background-color: $primary_color;
+}
 
 body, html {
 	margin : 0px;
