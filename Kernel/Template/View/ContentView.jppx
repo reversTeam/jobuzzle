@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 15:42:26
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 22:38:57
 **************************************************************/
 
 class ContentView extends MasterView {
@@ -35,7 +35,7 @@ class ContentView extends MasterView {
 	}
 
 	public getUrlAsset : function (assets) {
-		return 'http:' + assets;
+		return 'https:' + assets;
 	}
 
 	onVisible : function() {}
