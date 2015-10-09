@@ -7,13 +7,13 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-20 13:49:51
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 14:27:51
 **************************************************************/
 
-class MasterHelperView extends MasterView {
+class MasterHelperView extends ContentView {
 
-	initialize : function () {
-		_super();
+	initialize : function (props, context) {
+		_super(props, context);
 		this['_formElements'] = {};
 		this['_formElementsView'] = {};
 	}

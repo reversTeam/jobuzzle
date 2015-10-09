@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-02 18:23:40
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 15:37:22
 **************************************************************/
 
 var tmp = React['createClass']({
@@ -94,6 +94,7 @@ class MasterView extends tmp {
 
 		helper = helperManager.get(helperName);
 		helper.injectParams(params);
+		helper.visible();
 			
 		return React.createElement(helper.getView(), null);
 	}
