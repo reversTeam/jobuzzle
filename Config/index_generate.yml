@@ -330,6 +330,8 @@ scripts :
     - Modules/Filter/Bundle/Data/Form/FilterDataCreateForm.js
     - Modules/Filter/Bundle/Data/Form/FilterDataEditForm.js
     - Modules/Filter/Bundle/Data/Form/FilterDataSearchForm.js
+    - Modules/Filter/Bundle/Data/Helper/FilterDataDisplayHelper.js
+    - Modules/Filter/Bundle/Data/Helper/View/FilterDataHelperDisplayView.js
     - Modules/Skill/SkillAutoload.js
     - Modules/Skill/Bundle/Data/Collection/SkillDataMainCollection.js
     - Modules/Skill/Bundle/Data/Controller/SkillDataMainController.js
@@ -402,6 +404,8 @@ scripts :
     - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateTimelineView.js
     - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateUpdateView.js
     - Modules/SkillLink/Bundle/Data/Template/View/SkillLinkDataTemplateViewView.js
+    - Modules/SkillLink/Bundle/Data/Helper/SkillLinkDataDisplayHelper.js
+    - Modules/SkillLink/Bundle/Data/Helper/View/SkillLinkDataHelperDisplayView.js
     - Modules/Project/ProjectAutoload.js
     - Modules/Project/Bundle/Data/Collection/ProjectDataMainCollection.js
     - Modules/Project/Bundle/Data/Controller/ProjectDataMainController.js
