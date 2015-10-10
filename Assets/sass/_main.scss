@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 01:34:55
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 15:41:29
 **************************************************************/
 
 @import "vars/all";
@@ -25,7 +25,7 @@ html {
 body, html {
 	margin : 0px;
 	padding: 0px;
-	height : 100%;
+	min-height : 101%;
 	font-family: $primary_font;
 	font-weight: 400;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
