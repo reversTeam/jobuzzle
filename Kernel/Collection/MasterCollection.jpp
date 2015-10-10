@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-01 15:50:42
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 02:52:31
 **************************************************************/
 
 class MasterCollection {
@@ -157,7 +157,8 @@ class MasterCollection {
 		var type = this.get(id).getType();
 		var collection = this.getAll(type);
 		var parent = collection.getParent();
-		collection.updateEntity(id, datas);
+		if (!collection.updateEntity(id, datas))
+			return ;
 		dispatcher.trigger('Store:'+ collection.getEntityType() +'-'+ id +':update');
 		this.sendUpdateEvent(collection.getEntityType());
 
@@ -176,15 +177,24 @@ class MasterCollection {
 	* if entity have callback call that callback
 	**/
 	updateEntity : function (id, datas) {
-		var fn = '';
+		var setter = '';
+		var updated = false;
+
 		for (var i in datas) {
 			if (this.getProtect().indexOf(i) == -1)
-				fn = 'set'+ i.charAt(0).toUpperCase() + i.substr(1);
-				if (typeof this['_entity'][id][fn] == 'function')
-					this['_entity'][id][fn](datas[i]);
+				setter = 'set'+ i.charAt(0).toUpperCase() + i.substr(1);
+				getter = 'get'+ i.charAt(0).toUpperCase() + i.substr(1);
+
+				if (typeof this['_entity'][id][getter] == 'function' && this['_entity'][id][getter]() == datas[i])
+					continue ;
+
+				if (typeof this['_entity'][id][setter] == 'function') {
+					this['_entity'][id][setter](datas[i]);
+					updated = true;
+				}
 		}
 		
-		return true;
+		return updated;
 	}
 
 	/**

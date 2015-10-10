@@ -7,13 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 15:35:13
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 01:08:16
 **************************************************************/
 
 class MasterHelper extends ContentTemplate {
 
 	public _viewClassName = 'MasterHelperView';
-	_hasLoader = false;
 
 	initialize : function () {
 		_super();

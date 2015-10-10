@@ -7,28 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 22:38:57
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 02:01:15
 **************************************************************/
 
 class ContentView extends MasterView {
 
 	_nbCdn = 0;
-
-	/**
-	* Overide render if element is not visible
-	* return null
-	* else call display method
-	**/
-	public render : function () {
-		if (!this['_template']['getVisibility']())
-			return null;
-		if (!this['_template']['isReady']() && this._template['_hasLoader']) {
-			return <div className="loader_content_view">
-				{this.getTemplate('navigation_loader_main_template')}
-			</div>;
-		}
-		return this.display();
-	}
 
 	public getService : function () {
 		return this._template.getService();
@@ -45,4 +29,19 @@ class ContentView extends MasterView {
 			this._template['setReady'](false);
 	}
 
+	/**
+	* Overide render if element is not visible
+	* return null
+	* else call display method
+	**/
+	public render : function () {
+		if (!this['_template']['getVisibility']())
+			return null;
+		if (this._template['_hasLoader'] && !this._template['isReady']()) {
+			return <div className="loader_content_view">
+				{this.getTemplate('navigation_loader_main_template')}
+			</div>;
+		}
+		return this.display();
+	}
 }

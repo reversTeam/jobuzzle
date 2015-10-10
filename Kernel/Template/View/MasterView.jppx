@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-09 15:37:22
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 02:46:50
 **************************************************************/
 
 var tmp = React['createClass']({
@@ -59,6 +59,9 @@ class MasterView extends tmp {
 		if (!props['key'] || props['key'] == null)
 			props['key'] = currentKeyForTemplateReact++;
 		_super(props, context);
+
+		this._allHelpers = {};
+		this._allHelpersView = {};
 	}
 
 	/**
@@ -92,11 +95,14 @@ class MasterView extends tmp {
 	getHelper : function (helperName, params) {
 		var helperManager = serviceLocator.get('HelperManager');
 
-		helper = helperManager.get(helperName);
-		helper.injectParams(params);
-		helper.visible();
-			
-		return React.createElement(helper.getView(), null);
+		if (!this._allHelpers[helperName]) {
+			this._allHelpers[helperName] = helperManager.get(helperName);
+			this._allHelpers[helperName].visible();
+			this._allHelpersView[helperName] = React.createElement(this._allHelpers[helperName].getView(), {key : this.getKey()});
+		}
+		this._allHelpers[helperName].injectParams(params);
+
+		return this._allHelpersView[helperName];
 	}
 
 	/**
