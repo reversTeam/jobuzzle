@@ -79,3 +79,7 @@
 [submodule "Modules/Project"]
 	path = Modules/Project
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Project-Front.git
+[submodule "Modules/BaseUserCompany"]
+	path = Modules/BaseUserCompany
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/BaseUserCompany.git
+	branch = master
