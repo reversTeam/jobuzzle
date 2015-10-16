@@ -430,8 +430,8 @@ scripts :
     - Modules/Project/Bundle/Data/Template/View/ProjectDataTemplateViewView.js
     - Modules/BaseUserCompany/BaseUserCompanyAutoload.js
     - Modules/BaseUserCompany/Bundle/Data/Collection/BaseUserCompanyDataMainCollection.js
-    - Modules/BaseUserCompany/Bundle/Data/Controller/BaseUserDataMainController.js
-    - Modules/BaseUserCompany/Bundle/Data/Entity/BaseUserDataMainEntity.js
+    - Modules/BaseUserCompany/Bundle/Data/Controller/BaseUserCompanyDataMainController.js
+    - Modules/BaseUserCompany/Bundle/Data/Entity/BaseUserCompanyDataMainEntity.js
     - Modules/BaseUserCompany/Bundle/Data/Form/BaseUserCompanyCreateForm.js
     - Modules/BaseUserCompany/Bundle/Data/Form/BaseUserCompanyEditForm.js
     - Modules/BaseUserCompany/Bundle/Data/Form/BaseUserCompanySearchForm.js
@@ -450,6 +450,50 @@ scripts :
     - Modules/BaseUserCompany/Bundle/Data/Template/View/BaseUserCompanyDataTemplateTimelineView.js
     - Modules/BaseUserCompany/Bundle/Data/Template/View/BaseUserCompanyDataTemplateUpdateView.js
     - Modules/BaseUserCompany/Bundle/Data/Template/View/BaseUserCompanyDataTemplateViewView.js
+    - Modules/Agent/AgentAutoload.js
+    - Modules/Agent/Bundle/Data/Collection/AgentDataMainCollection.js
+    - Modules/Agent/Bundle/Data/Controller/AgentDataMainController.js
+    - Modules/Agent/Bundle/Data/Entity/AgentDataMainEntity.js
+    - Modules/Agent/Bundle/Data/Form/AgentCreateForm.js
+    - Modules/Agent/Bundle/Data/Form/AgentEditForm.js
+    - Modules/Agent/Bundle/Data/Form/AgentFieldsetForm.js
+    - Modules/Agent/Bundle/Data/Form/AgentSearchForm.js
+    - Modules/Agent/Bundle/Data/Route/AgentDataMainRoute.js
+    - Modules/Agent/Bundle/Data/Service/AgentDataMainService.js
+    - Modules/Agent/Bundle/Data/Template/View/AgentDataTemplateCreateView.js
+    - Modules/Agent/Bundle/Data/Template/View/AgentDataTemplateDeleteView.js
+    - Modules/Agent/Bundle/Data/Template/View/AgentDataTemplateSearchView.js
+    - Modules/Agent/Bundle/Data/Template/View/AgentDataTemplateTimelineView.js
+    - Modules/Agent/Bundle/Data/Template/View/AgentDataTemplateUpdateView.js
+    - Modules/Agent/Bundle/Data/Template/View/AgentDataTemplateViewView.js
+    - Modules/Agent/Bundle/Data/Template/AgentDataCreateTemplate.js
+    - Modules/Agent/Bundle/Data/Template/AgentDataDeleteTemplate.js
+    - Modules/Agent/Bundle/Data/Template/AgentDataSearchTemplate.js
+    - Modules/Agent/Bundle/Data/Template/AgentDataTimelineTemplate.js
+    - Modules/Agent/Bundle/Data/Template/AgentDataUpdateTemplate.js
+    - Modules/Agent/Bundle/Data/Template/AgentDataViewTemplate.js
+    - Modules/Recruiter/RecruiterAutoload.js
+    - Modules/Recruiter/Bundle/Data/Collection/RecruiterDataMainCollection.js
+    - Modules/Recruiter/Bundle/Data/Controller/RecruiterDataMainController.js
+    - Modules/Recruiter/Bundle/Data/Entity/RecruiterDataMainEntity.js
+    - Modules/Recruiter/Bundle/Data/Form/RecruiterCreateForm.js
+    - Modules/Recruiter/Bundle/Data/Form/RecruiterEditForm.js
+    - Modules/Recruiter/Bundle/Data/Form/RecruiterFieldsetForm.js
+    - Modules/Recruiter/Bundle/Data/Form/RecruiterSearchForm.js
+    - Modules/Recruiter/Bundle/Data/Route/RecruiterDataMainRoute.js
+    - Modules/Recruiter/Bundle/Data/Service/RecruiterDataMainService.js
+    - Modules/Recruiter/Bundle/Data/Template/View/RecruiterDataTemplateCreateView.js
+    - Modules/Recruiter/Bundle/Data/Template/View/RecruiterDataTemplateDeleteView.js
+    - Modules/Recruiter/Bundle/Data/Template/View/RecruiterDataTemplateSearchView.js
+    - Modules/Recruiter/Bundle/Data/Template/View/RecruiterDataTemplateTimelineView.js
+    - Modules/Recruiter/Bundle/Data/Template/View/RecruiterDataTemplateUpdateView.js
+    - Modules/Recruiter/Bundle/Data/Template/View/RecruiterDataTemplateViewView.js
+    - Modules/Recruiter/Bundle/Data/Template/RecruiterDataCreateTemplate.js
+    - Modules/Recruiter/Bundle/Data/Template/RecruiterDataDeleteTemplate.js
+    - Modules/Recruiter/Bundle/Data/Template/RecruiterDataSearchTemplate.js
+    - Modules/Recruiter/Bundle/Data/Template/RecruiterDataTimelineTemplate.js
+    - Modules/Recruiter/Bundle/Data/Template/RecruiterDataUpdateTemplate.js
+    - Modules/Recruiter/Bundle/Data/Template/RecruiterDataViewTemplate.js
     - main.js
 styles : 
     - Assets/css/all.css

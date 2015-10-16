@@ -7,7 +7,7 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-16 16:30:04
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-16 17:47:22
 ###############################################################
 
 element_data_main_route:
@@ -24,3 +24,5 @@ link_data_main_route:
 	skilllink_data_main_route:
 skilllink_data_main_route:
 baseusercompany_data_main_route:
+agent_data_main_route:
+recruiter_data_main_route:
