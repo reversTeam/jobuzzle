@@ -97,5 +97,5 @@
 	branch = master
 [submodule "Modules/CompanyFilter"]
 	path = Modules/CompanyFilter
-	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/StudentFilter-Front.git
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/CompanyFilter-Front.git
 	branch = master
