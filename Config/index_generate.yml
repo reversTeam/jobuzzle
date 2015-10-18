@@ -494,6 +494,50 @@ scripts :
     - Modules/Recruiter/Bundle/Data/Template/RecruiterDataTimelineTemplate.js
     - Modules/Recruiter/Bundle/Data/Template/RecruiterDataUpdateTemplate.js
     - Modules/Recruiter/Bundle/Data/Template/RecruiterDataViewTemplate.js
+    - Modules/StudentFilter/StudentFilterAutoload.js
+    - Modules/StudentFilter/Bundle/Data/Collection/StudentFilterDataMainCollection.js
+    - Modules/StudentFilter/Bundle/Data/Controller/StudentFilterDataMainController.js
+    - Modules/StudentFilter/Bundle/Data/Entity/StudentFilterDataMainEntity.js
+    - Modules/StudentFilter/Bundle/Data/Form/StudentFilterDataCreateForm.js
+    - Modules/StudentFilter/Bundle/Data/Form/StudentFilterDataEditForm.js
+    - Modules/StudentFilter/Bundle/Data/Form/StudentFilterDataFieldsetForm.js
+    - Modules/StudentFilter/Bundle/Data/Form/StudentFilterDataSearchForm.js
+    - Modules/StudentFilter/Bundle/Data/Route/StudentFilterDataMainRoute.js
+    - Modules/StudentFilter/Bundle/Data/Service/StudentFilterDataMainService.js
+    - Modules/StudentFilter/Bundle/Data/Template/StudentFilterDataCreateTemplate.js
+    - Modules/StudentFilter/Bundle/Data/Template/StudentFilterDataDeleteTemplate.js
+    - Modules/StudentFilter/Bundle/Data/Template/StudentFilterDataSearchTemplate.js
+    - Modules/StudentFilter/Bundle/Data/Template/StudentFilterDataTimelineTemplate.js
+    - Modules/StudentFilter/Bundle/Data/Template/StudentFilterDataUpdateTemplate.js
+    - Modules/StudentFilter/Bundle/Data/Template/StudentFilterDataViewTemplate.js
+    - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateCreateView.js
+    - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateDeleteView.js
+    - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateSearchView.js
+    - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateTimelineView.js
+    - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateUpdateView.js
+    - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateViewView.js
+    - Modules/CompanyFilter/CompanyFilterAutoload.js
+    - Modules/CompanyFilter/Bundle/Data/Collection/CompanyFilterDataMainCollection.js
+    - Modules/CompanyFilter/Bundle/Data/Controller/CompanyFilterDataMainController.js
+    - Modules/CompanyFilter/Bundle/Data/Entity/CompanyFilterDataMainEntity.js
+    - Modules/CompanyFilter/Bundle/Data/Form/CompanyFilterDataCreateForm.js
+    - Modules/CompanyFilter/Bundle/Data/Form/CompanyFilterDataEditForm.js
+    - Modules/CompanyFilter/Bundle/Data/Form/CompanyFilterDataFieldsetForm.js
+    - Modules/CompanyFilter/Bundle/Data/Form/CompanyFilterDataSearchForm.js
+    - Modules/CompanyFilter/Bundle/Data/Route/CompanyFilterDataMainRoute.js
+    - Modules/CompanyFilter/Bundle/Data/Service/CompanyFilterDataMainService.js
+    - Modules/CompanyFilter/Bundle/Data/Template/CompanyFilterDataCreateTemplate.js
+    - Modules/CompanyFilter/Bundle/Data/Template/CompanyFilterDataDeleteTemplate.js
+    - Modules/CompanyFilter/Bundle/Data/Template/CompanyFilterDataSearchTemplate.js
+    - Modules/CompanyFilter/Bundle/Data/Template/CompanyFilterDataTimelineTemplate.js
+    - Modules/CompanyFilter/Bundle/Data/Template/CompanyFilterDataUpdateTemplate.js
+    - Modules/CompanyFilter/Bundle/Data/Template/CompanyFilterDataViewTemplate.js
+    - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateCreateView.js
+    - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateDeleteView.js
+    - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateSearchView.js
+    - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateTimelineView.js
+    - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateUpdateView.js
+    - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateViewView.js
     - main.js
 styles : 
     - Assets/css/all.css

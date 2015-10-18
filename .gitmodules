@@ -91,3 +91,11 @@
 	path = Modules/Agent
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Agent-Front.git
 	branch = master
+[submodule "Modules/StudentFilter"]
+	path = Modules/StudentFilter
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/StudentFilter-Front.git
+	branch = master
+[submodule "Modules/CompanyFilter"]
+	path = Modules/CompanyFilter
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/StudentFilter-Front.git
+	branch = master

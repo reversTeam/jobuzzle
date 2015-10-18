@@ -7,15 +7,15 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-16 17:47:22
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-18 12:34:15
 ###############################################################
 
 element_data_main_route:
 student_data_main_route:
-	filter_data_main_route:
+	studentfilter_data_main_route:
 		skilllink_data_main_route:
 company_data_main_route:
-	filter_data_main_route:
+	companyfilter_data_main_route:
 		skilllink_data_main_route:
 school_data_main_route:
 filter_data_main_route:
@@ -26,3 +26,5 @@ skilllink_data_main_route:
 baseusercompany_data_main_route:
 agent_data_main_route:
 recruiter_data_main_route:
+studentfilter_data_main_route:
+companyfilter_data_main_route:
