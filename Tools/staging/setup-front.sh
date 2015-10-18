@@ -8,10 +8,11 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-02 20:30:41
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-18 14:14:22
 ###############################################################
 
-
+git submodule init
+git submodule update
 puzzle git current --recursive --skip-base branch move staging
 git submodule foreach git pull origin staging
 puzzle watcher --oneshot
