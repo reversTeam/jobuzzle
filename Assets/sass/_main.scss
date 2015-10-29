@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 15:41:29
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 18:28:00
 **************************************************************/
 
 @import "vars/all";
@@ -16,7 +16,8 @@
 @import "font/all";
 
 html {
-	background-color: black;
+	background-color: lighten($neutral_color, 10);
+	@include bruit;
 	// background-image: url($webapp_background);
 	// background-size : 100% 100%;
 	// background-attachment: fixed;
@@ -28,8 +29,7 @@ body, html {
 	min-height : 101%;
 	font-family: $primary_font;
 	font-weight: 400;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-	color: white;
+	color: darken($primary_color, 5);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 

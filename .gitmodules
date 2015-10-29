@@ -99,3 +99,11 @@
 	path = Modules/CompanyFilter
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/CompanyFilter-Front.git
 	branch = master
+[submodule "Modules/Challenge"]
+	path = Modules/Challenge
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Challenge-Front.git
+	branch = master
+[submodule "Modules/ChallengeLink"]
+	path = Modules/ChallengeLink
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/ChallengeLink-Front.git
+	branch = master

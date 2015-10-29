@@ -7,13 +7,14 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-18 12:34:15
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-28 15:18:07
 ###############################################################
 
 element_data_main_route:
 student_data_main_route:
 	studentfilter_data_main_route:
 		skilllink_data_main_route:
+		challengelink_data_main_route:
 company_data_main_route:
 	companyfilter_data_main_route:
 		skilllink_data_main_route:
@@ -28,3 +29,5 @@ agent_data_main_route:
 recruiter_data_main_route:
 studentfilter_data_main_route:
 companyfilter_data_main_route:
+challenge_data_main_route:
+challengelink_data_main_route:

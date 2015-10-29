@@ -538,6 +538,58 @@ scripts :
     - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateTimelineView.js
     - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateUpdateView.js
     - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateViewView.js
+    - Modules/Challenge/ChallengeAutoload.js
+    - Modules/Challenge/Bundle/Data/Collection/ChallengeDataMainCollection.js
+    - Modules/Challenge/Bundle/Data/Controller/ChallengeDataMainController.js
+    - Modules/Challenge/Bundle/Data/Entity/ChallengeDataMainEntity.js
+    - Modules/Challenge/Bundle/Data/Form/ChallengeDataCreateForm.js
+    - Modules/Challenge/Bundle/Data/Form/ChallengeDataEditForm.js
+    - Modules/Challenge/Bundle/Data/Form/ChallengeDataFieldsetForm.js
+    - Modules/Challenge/Bundle/Data/Form/ChallengeDataSearchForm.js
+    - Modules/Challenge/Bundle/Data/Route/ChallengeDataMainRoute.js
+    - Modules/Challenge/Bundle/Data/Service/ChallengeDataMainService.js
+    - Modules/Challenge/Bundle/Data/Template/ChallengeDataCreateTemplate.js
+    - Modules/Challenge/Bundle/Data/Template/ChallengeDataDeleteTemplate.js
+    - Modules/Challenge/Bundle/Data/Template/ChallengeDataSearchTemplate.js
+    - Modules/Challenge/Bundle/Data/Template/ChallengeDataTimelineTemplate.js
+    - Modules/Challenge/Bundle/Data/Template/ChallengeDataUpdateTemplate.js
+    - Modules/Challenge/Bundle/Data/Template/ChallengeDataViewTemplate.js
+    - Modules/Challenge/Bundle/Data/Template/View/ChallengeDataTemplateCreateView.js
+    - Modules/Challenge/Bundle/Data/Template/View/ChallengeDataTemplateDeleteView.js
+    - Modules/Challenge/Bundle/Data/Template/View/ChallengeDataTemplateSearchView.js
+    - Modules/Challenge/Bundle/Data/Template/View/ChallengeDataTemplateTimelineView.js
+    - Modules/Challenge/Bundle/Data/Template/View/ChallengeDataTemplateUpdateView.js
+    - Modules/Challenge/Bundle/Data/Template/View/ChallengeDataTemplateViewView.js
+    - Modules/ChallengeLink/ChallengeLinkAutoload.js
+    - Modules/ChallengeLink/Bundle/Data/Template/ChallengeLinkDataViewTemplate.js
+    - Modules/ChallengeLink/Bundle/Data/Template/ChallengeLinkDataUpdateTemplate.js
+    - Modules/ChallengeLink/Bundle/Data/Template/ChallengeLinkDataTimelineTemplate.js
+    - Modules/ChallengeLink/Bundle/Data/Template/ChallengeLinkDataSearchTemplate.js
+    - Modules/ChallengeLink/Bundle/Data/Template/ChallengeLinkDataMiniatureTemplate.js
+    - Modules/ChallengeLink/Bundle/Data/Template/ChallengeLinkDataDeleteTemplate.js
+    - Modules/ChallengeLink/Bundle/Data/Template/ChallengeLinkDataCreateTemplate.js
+    - Modules/ChallengeLink/Bundle/Data/Template/View/ChallengeLinkDataTemplateViewView.js
+    - Modules/ChallengeLink/Bundle/Data/Template/View/ChallengeLinkDataTemplateUpdateView.js
+    - Modules/ChallengeLink/Bundle/Data/Template/View/ChallengeLinkDataTemplateTimelineView.js
+    - Modules/ChallengeLink/Bundle/Data/Template/View/ChallengeLinkDataTemplateSearchView.js
+    - Modules/ChallengeLink/Bundle/Data/Template/View/ChallengeLinkDataTemplateMiniatureView.js
+    - Modules/ChallengeLink/Bundle/Data/Template/View/ChallengeLinkDataTemplateDeleteView.js
+    - Modules/ChallengeLink/Bundle/Data/Template/View/ChallengeLinkDataTemplateCreateView.js
+    - Modules/ChallengeLink/Bundle/Data/Service/ChallengeLinkDataMainService.js
+    - Modules/ChallengeLink/Bundle/Data/Route/ChallengeLinkDataMainRoute.js
+    - Modules/ChallengeLink/Bundle/Data/Form/ChallengeLinkDataSearchForm.js
+    - Modules/ChallengeLink/Bundle/Data/Form/ChallengeLinkDataFieldsetForm.js
+    - Modules/ChallengeLink/Bundle/Data/Form/ChallengeLinkDataEditForm.js
+    - Modules/ChallengeLink/Bundle/Data/Form/ChallengeLinkDataCreateForm.js
+    - Modules/ChallengeLink/Bundle/Data/Entity/ChallengeLinkDataMainEntity.js
+    - Modules/ChallengeLink/Bundle/Data/Controller/ChallengeLinkDataMainController.js
+    - Modules/ChallengeLink/Bundle/Data/Collection/ChallengeLinkDataMainCollection.js
+    - Modules/StudentFilter/Bundle/Data/Helper/StudentFilterDataDisplayHelper.js
+    - Modules/StudentFilter/Bundle/Data/Helper/View/StudentFilterDataHelperDisplayView.js
+    - Modules/CompanyFilter/Bundle/Data/Helper/CompanyFilterDataDisplayHelper.js
+    - Modules/CompanyFilter/Bundle/Data/Helper/View/CompanyFilterDataHelperDisplayView.js
+    - Modules/ChallengeLink/Bundle/Data/Helper/View/ChallengeLinkDataHelperDisplayView.js
+    - Modules/ChallengeLink/Bundle/Data/Helper/ChallengeLinkDataDisplayHelper.js
     - main.js
 styles : 
     - Assets/css/all.css
