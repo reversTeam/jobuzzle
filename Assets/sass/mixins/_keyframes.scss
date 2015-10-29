@@ -7,23 +7,23 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-09 18:02:16
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-29 12:46:15
 **************************************************************/
 
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes $animation-name {
+  @-webkit-keyframes #{$animation-name} {
     @content;
   }
-  @-moz-keyframes $animation-name {
+  @-moz-keyframes #{$animation-name} {
     @content;
   }  
-  @-ms-keyframes $animation-name {
+  @-ms-keyframes #{$animation-name} {
     @content;
   }
-  @-o-keyframes $animation-name {
+  @-o-keyframes #{$animation-name} {
     @content;
   }  
-  @keyframes $animation-name {
+  @keyframes #{$animation-name} {
     @content;
   }
 }
