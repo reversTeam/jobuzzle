@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:15:58
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 15:56:03
 **************************************************************/
 
 #import ('./Route/MasterRoute') = MasterRoute;
@@ -66,6 +66,46 @@ class Router {
 		}
 
 		return this.buildRecusiveRoute(segments, routes, datas, 0);
+	}
+
+	buildPartial : function (segments) {
+		var route = this._current + (segments ? '/'+ segments : '');
+		return this.build(route, this._currentParams);
+	}
+
+	buildPartialForApi : function (segments) {
+		var serviceManager = serviceLocator.get('ServiceManager');
+		var collectionManager = serviceLocator.get('CollectionManager');
+		var store = serviceManager.get('store_manager_main_service');
+		var routes = this.getRoutes();
+		var currentRoute = this._current.substr(1) + (segments ? '/'+ segments : '')
+		var currentRouteTab = currentRoute.split('/');
+		var n = 1;
+		var cur = routes[currentRouteTab[0]];
+		var params = {};
+
+		while (cur && cur._childs[currentRouteTab[n]]) {
+			cur = cur._childs[currentRouteTab[n]];
+			if (cur instanceof ParamsRouteType) {
+				var filterMethod = 'findBy';
+				var routeUrl = cur.getRouteUrl().substr(1);
+				var routeType = routeUrl.split('_')[0];
+				var routeFilter = routeUrl.split('_')[1];
+				var collection = collectionManager.get(routeType.toLowerCase()+ '_data_main_collection');
+				var entity = undefined;
+
+				filterMethod += routeFilter.charAt(0).toUpperCase() + routeFilter.substr(1);
+
+				entity = store.getAll(collection.getEntityType())[filterMethod](this._currentParams[routeUrl]);
+				if (!entity)
+					return null;
+
+				params[routeUrl] = entity.getId();
+			}
+			++n;
+		}
+
+		return this.build('/'+ currentRoute, params);
 	}
 
 	entityRoute : function (entity, str, forApi) {
@@ -176,8 +216,10 @@ class Router {
 			if (response.result.length) {
 				var entity = store.get(response['result'][0]['id']);
 
-				if (entity.getType().toLowerCase() == self.getLastEntityType())
+				if (entity.getType().toLowerCase() == self.getLastEntityType()) {
+					this._parentEntity = entity;
 					dispatcher.trigger('Router:setParentEntity:'+ self.getLastRouteName(), {'entity' : entity});
+				}
 				dispatcher.trigger(elementType.toLowerCase() +':load:entity', {'entity' : entity});
 			} else {
 				dispatcher.trigger('Error:url:404');
