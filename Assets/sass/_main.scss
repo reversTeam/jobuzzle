@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 18:28:00
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-02 18:06:43
 **************************************************************/
 
 @import "vars/all";
@@ -17,6 +17,7 @@
 
 html {
 	background-color: lighten($neutral_color, 10);
+	width: 100%;
 	@include bruit;
 	// background-image: url($webapp_background);
 	// background-size : 100% 100%;
