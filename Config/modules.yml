@@ -7,7 +7,7 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-28 15:17:41
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-03 17:52:04
 ###############################################################
 
 Example: true
@@ -38,3 +38,4 @@ StudentFilter: true
 CompanyFilter: true
 Challenge: true
 ChallengeLink: true
+Eligibility: true

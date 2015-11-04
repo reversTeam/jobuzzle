@@ -107,3 +107,7 @@
 	path = Modules/ChallengeLink
 	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/ChallengeLink-Front.git
 	branch = master
+[submodule "Modules/Eligibility"]
+	path = Modules/Eligibility
+	url = git@gitlab.intra.jobuzzle.com:Jobuzzle/Eligibility-Front.git
+	branch = master

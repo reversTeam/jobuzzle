@@ -244,6 +244,8 @@ scripts :
     - Modules/NamedData/Bundle/Data/Form/NamedDataDataEditForm.js
     - Modules/NamedData/Bundle/Data/Form/NamedDataDataFieldsetForm.js
     - Modules/NamedData/Bundle/Data/Form/NamedDataDataSearchForm.js
+    - Modules/NamedData/Bundle/Data/Template/NamedDataMiniatureTemplate.js
+    - Modules/NamedData/Bundle/Data/Template/View/NamedDataTemplateMiniatureView.js
     - Modules/Institute/Bundle/Data/Entity/InstituteDataMainEntity.js
     - Modules/Institute/Bundle/Data/Collection/InstituteDataMainCollection.js
     - Modules/Institute/Bundle/Data/Route/InstituteDataMainRoute.js
@@ -265,6 +267,8 @@ scripts :
     - Modules/Institute/Bundle/Data/Form/InstituteDataCreateForm.js
     - Modules/Institute/Bundle/Data/Form/InstituteDataEditForm.js
     - Modules/Institute/Bundle/Data/Form/InstituteDataSearchForm.js
+    - Modules/Institute/Bundle/Data/Template/InstituteDataMiniatureTemplate.js
+    - Modules/Institute/Bundle/Data/Template/View/InstituteDataTemplateMiniatureView.js
     - Modules/School/Bundle/Data/Collection/SchoolDataMainCollection.js
     - Modules/School/Bundle/Data/Entity/SchoolDataMainEntity.js
     - Modules/School/Bundle/Data/Route/SchoolDataMainRoute.js
@@ -516,6 +520,8 @@ scripts :
     - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateTimelineView.js
     - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateUpdateView.js
     - Modules/StudentFilter/Bundle/Data/Template/View/StudentFilterDataTemplateViewView.js
+    - Modules/StudentFilter/Bundle/Data/Helper/StudentFilterDataDisplayHelper.js
+    - Modules/StudentFilter/Bundle/Data/Helper/View/StudentFilterDataHelperDisplayView.js
     - Modules/CompanyFilter/CompanyFilterAutoload.js
     - Modules/CompanyFilter/Bundle/Data/Collection/CompanyFilterDataMainCollection.js
     - Modules/CompanyFilter/Bundle/Data/Controller/CompanyFilterDataMainController.js
@@ -538,6 +544,8 @@ scripts :
     - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateTimelineView.js
     - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateUpdateView.js
     - Modules/CompanyFilter/Bundle/Data/Template/View/CompanyFilterDataTemplateViewView.js
+    - Modules/CompanyFilter/Bundle/Data/Helper/CompanyFilterDataDisplayHelper.js
+    - Modules/CompanyFilter/Bundle/Data/Helper/View/CompanyFilterDataHelperDisplayView.js
     - Modules/Challenge/ChallengeAutoload.js
     - Modules/Challenge/Bundle/Data/Collection/ChallengeDataMainCollection.js
     - Modules/Challenge/Bundle/Data/Controller/ChallengeDataMainController.js
@@ -584,12 +592,36 @@ scripts :
     - Modules/ChallengeLink/Bundle/Data/Entity/ChallengeLinkDataMainEntity.js
     - Modules/ChallengeLink/Bundle/Data/Controller/ChallengeLinkDataMainController.js
     - Modules/ChallengeLink/Bundle/Data/Collection/ChallengeLinkDataMainCollection.js
-    - Modules/StudentFilter/Bundle/Data/Helper/StudentFilterDataDisplayHelper.js
-    - Modules/StudentFilter/Bundle/Data/Helper/View/StudentFilterDataHelperDisplayView.js
-    - Modules/CompanyFilter/Bundle/Data/Helper/CompanyFilterDataDisplayHelper.js
-    - Modules/CompanyFilter/Bundle/Data/Helper/View/CompanyFilterDataHelperDisplayView.js
     - Modules/ChallengeLink/Bundle/Data/Helper/View/ChallengeLinkDataHelperDisplayView.js
     - Modules/ChallengeLink/Bundle/Data/Helper/ChallengeLinkDataDisplayHelper.js
+    - Modules/Eligibility/EligibilityAutoload.js
+    - Modules/Eligibility/Bundle/Data/Collection/EligibilityDataMainCollection.js
+    - Modules/Eligibility/Bundle/Data/Controller/EligibilityDataMainController.js
+    - Modules/Eligibility/Bundle/Data/Entity/EligibilityDataMainEntity.js
+    - Modules/Eligibility/Bundle/Data/Form/EligibilityDataCreateForm.js
+    - Modules/Eligibility/Bundle/Data/Form/EligibilityDataEditForm.js
+    - Modules/Eligibility/Bundle/Data/Form/EligibilityDataFieldsetForm.js
+    - Modules/Eligibility/Bundle/Data/Form/EligibilityDataSearchForm.js
+    - Modules/Eligibility/Bundle/Data/Helper/EligibilityDataDisplayHelper.js
+    - Modules/Eligibility/Bundle/Data/Helper/View/EligibilityDataHelperDisplayView.js
+    - Modules/Eligibility/Bundle/Data/Route/EligibilityDataMainRoute.js
+    - Modules/Eligibility/Bundle/Data/Service/EligibilityDataMainService.js
+    - Modules/Eligibility/Bundle/Data/Template/EligibilityDataCreateTemplate.js
+    - Modules/Eligibility/Bundle/Data/Template/EligibilityDataDeleteTemplate.js
+    - Modules/Eligibility/Bundle/Data/Template/EligibilityDataMiniatureTemplate.js
+    - Modules/Eligibility/Bundle/Data/Template/EligibilityDataSearchTemplate.js
+    - Modules/Eligibility/Bundle/Data/Template/EligibilityDataTimelineTemplate.js
+    - Modules/Eligibility/Bundle/Data/Template/EligibilityDataUpdateTemplate.js
+    - Modules/Eligibility/Bundle/Data/Template/EligibilityDataViewTemplate.js
+    - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateCreateView.js
+    - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateDeleteView.js
+    - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateMiniatureView.js
+    - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateSearchView.js
+    - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateTimelineView.js
+    - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateUpdateView.js
+    - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateViewView.js
+    - Modules/Agent/Bundle/Data/Helper/AgentDataDisplayHelper.js
+    - Modules/Agent/Bundle/Data/Helper/View/AgentDataHelperDisplayView.js
     - main.js
 styles : 
     - Assets/css/all.css
