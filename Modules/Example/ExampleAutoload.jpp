@@ -7,24 +7,24 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-11 21:49:04
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-05 14:55:08
 **************************************************************/
 
 class ExampleAutoload extends MasterAutoload {
 
 	confModuleName = 'Example';
 
-	public onBootstrap : function () {
-		var routeManager = serviceLocator.get('RouteManager');
-		var router = serviceLocator.get('Router');
-		var authorRoute = routeManager.get('example_author_main_route');
-		var bookRoute = routeManager.get('example_book_main_route');
+	// public onBootstrap : function () {
+	// 	var routeManager = serviceLocator.get('RouteManager');
+	// 	var router = serviceLocator.get('Router');
+	// 	var authorRoute = routeManager.get('example_author_main_route');
+	// 	var bookRoute = routeManager.get('example_book_main_route');
 
-		router.addRoute('author', authorRoute);
-		router.addRoute('book', bookRoute);
-		router.getRoute('author').getRoute('view').addRoute('book', bookRoute);
-		router.getRoute('book').getRoute('view').addRoute('author', bookRoute);
-	}
+	// 	router.addRoute('author', authorRoute);
+	// 	router.addRoute('book', bookRoute);
+	// 	router.getRoute('author').getRoute('view').addRoute('book', bookRoute);
+	// 	router.getRoute('book').getRoute('view').addRoute('author', bookRoute);
+	// }
 
 	public init : function () {
 		
