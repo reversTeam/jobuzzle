@@ -476,6 +476,8 @@ scripts :
     - Modules/Agent/Bundle/Data/Template/AgentDataTimelineTemplate.js
     - Modules/Agent/Bundle/Data/Template/AgentDataUpdateTemplate.js
     - Modules/Agent/Bundle/Data/Template/AgentDataViewTemplate.js
+    - Modules/Agent/Bundle/Data/Helper/AgentDataDisplayHelper.js
+    - Modules/Agent/Bundle/Data/Helper/View/AgentDataHelperDisplayView.js
     - Modules/Recruiter/RecruiterAutoload.js
     - Modules/Recruiter/Bundle/Data/Collection/RecruiterDataMainCollection.js
     - Modules/Recruiter/Bundle/Data/Controller/RecruiterDataMainController.js
@@ -594,7 +596,6 @@ scripts :
     - Modules/ChallengeLink/Bundle/Data/Collection/ChallengeLinkDataMainCollection.js
     - Modules/ChallengeLink/Bundle/Data/Helper/View/ChallengeLinkDataHelperDisplayView.js
     - Modules/ChallengeLink/Bundle/Data/Helper/ChallengeLinkDataDisplayHelper.js
-    - Modules/Eligibility/EligibilityAutoload.js
     - Modules/Eligibility/Bundle/Data/Collection/EligibilityDataMainCollection.js
     - Modules/Eligibility/Bundle/Data/Controller/EligibilityDataMainController.js
     - Modules/Eligibility/Bundle/Data/Entity/EligibilityDataMainEntity.js
@@ -620,8 +621,7 @@ scripts :
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateTimelineView.js
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateUpdateView.js
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateViewView.js
-    - Modules/Agent/Bundle/Data/Helper/AgentDataDisplayHelper.js
-    - Modules/Agent/Bundle/Data/Helper/View/AgentDataHelperDisplayView.js
+    - Modules/Eligibility/EligibilityAutoload.js
     - main.js
 styles : 
     - Assets/css/all.css
