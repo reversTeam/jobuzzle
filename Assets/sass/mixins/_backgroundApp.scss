@@ -3,19 +3,20 @@
 *     ####         #                               #          *
 *       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
 *       ## #     # #     # #     #      #       #  # #     #  *
-*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-08-02 13:52:32
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-11-06 08:49:12
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-06 08:49:45
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-06 08:49:31
 **************************************************************/
 
-
-@import "mixin_color";
-@import "mixin_scrollbar";
-@import "mixin_placeholder";
-@import "keyframes";
-@import "fade_in";
-@import "animation";
-@import "bruit";
-@import "backgroundApp";
+@mixin backgroundApp () {
+	position: relative;
+	vertical-align: top;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding : 10px;
+	border-radius: 4px;
+	background: $white_color;
+	box-shadow: 0px 0px 3px darken($white_color, 20);
+}

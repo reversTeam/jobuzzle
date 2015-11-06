@@ -454,6 +454,8 @@ scripts :
     - Modules/BaseUserCompany/Bundle/Data/Template/View/BaseUserCompanyDataTemplateTimelineView.js
     - Modules/BaseUserCompany/Bundle/Data/Template/View/BaseUserCompanyDataTemplateUpdateView.js
     - Modules/BaseUserCompany/Bundle/Data/Template/View/BaseUserCompanyDataTemplateViewView.js
+    - Modules/BaseUserCompany/Bundle/Data/Helper/BaseUserCompanyDataDisplayHelper.js
+    - Modules/BaseUserCompany/Bundle/Data/Helper/View/BaseUserCompanyDataHelperDisplayView.js
     - Modules/Agent/AgentAutoload.js
     - Modules/Agent/Bundle/Data/Collection/AgentDataMainCollection.js
     - Modules/Agent/Bundle/Data/Controller/AgentDataMainController.js
@@ -596,6 +598,7 @@ scripts :
     - Modules/ChallengeLink/Bundle/Data/Collection/ChallengeLinkDataMainCollection.js
     - Modules/ChallengeLink/Bundle/Data/Helper/View/ChallengeLinkDataHelperDisplayView.js
     - Modules/ChallengeLink/Bundle/Data/Helper/ChallengeLinkDataDisplayHelper.js
+    - Modules/Eligibility/EligibilityAutoload.js
     - Modules/Eligibility/Bundle/Data/Collection/EligibilityDataMainCollection.js
     - Modules/Eligibility/Bundle/Data/Controller/EligibilityDataMainController.js
     - Modules/Eligibility/Bundle/Data/Entity/EligibilityDataMainEntity.js
@@ -621,7 +624,6 @@ scripts :
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateTimelineView.js
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateUpdateView.js
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateViewView.js
-    - Modules/Eligibility/EligibilityAutoload.js
     - main.js
 styles : 
     - Assets/css/all.css
