@@ -336,6 +336,8 @@ scripts :
     - Modules/Filter/Bundle/Data/Form/FilterDataSearchForm.js
     - Modules/Filter/Bundle/Data/Helper/FilterDataDisplayHelper.js
     - Modules/Filter/Bundle/Data/Helper/View/FilterDataHelperDisplayView.js
+    - Modules/Filter/Bundle/Data/Template/FilterDataMiniatureTemplate.js
+    - Modules/Filter/Bundle/Data/Template/View/FilterDataTemplateMiniatureView.js
     - Modules/Skill/SkillAutoload.js
     - Modules/Skill/Bundle/Data/Collection/SkillDataMainCollection.js
     - Modules/Skill/Bundle/Data/Controller/SkillDataMainController.js
