@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-05 17:55:14
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-06 13:02:01
 **************************************************************/
 
 #import ('./Route/MasterRoute') = MasterRoute;
@@ -19,6 +19,8 @@ class Router {
 	_currentRoute = undefined;
 	_currentParams = {};
 	_lastRouteName = undefined;
+	_lastSegment = undefined;
+	_lastSegmentName = undefined;
 	_parentEntity = undefined;
 	_lastEntityType = undefined;
 	_parent = undefined;
@@ -29,6 +31,8 @@ class Router {
 	#default get, set for _currentParams;
 	#default get, set for _parentEntity;
 	#default get, set for _lastRouteName;
+	#default get, set for _lastSegment;
+	#default get, set for _lastSegmentName;
 	#default get, set for _lastEntityType;
 	#default get, set for _parent;
 
@@ -77,11 +81,8 @@ class Router {
 		var route = (this._current ? this._current : '') + (segments ? '/'+ segments : '');
 		var reg = /\.\./;
 
-		// console.debug(route);
-
 		if (reg.test(route)) {
-			route = route.replace(/\/?[^\/]*\/\.\.\/?/, '');
-			console.debug(route);
+			route = route.replace(/\/?[^\/]*\/\.\.(\/$)?/, '');
 		}
 
 		return this.build(route, this._currentParams);
@@ -187,8 +188,11 @@ class Router {
 		this._currentSegment = '';
 		this._currentParams = {};
 		this._currentEntity = {};
+		this._lastSegment = undefined;
+		this._lastSegmentName = undefined;
 		this._lastEntityType = undefined;
 		this._lastRouteName = undefined;
+		this._parentEntity = undefined;
 		var result = this.matchRecusiveRoute(segments, routes, 0);
 
 		return result;
@@ -232,7 +236,7 @@ class Router {
 				var entity = store.get(response['result'][0]['id']);
 
 				if (entity.getType().toLowerCase() == self.getLastEntityType()) {
-					this._parentEntity = entity;
+					self._parentEntity = entity;
 					dispatcher.trigger('Router:setParentEntity:'+ self.getLastRouteName(), {'entity' : entity});
 				}
 				dispatcher.trigger(elementType.toLowerCase() +':load:entity', {'entity' : entity});
@@ -255,7 +259,7 @@ class Router {
 					this.loadEntity(routes[i], segments[index]);
 				}
 				this._current += '/'+ routes[i].getName();
-				this._currentSegment += '/'+ segments[index + 1];
+				this._currentSegment += '/'+ segments[index];
 				return this.concatResultMatch(match, this.matchRecusiveRoute(segments, routes[i].getRoutes(), index + 1));
 			} else if (match) {
 				if (routes[i] instanceof ParamsRouteType) {
@@ -265,6 +269,8 @@ class Router {
 				this._currentRoute = routes[i];
 				this._current += '/'+ routes[i].getName();
 				this._currentSegment += '/'+ segments[index];
+				this._lastSegment = segments[index];
+				this._lastSegmentName = routes[i].getName();
 				if (match !== true)
 					result = match;
 				var entityType = routes[i].getController().split('_')[0];
