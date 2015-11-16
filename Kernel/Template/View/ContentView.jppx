@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 15:11:08
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-11 11:01:29
 **************************************************************/
 
 class ContentView extends MasterView {
@@ -35,6 +35,8 @@ class ContentView extends MasterView {
 	* else call display method
 	**/
 	public render : function () {
+		var mainTemplate = this.getTemplateManager().get('body_right_main_template');
+
 		if (!this['_template']['getVisibility']())
 			return null;
 		if (this._template['_hasLoader'] && !this._template['isReady']()) {
