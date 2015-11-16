@@ -625,14 +625,14 @@ scripts :
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateTimelineView.js
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateUpdateView.js
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateViewView.js
+    - Modules/Body/Bundle/Right/Template/BodyRightBreadcrumTemplate.js
     - Modules/Element/Bundle/Data/Form/Element/TextareaFormElement.js
     - Modules/Element/Bundle/Data/Form/Element/View/TextareaFormElementView.js
-    - Modules/Navigation/Bundle/Popup/Template/NavigationPopupMainTemplate.js
-    - Modules/Navigation/Bundle/Popup/Template/View/NavigationPopupTemplateMainView.js
-    - Modules/Navigation/Bundle/Popup/Service/NavigationPopupMainService.js
-    - Modules/Body/Bundle/Right/Template/BodyRightBreadcrumTemplate.js
     - Modules/Element/Bundle/Data/Helper/EditActionHelper.js
     - Modules/Element/Bundle/Data/Helper/View/EditActionHelperView.js
+    - Modules/Navigation/Bundle/Popup/Service/NavigationPopupMainService.js
+    - Modules/Navigation/Bundle/Popup/Template/NavigationPopupMainTemplate.js
+    - Modules/Navigation/Bundle/Popup/Template/View/NavigationPopupTemplateMainView.js
     - main.js
 styles : 
     - Assets/css/all.css
