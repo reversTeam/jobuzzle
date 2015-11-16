@@ -106,7 +106,6 @@ scripts :
     - Modules/Body/Bundle/Base/Template/BodyBaseMainView.js
     - Modules/Body/Bundle/Base/Template/View/BodyBaseTemplateMainView.js
     - Modules/Body/Bundle/Right/Template/View/BodyRightTemplateBreadcrumView.js
-    - Modules/Body/Bundle/Right/Template/BodyRightViewBreadcrum.js
     - Modules/Panel/Bundle/Filter/Service/PanelFilterMainService.js
     - Modules/Panel/Bundle/Filter/Template/PanelFilterAbstractTemplate.js
     - Modules/Panel/Bundle/Filter/Template/PanelFilterMainTemplate.js
@@ -626,6 +625,14 @@ scripts :
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateTimelineView.js
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateUpdateView.js
     - Modules/Eligibility/Bundle/Data/Template/View/EligibilityDataTemplateViewView.js
+    - Modules/Element/Bundle/Data/Form/Element/TextareaFormElement.js
+    - Modules/Element/Bundle/Data/Form/Element/View/TextareaFormElementView.js
+    - Modules/Navigation/Bundle/Popup/Template/NavigationPopupMainTemplate.js
+    - Modules/Navigation/Bundle/Popup/Template/View/NavigationPopupTemplateMainView.js
+    - Modules/Navigation/Bundle/Popup/Service/NavigationPopupMainService.js
+    - Modules/Body/Bundle/Right/Template/BodyRightBreadcrumTemplate.js
+    - Modules/Element/Bundle/Data/Helper/EditActionHelper.js
+    - Modules/Element/Bundle/Data/Helper/View/EditActionHelperView.js
     - main.js
 styles : 
     - Assets/css/all.css
