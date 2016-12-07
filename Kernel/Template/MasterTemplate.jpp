@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-10 15:07:17
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-17 15:32:35
 **************************************************************/
 
 #import (Config.path +'/Kernel/Utility') = Utility;
@@ -49,7 +49,7 @@ class MasterTemplate {
 	* get template view
 	**/
 	getTemplate : function (template_name, parent) {
-		return React['createElement'](this.getTemplateManager().get(template_name).getView(parent), null);
+		return React['createElement'](this.getTemplateManager().get(template_name).getView(parent), {key : this.getKey()});
 	}
 
 	/**

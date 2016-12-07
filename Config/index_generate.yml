@@ -633,6 +633,14 @@ scripts :
     - Modules/Navigation/Bundle/Popup/Service/NavigationPopupMainService.js
     - Modules/Navigation/Bundle/Popup/Template/NavigationPopupMainTemplate.js
     - Modules/Navigation/Bundle/Popup/Template/View/NavigationPopupTemplateMainView.js
+    - Modules/Element/Bundle/Data/Helper/View/DeleteActionHelperView.js
+    - Modules/Element/Bundle/Data/Helper/DeleteActionHelper.js
+    - Modules/Element/Bundle/Data/Validator/ElementDataTextValidator.js
+    - Modules/Element/Bundle/Data/Validator/ElementDataInArrayValidator.js
+    - Modules/Element/Bundle/Data/Validator/ElementDataLengthValidator.js
+    - Modules/Element/Bundle/Data/Validator/ElementDataRegexValidator.js
+    - Modules/Element/Bundle/Data/Validator/ElementDataNumberValidator.js
+    - Modules/Element/Bundle/Data/Filter/ElementDataReplaceFilter.js
     - main.js
 styles : 
     - Assets/css/all.css

@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-02 18:06:43
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-25 16:22:51
 **************************************************************/
 
 @import "vars/all";
@@ -40,6 +40,7 @@ body, html {
 	-o-user-select: none;
 	user-select: none;
 	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 [data-url] {

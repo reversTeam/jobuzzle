@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-10 02:46:50
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-17 15:44:56
 **************************************************************/
 
 var tmp = React['createClass']({
@@ -47,17 +47,19 @@ class MasterView extends tmp {
 
 	#default get, set for _templateManager;
 
-	_current_key_index = 0;
+	_current_key_index = undefined;
 
 	/**
 	*  Bullshit react
 	**/
 	initialize : function (props, context) {
+		this._current_key_index = this.getKey();
 		this.setTemplateManager(serviceLocator.get('TemplateManager'));
 		if (!props)
 			props = {};
-		if (!props['key'] || props['key'] == null)
-			props['key'] = currentKeyForTemplateReact++;
+		if (!props['key'] || props['key'] == null) {
+			props['key'] = this._current_key_index;
+		}
 		_super(props, context);
 
 		this._allHelpers = {};
@@ -68,7 +70,10 @@ class MasterView extends tmp {
 	* Return key for optimise react js
 	**/
 	getKey: function () {
-		return this['_template'].getViewClassName() + (this._current_key_index++);
+		var key = this['_template'].getViewClassName() + (currentKeyForTemplateReact++);
+
+		// console.debug(key);
+		return key;
 	}
 
 	/**
@@ -133,7 +138,7 @@ class MasterView extends tmp {
 	**/
 	public render = function () {
 		this.state.key = 'MasterView';
-		return React['createElement']("div", {}, this.state.n)
+		return React['createElement']("div", { key : this.getKey() }, this.state.n)
 	}
 
 }
